@@ -1,0 +1,3263 @@
+{
+ "source": "Cronoanalise_Rede_Oftalmo.xlsx · aba “Coleta de Dados”",
+ "unit": "segundos",
+ "steps": [
+  {
+   "id": "recepcao",
+   "label": "Recepção (Portaria)",
+   "phase": "Chegada",
+   "n": 30,
+   "mean": 55.8,
+   "median": 49.5,
+   "min": 10,
+   "max": 145,
+   "stdev": 31.31,
+   "samples": [
+    {
+     "row": 5,
+     "obs": 1,
+     "seconds": 82,
+     "note": null
+    },
+    {
+     "row": 6,
+     "obs": 2,
+     "seconds": 40,
+     "note": null
+    },
+    {
+     "row": 7,
+     "obs": 3,
+     "seconds": 35,
+     "note": null
+    },
+    {
+     "row": 8,
+     "obs": 4,
+     "seconds": 101,
+     "note": null
+    },
+    {
+     "row": 9,
+     "obs": 5,
+     "seconds": 33,
+     "note": null
+    },
+    {
+     "row": 10,
+     "obs": 6,
+     "seconds": 26,
+     "note": null
+    },
+    {
+     "row": 11,
+     "obs": 7,
+     "seconds": 15,
+     "note": "Acompanhante de um paciente que já estava dentro"
+    },
+    {
+     "row": 12,
+     "obs": 9,
+     "seconds": 10,
+     "note": "Marcar Consulta"
+    },
+    {
+     "row": 13,
+     "obs": 10,
+     "seconds": 15,
+     "note": null
+    },
+    {
+     "row": 14,
+     "obs": 11,
+     "seconds": 38,
+     "note": null
+    },
+    {
+     "row": 15,
+     "obs": 12,
+     "seconds": 48,
+     "note": null
+    },
+    {
+     "row": 16,
+     "obs": 13,
+     "seconds": 131,
+     "note": "encaixe"
+    },
+    {
+     "row": 17,
+     "obs": 14,
+     "seconds": 50,
+     "note": null
+    },
+    {
+     "row": 18,
+     "obs": 15,
+     "seconds": 46,
+     "note": null
+    },
+    {
+     "row": 19,
+     "obs": 16,
+     "seconds": 45,
+     "note": null
+    },
+    {
+     "row": 20,
+     "obs": 17,
+     "seconds": 49,
+     "note": null
+    },
+    {
+     "row": 21,
+     "obs": 18,
+     "seconds": 50,
+     "note": null
+    },
+    {
+     "row": 22,
+     "obs": 19,
+     "seconds": 30,
+     "note": null
+    },
+    {
+     "row": 23,
+     "obs": 20,
+     "seconds": 39,
+     "note": null
+    },
+    {
+     "row": 24,
+     "obs": 22,
+     "seconds": 95,
+     "note": null
+    },
+    {
+     "row": 25,
+     "obs": 23,
+     "seconds": 64,
+     "note": null
+    },
+    {
+     "row": 26,
+     "obs": 24,
+     "seconds": 64,
+     "note": null
+    },
+    {
+     "row": 27,
+     "obs": 25,
+     "seconds": 60,
+     "note": null
+    },
+    {
+     "row": 28,
+     "obs": 26,
+     "seconds": 53,
+     "note": null
+    },
+    {
+     "row": 29,
+     "obs": 27,
+     "seconds": 80,
+     "note": null
+    },
+    {
+     "row": 30,
+     "obs": 28,
+     "seconds": 68,
+     "note": null
+    },
+    {
+     "row": 31,
+     "obs": 29,
+     "seconds": 63,
+     "note": null
+    },
+    {
+     "row": 32,
+     "obs": 30,
+     "seconds": 63,
+     "note": null
+    },
+    {
+     "row": 33,
+     "obs": 31,
+     "seconds": 36,
+     "note": null
+    },
+    {
+     "row": 34,
+     "obs": 32,
+     "seconds": 145,
+     "note": "Triagem"
+    }
+   ],
+   "excluded": [],
+   "source": "Colunas C–E",
+   "kind": "cronometrado",
+   "process": "glaucoma",
+   "link": {
+    "process": "glaucoma",
+    "nodes": [
+     "Node_b1a6b13f",
+     "Node_030b3116"
+    ],
+    "confidence": "provável",
+    "note": "A planilha mede “Recepção (Portaria)” como uma etapa única; no fluxograma ela corresponde às duas tarefas da entrada (Portaria e Recepção). O mesmo tempo é exibido nas duas, sem soma."
+   },
+   "lane": null
+  },
+  {
+   "id": "atendimento-glaucoma",
+   "label": "Atendimento Glaucoma",
+   "phase": "Chegada",
+   "n": 15,
+   "mean": 171.93,
+   "median": 139,
+   "min": 82,
+   "max": 331,
+   "stdev": 75.25,
+   "samples": [
+    {
+     "row": 5,
+     "obs": 1,
+     "seconds": 137,
+     "note": null
+    },
+    {
+     "row": 6,
+     "obs": 2,
+     "seconds": 139,
+     "note": null
+    },
+    {
+     "row": 7,
+     "obs": 3,
+     "seconds": 123,
+     "note": null
+    },
+    {
+     "row": 8,
+     "obs": 4,
+     "seconds": 286,
+     "note": null
+    },
+    {
+     "row": 9,
+     "obs": 5,
+     "seconds": 175,
+     "note": null
+    },
+    {
+     "row": 10,
+     "obs": 6,
+     "seconds": 197,
+     "note": null
+    },
+    {
+     "row": 11,
+     "obs": 7,
+     "seconds": 146,
+     "note": null
+    },
+    {
+     "row": 12,
+     "obs": 9,
+     "seconds": 136,
+     "note": null
+    },
+    {
+     "row": 13,
+     "obs": 10,
+     "seconds": 331,
+     "note": null
+    },
+    {
+     "row": 14,
+     "obs": 11,
+     "seconds": 116,
+     "note": null
+    },
+    {
+     "row": 15,
+     "obs": 12,
+     "seconds": 113,
+     "note": null
+    },
+    {
+     "row": 16,
+     "obs": 13,
+     "seconds": 135,
+     "note": null
+    },
+    {
+     "row": 17,
+     "obs": null,
+     "seconds": 82,
+     "note": null
+    },
+    {
+     "row": 18,
+     "obs": null,
+     "seconds": 159,
+     "note": null
+    },
+    {
+     "row": 19,
+     "obs": null,
+     "seconds": 304,
+     "note": null
+    }
+   ],
+   "excluded": [],
+   "source": "Colunas F–H",
+   "kind": "cronometrado",
+   "process": "glaucoma",
+   "link": {
+    "process": "glaucoma",
+    "nodes": [],
+    "confidence": "sem etapa equivalente",
+    "note": "Não há tarefa com este nome no fluxograma; mantida apenas nos dados do processo."
+   },
+   "lane": null
+  },
+  {
+   "id": "microscopia",
+   "label": "Microscopia",
+   "phase": "Exames",
+   "n": 13,
+   "mean": 187,
+   "median": 167,
+   "min": 84,
+   "max": 421,
+   "stdev": 92.06,
+   "samples": [
+    {
+     "row": 5,
+     "obs": 1,
+     "seconds": 128,
+     "note": null
+    },
+    {
+     "row": 6,
+     "obs": 2,
+     "seconds": 167,
+     "note": "Criança"
+    },
+    {
+     "row": 7,
+     "obs": 3,
+     "seconds": 115,
+     "note": null
+    },
+    {
+     "row": 8,
+     "obs": 4,
+     "seconds": 180,
+     "note": "Idoso"
+    },
+    {
+     "row": 9,
+     "obs": 5,
+     "seconds": 123,
+     "note": null
+    },
+    {
+     "row": 10,
+     "obs": 6,
+     "seconds": 118,
+     "note": null
+    },
+    {
+     "row": 11,
+     "obs": 7,
+     "seconds": 190,
+     "note": null
+    },
+    {
+     "row": 12,
+     "obs": 8,
+     "seconds": 229,
+     "note": "Idoso"
+    },
+    {
+     "row": 13,
+     "obs": 9,
+     "seconds": 293,
+     "note": null
+    },
+    {
+     "row": 14,
+     "obs": 10,
+     "seconds": 140,
+     "note": null
+    },
+    {
+     "row": 15,
+     "obs": 11,
+     "seconds": 243,
+     "note": null
+    },
+    {
+     "row": 16,
+     "obs": 12,
+     "seconds": 84,
+     "note": null
+    },
+    {
+     "row": 17,
+     "obs": 13,
+     "seconds": 421,
+     "note": null
+    }
+   ],
+   "excluded": [],
+   "source": "Colunas I–K",
+   "kind": "cronometrado",
+   "process": "glaucoma",
+   "link": {
+    "process": "glaucoma",
+    "nodes": [],
+    "lane": "Lane_33ed1915",
+    "confidence": "raia",
+    "note": "O fluxograma não detalha este exame/etapa individualmente; a medição é associada à raia “Exames”."
+   },
+   "lane": null
+  },
+  {
+   "id": "topografia",
+   "label": "Topografia",
+   "phase": "Exames",
+   "n": 17,
+   "mean": 329.76,
+   "median": 255,
+   "min": 50,
+   "max": 915,
+   "stdev": 233.39,
+   "samples": [
+    {
+     "row": 5,
+     "obs": 1,
+     "seconds": 190,
+     "note": null
+    },
+    {
+     "row": 6,
+     "obs": 2,
+     "seconds": 338,
+     "note": "Criança"
+    },
+    {
+     "row": 7,
+     "obs": 3,
+     "seconds": 370,
+     "note": "Idoso"
+    },
+    {
+     "row": 8,
+     "obs": 4,
+     "seconds": 174,
+     "note": null
+    },
+    {
+     "row": 9,
+     "obs": 5,
+     "seconds": 50,
+     "note": null
+    },
+    {
+     "row": 10,
+     "obs": 6,
+     "seconds": 192,
+     "note": null
+    },
+    {
+     "row": 11,
+     "obs": 7,
+     "seconds": 136,
+     "note": null
+    },
+    {
+     "row": 12,
+     "obs": 8,
+     "seconds": 192,
+     "note": null
+    },
+    {
+     "row": 13,
+     "obs": 9,
+     "seconds": 480,
+     "note": "Idoso"
+    },
+    {
+     "row": 14,
+     "obs": 10,
+     "seconds": 423,
+     "note": null
+    },
+    {
+     "row": 15,
+     "obs": 11,
+     "seconds": 211,
+     "note": null
+    },
+    {
+     "row": 16,
+     "obs": 12,
+     "seconds": 915,
+     "note": null
+    },
+    {
+     "row": 17,
+     "obs": 13,
+     "seconds": 255,
+     "note": null
+    },
+    {
+     "row": 18,
+     "obs": 14,
+     "seconds": 369,
+     "note": null
+    },
+    {
+     "row": 19,
+     "obs": 15,
+     "seconds": 166,
+     "note": null
+    },
+    {
+     "row": 20,
+     "obs": 16,
+     "seconds": 830,
+     "note": "Dificuldades com abrir os olhos"
+    },
+    {
+     "row": 21,
+     "obs": 17,
+     "seconds": 315,
+     "note": null
+    }
+   ],
+   "excluded": [],
+   "source": "Colunas L–N",
+   "kind": "cronometrado",
+   "process": "glaucoma",
+   "link": {
+    "process": "glaucoma",
+    "nodes": [],
+    "lane": "Lane_33ed1915",
+    "confidence": "raia",
+    "note": "O fluxograma não detalha este exame/etapa individualmente; a medição é associada à raia “Exames”."
+   },
+   "lane": null
+  },
+  {
+   "id": "tonometria-sopro",
+   "label": "Tonometria de sopro",
+   "phase": "Exames",
+   "n": 45,
+   "mean": 78.22,
+   "median": 72,
+   "min": 20,
+   "max": 170,
+   "stdev": 36.14,
+   "samples": [
+    {
+     "row": 5,
+     "obs": 1,
+     "seconds": 21,
+     "note": null
+    },
+    {
+     "row": 6,
+     "obs": 2,
+     "seconds": 49,
+     "note": null
+    },
+    {
+     "row": 7,
+     "obs": 3,
+     "seconds": 39,
+     "note": "Idoso"
+    },
+    {
+     "row": 8,
+     "obs": 4,
+     "seconds": 20,
+     "note": null
+    },
+    {
+     "row": 9,
+     "obs": 5,
+     "seconds": 51,
+     "note": null
+    },
+    {
+     "row": 10,
+     "obs": 6,
+     "seconds": 124,
+     "note": "Idoso"
+    },
+    {
+     "row": 11,
+     "obs": 7,
+     "seconds": 124,
+     "note": "Idoso"
+    },
+    {
+     "row": 12,
+     "obs": 8,
+     "seconds": 89,
+     "note": null
+    },
+    {
+     "row": 13,
+     "obs": 9,
+     "seconds": 54,
+     "note": null
+    },
+    {
+     "row": 14,
+     "obs": 10,
+     "seconds": 150,
+     "note": "Idoso"
+    },
+    {
+     "row": 15,
+     "obs": 11,
+     "seconds": 159,
+     "note": "Idoso"
+    },
+    {
+     "row": 16,
+     "obs": 12,
+     "seconds": 54,
+     "note": "Idoso"
+    },
+    {
+     "row": 17,
+     "obs": 13,
+     "seconds": 99,
+     "note": null
+    },
+    {
+     "row": 18,
+     "obs": 14,
+     "seconds": 84,
+     "note": null
+    },
+    {
+     "row": 19,
+     "obs": 15,
+     "seconds": 115,
+     "note": null
+    },
+    {
+     "row": 20,
+     "obs": 16,
+     "seconds": 100,
+     "note": null
+    },
+    {
+     "row": 21,
+     "obs": 17,
+     "seconds": 103,
+     "note": null
+    },
+    {
+     "row": 22,
+     "obs": 18,
+     "seconds": 74,
+     "note": null
+    },
+    {
+     "row": 23,
+     "obs": 19,
+     "seconds": 170,
+     "note": "Idoso"
+    },
+    {
+     "row": 24,
+     "obs": 20,
+     "seconds": 96,
+     "note": "Idoso"
+    },
+    {
+     "row": 25,
+     "obs": 21,
+     "seconds": 110,
+     "note": "Idoso"
+    },
+    {
+     "row": 26,
+     "obs": 22,
+     "seconds": 83,
+     "note": "Idoso"
+    },
+    {
+     "row": 27,
+     "obs": 23,
+     "seconds": 62,
+     "note": "Idoso"
+    },
+    {
+     "row": 28,
+     "obs": 24,
+     "seconds": 84,
+     "note": null
+    },
+    {
+     "row": 29,
+     "obs": 25,
+     "seconds": 100,
+     "note": "Idoso"
+    },
+    {
+     "row": 30,
+     "obs": 26,
+     "seconds": 92,
+     "note": "Idoso"
+    },
+    {
+     "row": 31,
+     "obs": 27,
+     "seconds": 56,
+     "note": null
+    },
+    {
+     "row": 32,
+     "obs": 28,
+     "seconds": 94,
+     "note": null
+    },
+    {
+     "row": 33,
+     "obs": 29,
+     "seconds": 65,
+     "note": "Idoso"
+    },
+    {
+     "row": 34,
+     "obs": 30,
+     "seconds": 62,
+     "note": "Idoso"
+    },
+    {
+     "row": 35,
+     "obs": 31,
+     "seconds": 72,
+     "note": null
+    },
+    {
+     "row": 36,
+     "obs": 32,
+     "seconds": 44,
+     "note": null
+    },
+    {
+     "row": 37,
+     "obs": 33,
+     "seconds": 33,
+     "note": null
+    },
+    {
+     "row": 38,
+     "obs": 34,
+     "seconds": 48,
+     "note": null
+    },
+    {
+     "row": 39,
+     "obs": 35,
+     "seconds": 63,
+     "note": null
+    },
+    {
+     "row": 40,
+     "obs": 36,
+     "seconds": 49,
+     "note": null
+    },
+    {
+     "row": 41,
+     "obs": 37,
+     "seconds": 39,
+     "note": null
+    },
+    {
+     "row": 42,
+     "obs": 38,
+     "seconds": 116,
+     "note": null
+    },
+    {
+     "row": 43,
+     "obs": 39,
+     "seconds": 41,
+     "note": null
+    },
+    {
+     "row": 44,
+     "obs": 40,
+     "seconds": 45,
+     "note": null
+    },
+    {
+     "row": 45,
+     "obs": 41,
+     "seconds": 37,
+     "note": null
+    },
+    {
+     "row": 46,
+     "obs": 42,
+     "seconds": 122,
+     "note": null
+    },
+    {
+     "row": 47,
+     "obs": 43,
+     "seconds": 55,
+     "note": null
+    },
+    {
+     "row": 48,
+     "obs": 44,
+     "seconds": 105,
+     "note": null
+    },
+    {
+     "row": 49,
+     "obs": 45,
+     "seconds": 68,
+     "note": null
+    }
+   ],
+   "excluded": [],
+   "source": "Colunas O–Q",
+   "kind": "cronometrado",
+   "process": "glaucoma",
+   "link": {
+    "process": "glaucoma",
+    "nodes": [
+     "Node_f3e97cd1"
+    ],
+    "confidence": "provável",
+    "note": "A tarefa do fluxograma une “mapeamento de retina e tonometria”; a planilha mede a tonometria de sopro separadamente."
+   },
+   "lane": null
+  },
+  {
+   "id": "auto-refratario",
+   "label": "Auto refratário",
+   "phase": "Exames",
+   "n": 41,
+   "mean": 69.32,
+   "median": 60,
+   "min": 33,
+   "max": 178,
+   "stdev": 28.78,
+   "samples": [
+    {
+     "row": 5,
+     "obs": 1,
+     "seconds": 50,
+     "note": null
+    },
+    {
+     "row": 6,
+     "obs": 2,
+     "seconds": 54,
+     "note": null
+    },
+    {
+     "row": 7,
+     "obs": 3,
+     "seconds": 46,
+     "note": "Idoso"
+    },
+    {
+     "row": 8,
+     "obs": 4,
+     "seconds": 57,
+     "note": null
+    },
+    {
+     "row": 9,
+     "obs": 5,
+     "seconds": 33,
+     "note": null
+    },
+    {
+     "row": 10,
+     "obs": 6,
+     "seconds": 90,
+     "note": "Idoso"
+    },
+    {
+     "row": 11,
+     "obs": 7,
+     "seconds": 92,
+     "note": null
+    },
+    {
+     "row": 12,
+     "obs": 8,
+     "seconds": 90,
+     "note": "Idoso"
+    },
+    {
+     "row": 13,
+     "obs": 9,
+     "seconds": 87,
+     "note": null
+    },
+    {
+     "row": 14,
+     "obs": 10,
+     "seconds": 100,
+     "note": null
+    },
+    {
+     "row": 15,
+     "obs": 11,
+     "seconds": 44,
+     "note": null
+    },
+    {
+     "row": 16,
+     "obs": 12,
+     "seconds": 62,
+     "note": null
+    },
+    {
+     "row": 17,
+     "obs": 13,
+     "seconds": 60,
+     "note": null
+    },
+    {
+     "row": 18,
+     "obs": 14,
+     "seconds": 79,
+     "note": "Idoso"
+    },
+    {
+     "row": 19,
+     "obs": 15,
+     "seconds": 54,
+     "note": "Idoso"
+    },
+    {
+     "row": 20,
+     "obs": 16,
+     "seconds": 72,
+     "note": "Idoso"
+    },
+    {
+     "row": 21,
+     "obs": 17,
+     "seconds": 113,
+     "note": "Idoso"
+    },
+    {
+     "row": 22,
+     "obs": 18,
+     "seconds": 84,
+     "note": "Idoso"
+    },
+    {
+     "row": 23,
+     "obs": 19,
+     "seconds": 48,
+     "note": "Idoso"
+    },
+    {
+     "row": 24,
+     "obs": 20,
+     "seconds": 40,
+     "note": "Idoso"
+    },
+    {
+     "row": 25,
+     "obs": 21,
+     "seconds": 60,
+     "note": null
+    },
+    {
+     "row": 26,
+     "obs": 22,
+     "seconds": 77,
+     "note": "Idoso"
+    },
+    {
+     "row": 27,
+     "obs": 23,
+     "seconds": 107,
+     "note": null
+    },
+    {
+     "row": 28,
+     "obs": 24,
+     "seconds": 51,
+     "note": null
+    },
+    {
+     "row": 29,
+     "obs": 25,
+     "seconds": 55,
+     "note": null
+    },
+    {
+     "row": 30,
+     "obs": 26,
+     "seconds": 55,
+     "note": null
+    },
+    {
+     "row": 31,
+     "obs": 27,
+     "seconds": 58,
+     "note": null
+    },
+    {
+     "row": 32,
+     "obs": 28,
+     "seconds": 52,
+     "note": null
+    },
+    {
+     "row": 33,
+     "obs": 29,
+     "seconds": 52,
+     "note": null
+    },
+    {
+     "row": 34,
+     "obs": 30,
+     "seconds": 41,
+     "note": null
+    },
+    {
+     "row": 35,
+     "obs": 31,
+     "seconds": 43,
+     "note": null
+    },
+    {
+     "row": 36,
+     "obs": 32,
+     "seconds": 63,
+     "note": null
+    },
+    {
+     "row": 37,
+     "obs": 33,
+     "seconds": 178,
+     "note": null
+    },
+    {
+     "row": 38,
+     "obs": 34,
+     "seconds": 39,
+     "note": null
+    },
+    {
+     "row": 39,
+     "obs": 35,
+     "seconds": 34,
+     "note": null
+    },
+    {
+     "row": 40,
+     "obs": 36,
+     "seconds": 92,
+     "note": null
+    },
+    {
+     "row": 41,
+     "obs": 37,
+     "seconds": 101,
+     "note": null
+    },
+    {
+     "row": 42,
+     "obs": 38,
+     "seconds": 53,
+     "note": null
+    },
+    {
+     "row": 43,
+     "obs": 39,
+     "seconds": 123,
+     "note": null
+    },
+    {
+     "row": 44,
+     "obs": 40,
+     "seconds": 75,
+     "note": null
+    },
+    {
+     "row": 45,
+     "obs": 41,
+     "seconds": 78,
+     "note": null
+    }
+   ],
+   "excluded": [],
+   "source": "Colunas R–T",
+   "kind": "cronometrado",
+   "process": "glaucoma",
+   "link": {
+    "process": "glaucoma",
+    "nodes": [
+     "Node_e858f5cb"
+    ],
+    "confidence": "provável",
+    "note": "O auto refrator é o equipamento da etapa de refração."
+   },
+   "lane": null
+  },
+  {
+   "id": "glaucoma-consulta",
+   "label": "Glaucoma Consulta",
+   "phase": "Consulta",
+   "n": 28,
+   "mean": 563.57,
+   "median": 546.0,
+   "min": 142,
+   "max": 1336,
+   "stdev": 283.47,
+   "samples": [
+    {
+     "row": 5,
+     "obs": 1,
+     "seconds": 342,
+     "note": "Abel"
+    },
+    {
+     "row": 6,
+     "obs": 2,
+     "seconds": 358,
+     "note": "Abel"
+    },
+    {
+     "row": 7,
+     "obs": 3,
+     "seconds": 626,
+     "note": "Abel"
+    },
+    {
+     "row": 8,
+     "obs": 4,
+     "seconds": 142,
+     "note": "Abel"
+    },
+    {
+     "row": 9,
+     "obs": 5,
+     "seconds": 464,
+     "note": "Abel"
+    },
+    {
+     "row": 10,
+     "obs": 6,
+     "seconds": 197,
+     "note": "Abel (sobrecarga de pressão)"
+    },
+    {
+     "row": 11,
+     "obs": 7,
+     "seconds": 578,
+     "note": "Abel"
+    },
+    {
+     "row": 12,
+     "obs": 8,
+     "seconds": 147,
+     "note": "Abel (sobrecarga de pressão)"
+    },
+    {
+     "row": 13,
+     "obs": 9,
+     "seconds": 718,
+     "note": "Abel"
+    },
+    {
+     "row": 14,
+     "obs": 10,
+     "seconds": 249,
+     "note": "Abel (sobrecarga de pressão)"
+    },
+    {
+     "row": 15,
+     "obs": 11,
+     "seconds": 682,
+     "note": "Clarice"
+    },
+    {
+     "row": 16,
+     "obs": 12,
+     "seconds": 1336,
+     "note": "Clarice"
+    },
+    {
+     "row": 17,
+     "obs": 13,
+     "seconds": 904,
+     "note": "Clarice"
+    },
+    {
+     "row": 18,
+     "obs": 14,
+     "seconds": 860,
+     "note": "Leandro"
+    },
+    {
+     "row": 19,
+     "obs": 15,
+     "seconds": 1060,
+     "note": "Leandro"
+    },
+    {
+     "row": 20,
+     "obs": 16,
+     "seconds": 461,
+     "note": "Leandro"
+    },
+    {
+     "row": 21,
+     "obs": 17,
+     "seconds": 330,
+     "note": "Leandro"
+    },
+    {
+     "row": 22,
+     "obs": 18,
+     "seconds": 452,
+     "note": "Leandro"
+    },
+    {
+     "row": 23,
+     "obs": 19,
+     "seconds": 273,
+     "note": "Andre"
+    },
+    {
+     "row": 24,
+     "obs": 20,
+     "seconds": 586,
+     "note": "Andre"
+    },
+    {
+     "row": 25,
+     "obs": 21,
+     "seconds": 491,
+     "note": null
+    },
+    {
+     "row": 26,
+     "obs": 22,
+     "seconds": 635,
+     "note": null
+    },
+    {
+     "row": 27,
+     "obs": 23,
+     "seconds": 674,
+     "note": null
+    },
+    {
+     "row": 28,
+     "obs": 24,
+     "seconds": 640,
+     "note": null
+    },
+    {
+     "row": 29,
+     "obs": 25,
+     "seconds": 990,
+     "note": null
+    },
+    {
+     "row": 30,
+     "obs": 26,
+     "seconds": 514,
+     "note": null
+    },
+    {
+     "row": 31,
+     "obs": 27,
+     "seconds": 440,
+     "note": null
+    },
+    {
+     "row": 32,
+     "obs": 28,
+     "seconds": 631,
+     "note": null
+    }
+   ],
+   "excluded": [],
+   "source": "Colunas U–W",
+   "kind": "cronometrado",
+   "process": "glaucoma",
+   "link": {
+    "process": "glaucoma",
+    "nodes": [],
+    "lane": "Lane_33ed1915",
+    "confidence": "raia",
+    "note": "O fluxograma não detalha este exame/etapa individualmente; a medição é associada à raia “Exames”."
+   },
+   "lane": null
+  },
+  {
+   "id": "campo-visual",
+   "label": "Campo visual",
+   "phase": "Exames",
+   "n": 58,
+   "mean": 809.33,
+   "median": 720.0,
+   "min": 240,
+   "max": 4500,
+   "stdev": 569.61,
+   "samples": [
+    {
+     "row": 5,
+     "obs": 1,
+     "seconds": 1290,
+     "note": "Tempo cronometrado direto (sem horário de início/fim)"
+    },
+    {
+     "row": 6,
+     "obs": 2,
+     "seconds": 950,
+     "note": "Tempo cronometrado direto (sem horário de início/fim)"
+    },
+    {
+     "row": 7,
+     "obs": 3,
+     "seconds": 954,
+     "note": "Tempo cronometrado direto (sem horário de início/fim)"
+    },
+    {
+     "row": 8,
+     "obs": 4,
+     "seconds": 1299,
+     "note": "Tempo cronometrado direto (sem horário de início/fim)"
+    },
+    {
+     "row": 9,
+     "obs": 5,
+     "seconds": 996,
+     "note": "Tempo cronometrado direto (sem horário de início/fim)"
+    },
+    {
+     "row": 10,
+     "obs": 6,
+     "seconds": 1105,
+     "note": "Tempo cronometrado direto (sem horário de início/fim)"
+    },
+    {
+     "row": 11,
+     "obs": 7,
+     "seconds": 1011,
+     "note": "Tempo cronometrado direto (sem horário de início/fim)"
+    },
+    {
+     "row": 12,
+     "obs": 9,
+     "seconds": 810,
+     "note": "Tempo cronometrado direto (sem horário de início/fim)"
+    },
+    {
+     "row": 13,
+     "obs": 10,
+     "seconds": 846,
+     "note": "Tempo cronometrado direto (sem horário de início/fim)"
+    },
+    {
+     "row": 14,
+     "obs": 11,
+     "seconds": 1260,
+     "start": "14:08",
+     "end": "14:29",
+     "note": null
+    },
+    {
+     "row": 15,
+     "obs": 12,
+     "seconds": 720,
+     "start": "13:07",
+     "end": "13:19",
+     "note": null
+    },
+    {
+     "row": 16,
+     "obs": 13,
+     "seconds": 720,
+     "start": "13:23",
+     "end": "13:35",
+     "note": null
+    },
+    {
+     "row": 17,
+     "obs": 14,
+     "seconds": 840,
+     "start": "13:41",
+     "end": "13:55",
+     "note": null
+    },
+    {
+     "row": 18,
+     "obs": 15,
+     "seconds": 480,
+     "start": "14:03",
+     "end": "14:11",
+     "note": null
+    },
+    {
+     "row": 19,
+     "obs": 16,
+     "seconds": 1020,
+     "start": "06:47",
+     "end": "07:04",
+     "note": null
+    },
+    {
+     "row": 20,
+     "obs": 17,
+     "seconds": 1080,
+     "start": "07:16",
+     "end": "07:34",
+     "note": null
+    },
+    {
+     "row": 21,
+     "obs": 18,
+     "seconds": 1200,
+     "start": "08:04",
+     "end": "08:24",
+     "note": null
+    },
+    {
+     "row": 22,
+     "obs": 19,
+     "seconds": 900,
+     "start": "07:43",
+     "end": "07:58",
+     "note": null
+    },
+    {
+     "row": 23,
+     "obs": 20,
+     "seconds": 600,
+     "start": "09:46",
+     "end": "09:56",
+     "note": null
+    },
+    {
+     "row": 24,
+     "obs": 22,
+     "seconds": 660,
+     "start": "08:31",
+     "end": "08:42",
+     "note": null
+    },
+    {
+     "row": 25,
+     "obs": 23,
+     "seconds": 960,
+     "start": "07:33",
+     "end": "07:49",
+     "note": null
+    },
+    {
+     "row": 26,
+     "obs": 24,
+     "seconds": 1020,
+     "start": "13:17",
+     "end": "13:34",
+     "note": null
+    },
+    {
+     "row": 27,
+     "obs": 25,
+     "seconds": 720,
+     "start": "13:39",
+     "end": "13:51",
+     "note": null
+    },
+    {
+     "row": 28,
+     "obs": 26,
+     "seconds": 660,
+     "start": "13:02",
+     "end": "13:13",
+     "note": null
+    },
+    {
+     "row": 29,
+     "obs": 27,
+     "seconds": 600,
+     "start": "13:56",
+     "end": "14:06",
+     "note": null
+    },
+    {
+     "row": 30,
+     "obs": 28,
+     "seconds": 720,
+     "start": "14:10",
+     "end": "14:22",
+     "note": null
+    },
+    {
+     "row": 31,
+     "obs": 29,
+     "seconds": 420,
+     "start": "14:21",
+     "end": "14:28",
+     "note": null
+    },
+    {
+     "row": 32,
+     "obs": 30,
+     "seconds": 780,
+     "start": "15:31",
+     "end": "15:44",
+     "note": null
+    },
+    {
+     "row": 33,
+     "obs": 31,
+     "seconds": 240,
+     "start": "14:55",
+     "end": "14:59",
+     "note": null
+    },
+    {
+     "row": 34,
+     "obs": 32,
+     "seconds": 300,
+     "start": "15:03",
+     "end": "15:08",
+     "note": null
+    },
+    {
+     "row": 35,
+     "obs": 33,
+     "seconds": 660,
+     "start": "15:51",
+     "end": "16:02",
+     "note": "A planilha trazia 1260 s (fórmula apontando para outra linha); recalculado a partir do início/fim registrados.",
+     "flag": "recalculado"
+    },
+    {
+     "row": 36,
+     "obs": 34,
+     "seconds": 1020,
+     "start": "10:16",
+     "end": "10:33",
+     "note": "A planilha trazia 1260 s (fórmula apontando para outra linha); recalculado a partir do início/fim registrados.",
+     "flag": "recalculado"
+    },
+    {
+     "row": 37,
+     "obs": 35,
+     "seconds": 540,
+     "start": "09:47",
+     "end": "09:56",
+     "note": "A planilha trazia 720 s (fórmula apontando para outra linha); recalculado a partir do início/fim registrados.",
+     "flag": "recalculado"
+    },
+    {
+     "row": 38,
+     "obs": 36,
+     "seconds": 840,
+     "start": "12:17",
+     "end": "12:31",
+     "note": "A planilha trazia 720 s (fórmula apontando para outra linha); recalculado a partir do início/fim registrados.",
+     "flag": "recalculado"
+    },
+    {
+     "row": 39,
+     "obs": 37,
+     "seconds": 540,
+     "start": "11:35",
+     "end": "11:44",
+     "note": "A planilha trazia 840 s (fórmula apontando para outra linha); recalculado a partir do início/fim registrados.",
+     "flag": "recalculado"
+    },
+    {
+     "row": 40,
+     "obs": 38,
+     "seconds": 4500,
+     "start": "12:20",
+     "end": "13:35",
+     "note": "A planilha trazia 480 s (fórmula apontando para outra linha); recalculado a partir do início/fim registrados.",
+     "flag": "recalculado"
+    },
+    {
+     "row": 41,
+     "obs": 39,
+     "seconds": 1320,
+     "start": "15:34",
+     "end": "15:56",
+     "note": "A planilha trazia 1020 s (fórmula apontando para outra linha); recalculado a partir do início/fim registrados.",
+     "flag": "recalculado"
+    },
+    {
+     "row": 42,
+     "obs": 40,
+     "seconds": 900,
+     "start": "16:50",
+     "end": "17:05",
+     "note": "A planilha trazia 1080 s (fórmula apontando para outra linha); recalculado a partir do início/fim registrados.",
+     "flag": "recalculado"
+    },
+    {
+     "row": 43,
+     "obs": 41,
+     "seconds": 540,
+     "start": "17:13",
+     "end": "17:22",
+     "note": "A planilha trazia 1200 s (fórmula apontando para outra linha); recalculado a partir do início/fim registrados.",
+     "flag": "recalculado"
+    },
+    {
+     "row": 44,
+     "obs": 42,
+     "seconds": 360,
+     "start": "10:19",
+     "end": "10:25",
+     "note": "A planilha trazia 900 s (fórmula apontando para outra linha); recalculado a partir do início/fim registrados.",
+     "flag": "recalculado"
+    },
+    {
+     "row": 45,
+     "obs": 43,
+     "seconds": 360,
+     "start": "11:20",
+     "end": "11:26",
+     "note": "A planilha trazia 600 s (fórmula apontando para outra linha); recalculado a partir do início/fim registrados.",
+     "flag": "recalculado"
+    },
+    {
+     "row": 46,
+     "obs": 44,
+     "seconds": 720,
+     "start": "10:48",
+     "end": "11:00",
+     "note": "A planilha trazia 660 s (fórmula apontando para outra linha); recalculado a partir do início/fim registrados.",
+     "flag": "recalculado"
+    },
+    {
+     "row": 47,
+     "obs": 45,
+     "seconds": 960,
+     "start": "11:40",
+     "end": "11:56",
+     "note": null
+    },
+    {
+     "row": 48,
+     "obs": 46,
+     "seconds": 600,
+     "start": "10:15",
+     "end": "10:25",
+     "note": "A planilha trazia 1020 s (fórmula apontando para outra linha); recalculado a partir do início/fim registrados.",
+     "flag": "recalculado"
+    },
+    {
+     "row": 49,
+     "obs": 47,
+     "seconds": 360,
+     "start": "11:20",
+     "end": "11:26",
+     "note": "A planilha trazia 720 s (fórmula apontando para outra linha); recalculado a partir do início/fim registrados.",
+     "flag": "recalculado"
+    },
+    {
+     "row": 50,
+     "obs": 48,
+     "seconds": 720,
+     "start": "10:48",
+     "end": "11:00",
+     "note": "A planilha trazia 660 s (fórmula apontando para outra linha); recalculado a partir do início/fim registrados.",
+     "flag": "recalculado"
+    },
+    {
+     "row": 51,
+     "obs": 49,
+     "seconds": 600,
+     "start": "11:35",
+     "end": "11:45",
+     "note": null
+    },
+    {
+     "row": 52,
+     "obs": 50,
+     "seconds": 960,
+     "start": "11:40",
+     "end": "11:56",
+     "note": "A planilha trazia 720 s (fórmula apontando para outra linha); recalculado a partir do início/fim registrados.",
+     "flag": "recalculado"
+    },
+    {
+     "row": 53,
+     "obs": 51,
+     "seconds": 1080,
+     "start": "12:18",
+     "end": "12:36",
+     "note": "A planilha trazia 420 s (fórmula apontando para outra linha); recalculado a partir do início/fim registrados.",
+     "flag": "recalculado"
+    },
+    {
+     "row": 54,
+     "obs": 34,
+     "seconds": 600,
+     "start": "12:38",
+     "end": "12:48",
+     "note": "A planilha trazia 780 s (fórmula apontando para outra linha); recalculado a partir do início/fim registrados.",
+     "flag": "recalculado"
+    },
+    {
+     "row": 55,
+     "obs": 53,
+     "seconds": 540,
+     "start": "12:43",
+     "end": "12:52",
+     "note": null
+    },
+    {
+     "row": 56,
+     "obs": 54,
+     "seconds": 240,
+     "start": "13:48",
+     "end": "13:52",
+     "note": null
+    },
+    {
+     "row": 57,
+     "obs": 55,
+     "seconds": 360,
+     "start": "13:17",
+     "end": "13:23",
+     "note": null
+    },
+    {
+     "row": 58,
+     "obs": 56,
+     "seconds": 300,
+     "start": "13:33",
+     "end": "13:38",
+     "note": null
+    },
+    {
+     "row": 59,
+     "obs": 57,
+     "seconds": 660,
+     "start": "13:00",
+     "end": "13:11",
+     "note": null
+    },
+    {
+     "row": 60,
+     "obs": 58,
+     "seconds": 480,
+     "start": "14:01",
+     "end": "14:09",
+     "note": null
+    },
+    {
+     "row": 61,
+     "obs": 59,
+     "seconds": 660,
+     "start": "15:17",
+     "end": "15:28",
+     "note": null
+    },
+    {
+     "row": 62,
+     "obs": 60,
+     "seconds": 360,
+     "start": "15:02",
+     "end": "15:08",
+     "note": null
+    }
+   ],
+   "excluded": [
+    {
+     "row": 54,
+     "raw": "00:17:09",
+     "reason": "valor em formato de horário (00:17), não de duração; desconsiderado"
+    }
+   ],
+   "source": "Colunas X–Z e BA–BC",
+   "kind": "cronometrado / início-fim",
+   "process": "glaucoma",
+   "link": {
+    "process": "glaucoma",
+    "nodes": [],
+    "lane": "Lane_33ed1915",
+    "confidence": "raia",
+    "note": "O fluxograma não detalha este exame/etapa individualmente; a medição é associada à raia “Exames”."
+   },
+   "lane": null
+  },
+  {
+   "id": "oct",
+   "label": "OCT",
+   "phase": "Exames",
+   "n": 27,
+   "mean": 375.56,
+   "median": 300,
+   "min": 60,
+   "max": 1200,
+   "stdev": 267.6,
+   "samples": [
+    {
+     "row": 5,
+     "obs": 1,
+     "seconds": 840,
+     "start": "15:34",
+     "end": "15:48",
+     "note": null
+    },
+    {
+     "row": 6,
+     "obs": 2,
+     "seconds": 420,
+     "start": "14:01",
+     "end": "14:08",
+     "note": null
+    },
+    {
+     "row": 7,
+     "obs": 3,
+     "seconds": 480,
+     "start": "14:13",
+     "end": "14:21",
+     "note": null
+    },
+    {
+     "row": 8,
+     "obs": 4,
+     "seconds": 660,
+     "start": "14:52",
+     "end": "15:03",
+     "note": null
+    },
+    {
+     "row": 9,
+     "obs": 5,
+     "seconds": 360,
+     "start": "14:37",
+     "end": "14:43",
+     "note": null
+    },
+    {
+     "row": 10,
+     "obs": 6,
+     "seconds": 1200,
+     "start": "14:14",
+     "end": "14:34",
+     "note": null
+    },
+    {
+     "row": 11,
+     "obs": 7,
+     "seconds": 420,
+     "start": "08:40",
+     "end": "08:47",
+     "note": null
+    },
+    {
+     "row": 12,
+     "obs": 9,
+     "seconds": 300,
+     "start": "08:52",
+     "end": "08:57",
+     "note": null
+    },
+    {
+     "row": 13,
+     "obs": 10,
+     "seconds": 300,
+     "start": "08:52",
+     "end": "08:57",
+     "note": null
+    },
+    {
+     "row": 14,
+     "obs": 11,
+     "seconds": 240,
+     "start": "09:37",
+     "end": "09:41",
+     "note": null
+    },
+    {
+     "row": 15,
+     "obs": 12,
+     "seconds": 420,
+     "start": "08:58",
+     "end": "09:05",
+     "note": null
+    },
+    {
+     "row": 16,
+     "obs": 13,
+     "seconds": 180,
+     "start": "08:18",
+     "end": "08:21",
+     "note": null
+    },
+    {
+     "row": 17,
+     "obs": 14,
+     "seconds": 60,
+     "start": "08:16",
+     "end": "08:17",
+     "note": null
+    },
+    {
+     "row": 18,
+     "obs": 15,
+     "seconds": 300,
+     "start": "10:02",
+     "end": "10:07",
+     "note": null
+    },
+    {
+     "row": 19,
+     "obs": 16,
+     "seconds": 180,
+     "start": "09:46",
+     "end": "09:49",
+     "note": null
+    },
+    {
+     "row": 20,
+     "obs": 17,
+     "seconds": 180,
+     "start": "09:29",
+     "end": "09:32",
+     "note": null
+    },
+    {
+     "row": 21,
+     "obs": 18,
+     "seconds": 540,
+     "start": "13:49",
+     "end": "13:58",
+     "note": null
+    },
+    {
+     "row": 22,
+     "obs": 19,
+     "seconds": 360,
+     "start": "14:23",
+     "end": "14:29",
+     "note": null
+    },
+    {
+     "row": 23,
+     "obs": 20,
+     "seconds": 780,
+     "start": "14:30",
+     "end": "14:43",
+     "note": null
+    },
+    {
+     "row": 24,
+     "obs": 22,
+     "seconds": 420,
+     "start": "14:51",
+     "end": "14:58",
+     "note": null
+    },
+    {
+     "row": 25,
+     "obs": 23,
+     "seconds": 660,
+     "start": "16:00",
+     "end": "16:11",
+     "note": null
+    },
+    {
+     "row": 26,
+     "obs": 24,
+     "seconds": 180,
+     "start": "13:34",
+     "end": "13:37",
+     "note": null
+    },
+    {
+     "row": 27,
+     "obs": 25,
+     "seconds": 180,
+     "start": "14:20",
+     "end": "14:23",
+     "note": null
+    },
+    {
+     "row": 28,
+     "obs": 26,
+     "seconds": 60,
+     "start": "14:17",
+     "end": "14:18",
+     "note": null
+    },
+    {
+     "row": 29,
+     "obs": 27,
+     "seconds": 120,
+     "start": "15:03",
+     "end": "15:05",
+     "note": null
+    },
+    {
+     "row": 30,
+     "obs": 28,
+     "seconds": 180,
+     "start": "15:18",
+     "end": "15:21",
+     "note": null
+    },
+    {
+     "row": 31,
+     "obs": 29,
+     "seconds": 120,
+     "start": "15:25",
+     "end": "15:27",
+     "note": null
+    }
+   ],
+   "excluded": [],
+   "source": "Colunas AR–AT",
+   "kind": "início / fim",
+   "process": "glaucoma",
+   "link": {
+    "process": "glaucoma",
+    "nodes": [],
+    "lane": "Lane_33ed1915",
+    "confidence": "raia",
+    "note": "O fluxograma não detalha este exame/etapa individualmente; a medição é associada à raia “Exames”."
+   },
+   "lane": null
+  },
+  {
+   "id": "paquimetria",
+   "label": "Paquimetria corneana",
+   "phase": "Exames",
+   "n": 13,
+   "mean": 83.08,
+   "median": 60,
+   "min": 60,
+   "max": 240,
+   "stdev": 52.18,
+   "samples": [
+    {
+     "row": 5,
+     "obs": 1,
+     "seconds": 240,
+     "start": "14:21",
+     "end": "14:25",
+     "note": null
+    },
+    {
+     "row": 6,
+     "obs": 2,
+     "seconds": 60,
+     "start": "15:03",
+     "end": "15:04",
+     "note": null
+    },
+    {
+     "row": 7,
+     "obs": 3,
+     "seconds": 60,
+     "start": "14:43",
+     "end": "14:44",
+     "note": null
+    },
+    {
+     "row": 8,
+     "obs": 4,
+     "seconds": 60,
+     "start": "08:47",
+     "end": "08:48",
+     "note": null
+    },
+    {
+     "row": 9,
+     "obs": 5,
+     "seconds": 60,
+     "start": "09:40",
+     "end": "09:41",
+     "note": null
+    },
+    {
+     "row": 10,
+     "obs": 6,
+     "seconds": 60,
+     "start": "09:49",
+     "end": "09:50",
+     "note": null
+    },
+    {
+     "row": 11,
+     "obs": 7,
+     "seconds": 60,
+     "start": "14:06",
+     "end": "14:07",
+     "note": null
+    },
+    {
+     "row": 12,
+     "obs": 9,
+     "seconds": 120,
+     "start": "13:41",
+     "end": "13:43",
+     "note": null
+    },
+    {
+     "row": 13,
+     "obs": 10,
+     "seconds": 120,
+     "start": "15:25",
+     "end": "15:27",
+     "note": null
+    },
+    {
+     "row": 14,
+     "obs": 11,
+     "seconds": 60,
+     "start": "16:11",
+     "end": "16:12",
+     "note": null
+    },
+    {
+     "row": 15,
+     "obs": 12,
+     "seconds": 60,
+     "start": "13:33",
+     "end": "13:34",
+     "note": null
+    },
+    {
+     "row": 16,
+     "obs": 13,
+     "seconds": 60,
+     "start": "14:25",
+     "end": "14:26",
+     "note": null
+    },
+    {
+     "row": 17,
+     "obs": 14,
+     "seconds": 60,
+     "start": "15:30",
+     "end": "15:31",
+     "note": null
+    }
+   ],
+   "excluded": [],
+   "source": "Colunas AU–AW",
+   "kind": "início / fim",
+   "process": "glaucoma",
+   "link": {
+    "process": "glaucoma",
+    "nodes": [],
+    "lane": "Lane_33ed1915",
+    "confidence": "raia",
+    "note": "O fluxograma não detalha este exame/etapa individualmente; a medição é associada à raia “Exames”."
+   },
+   "lane": null
+  },
+  {
+   "id": "retinografia",
+   "label": "Retinografia",
+   "phase": "Exames",
+   "n": 26,
+   "mean": 168.46,
+   "median": 180.0,
+   "min": 120,
+   "max": 300,
+   "stdev": 50.97,
+   "samples": [
+    {
+     "row": 5,
+     "obs": 1,
+     "seconds": 180,
+     "start": "15:50",
+     "end": "15:53",
+     "note": null
+    },
+    {
+     "row": 6,
+     "obs": 2,
+     "seconds": 180,
+     "start": "14:08",
+     "end": "14:11",
+     "note": null
+    },
+    {
+     "row": 7,
+     "obs": 3,
+     "seconds": 240,
+     "start": "14:22",
+     "end": "14:26",
+     "note": null
+    },
+    {
+     "row": 8,
+     "obs": 4,
+     "seconds": 180,
+     "start": "15:05",
+     "end": "15:08",
+     "note": null
+    },
+    {
+     "row": 9,
+     "obs": 5,
+     "seconds": 120,
+     "start": "14:45",
+     "end": "14:47",
+     "note": null
+    },
+    {
+     "row": 10,
+     "obs": 6,
+     "seconds": 180,
+     "start": "14:35",
+     "end": "14:38",
+     "note": null
+    },
+    {
+     "row": 11,
+     "obs": 7,
+     "seconds": 240,
+     "start": "08:48",
+     "end": "08:52",
+     "note": null
+    },
+    {
+     "row": 12,
+     "obs": 9,
+     "seconds": 120,
+     "start": "08:57",
+     "end": "08:59",
+     "note": null
+    },
+    {
+     "row": 13,
+     "obs": 10,
+     "seconds": 120,
+     "start": "09:35",
+     "end": "09:37",
+     "note": null
+    },
+    {
+     "row": 14,
+     "obs": 11,
+     "seconds": 120,
+     "start": "08:45",
+     "end": "08:47",
+     "note": null
+    },
+    {
+     "row": 15,
+     "obs": 12,
+     "seconds": 300,
+     "start": "09:05",
+     "end": "09:10",
+     "note": null
+    },
+    {
+     "row": 16,
+     "obs": 13,
+     "seconds": 240,
+     "start": "08:21",
+     "end": "08:25",
+     "note": null
+    },
+    {
+     "row": 17,
+     "obs": 14,
+     "seconds": 180,
+     "start": "08:17",
+     "end": "08:20",
+     "note": null
+    },
+    {
+     "row": 18,
+     "obs": 15,
+     "seconds": 120,
+     "start": "09:58",
+     "end": "10:00",
+     "note": null
+    },
+    {
+     "row": 19,
+     "obs": 16,
+     "seconds": 180,
+     "start": "09:43",
+     "end": "09:46",
+     "note": null
+    },
+    {
+     "row": 20,
+     "obs": 17,
+     "seconds": 180,
+     "start": "08:26",
+     "end": "08:29",
+     "note": null
+    },
+    {
+     "row": 21,
+     "obs": 18,
+     "seconds": 180,
+     "start": "08:35",
+     "end": "08:38",
+     "note": null
+    },
+    {
+     "row": 22,
+     "obs": 19,
+     "seconds": 180,
+     "start": "13:59",
+     "end": "14:02",
+     "note": null
+    },
+    {
+     "row": 23,
+     "obs": 20,
+     "seconds": 120,
+     "start": "14:15",
+     "end": "14:17",
+     "note": null
+    },
+    {
+     "row": 24,
+     "obs": 22,
+     "seconds": 120,
+     "start": "13:39",
+     "end": "13:41",
+     "note": null
+    },
+    {
+     "row": 25,
+     "obs": 23,
+     "seconds": 120,
+     "start": "14:30",
+     "end": "14:32",
+     "note": null
+    },
+    {
+     "row": 26,
+     "obs": 24,
+     "seconds": 120,
+     "start": "14:27",
+     "end": "14:29",
+     "note": null
+    },
+    {
+     "row": 27,
+     "obs": 25,
+     "seconds": 120,
+     "start": "15:00",
+     "end": "15:02",
+     "note": null
+    },
+    {
+     "row": 28,
+     "obs": 26,
+     "seconds": 240,
+     "start": "15:20",
+     "end": "15:24",
+     "note": null
+    },
+    {
+     "row": 29,
+     "obs": 27,
+     "seconds": 180,
+     "start": "13:38",
+     "end": "13:41",
+     "note": null
+    },
+    {
+     "row": 30,
+     "obs": 28,
+     "seconds": 120,
+     "start": "15:06",
+     "end": "15:08",
+     "note": null
+    }
+   ],
+   "excluded": [],
+   "source": "Colunas BD–BF",
+   "kind": "início / fim",
+   "process": "glaucoma",
+   "link": {
+    "process": "glaucoma",
+    "nodes": [
+     "Node_f3e97cd1"
+    ],
+    "confidence": "provável",
+    "note": "A tarefa do fluxograma une “mapeamento de retina e tonometria”; a planilha mede a retinografia separadamente."
+   },
+   "lane": null
+  },
+  {
+   "id": "pos-consulta",
+   "label": "Pós-consulta",
+   "phase": "Pós-consulta",
+   "n": 49,
+   "mean": 248.57,
+   "median": 180,
+   "min": 60,
+   "max": 660,
+   "stdev": 167.93,
+   "samples": [
+    {
+     "row": 9,
+     "obs": 5,
+     "seconds": 240,
+     "start": "07:05",
+     "end": "07:09",
+     "note": null
+    },
+    {
+     "row": 10,
+     "obs": 6,
+     "seconds": 60,
+     "start": "07:26",
+     "end": "07:27",
+     "note": null
+    },
+    {
+     "row": 11,
+     "obs": 7,
+     "seconds": 60,
+     "start": "07:45",
+     "end": "07:46",
+     "note": null
+    },
+    {
+     "row": 12,
+     "obs": 9,
+     "seconds": 120,
+     "start": "07:50",
+     "end": "07:52",
+     "note": null
+    },
+    {
+     "row": 13,
+     "obs": 10,
+     "seconds": 120,
+     "start": "07:52",
+     "end": "07:54",
+     "note": null
+    },
+    {
+     "row": 14,
+     "obs": 11,
+     "seconds": 120,
+     "start": "07:54",
+     "end": "07:56",
+     "note": null
+    },
+    {
+     "row": 15,
+     "obs": 12,
+     "seconds": 120,
+     "start": "07:58",
+     "end": "08:00",
+     "note": null
+    },
+    {
+     "row": 16,
+     "obs": 13,
+     "seconds": 360,
+     "start": "08:02",
+     "end": "08:08",
+     "note": null
+    },
+    {
+     "row": 17,
+     "obs": 14,
+     "seconds": 180,
+     "start": "08:14",
+     "end": "08:17",
+     "note": null
+    },
+    {
+     "row": 18,
+     "obs": 15,
+     "seconds": 240,
+     "start": "08:25",
+     "end": "08:29",
+     "note": null
+    },
+    {
+     "row": 19,
+     "obs": 16,
+     "seconds": 180,
+     "start": "08:28",
+     "end": "08:31",
+     "note": null
+    },
+    {
+     "row": 20,
+     "obs": 17,
+     "seconds": 120,
+     "start": "08:43",
+     "end": "08:45",
+     "note": null
+    },
+    {
+     "row": 21,
+     "obs": 18,
+     "seconds": 360,
+     "start": "08:47",
+     "end": "08:53",
+     "note": null
+    },
+    {
+     "row": 22,
+     "obs": 19,
+     "seconds": 180,
+     "start": "08:56",
+     "end": "08:59",
+     "note": null
+    },
+    {
+     "row": 23,
+     "obs": 20,
+     "seconds": 60,
+     "start": "13:00",
+     "end": "13:01",
+     "note": null
+    },
+    {
+     "row": 24,
+     "obs": 22,
+     "seconds": 300,
+     "start": "13:03",
+     "end": "13:08",
+     "note": null
+    },
+    {
+     "row": 25,
+     "obs": 23,
+     "seconds": 360,
+     "start": "13:09",
+     "end": "13:15",
+     "note": null
+    },
+    {
+     "row": 26,
+     "obs": 24,
+     "seconds": 60,
+     "start": "13:16",
+     "end": "13:17",
+     "note": null
+    },
+    {
+     "row": 27,
+     "obs": 25,
+     "seconds": 660,
+     "start": "13:41",
+     "end": "13:52",
+     "note": null
+    },
+    {
+     "row": 28,
+     "obs": 26,
+     "seconds": 420,
+     "start": "13:53",
+     "end": "14:00",
+     "note": null
+    },
+    {
+     "row": 29,
+     "obs": 27,
+     "seconds": 120,
+     "start": "14:25",
+     "end": "14:27",
+     "note": null
+    },
+    {
+     "row": 30,
+     "obs": 28,
+     "seconds": 180,
+     "start": "14:37",
+     "end": "14:40",
+     "note": null
+    },
+    {
+     "row": 31,
+     "obs": 29,
+     "seconds": 120,
+     "start": "14:41",
+     "end": "14:43",
+     "note": null
+    },
+    {
+     "row": 32,
+     "obs": 30,
+     "seconds": 600,
+     "start": "14:42",
+     "end": "14:52",
+     "note": null
+    },
+    {
+     "row": 33,
+     "obs": 31,
+     "seconds": 540,
+     "start": "14:54",
+     "end": "15:03",
+     "note": null
+    },
+    {
+     "row": 34,
+     "obs": 32,
+     "seconds": 120,
+     "start": "07:07",
+     "end": "07:09",
+     "note": null
+    },
+    {
+     "row": 35,
+     "obs": 33,
+     "seconds": 240,
+     "start": "07:36",
+     "end": "07:40",
+     "note": null
+    },
+    {
+     "row": 36,
+     "obs": 34,
+     "seconds": 60,
+     "start": "08:05",
+     "end": "08:06",
+     "note": null
+    },
+    {
+     "row": 37,
+     "obs": 35,
+     "seconds": 240,
+     "start": "08:06",
+     "end": "08:10",
+     "note": null
+    },
+    {
+     "row": 38,
+     "obs": 36,
+     "seconds": 480,
+     "start": "08:35",
+     "end": "08:43",
+     "note": null
+    },
+    {
+     "row": 39,
+     "obs": 37,
+     "seconds": 60,
+     "start": "08:44",
+     "end": "08:45",
+     "note": null
+    },
+    {
+     "row": 40,
+     "obs": 38,
+     "seconds": 180,
+     "start": "07:09",
+     "end": "07:12",
+     "note": null
+    },
+    {
+     "row": 41,
+     "obs": 39,
+     "seconds": 120,
+     "start": "07:26",
+     "end": "07:28",
+     "note": null
+    },
+    {
+     "row": 42,
+     "obs": 40,
+     "seconds": 420,
+     "start": "07:35",
+     "end": "07:42",
+     "note": null
+    },
+    {
+     "row": 43,
+     "obs": 41,
+     "seconds": 480,
+     "start": "08:04",
+     "end": "08:12",
+     "note": null
+    },
+    {
+     "row": 44,
+     "obs": 42,
+     "seconds": 300,
+     "start": "08:18",
+     "end": "08:23",
+     "note": null
+    },
+    {
+     "row": 45,
+     "obs": 43,
+     "seconds": 180,
+     "start": "08:55",
+     "end": "08:58",
+     "note": null
+    },
+    {
+     "row": 46,
+     "obs": 44,
+     "seconds": 420,
+     "start": "13:24",
+     "end": "13:31",
+     "note": null
+    },
+    {
+     "row": 47,
+     "obs": 45,
+     "seconds": 420,
+     "start": "13:31",
+     "end": "13:38",
+     "note": null
+    },
+    {
+     "row": 48,
+     "obs": 46,
+     "seconds": 420,
+     "start": "13:38",
+     "end": "13:45",
+     "note": null
+    },
+    {
+     "row": 49,
+     "obs": 47,
+     "seconds": 120,
+     "start": "13:46",
+     "end": "13:48",
+     "note": null
+    },
+    {
+     "row": 50,
+     "obs": 48,
+     "seconds": 600,
+     "start": "13:50",
+     "end": "14:00",
+     "note": null
+    },
+    {
+     "row": 51,
+     "obs": 49,
+     "seconds": 420,
+     "start": "14:01",
+     "end": "14:08",
+     "note": null
+    },
+    {
+     "row": 52,
+     "obs": 50,
+     "seconds": 240,
+     "start": "14:09",
+     "end": "14:13",
+     "note": null
+    },
+    {
+     "row": 53,
+     "obs": 51,
+     "seconds": 240,
+     "start": "14:11",
+     "end": "14:15",
+     "note": null
+    },
+    {
+     "row": 54,
+     "obs": 34,
+     "seconds": 60,
+     "start": "14:30",
+     "end": "14:31",
+     "note": null
+    },
+    {
+     "row": 55,
+     "obs": 53,
+     "seconds": 360,
+     "start": "14:34",
+     "end": "14:40",
+     "note": null
+    },
+    {
+     "row": 56,
+     "obs": 54,
+     "seconds": 60,
+     "start": "14:42",
+     "end": "14:43",
+     "note": null
+    },
+    {
+     "row": 57,
+     "obs": 55,
+     "seconds": 60,
+     "start": "14:55",
+     "end": "14:56",
+     "note": null
+    }
+   ],
+   "excluded": [
+    {
+     "row": 5,
+     "raw": "x / x",
+     "reason": "sem horários registrados (BJ traz valor sem sentido)"
+    },
+    {
+     "row": 6,
+     "raw": "x / x",
+     "reason": "sem horários registrados (BJ traz valor sem sentido)"
+    },
+    {
+     "row": 7,
+     "raw": "x / x",
+     "reason": "sem horários registrados (BJ traz valor sem sentido)"
+    },
+    {
+     "row": 8,
+     "raw": "x / x",
+     "reason": "sem horários registrados (BJ traz valor sem sentido)"
+    }
+   ],
+   "source": "Colunas BG–BH (BJ)",
+   "kind": "início / fim",
+   "process": "glaucoma",
+   "link": {
+    "process": "glaucoma",
+    "nodes": [],
+    "lane": "Lane_33ed1915",
+    "confidence": "raia",
+    "note": "O fluxograma não detalha este exame/etapa individualmente; a medição é associada à raia “Exames”."
+   },
+   "lane": null
+  },
+  {
+   "id": "pos-consulta-ociosidade",
+   "label": "Pós-consulta · tempo sem paciente",
+   "phase": "Pós-consulta",
+   "n": 46,
+   "mean": 758.28,
+   "median": 120.0,
+   "min": 0,
+   "max": 14460,
+   "stdev": 2137.35,
+   "samples": [
+    {
+     "row": 5,
+     "obs": 1,
+     "seconds": 10,
+     "note": null
+    },
+    {
+     "row": 6,
+     "obs": 2,
+     "seconds": 52,
+     "note": null
+    },
+    {
+     "row": 7,
+     "obs": 3,
+     "seconds": 113,
+     "note": null
+    },
+    {
+     "row": 8,
+     "obs": 4,
+     "seconds": 26,
+     "note": null
+    },
+    {
+     "row": 9,
+     "obs": 5,
+     "seconds": 1020,
+     "note": null
+    },
+    {
+     "row": 10,
+     "obs": 6,
+     "seconds": 1080,
+     "note": null
+    },
+    {
+     "row": 11,
+     "obs": 7,
+     "seconds": 240,
+     "note": null
+    },
+    {
+     "row": 12,
+     "obs": 9,
+     "seconds": 0,
+     "note": null
+    },
+    {
+     "row": 13,
+     "obs": 10,
+     "seconds": 0,
+     "note": null
+    },
+    {
+     "row": 14,
+     "obs": 11,
+     "seconds": 120,
+     "note": null
+    },
+    {
+     "row": 15,
+     "obs": 12,
+     "seconds": 120,
+     "note": null
+    },
+    {
+     "row": 16,
+     "obs": 13,
+     "seconds": 360,
+     "note": null
+    },
+    {
+     "row": 17,
+     "obs": 14,
+     "seconds": 480,
+     "note": null
+    },
+    {
+     "row": 19,
+     "obs": 16,
+     "seconds": 720,
+     "note": null
+    },
+    {
+     "row": 20,
+     "obs": 17,
+     "seconds": 120,
+     "note": null
+    },
+    {
+     "row": 21,
+     "obs": 18,
+     "seconds": 180,
+     "note": null
+    },
+    {
+     "row": 22,
+     "obs": 19,
+     "seconds": 14460,
+     "note": null
+    },
+    {
+     "row": 23,
+     "obs": 20,
+     "seconds": 120,
+     "note": null
+    },
+    {
+     "row": 24,
+     "obs": 22,
+     "seconds": 60,
+     "note": null
+    },
+    {
+     "row": 25,
+     "obs": 23,
+     "seconds": 60,
+     "note": null
+    },
+    {
+     "row": 26,
+     "obs": 24,
+     "seconds": 1440,
+     "note": null
+    },
+    {
+     "row": 27,
+     "obs": 25,
+     "seconds": 60,
+     "note": null
+    },
+    {
+     "row": 28,
+     "obs": 26,
+     "seconds": 1500,
+     "note": null
+    },
+    {
+     "row": 29,
+     "obs": 27,
+     "seconds": 600,
+     "note": null
+    },
+    {
+     "row": 30,
+     "obs": 28,
+     "seconds": 60,
+     "note": null
+    },
+    {
+     "row": 32,
+     "obs": 30,
+     "seconds": 120,
+     "note": null
+    },
+    {
+     "row": 34,
+     "obs": 32,
+     "seconds": 1620,
+     "note": null
+    },
+    {
+     "row": 35,
+     "obs": 33,
+     "seconds": 1500,
+     "note": null
+    },
+    {
+     "row": 36,
+     "obs": 34,
+     "seconds": 0,
+     "note": null
+    },
+    {
+     "row": 37,
+     "obs": 35,
+     "seconds": 1500,
+     "note": null
+    },
+    {
+     "row": 38,
+     "obs": 36,
+     "seconds": 60,
+     "note": null
+    },
+    {
+     "row": 40,
+     "obs": 38,
+     "seconds": 840,
+     "note": null
+    },
+    {
+     "row": 41,
+     "obs": 39,
+     "seconds": 420,
+     "note": null
+    },
+    {
+     "row": 42,
+     "obs": 40,
+     "seconds": 1320,
+     "note": null
+    },
+    {
+     "row": 43,
+     "obs": 41,
+     "seconds": 360,
+     "note": null
+    },
+    {
+     "row": 44,
+     "obs": 42,
+     "seconds": 1920,
+     "note": null
+    },
+    {
+     "row": 46,
+     "obs": 44,
+     "seconds": 0,
+     "note": null
+    },
+    {
+     "row": 47,
+     "obs": 45,
+     "seconds": 0,
+     "note": null
+    },
+    {
+     "row": 48,
+     "obs": 46,
+     "seconds": 60,
+     "note": null
+    },
+    {
+     "row": 49,
+     "obs": 47,
+     "seconds": 120,
+     "note": null
+    },
+    {
+     "row": 50,
+     "obs": 48,
+     "seconds": 60,
+     "note": null
+    },
+    {
+     "row": 51,
+     "obs": 49,
+     "seconds": 60,
+     "note": null
+    },
+    {
+     "row": 53,
+     "obs": 51,
+     "seconds": 900,
+     "note": null
+    },
+    {
+     "row": 54,
+     "obs": 34,
+     "seconds": 180,
+     "note": null
+    },
+    {
+     "row": 55,
+     "obs": 53,
+     "seconds": 120,
+     "note": null
+    },
+    {
+     "row": 56,
+     "obs": 54,
+     "seconds": 720,
+     "note": null
+    }
+   ],
+   "excluded": [
+    {
+     "row": 18,
+     "raw": "x",
+     "reason": "marcado com \"x\" (sem valor)"
+    },
+    {
+     "row": 31,
+     "raw": "x",
+     "reason": "marcado com \"x\" (sem valor)"
+    },
+    {
+     "row": 33,
+     "raw": "x",
+     "reason": "marcado com \"x\" (sem valor)"
+    },
+    {
+     "row": 45,
+     "raw": "x",
+     "reason": "marcado com \"x\" (sem valor)"
+    },
+    {
+     "row": 52,
+     "raw": "x",
+     "reason": "marcado com \"x\" (sem valor)"
+    },
+    {
+     "row": 57,
+     "raw": "x",
+     "reason": "marcado com \"x\" (sem valor)"
+    }
+   ],
+   "source": "Coluna BI",
+   "kind": "intervalo do posto",
+   "process": "glaucoma",
+   "link": {
+    "process": "glaucoma",
+    "nodes": [],
+    "confidence": "sem etapa equivalente",
+    "note": "Intervalo em que o posto de pós-consulta ficou sem paciente; não é uma etapa da jornada."
+   },
+   "lane": null
+  }
+ ],
+ "emptySteps": [
+  {
+   "label": "Teste provocativo de Glaucoma",
+   "cols": "AX–AZ"
+  },
+  {
+   "label": "Consulta oftalmológica",
+   "cols": "AD–AF"
+  },
+  {
+   "label": "Encaminhamento / Agendamento / Faturamento",
+   "cols": "AG–AI"
+  },
+  {
+   "label": "Horário de saída da clínica",
+   "cols": "AJ"
+  },
+  {
+   "label": "Médico",
+   "cols": "AO"
+  }
+ ],
+ "laneSteps": {
+  "Lane_33ed1915": [
+   "microscopia",
+   "topografia",
+   "oct",
+   "paquimetria",
+   "campo-visual",
+   "glaucoma-consulta",
+   "pos-consulta"
+  ]
+ },
+ "quality": [
+  {
+   "id": "titulo",
+   "level": "atenção",
+   "title": "Título da planilha × conteúdo",
+   "text": "A planilha se intitula “Consulta e Exames de Córnea”, mas as etapas medidas (Atendimento Glaucoma, Glaucoma Consulta, Teste provocativo de Glaucoma, tonometria, OCT, campo visual…) correspondem ao fluxograma de Glaucoma. As medições foram associadas ao processo de Glaucoma."
+  },
+  {
+   "id": "sem-medicoes",
+   "level": "atenção",
+   "title": "Córnea e Teste de lente sem medições",
+   "text": "Não há medições para “Exame de córnea” e “Teste de lente” na planilha recebida. Para esses processos o site mostra apenas o fluxograma e o tempo total registrado no próprio diagrama (“tempo total aprox. 16:05” e “41:52, com 2 tentativas de lente”)."
+  },
+  {
+   "id": "independentes",
+   "level": "info",
+   "title": "Medições independentes por etapa",
+   "text": "Cada etapa tem a sua própria contagem de pacientes (“Nº Pacientes”), ou seja, as etapas não foram cronometradas para os mesmos pacientes. Por isso o site não soma etapas nem calcula tempo total de permanência — as colunas de totais da planilha também estão com erro (#REF!)."
+  },
+  {
+   "id": "campo-visual",
+   "level": "corrigido",
+   "title": "Campo visual — durações recalculadas",
+   "text": "Em 18 observações a coluna de duração (BC) tinha fórmulas apontando para a linha errada. A duração foi recalculada a partir do início e fim registrados nas colunas BA/BB; cada linha afetada está marcada na tabela."
+  },
+  {
+   "id": "excluidos",
+   "level": "corrigido",
+   "title": "Valores desconsiderados",
+   "text": "Foram desconsiderados valores que não são durações válidas (ex.: horário “00:17” na coluna de Campo visual; “x” nas linhas 5–8 de Pós-consulta). Todos estão listados em cada etapa. Nenhum valor válido foi alterado."
+  },
+  {
+   "id": "vazias",
+   "level": "info",
+   "title": "Etapas previstas sem dados",
+   "text": "Previstas na planilha, mas sem nenhuma medição: Teste provocativo de Glaucoma; Consulta oftalmológica; Encaminhamento / Agendamento / Faturamento; Horário de saída da clínica; Médico."
+  },
+  {
+   "id": "outliers",
+   "level": "info",
+   "title": "Valores extremos",
+   "text": "Os valores foram mantidos como registrados. Valores muito acima da mediana aparecem destacados nos gráficos e tabelas e merecem conferência em campo."
+  }
+ ]
+}

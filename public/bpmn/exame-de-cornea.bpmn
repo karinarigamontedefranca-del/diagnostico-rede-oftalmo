@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Defs_exame-de-cornea" targetNamespace="http://skema.jr/rede-oftalmo">
+<bpmn:collaboration id="Collab_1"><bpmn:participant id="Pool_1" name="Processo 1 - Exame de cornea 2 (paciente nova)" processRef="Process_1" /></bpmn:collaboration>
+<bpmn:process id="Process_1" isExecutable="false">
+<bpmn:laneSet id="LaneSet_1">
+<bpmn:lane id="Lane_8f1cd308" name="Medico / tecnico do exame">
+<bpmn:flowNodeRef>Node_f2a0bc91</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_88223eaf</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_9b751611</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_cc76b057</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_1d49f06b</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_06f7c542</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_0eecc944</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_c76c27e8</bpmn:flowNodeRef>
+</bpmn:lane>
+<bpmn:lane id="Lane_9fb0f440" name="Enfermeira">
+</bpmn:lane>
+</bpmn:laneSet>
+<bpmn:startEvent id="Node_f2a0bc91" name="Inicio - paciente chega para exame">
+<bpmn:outgoing>Flow_9cef9cb2</bpmn:outgoing>
+</bpmn:startEvent>
+<bpmn:task id="Node_88223eaf" name="Entender o caso do paciente">
+<bpmn:incoming>Flow_9cef9cb2</bpmn:incoming>
+<bpmn:outgoing>Flow_01f4ed4a</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Node_9b751611" name="Teste na lâmpada de fenda">
+<bpmn:incoming>Flow_01f4ed4a</bpmn:incoming>
+<bpmn:outgoing>Flow_90c1959f</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Node_cc76b057" name="Medir o grau dos óculos do paciente">
+<bpmn:documentation>Executado em paralelo ao teste de lampada de fenda (T2), a pedido do medico.</bpmn:documentation>
+<bpmn:incoming>Flow_90c1959f</bpmn:incoming>
+<bpmn:outgoing>Flow_b1994933</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Node_1d49f06b" name="Exame de refração - máquina Grins">
+<bpmn:incoming>Flow_b1994933</bpmn:incoming>
+<bpmn:outgoing>Flow_d6a6a9eb</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Node_06f7c542" name="Preenchimento do relatório">
+<bpmn:incoming>Flow_d6a6a9eb</bpmn:incoming>
+<bpmn:outgoing>Flow_741208bf</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Node_0eecc944" name="Entrega de amostra de colírio, receita e explicação do caso">
+<bpmn:incoming>Flow_741208bf</bpmn:incoming>
+<bpmn:outgoing>Flow_97b839f2</bpmn:outgoing>
+</bpmn:task>
+<bpmn:endEvent id="Node_c76c27e8" name="Fim - tempo total aprox. 16:05">
+<bpmn:incoming>Flow_97b839f2</bpmn:incoming>
+</bpmn:endEvent>
+<bpmn:sequenceFlow id="Flow_9cef9cb2" sourceRef="Node_f2a0bc91" targetRef="Node_88223eaf" />
+<bpmn:sequenceFlow id="Flow_01f4ed4a" sourceRef="Node_88223eaf" targetRef="Node_9b751611" />
+<bpmn:sequenceFlow id="Flow_90c1959f" sourceRef="Node_9b751611" targetRef="Node_cc76b057" />
+<bpmn:sequenceFlow id="Flow_b1994933" sourceRef="Node_cc76b057" targetRef="Node_1d49f06b" />
+<bpmn:sequenceFlow id="Flow_d6a6a9eb" sourceRef="Node_1d49f06b" targetRef="Node_06f7c542" />
+<bpmn:sequenceFlow id="Flow_741208bf" sourceRef="Node_06f7c542" targetRef="Node_0eecc944" />
+<bpmn:sequenceFlow id="Flow_97b839f2" sourceRef="Node_0eecc944" targetRef="Node_c76c27e8" />
+</bpmn:process>
+<bpmndi:BPMNDiagram id="Diagram_1"><bpmndi:BPMNPlane id="Plane_1" bpmnElement="Collab_1">
+<bpmndi:BPMNShape id="Pool_1_di" bpmnElement="Pool_1" isHorizontal="true"><dc:Bounds x="80" y="80" width="1326" height="361" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Lane_8f1cd308_di" bpmnElement="Lane_8f1cd308" isHorizontal="true"><dc:Bounds x="130" y="80" width="1276" height="180" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Lane_9fb0f440_di" bpmnElement="Lane_9fb0f440" isHorizontal="true"><dc:Bounds x="130" y="260" width="1276" height="181" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_f2a0bc91_di" bpmnElement="Node_f2a0bc91"><dc:Bounds x="203" y="152" width="36" height="36" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_88223eaf_di" bpmnElement="Node_88223eaf"><dc:Bounds x="290" y="130" width="100" height="80" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_9b751611_di" bpmnElement="Node_9b751611"><dc:Bounds x="440" y="130" width="100" height="80" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_cc76b057_di" bpmnElement="Node_cc76b057"><dc:Bounds x="593" y="130" width="100" height="80" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_1d49f06b_di" bpmnElement="Node_1d49f06b"><dc:Bounds x="757" y="130" width="100" height="80" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_06f7c542_di" bpmnElement="Node_06f7c542"><dc:Bounds x="925" y="130" width="100" height="80" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_0eecc944_di" bpmnElement="Node_0eecc944"><dc:Bounds x="1081" y="130" width="100" height="80" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_c76c27e8_di" bpmnElement="Node_c76c27e8"><dc:Bounds x="1242" y="152" width="36" height="36" /></bpmndi:BPMNShape>
+<bpmndi:BPMNEdge id="Flow_9cef9cb2_di" bpmnElement="Flow_9cef9cb2">
+<di:waypoint x="239" y="170" />
+<di:waypoint x="290" y="170" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_01f4ed4a_di" bpmnElement="Flow_01f4ed4a">
+<di:waypoint x="390" y="170" />
+<di:waypoint x="440" y="170" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_90c1959f_di" bpmnElement="Flow_90c1959f">
+<di:waypoint x="540" y="170" />
+<di:waypoint x="593" y="170" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_b1994933_di" bpmnElement="Flow_b1994933">
+<di:waypoint x="693" y="170" />
+<di:waypoint x="757" y="170" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_d6a6a9eb_di" bpmnElement="Flow_d6a6a9eb">
+<di:waypoint x="857" y="170" />
+<di:waypoint x="925" y="170" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_741208bf_di" bpmnElement="Flow_741208bf">
+<di:waypoint x="1025" y="170" />
+<di:waypoint x="1081" y="170" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_97b839f2_di" bpmnElement="Flow_97b839f2">
+<di:waypoint x="1181" y="170" />
+<di:waypoint x="1242" y="170" />
+</bpmndi:BPMNEdge>
+</bpmndi:BPMNPlane></bpmndi:BPMNDiagram></bpmn:definitions>

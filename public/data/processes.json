@@ -1,0 +1,516 @@
+{
+ "processes": [
+  {
+   "id": "glaucoma",
+   "title": "Glaucoma",
+   "short": "Jornada do paciente com glaucoma",
+   "poolName": "Processo do glaucoma",
+   "sourceFile": "Fluxograma_Glaucoma.bpm",
+   "bpmn": "bpmn/glaucoma.bpmn",
+   "lanes": [
+    {
+     "id": "Lane_9ed2805e",
+     "name": "Portaria"
+    },
+    {
+     "id": "Lane_5c0614e3",
+     "name": "Recepção"
+    },
+    {
+     "id": "Lane_33ed1915",
+     "name": "Exames"
+    }
+   ],
+   "nodes": [
+    {
+     "id": "Node_d4e21356",
+     "name": "",
+     "kind": "startEvent",
+     "lane": "Lane_9ed2805e",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_dd887a25",
+     "name": "Paciente chega encaminhado pelo médico",
+     "kind": "task",
+     "lane": "Lane_9ed2805e",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_b1a6b13f",
+     "name": "Portaria identifica o paciente e direciona para o local.",
+     "kind": "task",
+     "lane": "Lane_9ed2805e",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_030b3116",
+     "name": "Recepção abre a ficha do paciente",
+     "kind": "task",
+     "lane": "Lane_5c0614e3",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_9be543c1",
+     "name": "Exame ou Consulta?",
+     "kind": "exclusiveGateway",
+     "lane": "Lane_5c0614e3",
+     "doc": "",
+     "gw": "Diverging"
+    },
+    {
+     "id": "Node_e858f5cb",
+     "name": "Refração*",
+     "kind": "task",
+     "lane": "Lane_33ed1915",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_3a9ca350",
+     "name": "Direcionado a fazer os exames de propedeutica",
+     "kind": "task",
+     "lane": "Lane_33ed1915",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_0e5d739f",
+     "name": "Optou por pingar colirio",
+     "kind": "exclusiveGateway",
+     "lane": "Lane_33ed1915",
+     "doc": "",
+     "gw": "Diverging"
+    },
+    {
+     "id": "Node_65192337",
+     "name": "Esperar dilatar",
+     "kind": "task",
+     "lane": "Lane_33ed1915",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_4cdd1a2e",
+     "name": "Direcionado para a consulta com o médico",
+     "kind": "task",
+     "lane": "Lane_33ed1915",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_f3e97cd1",
+     "name": "Mapeamento de retina e tonometria",
+     "kind": "task",
+     "lane": "Lane_33ed1915",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_70b7bc1b",
+     "name": "Possui glaucoma?",
+     "kind": "exclusiveGateway",
+     "lane": "Lane_33ed1915",
+     "doc": "",
+     "gw": "Diverging"
+    },
+    {
+     "id": "Node_8c6ad279",
+     "name": "Direcionamento para marcar nova propedeutica",
+     "kind": "task",
+     "lane": "Lane_33ed1915",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_5cc5f1e1",
+     "name": "Retorna após um ano para acompanhamento",
+     "kind": "task",
+     "lane": "Lane_33ed1915",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_28da4531",
+     "name": "Analise dos resultados dos exames",
+     "kind": "task",
+     "lane": "Lane_33ed1915",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_b697f175",
+     "name": "",
+     "kind": "endEvent",
+     "lane": "Lane_33ed1915",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_d7fed599",
+     "name": "Medico pediu exames opcionais?",
+     "kind": "exclusiveGateway",
+     "lane": "Lane_33ed1915",
+     "doc": "",
+     "gw": "Diverging"
+    },
+    {
+     "id": "Node_fe63c813",
+     "name": "Médico avalia os resultados com o paciente",
+     "kind": "task",
+     "lane": "Lane_33ed1915",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_7e6f8a45",
+     "name": "Realizar exames",
+     "kind": "task",
+     "lane": "Lane_33ed1915",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_fb1fb52c",
+     "name": "Teve intercorrencia?",
+     "kind": "exclusiveGateway",
+     "lane": "Lane_33ed1915",
+     "doc": "",
+     "gw": "Diverging"
+    },
+    {
+     "id": "Node_4d0479df",
+     "name": "Médico direciona para os próximos passos",
+     "kind": "task",
+     "lane": "Lane_33ed1915",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_9504e40a",
+     "name": "Paciente é liberado",
+     "kind": "task",
+     "lane": "Lane_33ed1915",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_146d68a3",
+     "name": "",
+     "kind": "endEvent",
+     "lane": "Lane_33ed1915",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_d0ae69bf",
+     "name": "",
+     "kind": "endEvent",
+     "lane": "Lane_33ed1915",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_ba2c7744",
+     "name": "Analisar quais exames o paciente precisa fazer",
+     "kind": "task",
+     "lane": "Lane_33ed1915",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_a0831d15",
+     "name": "Realizar exames obrigatórios",
+     "kind": "task",
+     "lane": "Lane_33ed1915",
+     "doc": "",
+     "gw": null
+    }
+   ],
+   "counts": {
+    "tasks": 17,
+    "gateways": 5,
+    "events": 4,
+    "flows": 28,
+    "lanes": 3
+   },
+   "totalLabel": null
+  },
+  {
+   "id": "exame-de-cornea",
+   "title": "Exame de córnea",
+   "short": "Exame de córnea (paciente nova)",
+   "poolName": "Processo 1 - Exame de cornea 2 (paciente nova)",
+   "sourceFile": "Fluxograma_Exame_de_cornea.bpm",
+   "bpmn": "bpmn/exame-de-cornea.bpmn",
+   "lanes": [
+    {
+     "id": "Lane_8f1cd308",
+     "name": "Medico / tecnico do exame"
+    },
+    {
+     "id": "Lane_9fb0f440",
+     "name": "Enfermeira"
+    }
+   ],
+   "nodes": [
+    {
+     "id": "Node_f2a0bc91",
+     "name": "Inicio - paciente chega para exame",
+     "kind": "startEvent",
+     "lane": "Lane_8f1cd308",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_88223eaf",
+     "name": "Entender o caso do paciente",
+     "kind": "task",
+     "lane": "Lane_8f1cd308",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_9b751611",
+     "name": "Teste na lâmpada de fenda",
+     "kind": "task",
+     "lane": "Lane_8f1cd308",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_cc76b057",
+     "name": "Medir o grau dos óculos do paciente",
+     "kind": "task",
+     "lane": "Lane_8f1cd308",
+     "doc": "Executado em paralelo ao teste de lampada de fenda (T2), a pedido do medico.",
+     "gw": null
+    },
+    {
+     "id": "Node_1d49f06b",
+     "name": "Exame de refração - máquina Grins",
+     "kind": "task",
+     "lane": "Lane_8f1cd308",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_06f7c542",
+     "name": "Preenchimento do relatório",
+     "kind": "task",
+     "lane": "Lane_8f1cd308",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_0eecc944",
+     "name": "Entrega de amostra de colírio, receita e explicação do caso",
+     "kind": "task",
+     "lane": "Lane_8f1cd308",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_c76c27e8",
+     "name": "Fim - tempo total aprox. 16:05",
+     "kind": "endEvent",
+     "lane": "Lane_8f1cd308",
+     "doc": "",
+     "gw": null
+    }
+   ],
+   "counts": {
+    "tasks": 6,
+    "gateways": 0,
+    "events": 2,
+    "flows": 7,
+    "lanes": 2
+   },
+   "totalLabel": {
+    "value": "16:05",
+    "note": "",
+    "text": "Fim - tempo total aprox. 16:05"
+   }
+  },
+  {
+   "id": "teste-de-lente",
+   "title": "Teste de lente",
+   "short": "Consulta de teste de lente",
+   "poolName": "Processo 2 - Consulta teste de lente (Dr. Caio Coutinho - Cornea)",
+   "sourceFile": "Fluxograma_Teste_de_lente.bpm",
+   "bpmn": "bpmn/teste-de-lente.bpmn",
+   "lanes": [
+    {
+     "id": "Lane_09f740aa",
+     "name": "Paciente"
+    },
+    {
+     "id": "Lane_a6f10499",
+     "name": "Medico"
+    },
+    {
+     "id": "Lane_e60989e7",
+     "name": "Equipe pre-exame (mulheres do sistema)"
+    },
+    {
+     "id": "Lane_b1bed08d",
+     "name": "Equipe de lentes (mulher da lente)"
+    }
+   ],
+   "nodes": [
+    {
+     "id": "Node_5d57a86e",
+     "name": "Inicio - paciente fidelizado chega para teste de lente",
+     "kind": "startEvent",
+     "lane": "Lane_a6f10499",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_7802e036",
+     "name": "Conversa inicial",
+     "kind": "task",
+     "lane": "Lane_a6f10499",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_33d2297c",
+     "name": "Paciente trouxe os exames?",
+     "kind": "exclusiveGateway",
+     "lane": "Lane_a6f10499",
+     "doc": "",
+     "gw": "Diverging"
+    },
+    {
+     "id": "Node_1e6197cc",
+     "name": "Localizar / imprimir exame no sistema",
+     "kind": "task",
+     "lane": "Lane_e60989e7",
+     "doc": "Fator variavel: se o consultorio estiver vazio, o exame pode ser refeito na hora (consulta mais longa); se estiver cheio, falta sala e o paciente precisa remarcar outro dia.",
+     "gw": null
+    },
+    {
+     "id": "Node_59ebf263",
+     "name": "Exame em mãos",
+     "kind": "exclusiveGateway",
+     "lane": "Lane_a6f10499",
+     "doc": "",
+     "gw": "Converging"
+    },
+    {
+     "id": "Node_59421023",
+     "name": "Ir até a equipe de lentes buscar uma lente - tentativa 1",
+     "kind": "task",
+     "lane": "Lane_a6f10499",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_6a4f229c",
+     "name": "Pingar colírio para colorir a lente",
+     "kind": "task",
+     "lane": "Lane_a6f10499",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_0f33f858",
+     "name": "Teste lâmpada de fenda - conferir tamanho da lente",
+     "kind": "task",
+     "lane": "Lane_a6f10499",
+     "doc": "Lente nao serviu. Enquanto isso, o medico prepara o exame de letras para o teste de grau.",
+     "gw": null
+    },
+    {
+     "id": "Node_5ccaed1a",
+     "name": "Retornar a equipe de lentes - tentativa 2",
+     "kind": "task",
+     "lane": "Lane_a6f10499",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_b2671c12",
+     "name": "Pingar colírio para colorir a lente",
+     "kind": "task",
+     "lane": "Lane_a6f10499",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_e682b7fb",
+     "name": "Teste lampada de fenda - lente aprovada",
+     "kind": "task",
+     "lane": "Lane_a6f10499",
+     "doc": "Teste de lente e sempre por tentativa e erro; pode haver mais rodadas do que as duas registradas aqui.",
+     "gw": null
+    },
+    {
+     "id": "Node_00ecd5c4",
+     "name": "Exame de refração - máquina Grins, olho 1",
+     "kind": "task",
+     "lane": "Lane_a6f10499",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_70f71a00",
+     "name": "Exame de refração - máquina Grins, olho 2",
+     "kind": "task",
+     "lane": "Lane_a6f10499",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_90140c99",
+     "name": "Fim - tempo total aprox. 41:52 (com 2 tentativas de lente)",
+     "kind": "endEvent",
+     "lane": "Lane_a6f10499",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_8a0365e1",
+     "name": "Entrega de amostra de colírio, receita e explicação do caso",
+     "kind": "task",
+     "lane": "Lane_a6f10499",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_715182ce",
+     "name": "Preenchimento do relatório",
+     "kind": "task",
+     "lane": "Lane_a6f10499",
+     "doc": "",
+     "gw": null
+    },
+    {
+     "id": "Node_97909674",
+     "name": "Passar pela catraca e identificação",
+     "kind": "task",
+     "lane": "Lane_a6f10499",
+     "doc": "",
+     "gw": null
+    }
+   ],
+   "counts": {
+    "tasks": 13,
+    "gateways": 2,
+    "events": 2,
+    "flows": 17,
+    "lanes": 4
+   },
+   "totalLabel": {
+    "value": "41:52",
+    "note": "com 2 tentativas de lente",
+    "text": "Fim - tempo total aprox. 41:52 (com 2 tentativas de lente)"
+   }
+  }
+ ]
+}

@@ -1,0 +1,7 @@
+Coloque aqui as logos oficiais (sem alterá-las):
+
+  skema.svg  (ou skema.png / skema.webp)
+  rede-oftalmo.svg  (ou rede-oftalmo.png / rede-oftalmo.webp)
+
+O site as carrega automaticamente na abertura e na barra de navegação.
+Enquanto os arquivos não existirem, aparece apenas o nome em texto.

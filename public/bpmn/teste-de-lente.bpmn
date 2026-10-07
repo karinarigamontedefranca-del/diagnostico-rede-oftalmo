@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Defs_teste-de-lente" targetNamespace="http://skema.jr/rede-oftalmo">
+<bpmn:collaboration id="Collab_1"><bpmn:participant id="Pool_1" name="Processo 2 - Consulta teste de lente (Dr. Caio Coutinho - Cornea)" processRef="Process_1" /></bpmn:collaboration>
+<bpmn:process id="Process_1" isExecutable="false">
+<bpmn:laneSet id="LaneSet_1">
+<bpmn:lane id="Lane_09f740aa" name="Paciente">
+</bpmn:lane>
+<bpmn:lane id="Lane_a6f10499" name="Medico">
+<bpmn:flowNodeRef>Node_5d57a86e</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_7802e036</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_33d2297c</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_59ebf263</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_59421023</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_6a4f229c</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_0f33f858</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_5ccaed1a</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_b2671c12</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_e682b7fb</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_00ecd5c4</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_70f71a00</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_90140c99</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_8a0365e1</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_715182ce</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_97909674</bpmn:flowNodeRef>
+</bpmn:lane>
+<bpmn:lane id="Lane_e60989e7" name="Equipe pre-exame (mulheres do sistema)">
+<bpmn:flowNodeRef>Node_1e6197cc</bpmn:flowNodeRef>
+</bpmn:lane>
+<bpmn:lane id="Lane_b1bed08d" name="Equipe de lentes (mulher da lente)">
+</bpmn:lane>
+</bpmn:laneSet>
+<bpmn:startEvent id="Node_5d57a86e" name="Inicio - paciente fidelizado chega para teste de lente">
+<bpmn:outgoing>Flow_b33c6860</bpmn:outgoing>
+</bpmn:startEvent>
+<bpmn:task id="Node_7802e036" name="Conversa inicial">
+<bpmn:incoming>Flow_26b81ddd</bpmn:incoming>
+<bpmn:outgoing>Flow_380d1777</bpmn:outgoing>
+</bpmn:task>
+<bpmn:exclusiveGateway id="Node_33d2297c" name="Paciente trouxe os exames?">
+<bpmn:incoming>Flow_380d1777</bpmn:incoming>
+<bpmn:outgoing>Flow_7f26b471</bpmn:outgoing>
+<bpmn:outgoing>Flow_dd4b6ebf</bpmn:outgoing>
+</bpmn:exclusiveGateway>
+<bpmn:task id="Node_1e6197cc" name="Localizar / imprimir exame no sistema">
+<bpmn:documentation>Fator variavel: se o consultorio estiver vazio, o exame pode ser refeito na hora (consulta mais longa); se estiver cheio, falta sala e o paciente precisa remarcar outro dia.</bpmn:documentation>
+<bpmn:incoming>Flow_7f26b471</bpmn:incoming>
+<bpmn:outgoing>Flow_186472e2</bpmn:outgoing>
+</bpmn:task>
+<bpmn:exclusiveGateway id="Node_59ebf263" name="Exame em mãos">
+<bpmn:incoming>Flow_dd4b6ebf</bpmn:incoming>
+<bpmn:incoming>Flow_186472e2</bpmn:incoming>
+<bpmn:outgoing>Flow_a3d933ec</bpmn:outgoing>
+</bpmn:exclusiveGateway>
+<bpmn:task id="Node_59421023" name="Ir até a equipe de lentes buscar uma lente - tentativa 1">
+<bpmn:incoming>Flow_a3d933ec</bpmn:incoming>
+<bpmn:outgoing>Flow_7b50dbec</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Node_6a4f229c" name="Pingar colírio para colorir a lente">
+<bpmn:incoming>Flow_7b50dbec</bpmn:incoming>
+<bpmn:outgoing>Flow_72db3692</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Node_0f33f858" name="Teste lâmpada de fenda - conferir tamanho da lente">
+<bpmn:documentation>Lente nao serviu. Enquanto isso, o medico prepara o exame de letras para o teste de grau.</bpmn:documentation>
+<bpmn:incoming>Flow_72db3692</bpmn:incoming>
+<bpmn:outgoing>Flow_47edc912</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Node_5ccaed1a" name="Retornar a equipe de lentes - tentativa 2">
+<bpmn:incoming>Flow_47edc912</bpmn:incoming>
+<bpmn:outgoing>Flow_dc3e6177</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Node_b2671c12" name="Pingar colírio para colorir a lente">
+<bpmn:incoming>Flow_dc3e6177</bpmn:incoming>
+<bpmn:outgoing>Flow_8998cda1</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Node_e682b7fb" name="Teste lampada de fenda - lente aprovada">
+<bpmn:documentation>Teste de lente e sempre por tentativa e erro; pode haver mais rodadas do que as duas registradas aqui.</bpmn:documentation>
+<bpmn:incoming>Flow_8998cda1</bpmn:incoming>
+<bpmn:outgoing>Flow_e06c2f8c</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Node_00ecd5c4" name="Exame de refração - máquina Grins, olho 1">
+<bpmn:incoming>Flow_e06c2f8c</bpmn:incoming>
+<bpmn:outgoing>Flow_2721e01b</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Node_70f71a00" name="Exame de refração - máquina Grins, olho 2">
+<bpmn:incoming>Flow_2721e01b</bpmn:incoming>
+<bpmn:outgoing>Flow_0fc1bf4e</bpmn:outgoing>
+</bpmn:task>
+<bpmn:endEvent id="Node_90140c99" name="Fim - tempo total aprox. 41:52 (com 2 tentativas de lente)">
+<bpmn:incoming>Flow_8e6f5f2b</bpmn:incoming>
+</bpmn:endEvent>
+<bpmn:task id="Node_8a0365e1" name="Entrega de amostra de colírio, receita e explicação do caso">
+<bpmn:incoming>Flow_7295fe64</bpmn:incoming>
+<bpmn:outgoing>Flow_8e6f5f2b</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Node_715182ce" name="Preenchimento do relatório">
+<bpmn:incoming>Flow_0fc1bf4e</bpmn:incoming>
+<bpmn:outgoing>Flow_7295fe64</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Node_97909674" name="Passar pela catraca e identificação">
+<bpmn:incoming>Flow_b33c6860</bpmn:incoming>
+<bpmn:outgoing>Flow_26b81ddd</bpmn:outgoing>
+</bpmn:task>
+<bpmn:sequenceFlow id="Flow_b33c6860" sourceRef="Node_5d57a86e" targetRef="Node_97909674" />
+<bpmn:sequenceFlow id="Flow_380d1777" sourceRef="Node_7802e036" targetRef="Node_33d2297c" />
+<bpmn:sequenceFlow id="Flow_7f26b471" sourceRef="Node_33d2297c" targetRef="Node_1e6197cc" name="Nao" />
+<bpmn:sequenceFlow id="Flow_dd4b6ebf" sourceRef="Node_33d2297c" targetRef="Node_59ebf263" name="Sim" />
+<bpmn:sequenceFlow id="Flow_186472e2" sourceRef="Node_1e6197cc" targetRef="Node_59ebf263" />
+<bpmn:sequenceFlow id="Flow_a3d933ec" sourceRef="Node_59ebf263" targetRef="Node_59421023" />
+<bpmn:sequenceFlow id="Flow_7b50dbec" sourceRef="Node_59421023" targetRef="Node_6a4f229c" />
+<bpmn:sequenceFlow id="Flow_72db3692" sourceRef="Node_6a4f229c" targetRef="Node_0f33f858" />
+<bpmn:sequenceFlow id="Flow_47edc912" sourceRef="Node_0f33f858" targetRef="Node_5ccaed1a" />
+<bpmn:sequenceFlow id="Flow_dc3e6177" sourceRef="Node_5ccaed1a" targetRef="Node_b2671c12" />
+<bpmn:sequenceFlow id="Flow_8998cda1" sourceRef="Node_b2671c12" targetRef="Node_e682b7fb" />
+<bpmn:sequenceFlow id="Flow_e06c2f8c" sourceRef="Node_e682b7fb" targetRef="Node_00ecd5c4" />
+<bpmn:sequenceFlow id="Flow_2721e01b" sourceRef="Node_00ecd5c4" targetRef="Node_70f71a00" />
+<bpmn:sequenceFlow id="Flow_8e6f5f2b" sourceRef="Node_8a0365e1" targetRef="Node_90140c99" />
+<bpmn:sequenceFlow id="Flow_0fc1bf4e" sourceRef="Node_70f71a00" targetRef="Node_715182ce" />
+<bpmn:sequenceFlow id="Flow_26b81ddd" sourceRef="Node_97909674" targetRef="Node_7802e036" />
+<bpmn:sequenceFlow id="Flow_7295fe64" sourceRef="Node_715182ce" targetRef="Node_8a0365e1" />
+</bpmn:process>
+<bpmndi:BPMNDiagram id="Diagram_1"><bpmndi:BPMNPlane id="Plane_1" bpmnElement="Collab_1">
+<bpmndi:BPMNShape id="Pool_1_di" bpmnElement="Pool_1" isHorizontal="true"><dc:Bounds x="40" y="40" width="2613" height="560" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Lane_09f740aa_di" bpmnElement="Lane_09f740aa" isHorizontal="true"><dc:Bounds x="90" y="40" width="2563" height="140" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Lane_a6f10499_di" bpmnElement="Lane_a6f10499" isHorizontal="true"><dc:Bounds x="90" y="180" width="2563" height="140" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Lane_e60989e7_di" bpmnElement="Lane_e60989e7" isHorizontal="true"><dc:Bounds x="90" y="320" width="2563" height="140" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Lane_b1bed08d_di" bpmnElement="Lane_b1bed08d" isHorizontal="true"><dc:Bounds x="90" y="460" width="2563" height="140" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_5d57a86e_di" bpmnElement="Node_5d57a86e"><dc:Bounds x="128" y="232" width="36" height="36" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_7802e036_di" bpmnElement="Node_7802e036"><dc:Bounds x="337" y="210" width="100" height="80" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_33d2297c_di" bpmnElement="Node_33d2297c" isMarkerVisible="true"><dc:Bounds x="501" y="220" width="60" height="60" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_1e6197cc_di" bpmnElement="Node_1e6197cc"><dc:Bounds x="591" y="320" width="100" height="80" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_59ebf263_di" bpmnElement="Node_59ebf263" isMarkerVisible="true"><dc:Bounds x="714" y="225" width="50" height="50" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_59421023_di" bpmnElement="Node_59421023"><dc:Bounds x="829" y="210" width="100" height="80" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_6a4f229c_di" bpmnElement="Node_6a4f229c"><dc:Bounds x="970" y="210" width="100" height="80" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_0f33f858_di" bpmnElement="Node_0f33f858"><dc:Bounds x="1131" y="210" width="100" height="80" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_5ccaed1a_di" bpmnElement="Node_5ccaed1a"><dc:Bounds x="1281" y="210" width="100" height="80" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_b2671c12_di" bpmnElement="Node_b2671c12"><dc:Bounds x="1431" y="210" width="100" height="80" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_e682b7fb_di" bpmnElement="Node_e682b7fb"><dc:Bounds x="1581" y="210" width="100" height="80" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_00ecd5c4_di" bpmnElement="Node_00ecd5c4"><dc:Bounds x="1731" y="210" width="100" height="80" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_70f71a00_di" bpmnElement="Node_70f71a00"><dc:Bounds x="1881" y="210" width="100" height="80" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_90140c99_di" bpmnElement="Node_90140c99"><dc:Bounds x="2344" y="232" width="36" height="36" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_8a0365e1_di" bpmnElement="Node_8a0365e1"><dc:Bounds x="2189" y="210" width="100" height="80" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_715182ce_di" bpmnElement="Node_715182ce"><dc:Bounds x="2031" y="210" width="100" height="80" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_97909674_di" bpmnElement="Node_97909674"><dc:Bounds x="203" y="214" width="90" height="72" /></bpmndi:BPMNShape>
+<bpmndi:BPMNEdge id="Flow_b33c6860_di" bpmnElement="Flow_b33c6860">
+<di:waypoint x="164" y="250" />
+<di:waypoint x="203" y="250" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_380d1777_di" bpmnElement="Flow_380d1777">
+<di:waypoint x="437" y="250" />
+<di:waypoint x="501" y="250" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_7f26b471_di" bpmnElement="Flow_7f26b471">
+<di:waypoint x="531" y="280" />
+<di:waypoint x="531" y="360" />
+<di:waypoint x="591" y="360" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_dd4b6ebf_di" bpmnElement="Flow_dd4b6ebf">
+<di:waypoint x="561" y="250" />
+<di:waypoint x="714" y="250" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_186472e2_di" bpmnElement="Flow_186472e2">
+<di:waypoint x="691" y="360" />
+<di:waypoint x="739" y="360" />
+<di:waypoint x="739" y="275" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_a3d933ec_di" bpmnElement="Flow_a3d933ec">
+<di:waypoint x="764" y="250" />
+<di:waypoint x="829" y="250" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_7b50dbec_di" bpmnElement="Flow_7b50dbec">
+<di:waypoint x="929" y="250" />
+<di:waypoint x="970" y="250" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_72db3692_di" bpmnElement="Flow_72db3692">
+<di:waypoint x="1070" y="250" />
+<di:waypoint x="1131" y="250" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_47edc912_di" bpmnElement="Flow_47edc912">
+<di:waypoint x="1231" y="250" />
+<di:waypoint x="1281" y="250" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_dc3e6177_di" bpmnElement="Flow_dc3e6177">
+<di:waypoint x="1381" y="250" />
+<di:waypoint x="1431" y="250" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_8998cda1_di" bpmnElement="Flow_8998cda1">
+<di:waypoint x="1531" y="250" />
+<di:waypoint x="1581" y="250" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_e06c2f8c_di" bpmnElement="Flow_e06c2f8c">
+<di:waypoint x="1681" y="250" />
+<di:waypoint x="1731" y="250" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_2721e01b_di" bpmnElement="Flow_2721e01b">
+<di:waypoint x="1831" y="250" />
+<di:waypoint x="1881" y="250" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_8e6f5f2b_di" bpmnElement="Flow_8e6f5f2b">
+<di:waypoint x="2289" y="250" />
+<di:waypoint x="2344" y="250" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_0fc1bf4e_di" bpmnElement="Flow_0fc1bf4e">
+<di:waypoint x="1981" y="250" />
+<di:waypoint x="2031" y="250" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_26b81ddd_di" bpmnElement="Flow_26b81ddd">
+<di:waypoint x="293" y="250" />
+<di:waypoint x="337" y="250" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_7295fe64_di" bpmnElement="Flow_7295fe64">
+<di:waypoint x="2131" y="250" />
+<di:waypoint x="2189" y="250" />
+</bpmndi:BPMNEdge>
+</bpmndi:BPMNPlane></bpmndi:BPMNDiagram></bpmn:definitions>

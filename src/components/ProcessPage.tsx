@@ -34,7 +34,7 @@ export default function ProcessPage({ data, id, step }: { data: Dataset; id: str
         <section style={{ marginTop: 80 }}>
           <h2 style={{ fontSize: 'clamp(28px,3.4vw,42px)', fontWeight: 700 }}>Fluxograma</h2>
           <p className="lead measure" style={{ marginBottom: 24 }}>
-            {journey.length ? 'Etapas destacadas em verde têm medições associadas; clique em uma etapa ou raia para ver tempo médio, menor e maior tempo.' : 'Clique em uma etapa para ver a raia responsável e as observações do diagrama.'}
+            {journey.length ? 'Etapas destacadas em azul têm medições associadas; clique em uma etapa ou raia para ver tempo médio, menor e maior tempo.' : 'Clique em uma etapa para ver a raia responsável e as observações do diagrama.'}
           </p>
           <BpmnViewer key={p.id} process={p} steps={steps} focusStep={step} />
           {p.totalLabel && (

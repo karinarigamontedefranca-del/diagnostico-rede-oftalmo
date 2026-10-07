@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import type { Process } from '../lib/data'
 import type { Route } from '../lib/router'
+import { Logo } from './Brand'
 
 export default function Nav({ route, processes }: { route: Route; processes: Process[] }) {
   const [show, setShow] = useState(route.name !== 'home')
@@ -19,7 +20,7 @@ export default function Nav({ route, processes }: { route: Route; processes: Pro
     <nav className={`nav ${show ? '' : 'hide'}`} aria-label="Principal">
       <div className="wrap" style={{ display: 'flex', alignItems: 'center', gap: 28, height: 60 }}>
         <a href="#/" onClick={(e) => { e.preventDefault(); location.hash = '#/'; window.scrollTo({ top: 0 }) }} style={{ display: 'flex', gap: 10, alignItems: 'center', border: 0, padding: 0 }} aria-label="Início">
-          <span className="font-display" style={{ fontWeight: 700, color: 'var(--color-ink)', fontSize: 16, fontFamily: 'var(--font-display)' }}>Rede Oftalmo <span style={{ color: 'var(--color-muted)', fontWeight: 500 }}>×</span> SKEMA</span>
+          <Logo who="skema" className="h-9" /><span aria-hidden style={{ color: 'var(--color-muted)' }}>×</span><Logo who="oftalmo" className="h-9" />
         </a>
         <div className="hidden md:flex" style={{ gap: 22, marginLeft: 'auto', alignItems: 'center' }}>
           <a href="#visao-geral" onClick={toSection('visao-geral')}>Visão geral</a>

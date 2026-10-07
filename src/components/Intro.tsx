@@ -1,15 +1,15 @@
-import { Aperture, Logo } from './Brand'
+import { Logo } from './Brand'
 
 export default function Intro({ onStart }: { onStart: () => void }) {
   return (
     <header className="intro" id="topo">
       <div className="intro-inner">
         <div className="brand-row" aria-label="Rede Oftalmo e SKEMA Consultoria Júnior">
-          <div className="plate l"><Logo who="oftalmo" /></div>
+          <Logo who="skema" tone="dark" className="logo-l" />
           <div className="link"><i /><b className="sq" /><b className="di" /></div>
-          <Aperture />
+          <div className="mark" aria-hidden="true">×</div>
           <div className="link rev"><i /><b className="sq" /><b className="di" /></div>
-          <div className="plate r"><Logo who="skema" /></div>
+          <div className="plate r"><Logo who="oftalmo" /></div>
         </div>
         <div>
           <h1 className="title">Mapeamento de Processos</h1>

@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { Logo } from './Brand'
 import { Dataset, JOURNEY, describe, fmt } from '../lib/data'
 import { goProcess as go } from '../lib/router'
 
@@ -92,7 +93,7 @@ export default function Home({ data }: { data: Dataset }) {
             {byN.map((s) => (
               <button key={s.id} className="hbar" onClick={() => go('glaucoma', s.id)}>
                 <span className="lab">{s.label}</span>
-                <span className="track"><span className="fill" style={{ width: `${(s.n / maxN) * 100}%`, background: '#6f8e95' }} /></span>
+                <span className="track"><span className="fill" style={{ width: `${(s.n / maxN) * 100}%`, background: '#8b90b5' }} /></span>
                 <span className="val num">{s.n}</span>
               </button>
             ))}
@@ -144,10 +145,10 @@ export default function Home({ data }: { data: Dataset }) {
         <p style={{ color: 'var(--color-muted)', marginTop: 28, fontSize: 14 }}>Fonte: {m.source}. Fluxograma de Glaucoma: {glaucoma.sourceFile}.</p>
       </Section>
 
-      <footer style={{ background: 'var(--color-ink)', color: '#bfe6e3', padding: '48px 0', marginTop: 80 }}>
-        <div className="wrap" style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
-          <span style={{ fontFamily: 'var(--font-display)', fontWeight: 600, color: '#fff' }}>Rede Oftalmo × SKEMA Consultoria Júnior</span>
-          <span>Mapeamento de Processos</span>
+      <footer style={{ background: 'var(--color-deep)', color: '#b9bddb', padding: '48px 0', marginTop: 80 }}>
+        <div className="wrap" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 24 }}>
+          <Logo who="skema" tone="dark" className="h-12" />
+          <span>Mapeamento de Processos · Rede Oftalmo</span>
         </div>
       </footer>
     </main>
@@ -183,8 +184,8 @@ function RangePlot({ steps }: { steps: Dataset['m']['steps'] }) {
             <button key={s.id} className="hbar" style={{ gridTemplateColumns: 'minmax(120px,190px) 1fr 120px' }} onClick={() => go('glaucoma', s.id)} onMouseEnter={() => setHov(s.id)} onMouseLeave={() => setHov(null)}>
               <span className="lab">{s.label}</span>
               <span style={{ position: 'relative', height: 22 }}>
-                {ticks.map((t) => <span key={t} style={{ position: 'absolute', left: pos(t), top: 0, bottom: 0, width: 1, background: '#e3ebec' }} />)}
-                <span style={{ position: 'absolute', left: pos(s.min), width: `calc(${pos(s.max)} - ${pos(s.min)})`, top: 10, height: 2, background: '#7f9ba1' }} />
+                {ticks.map((t) => <span key={t} style={{ position: 'absolute', left: pos(t), top: 0, bottom: 0, width: 1, background: '#e4e3ea' }} />)}
+                <span style={{ position: 'absolute', left: pos(s.min), width: `calc(${pos(s.max)} - ${pos(s.min)})`, top: 10, height: 2, background: '#8b90b5' }} />
                 <span style={{ position: 'absolute', left: pos(d.q1), width: `calc(${pos(d.q3)} - ${pos(d.q1)})`, top: 4, height: 14, background: 'var(--color-iris)', borderRadius: 4, opacity: hov === s.id ? 1 : 0.88 }} />
                 <span style={{ position: 'absolute', left: `calc(${pos(s.median)} - 1.5px)`, top: 1, height: 20, width: 3, background: 'var(--color-ink)', borderRadius: 2 }} />
                 {d.outliers.map((o, i) => <span key={i} style={{ position: 'absolute', left: `calc(${pos(o.seconds)} - 4px)`, top: 7, width: 8, height: 8, borderRadius: 4, background: 'var(--color-amber)', border: '1.5px solid #fff' }} />)}

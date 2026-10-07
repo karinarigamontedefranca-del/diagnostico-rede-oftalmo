@@ -77,13 +77,13 @@ export default function Measures({ steps, initial }: { steps: Step[]; initial?: 
             <div style={{ height: 280 }}>
               <ResponsiveContainer>
                 <BarChart data={seq} margin={{ top: 8, right: 8, bottom: 0, left: 0 }}>
-                  <CartesianGrid vertical={false} stroke="#e3ebec" />
-                  <XAxis dataKey="i" tick={{ fontSize: 12, fill: '#5a7279' }} tickLine={false} axisLine={{ stroke: '#9db3b8' }} interval="preserveStartEnd" />
-                  <YAxis tickFormatter={axisSec} tick={{ fontSize: 12, fill: '#5a7279' }} tickLine={false} axisLine={false} width={52} />
-                  <Tooltip cursor={{ fill: 'rgba(14,127,134,.08)' }} content={({ active, payload }: any) => active && payload?.length ? (
+                  <CartesianGrid vertical={false} stroke="#e4e3ea" />
+                  <XAxis dataKey="i" tick={{ fontSize: 12, fill: '#5d6385' }} tickLine={false} axisLine={{ stroke: '#a4a8c4' }} interval="preserveStartEnd" />
+                  <YAxis tickFormatter={axisSec} tick={{ fontSize: 12, fill: '#5d6385' }} tickLine={false} axisLine={false} width={52} />
+                  <Tooltip cursor={{ fill: 'rgba(29,42,97,.07)' }} content={({ active, payload }: any) => active && payload?.length ? (
                     <div className="tipbox" style={{ position: 'static' }}><b>{fmt(payload[0].payload.seconds)}</b><br />linha {payload[0].payload.row} da planilha{payload[0].payload.start ? <><br />{payload[0].payload.start}–{payload[0].payload.end}</> : null}{payload[0].payload.note ? <><br />{payload[0].payload.note}</> : null}</div>
                   ) : null} />
-                  <ReferenceLine y={step.mean} stroke="#0c2a32" strokeDasharray="5 4" />
+                  <ReferenceLine y={step.mean} stroke="#1d2a61" strokeDasharray="5 4" />
                   <Bar dataKey="seconds" radius={[3, 3, 0, 0]} maxBarSize={22} isAnimationActive={false}>
                     {seq.map((s) => <Cell key={s.row} fill={isOut(s.seconds) ? 'var(--color-amber)' : 'var(--color-iris)'} />)}
                   </Bar>
@@ -97,10 +97,10 @@ export default function Measures({ steps, initial }: { steps: Step[]; initial?: 
             <div style={{ height: 280 }}>
               <ResponsiveContainer>
                 <BarChart data={hist} margin={{ top: 8, right: 8, bottom: 0, left: 0 }}>
-                  <CartesianGrid vertical={false} stroke="#e3ebec" />
-                  <XAxis dataKey="label" tick={{ fontSize: 11, fill: '#5a7279' }} tickLine={false} axisLine={{ stroke: '#9db3b8' }} interval={0} />
-                  <YAxis allowDecimals={false} tick={{ fontSize: 12, fill: '#5a7279' }} tickLine={false} axisLine={false} width={30} />
-                  <Tooltip cursor={{ fill: 'rgba(14,127,134,.08)' }} content={({ active, payload }: any) => active && payload?.length ? (
+                  <CartesianGrid vertical={false} stroke="#e4e3ea" />
+                  <XAxis dataKey="label" tick={{ fontSize: 11, fill: '#5d6385' }} tickLine={false} axisLine={{ stroke: '#a4a8c4' }} interval={0} />
+                  <YAxis allowDecimals={false} tick={{ fontSize: 12, fill: '#5d6385' }} tickLine={false} axisLine={false} width={30} />
+                  <Tooltip cursor={{ fill: 'rgba(29,42,97,.07)' }} content={({ active, payload }: any) => active && payload?.length ? (
                     <div className="tipbox" style={{ position: 'static' }}><b>{payload[0].value} medições</b><br />de {fmt(payload[0].payload.from)} a {fmt(payload[0].payload.to)}</div>) : null} />
                   <Bar dataKey="n" fill="var(--color-iris)" radius={[3, 3, 0, 0]} isAnimationActive={false} />
                 </BarChart>

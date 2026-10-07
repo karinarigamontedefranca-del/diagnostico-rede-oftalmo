@@ -1,7 +1,4 @@
-Coloque aqui as logos oficiais (sem alterá-las):
-
-  skema.svg  (ou skema.png / skema.webp)
-  rede-oftalmo.svg  (ou rede-oftalmo.png / rede-oftalmo.webp)
-
-O site as carrega automaticamente na abertura e na barra de navegação.
-Enquanto os arquivos não existirem, aparece apenas o nome em texto.
+skema-branca.png  → logo SKEMA branca (fundos escuros)
+skema.png         → logo SKEMA na cor azul da marca (fundos claros)
+rede-oftalmo.png  → logo Rede Oftalmo (fundo transparente)
+Para trocar por arquivos oficiais (SVG/PNG), mantenha estes nomes.

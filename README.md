@@ -16,7 +16,7 @@ npm run build      # gera /dist (pronto para Vercel; framework: Vite)
 Para atualizar: substitua os arquivos em `source/`, rode `npm run data` e `npm run build`.
 
 ## Logos
-Coloque `skema.svg|png` e `rede-oftalmo.svg|png` em `public/logos/` (nenhuma logo veio nos arquivos recebidos; até lá aparece só o nome em texto). Cores no topo de `src/index.css`.
+Logos em `public/logos/` (`skema-branca.png`, `skema.png`, `rede-oftalmo.png`); troque por arquivos oficiais mantendo os nomes. Identidade: Brand Book SKEMA (azul #1d2a61, off-white #f6f5f3, verde-menta #80bba9 só em detalhes, Montserrat) — tokens no topo de `src/index.css`.
 
 ## Associações e ressalvas (também visíveis no site, seção “Notas sobre os dados”)
 - A planilha se intitula “Córnea”, mas suas etapas são as do fluxograma de **Glaucoma**; as medições foram associadas a ele.

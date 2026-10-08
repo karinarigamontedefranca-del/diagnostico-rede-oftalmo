@@ -5,7 +5,7 @@ export type Step = {
   id: string; label: string; phase: string; n: number; mean: number; median: number; min: number; max: number; stdev: number | null
   samples: Sample[]; excluded: Excluded[]; source: string; kind: string; link: Link
 }
-export type NodeInfo = { id: string; name: string; kind: string; lane: string | null; doc: string; gw: string | null }
+export type NodeInfo = { id: string; name: string; kind: string; lane: string | null; doc: string; gw: string | null; origin?: string; x: number; y: number; via: string | null; seq: number }
 export type Process = {
   id: string; title: string; short: string; poolName: string; sourceFile: string; bpmn: string
   lanes: { id: string; name: string }[]; nodes: NodeInfo[]
@@ -16,6 +16,12 @@ export type Quality = { id: string; level: string; title: string; text: string }
 export type Measurements = {
   source: string; unit: string; steps: Step[]; emptySteps: { label: string; cols: string }[]
   laneSteps: Record<string, string[]>; quality: Quality[]
+  plan: Plan
+}
+export type Plan = {
+  target: number; perVisit: number; perWeek: number; excluded: string[]; visits: number; lastDone: string; end: string; next: string; bottleneck: string[]; weekdays: number[]
+  steps: { id: string; label: string; n: number; missing: number; visits: number }[]
+  schedule: { n: number; date: string; closes: string[]; lowest: number }[]
 }
 export type Dataset = { processes: Process[]; m: Measurements }
 
@@ -53,3 +59,7 @@ export function describe(step: Step) {
 }
 
 export const JOURNEY = (steps: Step[]) => steps.filter((s) => s.id !== 'pos-consulta-ociosidade')
+
+export const WD = ['segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado', 'domingo']
+export const planDate = (iso: string) => { const [, m, d] = iso.split('-'); return `${d}/${m}` }
+export const weekday = (iso: string) => WD[(new Date(iso + 'T12:00').getDay() + 6) % 7]

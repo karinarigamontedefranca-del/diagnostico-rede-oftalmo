@@ -52,12 +52,14 @@ export default function BpmnViewer({ process, steps, focusStep }: { process: Pro
             html.textContent = ss.length === 1 ? fmt(ss[0].mean, { compact: true }) : `${ss.length} medições`
             overlays.add(el.id, { position: { top: -24, left: 0 }, html })
           }
+          const ni = process.nodes.find((x) => x.id === el.id)
+          if (ni && ni.origin && ni.origin !== 'diagrama' && ni.kind !== 'textAnnotation') canvas.addMarker(el.id, 'from-interview')
           if (el.type === 'bpmn:Lane' && byLane[el.id]) canvas.addMarker(el.id, 'lane-data')
         })
         bus.on('element.click', (e: any) => {
           const el = e.element
           if (el.type === 'bpmn:Lane') setSel({ id: el.id, type: 'lane' })
-          else if (el.type === 'bpmn:Participant' || el.type === 'label') setSel(null)
+          else if (el.type === 'bpmn:Participant' || el.type === 'label' || el.type === 'bpmn:TextAnnotation' || el.type === 'bpmn:Association') setSel(null)
           else setSel({ id: el.id, type: 'node' })
         })
         bus.on('canvas.click', () => setSel(null))
@@ -110,12 +112,12 @@ export default function BpmnViewer({ process, steps, focusStep }: { process: Pro
     const info = isLane ? null : nodeInfo(sel.id)
     const ss = (isLane ? byLane[sel.id] : byNode[sel.id]) || []
     const title = isLane ? laneName(sel.id) : info?.name || (info?.kind === 'startEvent' ? 'Início do processo' : info?.kind === 'endEvent' ? 'Fim do processo' : 'Decisão')
-    const kindLabel = isLane ? 'Raia' : info?.kind === 'task' ? 'Etapa' : info?.kind === 'exclusiveGateway' ? 'Decisão' : info?.kind === 'startEvent' ? 'Início' : 'Fim'
+    const kindLabel = isLane ? "Raia" : info?.kind === "textAnnotation" ? "Anotação" : info?.kind === 'task' ? 'Etapa' : info?.kind === 'exclusiveGateway' ? 'Decisão' : info?.kind === 'startEvent' ? 'Início' : 'Fim'
     panel = (
       <aside className="side" aria-live="polite">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', gap: 8 }}>
           <div>
-            <span className="pill gray">{kindLabel}</span>
+            <span className="pill gray">{kindLabel}</span>{!isLane && info?.origin && info.origin !== 'diagrama' && <span className={`pill ${info.origin === 'a confirmar' ? 'amber' : ''}`} style={{ marginLeft: 6 }}>{info.origin === 'entrevista' ? 'acrescentada com base na entrevista' : info.origin}</span>}
             <h4 style={{ fontSize: 22, margin: '10px 0 2px' }}>{title}</h4>
             {!isLane && info?.lane && <div style={{ color: 'var(--color-muted)', fontSize: 14 }}>Raia: {laneName(info.lane)}</div>}
           </div>

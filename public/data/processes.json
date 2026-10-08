@@ -28,7 +28,12 @@
      "kind": "startEvent",
      "lane": "Lane_9ed2805e",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 216,
+     "y": 266,
+     "via": null,
+     "seq": 0,
+     "origin": "diagrama"
     },
     {
      "id": "Node_dd887a25",
@@ -36,7 +41,12 @@
      "kind": "task",
      "lane": "Lane_9ed2805e",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 294,
+     "y": 251,
+     "via": null,
+     "seq": 1,
+     "origin": "diagrama"
     },
     {
      "id": "Node_b1a6b13f",
@@ -44,7 +54,12 @@
      "kind": "task",
      "lane": "Lane_9ed2805e",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 430,
+     "y": 251,
+     "via": null,
+     "seq": 2,
+     "origin": "diagrama"
     },
     {
      "id": "Node_030b3116",
@@ -52,7 +67,12 @@
      "kind": "task",
      "lane": "Lane_5c0614e3",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 445,
+     "y": 391,
+     "via": null,
+     "seq": 3,
+     "origin": "diagrama"
     },
     {
      "id": "Node_9be543c1",
@@ -60,7 +80,12 @@
      "kind": "exclusiveGateway",
      "lane": "Lane_5c0614e3",
      "doc": "",
-     "gw": "Diverging"
+     "gw": "Diverging",
+     "x": 639,
+     "y": 401,
+     "via": null,
+     "seq": 4,
+     "origin": "diagrama"
     },
     {
      "id": "Node_e858f5cb",
@@ -68,7 +93,12 @@
      "kind": "task",
      "lane": "Lane_33ed1915",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 743,
+     "y": 570,
+     "via": "Consulta",
+     "seq": 12,
+     "origin": "diagrama"
     },
     {
      "id": "Node_3a9ca350",
@@ -76,7 +106,12 @@
      "kind": "task",
      "lane": "Lane_33ed1915",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 524,
+     "y": 570,
+     "via": "Exame",
+     "seq": 5,
+     "origin": "diagrama"
     },
     {
      "id": "Node_0e5d739f",
@@ -84,7 +119,12 @@
      "kind": "exclusiveGateway",
      "lane": "Lane_33ed1915",
      "doc": "",
-     "gw": "Diverging"
+     "gw": "Diverging",
+     "x": 768,
+     "y": 659,
+     "via": null,
+     "seq": 13,
+     "origin": "diagrama"
     },
     {
      "id": "Node_65192337",
@@ -92,7 +132,12 @@
      "kind": "task",
      "lane": "Lane_33ed1915",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 905,
+     "y": 570,
+     "via": "Sim",
+     "seq": 16,
+     "origin": "diagrama"
     },
     {
      "id": "Node_4cdd1a2e",
@@ -100,7 +145,12 @@
      "kind": "task",
      "lane": "Lane_33ed1915",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 906,
+     "y": 726,
+     "via": "Não",
+     "seq": 17,
+     "origin": "diagrama"
     },
     {
      "id": "Node_f3e97cd1",
@@ -108,7 +158,12 @@
      "kind": "task",
      "lane": "Lane_33ed1915",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 1053,
+     "y": 726,
+     "via": null,
+     "seq": 20,
+     "origin": "diagrama"
     },
     {
      "id": "Node_70b7bc1b",
@@ -116,7 +171,12 @@
      "kind": "exclusiveGateway",
      "lane": "Lane_33ed1915",
      "doc": "",
-     "gw": "Diverging"
+     "gw": "Diverging",
+     "x": 1321,
+     "y": 736,
+     "via": null,
+     "seq": 22,
+     "origin": "diagrama"
     },
     {
      "id": "Node_8c6ad279",
@@ -124,7 +184,12 @@
      "kind": "task",
      "lane": "Lane_33ed1915",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 1464,
+     "y": 649,
+     "via": "Sim",
+     "seq": 23,
+     "origin": "diagrama"
     },
     {
      "id": "Node_5cc5f1e1",
@@ -132,7 +197,12 @@
      "kind": "task",
      "lane": "Lane_33ed1915",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 1466,
+     "y": 776,
+     "via": "Não",
+     "seq": 24,
+     "origin": "diagrama"
     },
     {
      "id": "Node_28da4531",
@@ -140,7 +210,12 @@
      "kind": "task",
      "lane": "Lane_33ed1915",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 1192,
+     "y": 726,
+     "via": null,
+     "seq": 21,
+     "origin": "diagrama"
     },
     {
      "id": "Node_b697f175",
@@ -148,7 +223,12 @@
      "kind": "endEvent",
      "lane": "Lane_33ed1915",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 1626,
+     "y": 791,
+     "via": null,
+     "seq": 25,
+     "origin": "diagrama"
     },
     {
      "id": "Node_d7fed599",
@@ -156,7 +236,12 @@
      "kind": "exclusiveGateway",
      "lane": "Lane_33ed1915",
      "doc": "",
-     "gw": "Diverging"
+     "gw": "Diverging",
+     "x": 291,
+     "y": 893,
+     "via": null,
+     "seq": 8,
+     "origin": "diagrama"
     },
     {
      "id": "Node_fe63c813",
@@ -164,7 +249,12 @@
      "kind": "task",
      "lane": "Lane_33ed1915",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 562,
+     "y": 851,
+     "via": "Não",
+     "seq": 10,
+     "origin": "diagrama"
     },
     {
      "id": "Node_7e6f8a45",
@@ -172,7 +262,12 @@
      "kind": "task",
      "lane": "Lane_33ed1915",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 426,
+     "y": 921,
+     "via": "Sim",
+     "seq": 9,
+     "origin": "diagrama"
     },
     {
      "id": "Node_fb1fb52c",
@@ -180,7 +275,12 @@
      "kind": "exclusiveGateway",
      "lane": "Lane_33ed1915",
      "doc": "",
-     "gw": "Diverging"
+     "gw": "Diverging",
+     "x": 705,
+     "y": 861,
+     "via": null,
+     "seq": 11,
+     "origin": "diagrama"
     },
     {
      "id": "Node_4d0479df",
@@ -188,7 +288,12 @@
      "kind": "task",
      "lane": "Lane_33ed1915",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 800,
+     "y": 806,
+     "via": null,
+     "seq": 14,
+     "origin": "diagrama"
     },
     {
      "id": "Node_9504e40a",
@@ -196,7 +301,12 @@
      "kind": "task",
      "lane": "Lane_33ed1915",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 800,
+     "y": 893,
+     "via": null,
+     "seq": 15,
+     "origin": "diagrama"
     },
     {
      "id": "Node_146d68a3",
@@ -204,7 +314,12 @@
      "kind": "endEvent",
      "lane": "Lane_33ed1915",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 944,
+     "y": 908,
+     "via": null,
+     "seq": 19,
+     "origin": "diagrama"
     },
     {
      "id": "Node_d0ae69bf",
@@ -212,7 +327,12 @@
      "kind": "endEvent",
      "lane": "Lane_33ed1915",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 944,
+     "y": 821,
+     "via": null,
+     "seq": 18,
+     "origin": "diagrama"
     },
     {
      "id": "Node_ba2c7744",
@@ -220,7 +340,12 @@
      "kind": "task",
      "lane": "Lane_33ed1915",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 384,
+     "y": 570,
+     "via": null,
+     "seq": 6,
+     "origin": "diagrama"
     },
     {
      "id": "Node_a0831d15",
@@ -228,7 +353,12 @@
      "kind": "task",
      "lane": "Lane_33ed1915",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 266,
+     "y": 666,
+     "via": null,
+     "seq": 7,
+     "origin": "diagrama"
     }
    ],
    "counts": {
@@ -244,96 +374,310 @@
    "id": "exame-de-cornea",
    "title": "Exame de córnea",
    "short": "Exame de córnea (paciente nova)",
-   "poolName": "Processo 1 - Exame de cornea 2 (paciente nova)",
-   "sourceFile": "Fluxograma_Exame_de_cornea.bpm",
+   "poolName": "Processo 1 - Exame de cornea 2 (paciente nova) - da portaria à saída",
+   "sourceFile": "Diagrama_Cornea.bpmn",
    "bpmn": "bpmn/exame-de-cornea.bpmn",
    "lanes": [
     {
-     "id": "Lane_8f1cd308",
+     "id": "Lane_portaria",
+     "name": "Portaria"
+    },
+    {
+     "id": "Lane_recepcao",
+     "name": "Recepção"
+    },
+    {
+     "id": "Lane_enfermeira",
+     "name": "Enfermeira"
+    },
+    {
+     "id": "Lane_medico",
      "name": "Medico / tecnico do exame"
     },
     {
-     "id": "Lane_9fb0f440",
-     "name": "Enfermeira"
+     "id": "Lane_marcacao",
+     "name": "Marcação (2º andar)"
     }
    ],
    "nodes": [
     {
-     "id": "Node_f2a0bc91",
-     "name": "Inicio - paciente chega para exame",
+     "id": "Node_inicio",
+     "name": "Inicio - paciente chega na portaria",
      "kind": "startEvent",
-     "lane": "Lane_8f1cd308",
+     "lane": "Lane_portaria",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 122,
+     "y": 107,
+     "via": null,
+     "seq": 0,
+     "origin": "entrevista"
     },
     {
-     "id": "Node_88223eaf",
+     "id": "Node_nome",
+     "name": "Paciente informa o nome na portaria",
+     "kind": "task",
+     "lane": "Lane_portaria",
+     "doc": "",
+     "gw": null,
+     "x": 215,
+     "y": 88,
+     "via": null,
+     "seq": 1,
+     "origin": "entrevista"
+    },
+    {
+     "id": "Node_lanca",
+     "name": "Porteiro lança o paciente no sistema (córnea) e o direciona para a recepção",
+     "kind": "task",
+     "lane": "Lane_portaria",
+     "doc": "Segundo a entrevista, o porteiro lança o paciente para a córnea e o direciona para baixo, onde a recepção o chama.",
+     "gw": null,
+     "x": 360,
+     "y": 82,
+     "via": null,
+     "seq": 2,
+     "origin": "entrevista"
+    },
+    {
+     "id": "Node_chama",
+     "name": "Recepção chama o paciente",
+     "kind": "task",
+     "lane": "Lane_recepcao",
+     "doc": "",
+     "gw": null,
+     "x": 360,
+     "y": 258,
+     "via": null,
+     "seq": 3,
+     "origin": "entrevista"
+    },
+    {
+     "id": "Node_ficha",
+     "name": "Recepção faz a ficha do paciente",
+     "kind": "task",
+     "lane": "Lane_recepcao",
+     "doc": "",
+     "gw": null,
+     "x": 535,
+     "y": 258,
+     "via": null,
+     "seq": 4,
+     "origin": "entrevista"
+    },
+    {
+     "id": "Node_recebe",
+     "name": "Paciente leva a ficha e a equipe da córnea a recebe",
+     "kind": "task",
+     "lane": "Lane_enfermeira",
+     "doc": "Raia “Enfermeira” assumida a partir de “a gente faz o exame” na entrevista; confirmar o cargo de quem recebe a ficha e faz os exames.",
+     "gw": null,
+     "x": 535,
+     "y": 428,
+     "via": null,
+     "seq": 5,
+     "origin": "entrevista"
+    },
+    {
+     "id": "Node_g_pedido",
+     "name": "Paciente chegou com exames pedidos?",
+     "kind": "exclusiveGateway",
+     "lane": "Lane_enfermeira",
+     "doc": "",
+     "gw": null,
+     "x": 705,
+     "y": 440,
+     "via": null,
+     "seq": 6,
+     "origin": "entrevista"
+    },
+    {
+     "id": "Node_exames",
+     "name": "Equipe faz os exames (microscopia, topografia, paquimetria, autorefrator e tonometria)",
+     "kind": "task",
+     "lane": "Lane_enfermeira",
+     "doc": "Lista citada na entrevista: microscopia, topografia, paquimetria (trecho pouco claro no áudio), autorefrator e tonometria. O pedido vem da última consulta ou do médico.",
+     "gw": null,
+     "x": 805,
+     "y": 413,
+     "via": "Sim",
+     "seq": 7,
+     "origin": "entrevista"
+    },
+    {
+     "id": "Node_g_merge",
+     "name": "",
+     "kind": "exclusiveGateway",
+     "lane": "Lane_enfermeira",
+     "doc": "",
+     "gw": null,
+     "x": 1025,
+     "y": 440,
+     "via": "Não",
+     "seq": 8,
+     "origin": "entrevista"
+    },
+    {
+     "id": "Node_entender",
      "name": "Entender o caso do paciente",
      "kind": "task",
-     "lane": "Lane_8f1cd308",
+     "lane": "Lane_medico",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 1135,
+     "y": 598,
+     "via": null,
+     "seq": 9,
+     "origin": "diagrama"
     },
     {
-     "id": "Node_9b751611",
+     "id": "Node_fenda",
      "name": "Teste na lâmpada de fenda",
      "kind": "task",
-     "lane": "Lane_8f1cd308",
+     "lane": "Lane_medico",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 1280,
+     "y": 598,
+     "via": null,
+     "seq": 10,
+     "origin": "diagrama"
     },
     {
-     "id": "Node_cc76b057",
+     "id": "Node_grau",
      "name": "Medir o grau dos óculos do paciente",
      "kind": "task",
-     "lane": "Lane_8f1cd308",
+     "lane": "Lane_medico",
      "doc": "Executado em paralelo ao teste de lampada de fenda (T2), a pedido do medico.",
-     "gw": null
+     "gw": null,
+     "x": 1425,
+     "y": 598,
+     "via": null,
+     "seq": 11,
+     "origin": "diagrama"
     },
     {
-     "id": "Node_1d49f06b",
+     "id": "Node_grins",
      "name": "Exame de refração - máquina Grins",
      "kind": "task",
-     "lane": "Lane_8f1cd308",
+     "lane": "Lane_medico",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 1570,
+     "y": 598,
+     "via": null,
+     "seq": 12,
+     "origin": "diagrama"
     },
     {
-     "id": "Node_06f7c542",
+     "id": "Node_relatorio",
      "name": "Preenchimento do relatório",
      "kind": "task",
-     "lane": "Lane_8f1cd308",
+     "lane": "Lane_medico",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 1715,
+     "y": 598,
+     "via": null,
+     "seq": 13,
+     "origin": "diagrama"
     },
     {
-     "id": "Node_0eecc944",
+     "id": "Node_entrega",
      "name": "Entrega de amostra de colírio, receita e explicação do caso",
      "kind": "task",
-     "lane": "Lane_8f1cd308",
+     "lane": "Lane_medico",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 1865,
+     "y": 593,
+     "via": null,
+     "seq": 14,
+     "origin": "diagrama"
     },
     {
-     "id": "Node_c76c27e8",
-     "name": "Fim - tempo total aprox. 16:05",
-     "kind": "endEvent",
-     "lane": "Lane_8f1cd308",
+     "id": "Node_g_agendar",
+     "name": "Médico pediu para agendar?",
+     "kind": "exclusiveGateway",
+     "lane": "Lane_medico",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 2045,
+     "y": 610,
+     "via": null,
+     "seq": 15,
+     "origin": "entrevista"
+    },
+    {
+     "id": "Node_fim_casa",
+     "name": "Fim - paciente vai embora",
+     "kind": "endEvent",
+     "lane": "Lane_medico",
+     "doc": "",
+     "gw": null,
+     "x": 2172,
+     "y": 617,
+     "via": "Não",
+     "seq": 17,
+     "origin": "entrevista"
+    },
+    {
+     "id": "Node_sobe",
+     "name": "Paciente sobe ao setor de marcação (2º andar, ao lado da lanchonete)",
+     "kind": "task",
+     "lane": "Lane_marcacao",
+     "doc": "Na entrevista: antes o agendamento era feito na recepção; hoje a marcação fica no andar de cima, para tirar o gargalo de quem espera exame e de quem vai marcar.",
+     "gw": null,
+     "x": 2120,
+     "y": 762,
+     "via": "Sim",
+     "seq": 16,
+     "origin": "entrevista"
+    },
+    {
+     "id": "Node_agenda",
+     "name": "Marcação agenda o que o médico pediu",
+     "kind": "task",
+     "lane": "Lane_marcacao",
+     "doc": "",
+     "gw": null,
+     "x": 2305,
+     "y": 768,
+     "via": null,
+     "seq": 18,
+     "origin": "entrevista"
+    },
+    {
+     "id": "Node_fim_agenda",
+     "name": "Fim - paciente agendado",
+     "kind": "endEvent",
+     "lane": "Lane_marcacao",
+     "doc": "",
+     "gw": null,
+     "x": 2462,
+     "y": 787,
+     "via": null,
+     "seq": 19,
+     "origin": "entrevista"
+    }
+   ],
+   "notes": [
+    {
+     "id": "Note_1605",
+     "text": "Tempo registrado no desenho original, só da etapa de consulta (do início do atendimento à entrega): aprox. 16:05"
     }
    ],
    "counts": {
-    "tasks": 6,
-    "gateways": 0,
-    "events": 2,
-    "flows": 7,
-    "lanes": 2
+    "tasks": 14,
+    "gateways": 3,
+    "events": 3,
+    "flows": 20,
+    "lanes": 5
    },
    "totalLabel": {
     "value": "16:05",
-    "note": "",
-    "text": "Fim - tempo total aprox. 16:05"
+    "note": "só a etapa de consulta",
+    "text": "Tempo registrado no desenho original, só da etapa de consulta (do início do atendimento à entrega): aprox. 16:05"
    }
   },
   {
@@ -341,167 +685,227 @@
    "title": "Teste de lente",
    "short": "Consulta de teste de lente",
    "poolName": "Processo 2 - Consulta teste de lente (Dr. Caio Coutinho - Cornea)",
-   "sourceFile": "Fluxograma_Teste_de_lente.bpm",
+   "sourceFile": "Diagrama_Teste_de_lente.bpmn",
    "bpmn": "bpmn/teste-de-lente.bpmn",
    "lanes": [
     {
-     "id": "Lane_09f740aa",
+     "id": "Id_09f740aa-0bf9-4208-a180-0e0305be1630",
      "name": "Paciente"
     },
     {
-     "id": "Lane_a6f10499",
+     "id": "Id_a6f10499-4c55-450c-be5d-3e2873be79b2",
      "name": "Medico"
     },
     {
-     "id": "Lane_e60989e7",
+     "id": "Id_e60989e7-da34-4995-b3b5-07460618a35e",
      "name": "Equipe pre-exame (mulheres do sistema)"
     },
     {
-     "id": "Lane_b1bed08d",
+     "id": "Id_b1bed08d-b673-4b59-a64b-cb7397beaa00",
      "name": "Equipe de lentes (mulher da lente)"
     }
    ],
    "nodes": [
     {
-     "id": "Node_5d57a86e",
+     "id": "Id_5d57a86e-81d1-4146-89cc-63b2a9636771",
      "name": "Inicio - paciente fidelizado chega para teste de lente",
      "kind": "startEvent",
-     "lane": "Lane_a6f10499",
+     "lane": "Id_a6f10499-4c55-450c-be5d-3e2873be79b2",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 128,
+     "y": 244,
+     "via": null,
+     "seq": 0,
+     "origin": "diagrama"
     },
     {
-     "id": "Node_7802e036",
+     "id": "Id_7802e036-ec88-4c05-a516-b8b828ffb870",
      "name": "Conversa inicial",
      "kind": "task",
-     "lane": "Lane_a6f10499",
+     "lane": "Id_a6f10499-4c55-450c-be5d-3e2873be79b2",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 337,
+     "y": 222,
+     "via": null,
+     "seq": 2,
+     "origin": "diagrama"
     },
     {
-     "id": "Node_33d2297c",
+     "id": "Id_33d2297c-56f8-4c85-ab46-352f51195005",
      "name": "Paciente trouxe os exames?",
      "kind": "exclusiveGateway",
-     "lane": "Lane_a6f10499",
+     "lane": "Id_a6f10499-4c55-450c-be5d-3e2873be79b2",
      "doc": "",
-     "gw": "Diverging"
+     "gw": null,
+     "x": 501,
+     "y": 232,
+     "via": null,
+     "seq": 3,
+     "origin": "diagrama"
     },
     {
-     "id": "Node_1e6197cc",
+     "id": "Id_1e6197cc-f10d-46af-a7a9-8975263ad902",
      "name": "Localizar / imprimir exame no sistema",
      "kind": "task",
-     "lane": "Lane_e60989e7",
+     "lane": "Id_e60989e7-da34-4995-b3b5-07460618a35e",
      "doc": "Fator variavel: se o consultorio estiver vazio, o exame pode ser refeito na hora (consulta mais longa); se estiver cheio, falta sala e o paciente precisa remarcar outro dia.",
-     "gw": null
+     "gw": null,
+     "x": 591,
+     "y": 353,
+     "via": "Não",
+     "seq": 4,
+     "origin": "diagrama"
     },
     {
-     "id": "Node_59ebf263",
+     "id": "Id_59ebf263-07b1-4f91-8d04-520213435b61",
      "name": "Exame em mãos",
      "kind": "exclusiveGateway",
-     "lane": "Lane_a6f10499",
+     "lane": "Id_a6f10499-4c55-450c-be5d-3e2873be79b2",
      "doc": "",
-     "gw": "Converging"
+     "gw": null,
+     "x": 714,
+     "y": 237,
+     "via": "Sim",
+     "seq": 5,
+     "origin": "diagrama"
     },
     {
-     "id": "Node_59421023",
-     "name": "Ir até a equipe de lentes buscar uma lente - tentativa 1",
+     "id": "Id_59421023-eaad-4843-b7f8-554ddbe490f6",
+     "name": "Ir até a equipe de lentes buscar uma lente",
      "kind": "task",
-     "lane": "Lane_a6f10499",
+     "lane": "Id_a6f10499-4c55-450c-be5d-3e2873be79b2",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 829,
+     "y": 222,
+     "via": "Não",
+     "seq": 6,
+     "origin": "diagrama"
     },
     {
-     "id": "Node_6a4f229c",
+     "id": "Id_6a4f229c-09b6-4905-91c4-e108545e5ddb",
      "name": "Pingar colírio para colorir a lente",
      "kind": "task",
-     "lane": "Lane_a6f10499",
+     "lane": "Id_a6f10499-4c55-450c-be5d-3e2873be79b2",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 970,
+     "y": 222,
+     "via": null,
+     "seq": 7,
+     "origin": "diagrama"
     },
     {
-     "id": "Node_0f33f858",
+     "id": "Id_0f33f858-a720-422a-b708-1f1187a534bb",
      "name": "Teste lâmpada de fenda - conferir tamanho da lente",
      "kind": "task",
-     "lane": "Lane_a6f10499",
+     "lane": "Id_a6f10499-4c55-450c-be5d-3e2873be79b2",
      "doc": "Lente nao serviu. Enquanto isso, o medico prepara o exame de letras para o teste de grau.",
-     "gw": null
+     "gw": null,
+     "x": 1131,
+     "y": 222,
+     "via": null,
+     "seq": 8,
+     "origin": "diagrama"
     },
     {
-     "id": "Node_5ccaed1a",
-     "name": "Retornar a equipe de lentes - tentativa 2",
-     "kind": "task",
-     "lane": "Lane_a6f10499",
-     "doc": "",
-     "gw": null
-    },
-    {
-     "id": "Node_b2671c12",
-     "name": "Pingar colírio para colorir a lente",
-     "kind": "task",
-     "lane": "Lane_a6f10499",
-     "doc": "",
-     "gw": null
-    },
-    {
-     "id": "Node_e682b7fb",
-     "name": "Teste lampada de fenda - lente aprovada",
-     "kind": "task",
-     "lane": "Lane_a6f10499",
-     "doc": "Teste de lente e sempre por tentativa e erro; pode haver mais rodadas do que as duas registradas aqui.",
-     "gw": null
-    },
-    {
-     "id": "Node_00ecd5c4",
+     "id": "Id_00ecd5c4-c827-4517-acc1-f1ef6863dc01",
      "name": "Exame de refração - máquina Grins, olho 1",
      "kind": "task",
-     "lane": "Lane_a6f10499",
+     "lane": "Id_a6f10499-4c55-450c-be5d-3e2873be79b2",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 1423,
+     "y": 222,
+     "via": "SIm",
+     "seq": 10,
+     "origin": "diagrama"
     },
     {
-     "id": "Node_70f71a00",
+     "id": "Id_70f71a00-3232-4b86-bab4-1b340305a225",
      "name": "Exame de refração - máquina Grins, olho 2",
      "kind": "task",
-     "lane": "Lane_a6f10499",
+     "lane": "Id_a6f10499-4c55-450c-be5d-3e2873be79b2",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 1573,
+     "y": 222,
+     "via": null,
+     "seq": 11,
+     "origin": "diagrama"
     },
     {
-     "id": "Node_90140c99",
+     "id": "Id_90140c99-7904-457b-8ca5-8d03ca606399",
      "name": "Fim - tempo total aprox. 41:52 (com 2 tentativas de lente)",
      "kind": "endEvent",
-     "lane": "Lane_a6f10499",
+     "lane": "Id_a6f10499-4c55-450c-be5d-3e2873be79b2",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 2036,
+     "y": 244,
+     "via": null,
+     "seq": 14,
+     "origin": "diagrama"
     },
     {
-     "id": "Node_8a0365e1",
+     "id": "Id_8a0365e1-8760-471e-ac68-ef5e983fd1da",
      "name": "Entrega de amostra de colírio, receita e explicação do caso",
      "kind": "task",
-     "lane": "Lane_a6f10499",
+     "lane": "Id_a6f10499-4c55-450c-be5d-3e2873be79b2",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 1881,
+     "y": 222,
+     "via": null,
+     "seq": 13,
+     "origin": "diagrama"
     },
     {
-     "id": "Node_715182ce",
+     "id": "Id_715182ce-4356-4b10-8822-edb3db8d0821",
      "name": "Preenchimento do relatório",
      "kind": "task",
-     "lane": "Lane_a6f10499",
+     "lane": "Id_a6f10499-4c55-450c-be5d-3e2873be79b2",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 1723,
+     "y": 222,
+     "via": null,
+     "seq": 12,
+     "origin": "diagrama"
     },
     {
-     "id": "Node_97909674",
+     "id": "Id_97909674-f91f-42f6-95ed-d53b75bde930",
      "name": "Passar pela catraca e identificação",
      "kind": "task",
-     "lane": "Lane_a6f10499",
+     "lane": "Id_a6f10499-4c55-450c-be5d-3e2873be79b2",
      "doc": "",
-     "gw": null
+     "gw": null,
+     "x": 203,
+     "y": 226,
+     "via": null,
+     "seq": 1,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_5b52d4fb-2bdd-4d72-8f01-bf171d300bd6",
+     "name": "lente aprovada?",
+     "kind": "exclusiveGateway",
+     "lane": "Id_a6f10499-4c55-450c-be5d-3e2873be79b2",
+     "doc": "",
+     "gw": null,
+     "x": 1305,
+     "y": 242,
+     "via": null,
+     "seq": 9,
+     "origin": "diagrama"
     }
    ],
+   "notes": [],
    "counts": {
-    "tasks": 13,
-    "gateways": 2,
+    "tasks": 10,
+    "gateways": 3,
     "events": 2,
     "flows": 17,
     "lanes": 4

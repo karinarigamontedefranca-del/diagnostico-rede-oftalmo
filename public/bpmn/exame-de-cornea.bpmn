@@ -1,98 +1,261 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Defs_exame-de-cornea" targetNamespace="http://skema.jr/rede-oftalmo">
-<bpmn:collaboration id="Collab_1"><bpmn:participant id="Pool_1" name="Processo 1 - Exame de cornea 2 (paciente nova)" processRef="Process_1" /></bpmn:collaboration>
-<bpmn:process id="Process_1" isExecutable="false">
-<bpmn:laneSet id="LaneSet_1">
-<bpmn:lane id="Lane_8f1cd308" name="Medico / tecnico do exame">
-<bpmn:flowNodeRef>Node_f2a0bc91</bpmn:flowNodeRef>
-<bpmn:flowNodeRef>Node_88223eaf</bpmn:flowNodeRef>
-<bpmn:flowNodeRef>Node_9b751611</bpmn:flowNodeRef>
-<bpmn:flowNodeRef>Node_cc76b057</bpmn:flowNodeRef>
-<bpmn:flowNodeRef>Node_1d49f06b</bpmn:flowNodeRef>
-<bpmn:flowNodeRef>Node_06f7c542</bpmn:flowNodeRef>
-<bpmn:flowNodeRef>Node_0eecc944</bpmn:flowNodeRef>
-<bpmn:flowNodeRef>Node_c76c27e8</bpmn:flowNodeRef>
+<bpmn:collaboration id="Collab_1"><bpmn:participant id="Pool_1" name="Processo 1 - Exame de cornea 2 (paciente nova) - da portaria à saída" processRef="Process_1" /></bpmn:collaboration>
+<bpmn:process id="Process_1" isExecutable="false"><bpmn:laneSet id="LaneSet_1">
+<bpmn:lane id="Lane_portaria" name="Portaria">
+<bpmn:flowNodeRef>Node_inicio</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_nome</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_lanca</bpmn:flowNodeRef>
 </bpmn:lane>
-<bpmn:lane id="Lane_9fb0f440" name="Enfermeira">
+<bpmn:lane id="Lane_recepcao" name="Recepção">
+<bpmn:flowNodeRef>Node_chama</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_ficha</bpmn:flowNodeRef>
+</bpmn:lane>
+<bpmn:lane id="Lane_enfermeira" name="Enfermeira">
+<bpmn:flowNodeRef>Node_recebe</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_g_pedido</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_exames</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_g_merge</bpmn:flowNodeRef>
+</bpmn:lane>
+<bpmn:lane id="Lane_medico" name="Medico / tecnico do exame">
+<bpmn:flowNodeRef>Node_entender</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_fenda</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_grau</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_grins</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_relatorio</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_entrega</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_g_agendar</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_fim_casa</bpmn:flowNodeRef>
+</bpmn:lane>
+<bpmn:lane id="Lane_marcacao" name="Marcação (2º andar)">
+<bpmn:flowNodeRef>Node_sobe</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_agenda</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Node_fim_agenda</bpmn:flowNodeRef>
 </bpmn:lane>
 </bpmn:laneSet>
-<bpmn:startEvent id="Node_f2a0bc91" name="Inicio - paciente chega para exame">
-<bpmn:outgoing>Flow_9cef9cb2</bpmn:outgoing>
+<bpmn:startEvent id="Node_inicio" name="Inicio - paciente chega na portaria">
+<bpmn:outgoing>Flow_1</bpmn:outgoing>
 </bpmn:startEvent>
-<bpmn:task id="Node_88223eaf" name="Entender o caso do paciente">
-<bpmn:incoming>Flow_9cef9cb2</bpmn:incoming>
-<bpmn:outgoing>Flow_01f4ed4a</bpmn:outgoing>
+<bpmn:task id="Node_nome" name="Paciente informa o nome na portaria">
+<bpmn:incoming>Flow_1</bpmn:incoming>
+<bpmn:outgoing>Flow_2</bpmn:outgoing>
 </bpmn:task>
-<bpmn:task id="Node_9b751611" name="Teste na lâmpada de fenda">
-<bpmn:incoming>Flow_01f4ed4a</bpmn:incoming>
-<bpmn:outgoing>Flow_90c1959f</bpmn:outgoing>
+<bpmn:task id="Node_lanca" name="Porteiro lança o paciente no sistema (córnea) e o direciona para a recepção">
+<bpmn:documentation>Segundo a entrevista, o porteiro lança o paciente para a córnea e o direciona para baixo, onde a recepção o chama.</bpmn:documentation>
+<bpmn:incoming>Flow_2</bpmn:incoming>
+<bpmn:outgoing>Flow_3</bpmn:outgoing>
 </bpmn:task>
-<bpmn:task id="Node_cc76b057" name="Medir o grau dos óculos do paciente">
+<bpmn:task id="Node_chama" name="Recepção chama o paciente">
+<bpmn:incoming>Flow_3</bpmn:incoming>
+<bpmn:outgoing>Flow_4</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Node_ficha" name="Recepção faz a ficha do paciente">
+<bpmn:incoming>Flow_4</bpmn:incoming>
+<bpmn:outgoing>Flow_5</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Node_recebe" name="Paciente leva a ficha e a equipe da córnea a recebe">
+<bpmn:documentation>Raia “Enfermeira” assumida a partir de “a gente faz o exame” na entrevista; confirmar o cargo de quem recebe a ficha e faz os exames.</bpmn:documentation>
+<bpmn:incoming>Flow_5</bpmn:incoming>
+<bpmn:outgoing>Flow_6</bpmn:outgoing>
+</bpmn:task>
+<bpmn:exclusiveGateway id="Node_g_pedido" name="Paciente chegou com exames pedidos?">
+<bpmn:incoming>Flow_6</bpmn:incoming>
+<bpmn:outgoing>Flow_7</bpmn:outgoing>
+<bpmn:outgoing>Flow_8</bpmn:outgoing>
+</bpmn:exclusiveGateway>
+<bpmn:task id="Node_exames" name="Equipe faz os exames (microscopia, topografia, paquimetria, autorefrator e tonometria)">
+<bpmn:documentation>Lista citada na entrevista: microscopia, topografia, paquimetria (trecho pouco claro no áudio), autorefrator e tonometria. O pedido vem da última consulta ou do médico.</bpmn:documentation>
+<bpmn:incoming>Flow_7</bpmn:incoming>
+<bpmn:outgoing>Flow_9</bpmn:outgoing>
+</bpmn:task>
+<bpmn:exclusiveGateway id="Node_g_merge">
+<bpmn:incoming>Flow_8</bpmn:incoming>
+<bpmn:incoming>Flow_9</bpmn:incoming>
+<bpmn:outgoing>Flow_10</bpmn:outgoing>
+</bpmn:exclusiveGateway>
+<bpmn:task id="Node_entender" name="Entender o caso do paciente">
+<bpmn:incoming>Flow_10</bpmn:incoming>
+<bpmn:outgoing>Flow_11</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Node_fenda" name="Teste na lâmpada de fenda">
+<bpmn:incoming>Flow_11</bpmn:incoming>
+<bpmn:outgoing>Flow_12</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Node_grau" name="Medir o grau dos óculos do paciente">
 <bpmn:documentation>Executado em paralelo ao teste de lampada de fenda (T2), a pedido do medico.</bpmn:documentation>
-<bpmn:incoming>Flow_90c1959f</bpmn:incoming>
-<bpmn:outgoing>Flow_b1994933</bpmn:outgoing>
+<bpmn:incoming>Flow_12</bpmn:incoming>
+<bpmn:outgoing>Flow_13</bpmn:outgoing>
 </bpmn:task>
-<bpmn:task id="Node_1d49f06b" name="Exame de refração - máquina Grins">
-<bpmn:incoming>Flow_b1994933</bpmn:incoming>
-<bpmn:outgoing>Flow_d6a6a9eb</bpmn:outgoing>
+<bpmn:task id="Node_grins" name="Exame de refração - máquina Grins">
+<bpmn:incoming>Flow_13</bpmn:incoming>
+<bpmn:outgoing>Flow_14</bpmn:outgoing>
 </bpmn:task>
-<bpmn:task id="Node_06f7c542" name="Preenchimento do relatório">
-<bpmn:incoming>Flow_d6a6a9eb</bpmn:incoming>
-<bpmn:outgoing>Flow_741208bf</bpmn:outgoing>
+<bpmn:task id="Node_relatorio" name="Preenchimento do relatório">
+<bpmn:incoming>Flow_14</bpmn:incoming>
+<bpmn:outgoing>Flow_15</bpmn:outgoing>
 </bpmn:task>
-<bpmn:task id="Node_0eecc944" name="Entrega de amostra de colírio, receita e explicação do caso">
-<bpmn:incoming>Flow_741208bf</bpmn:incoming>
-<bpmn:outgoing>Flow_97b839f2</bpmn:outgoing>
+<bpmn:task id="Node_entrega" name="Entrega de amostra de colírio, receita e explicação do caso">
+<bpmn:incoming>Flow_15</bpmn:incoming>
+<bpmn:outgoing>Flow_16</bpmn:outgoing>
 </bpmn:task>
-<bpmn:endEvent id="Node_c76c27e8" name="Fim - tempo total aprox. 16:05">
-<bpmn:incoming>Flow_97b839f2</bpmn:incoming>
+<bpmn:exclusiveGateway id="Node_g_agendar" name="Médico pediu para agendar?">
+<bpmn:incoming>Flow_16</bpmn:incoming>
+<bpmn:outgoing>Flow_17</bpmn:outgoing>
+<bpmn:outgoing>Flow_18</bpmn:outgoing>
+</bpmn:exclusiveGateway>
+<bpmn:endEvent id="Node_fim_casa" name="Fim - paciente vai embora">
+<bpmn:incoming>Flow_17</bpmn:incoming>
 </bpmn:endEvent>
-<bpmn:sequenceFlow id="Flow_9cef9cb2" sourceRef="Node_f2a0bc91" targetRef="Node_88223eaf" />
-<bpmn:sequenceFlow id="Flow_01f4ed4a" sourceRef="Node_88223eaf" targetRef="Node_9b751611" />
-<bpmn:sequenceFlow id="Flow_90c1959f" sourceRef="Node_9b751611" targetRef="Node_cc76b057" />
-<bpmn:sequenceFlow id="Flow_b1994933" sourceRef="Node_cc76b057" targetRef="Node_1d49f06b" />
-<bpmn:sequenceFlow id="Flow_d6a6a9eb" sourceRef="Node_1d49f06b" targetRef="Node_06f7c542" />
-<bpmn:sequenceFlow id="Flow_741208bf" sourceRef="Node_06f7c542" targetRef="Node_0eecc944" />
-<bpmn:sequenceFlow id="Flow_97b839f2" sourceRef="Node_0eecc944" targetRef="Node_c76c27e8" />
+<bpmn:task id="Node_sobe" name="Paciente sobe ao setor de marcação (2º andar, ao lado da lanchonete)">
+<bpmn:documentation>Na entrevista: antes o agendamento era feito na recepção; hoje a marcação fica no andar de cima, para tirar o gargalo de quem espera exame e de quem vai marcar.</bpmn:documentation>
+<bpmn:incoming>Flow_18</bpmn:incoming>
+<bpmn:outgoing>Flow_19</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Node_agenda" name="Marcação agenda o que o médico pediu">
+<bpmn:incoming>Flow_19</bpmn:incoming>
+<bpmn:outgoing>Flow_20</bpmn:outgoing>
+</bpmn:task>
+<bpmn:endEvent id="Node_fim_agenda" name="Fim - paciente agendado">
+<bpmn:incoming>Flow_20</bpmn:incoming>
+</bpmn:endEvent>
+<bpmn:sequenceFlow id="Flow_1" sourceRef="Node_inicio" targetRef="Node_nome" />
+<bpmn:sequenceFlow id="Flow_2" sourceRef="Node_nome" targetRef="Node_lanca" />
+<bpmn:sequenceFlow id="Flow_3" sourceRef="Node_lanca" targetRef="Node_chama" />
+<bpmn:sequenceFlow id="Flow_4" sourceRef="Node_chama" targetRef="Node_ficha" />
+<bpmn:sequenceFlow id="Flow_5" sourceRef="Node_ficha" targetRef="Node_recebe" />
+<bpmn:sequenceFlow id="Flow_6" sourceRef="Node_recebe" targetRef="Node_g_pedido" />
+<bpmn:sequenceFlow id="Flow_7" sourceRef="Node_g_pedido" targetRef="Node_exames" name="Sim" />
+<bpmn:sequenceFlow id="Flow_8" sourceRef="Node_g_pedido" targetRef="Node_g_merge" name="Não" />
+<bpmn:sequenceFlow id="Flow_9" sourceRef="Node_exames" targetRef="Node_g_merge" />
+<bpmn:sequenceFlow id="Flow_10" sourceRef="Node_g_merge" targetRef="Node_entender" />
+<bpmn:sequenceFlow id="Flow_11" sourceRef="Node_entender" targetRef="Node_fenda" />
+<bpmn:sequenceFlow id="Flow_12" sourceRef="Node_fenda" targetRef="Node_grau" />
+<bpmn:sequenceFlow id="Flow_13" sourceRef="Node_grau" targetRef="Node_grins" />
+<bpmn:sequenceFlow id="Flow_14" sourceRef="Node_grins" targetRef="Node_relatorio" />
+<bpmn:sequenceFlow id="Flow_15" sourceRef="Node_relatorio" targetRef="Node_entrega" />
+<bpmn:sequenceFlow id="Flow_16" sourceRef="Node_entrega" targetRef="Node_g_agendar" />
+<bpmn:sequenceFlow id="Flow_17" sourceRef="Node_g_agendar" targetRef="Node_fim_casa" name="Não" />
+<bpmn:sequenceFlow id="Flow_18" sourceRef="Node_g_agendar" targetRef="Node_sobe" name="Sim" />
+<bpmn:sequenceFlow id="Flow_19" sourceRef="Node_sobe" targetRef="Node_agenda" />
+<bpmn:sequenceFlow id="Flow_20" sourceRef="Node_agenda" targetRef="Node_fim_agenda" />
+<bpmn:textAnnotation id="Note_1605"><bpmn:text>Tempo registrado no desenho original, só da etapa de consulta (do início do atendimento à entrega): aprox. 16:05</bpmn:text></bpmn:textAnnotation>
+<bpmn:association id="Assoc_2" sourceRef="Note_1605" targetRef="Node_entrega" />
 </bpmn:process>
 <bpmndi:BPMNDiagram id="Diagram_1"><bpmndi:BPMNPlane id="Plane_1" bpmnElement="Collab_1">
-<bpmndi:BPMNShape id="Pool_1_di" bpmnElement="Pool_1" isHorizontal="true"><dc:Bounds x="80" y="80" width="1326" height="361" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Lane_8f1cd308_di" bpmnElement="Lane_8f1cd308" isHorizontal="true"><dc:Bounds x="130" y="80" width="1276" height="180" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Lane_9fb0f440_di" bpmnElement="Lane_9fb0f440" isHorizontal="true"><dc:Bounds x="130" y="260" width="1276" height="181" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_f2a0bc91_di" bpmnElement="Node_f2a0bc91"><dc:Bounds x="203" y="152" width="36" height="36" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_88223eaf_di" bpmnElement="Node_88223eaf"><dc:Bounds x="290" y="130" width="100" height="80" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_9b751611_di" bpmnElement="Node_9b751611"><dc:Bounds x="440" y="130" width="100" height="80" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_cc76b057_di" bpmnElement="Node_cc76b057"><dc:Bounds x="593" y="130" width="100" height="80" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_1d49f06b_di" bpmnElement="Node_1d49f06b"><dc:Bounds x="757" y="130" width="100" height="80" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_06f7c542_di" bpmnElement="Node_06f7c542"><dc:Bounds x="925" y="130" width="100" height="80" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_0eecc944_di" bpmnElement="Node_0eecc944"><dc:Bounds x="1081" y="130" width="100" height="80" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_c76c27e8_di" bpmnElement="Node_c76c27e8"><dc:Bounds x="1242" y="152" width="36" height="36" /></bpmndi:BPMNShape>
-<bpmndi:BPMNEdge id="Flow_9cef9cb2_di" bpmnElement="Flow_9cef9cb2">
-<di:waypoint x="239" y="170" />
-<di:waypoint x="290" y="170" />
+<bpmndi:BPMNShape id="Pool_1_di" bpmnElement="Pool_1" isHorizontal="true"><dc:Bounds x="10" y="40" width="2528" height="850" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Lane_portaria_di" bpmnElement="Lane_portaria" isHorizontal="true"><dc:Bounds x="50" y="40" width="2448" height="170" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Lane_recepcao_di" bpmnElement="Lane_recepcao" isHorizontal="true"><dc:Bounds x="50" y="210" width="2448" height="170" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Lane_enfermeira_di" bpmnElement="Lane_enfermeira" isHorizontal="true"><dc:Bounds x="50" y="380" width="2448" height="170" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Lane_medico_di" bpmnElement="Lane_medico" isHorizontal="true"><dc:Bounds x="50" y="550" width="2448" height="170" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Lane_marcacao_di" bpmnElement="Lane_marcacao" isHorizontal="true"><dc:Bounds x="50" y="720" width="2448" height="170" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_inicio_di" bpmnElement="Node_inicio"><dc:Bounds x="122" y="107" width="36" height="36" /><bpmndi:BPMNLabel><dc:Bounds x="65" y="147" width="90" height="36" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_nome_di" bpmnElement="Node_nome"><dc:Bounds x="215" y="88" width="110" height="74" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_lanca_di" bpmnElement="Node_lanca"><dc:Bounds x="360" y="82" width="140" height="86" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_chama_di" bpmnElement="Node_chama"><dc:Bounds x="360" y="258" width="140" height="74" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_ficha_di" bpmnElement="Node_ficha"><dc:Bounds x="535" y="258" width="110" height="74" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_recebe_di" bpmnElement="Node_recebe"><dc:Bounds x="535" y="428" width="110" height="74" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_g_pedido_di" bpmnElement="Node_g_pedido" isMarkerVisible="true"><dc:Bounds x="705" y="440" width="50" height="50" /><bpmndi:BPMNLabel><dc:Bounds x="665" y="394" width="90" height="36" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_exames_di" bpmnElement="Node_exames"><dc:Bounds x="805" y="413" width="170" height="104" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_g_merge_di" bpmnElement="Node_g_merge" isMarkerVisible="true"><dc:Bounds x="1025" y="440" width="50" height="50" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_entender_di" bpmnElement="Node_entender"><dc:Bounds x="1135" y="598" width="110" height="74" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_fenda_di" bpmnElement="Node_fenda"><dc:Bounds x="1280" y="598" width="110" height="74" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_grau_di" bpmnElement="Node_grau"><dc:Bounds x="1425" y="598" width="110" height="74" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_grins_di" bpmnElement="Node_grins"><dc:Bounds x="1570" y="598" width="110" height="74" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_relatorio_di" bpmnElement="Node_relatorio"><dc:Bounds x="1715" y="598" width="110" height="74" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_entrega_di" bpmnElement="Node_entrega"><dc:Bounds x="1865" y="593" width="130" height="84" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_g_agendar_di" bpmnElement="Node_g_agendar" isMarkerVisible="true"><dc:Bounds x="2045" y="610" width="50" height="50" /><bpmndi:BPMNLabel><dc:Bounds x="2005" y="564" width="90" height="36" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_fim_casa_di" bpmnElement="Node_fim_casa"><dc:Bounds x="2172" y="617" width="36" height="36" /><bpmndi:BPMNLabel><dc:Bounds x="2115" y="657" width="90" height="36" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_sobe_di" bpmnElement="Node_sobe"><dc:Bounds x="2120" y="762" width="140" height="86" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_agenda_di" bpmnElement="Node_agenda"><dc:Bounds x="2305" y="768" width="110" height="74" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Node_fim_agenda_di" bpmnElement="Node_fim_agenda"><dc:Bounds x="2462" y="787" width="36" height="36" /><bpmndi:BPMNLabel><dc:Bounds x="2405" y="827" width="90" height="36" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Note_1605_di" bpmnElement="Note_1605"><dc:Bounds x="1760" y="388" width="260" height="84" /></bpmndi:BPMNShape>
+<bpmndi:BPMNEdge id="Flow_1_di" bpmnElement="Flow_1">
+<di:waypoint x="158" y="125" />
+<di:waypoint x="215" y="125" />
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="Flow_01f4ed4a_di" bpmnElement="Flow_01f4ed4a">
-<di:waypoint x="390" y="170" />
-<di:waypoint x="440" y="170" />
+<bpmndi:BPMNEdge id="Flow_2_di" bpmnElement="Flow_2">
+<di:waypoint x="325" y="125" />
+<di:waypoint x="360" y="125" />
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="Flow_90c1959f_di" bpmnElement="Flow_90c1959f">
-<di:waypoint x="540" y="170" />
-<di:waypoint x="593" y="170" />
+<bpmndi:BPMNEdge id="Flow_3_di" bpmnElement="Flow_3">
+<di:waypoint x="430" y="168" />
+<di:waypoint x="430" y="258" />
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="Flow_b1994933_di" bpmnElement="Flow_b1994933">
-<di:waypoint x="693" y="170" />
-<di:waypoint x="757" y="170" />
+<bpmndi:BPMNEdge id="Flow_4_di" bpmnElement="Flow_4">
+<di:waypoint x="500" y="295" />
+<di:waypoint x="535" y="295" />
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="Flow_d6a6a9eb_di" bpmnElement="Flow_d6a6a9eb">
-<di:waypoint x="857" y="170" />
-<di:waypoint x="925" y="170" />
+<bpmndi:BPMNEdge id="Flow_5_di" bpmnElement="Flow_5">
+<di:waypoint x="590" y="332" />
+<di:waypoint x="590" y="428" />
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="Flow_741208bf_di" bpmnElement="Flow_741208bf">
-<di:waypoint x="1025" y="170" />
-<di:waypoint x="1081" y="170" />
+<bpmndi:BPMNEdge id="Flow_6_di" bpmnElement="Flow_6">
+<di:waypoint x="645" y="465" />
+<di:waypoint x="705" y="465" />
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="Flow_97b839f2_di" bpmnElement="Flow_97b839f2">
-<di:waypoint x="1181" y="170" />
-<di:waypoint x="1242" y="170" />
+<bpmndi:BPMNEdge id="Flow_7_di" bpmnElement="Flow_7">
+<di:waypoint x="755" y="465" />
+<di:waypoint x="805" y="465" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_8_di" bpmnElement="Flow_8">
+<di:waypoint x="730" y="490" />
+<di:waypoint x="730" y="536" />
+<di:waypoint x="1050" y="536" />
+<di:waypoint x="1050" y="490" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_9_di" bpmnElement="Flow_9">
+<di:waypoint x="975" y="465" />
+<di:waypoint x="1025" y="465" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_10_di" bpmnElement="Flow_10">
+<di:waypoint x="1075" y="465" />
+<di:waypoint x="1120" y="465" />
+<di:waypoint x="1120" y="635" />
+<di:waypoint x="1135" y="635" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_11_di" bpmnElement="Flow_11">
+<di:waypoint x="1245" y="635" />
+<di:waypoint x="1280" y="635" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_12_di" bpmnElement="Flow_12">
+<di:waypoint x="1390" y="635" />
+<di:waypoint x="1425" y="635" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_13_di" bpmnElement="Flow_13">
+<di:waypoint x="1535" y="635" />
+<di:waypoint x="1570" y="635" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_14_di" bpmnElement="Flow_14">
+<di:waypoint x="1680" y="635" />
+<di:waypoint x="1715" y="635" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_15_di" bpmnElement="Flow_15">
+<di:waypoint x="1825" y="635" />
+<di:waypoint x="1865" y="635" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_16_di" bpmnElement="Flow_16">
+<di:waypoint x="1995" y="635" />
+<di:waypoint x="2045" y="635" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_17_di" bpmnElement="Flow_17">
+<di:waypoint x="2095" y="635" />
+<di:waypoint x="2172" y="635" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_18_di" bpmnElement="Flow_18">
+<di:waypoint x="2070" y="660" />
+<di:waypoint x="2070" y="805" />
+<di:waypoint x="2120" y="805" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_19_di" bpmnElement="Flow_19">
+<di:waypoint x="2260" y="805" />
+<di:waypoint x="2305" y="805" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Flow_20_di" bpmnElement="Flow_20">
+<di:waypoint x="2415" y="805" />
+<di:waypoint x="2462" y="805" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Assoc_2_di" bpmnElement="Assoc_2">
+<di:waypoint x="1930" y="472" />
+<di:waypoint x="1930" y="593" />
 </bpmndi:BPMNEdge>
 </bpmndi:BPMNPlane></bpmndi:BPMNDiagram></bpmn:definitions>

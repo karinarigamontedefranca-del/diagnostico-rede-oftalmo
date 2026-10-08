@@ -17,7 +17,7 @@ export default function ProcessPage({ data, id, step }: { data: Dataset; id: str
   const all = journey.flatMap((s) => s.samples.map((x) => x.seconds))
   const kpis: [string, string][] = journey.length
     ? [[String(p.counts.tasks), 'tarefas no fluxograma'], [String(journey.length), 'etapas cronometradas'], [String(all.reduce((a) => a + 1, 0)), 'medições válidas'], [fmt(Math.min(...all)), 'menor tempo observado'], [fmt(Math.max(...all)), 'maior tempo observado']]
-    : [[String(p.counts.tasks), 'tarefas no fluxograma'], [String(p.counts.lanes), 'raias (equipes)'], [String(p.counts.gateways), 'decisões'], ...(p.totalLabel ? ([[p.totalLabel.value, 'tempo total registrado no diagrama (mm:ss)']] as [string, string][]) : [])]
+    : [[String(p.counts.tasks), 'tarefas no fluxograma'], [String(p.counts.lanes), 'raias (equipes)'], [String(p.counts.gateways), 'decisões'], ...(p.totalLabel ? ([[p.totalLabel.value, `tempo registrado no diagrama (mm:ss)${p.totalLabel.note ? ` · ${p.totalLabel.note}` : ''}`]] as [string, string][]) : [])]
 
   return (
     <main style={{ paddingTop: 150 }}>
@@ -36,10 +36,13 @@ export default function ProcessPage({ data, id, step }: { data: Dataset; id: str
           <p className="lead measure" style={{ marginBottom: 24 }}>
             {journey.length ? 'Etapas destacadas em azul têm medições associadas; clique em uma etapa ou raia para ver tempo médio, menor e maior tempo.' : 'Clique em uma etapa para ver a raia responsável e as observações do diagrama.'}
           </p>
+          {p.nodes.some((n) => n.origin && n.origin !== 'diagrama') && (
+            <div className="legend"><span><i />Etapa do desenho original</span><span><i className="dash" />Etapa acrescentada com base na entrevista</span></div>
+          )}
           <BpmnViewer key={p.id} process={p} steps={steps} focusStep={step} />
           {p.totalLabel && (
             <p style={{ marginTop: 16, color: 'var(--color-muted)' }}>
-              Evento final do diagrama: “{p.totalLabel.text}”. Este é o único tempo registrado no fluxograma; ele não vem da planilha de cronoanálise.
+              No diagrama: “{p.totalLabel.text}”. É o único tempo escrito no fluxograma; ele não vem da planilha de cronoanálise.
             </p>
           )}
         </section>
@@ -66,7 +69,7 @@ export default function ProcessPage({ data, id, step }: { data: Dataset; id: str
               const ss = steps.filter((s) => s.link.nodes.includes(t.id))
               return (
                 <div key={t.id} style={{ display: 'grid', gridTemplateColumns: 'minmax(220px,2fr) minmax(120px,1fr) minmax(120px,1fr)', gap: 16, padding: '14px 0', borderBottom: '1px solid var(--color-line)' }}>
-                  <div><b>{t.name}</b>{t.doc && <div style={{ color: 'var(--color-muted)', fontSize: 14 }}>{t.doc}</div>}</div>
+                  <div><b>{t.name}</b>{t.origin && t.origin !== 'diagrama' && <span className="pill" style={{ marginLeft: 8 }}>entrevista</span>}{t.doc && <div style={{ color: 'var(--color-muted)', fontSize: 14 }}>{t.doc}</div>}</div>
                   <div style={{ color: 'var(--color-muted)' }}>{p.lanes.find((l) => l.id === t.lane)?.name}</div>
                   <div className="num">{ss.length ? ss.map((s) => `${s.label}: ${fmt(s.mean, { compact: true })}`).join(' · ') : <span style={{ color: 'var(--color-muted)' }}>—</span>}</div>
                 </div>

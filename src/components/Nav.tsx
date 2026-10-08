@@ -23,8 +23,10 @@ export default function Nav({ route, processes }: { route: Route; processes: Pro
           <Logo who="skema" className="h-9" /><span aria-hidden style={{ color: 'var(--color-muted)' }}>×</span><Logo who="oftalmo" className="h-9" />
         </a>
         <div className="hidden md:flex" style={{ gap: 22, marginLeft: 'auto', alignItems: 'center' }}>
+          <a href="#jornada" onClick={toSection('jornada')}>Jornada</a>
           <a href="#visao-geral" onClick={toSection('visao-geral')}>Visão geral</a>
           <a href="#dashboard" onClick={toSection('dashboard')}>Dashboard</a>
+          <a href="#cronograma" onClick={toSection('cronograma')}>Cronograma</a>
           <a href="#processos" onClick={toSection('processos')} className={route.name === 'process' ? 'on' : ''}>Processos</a>
           <a href="#notas" onClick={toSection('notas')}>Notas sobre os dados</a>
         </div>

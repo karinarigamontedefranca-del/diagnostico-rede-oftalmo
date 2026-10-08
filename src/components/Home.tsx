@@ -1,7 +1,8 @@
 import { useMemo, useState } from 'react'
 import { Logo } from './Brand'
-import { Dataset, JOURNEY, describe, fmt } from '../lib/data'
+import { Dataset, JOURNEY, WD, describe, fmt, planDate, weekday } from '../lib/data'
 import { goProcess as go } from '../lib/router'
+import Journey from './Journey'
 
 function Section({ id, kicker, title, lead, children }: { id: string; kicker: string; title: string; lead?: string; children: React.ReactNode }) {
   return (
@@ -19,11 +20,11 @@ function Section({ id, kicker, title, lead, children }: { id: string; kicker: st
 
 export default function Home({ data }: { data: Dataset }) {
   const { processes, m } = data
+  const plan = m.plan
   const journey = JOURNEY(m.steps)
   const totalN = journey.reduce((a, s) => a + s.n, 0)
   const all = journey.flatMap((s) => s.samples.map((x) => ({ ...x, step: s })))
   const lo = all.reduce((a, b) => (b.seconds < a.seconds ? b : a))
-  const hi = all.reduce((a, b) => (b.seconds > a.seconds ? b : a))
   const tasks = processes.reduce((a, p) => a + p.counts.tasks, 0)
   const byMean = [...journey].sort((a, b) => b.mean - a.mean)
   const byN = [...journey].sort((a, b) => b.n - a.n)
@@ -51,16 +52,15 @@ export default function Home({ data }: { data: Dataset }) {
         </div>
       </section>
 
+      <Journey data={data} />
+
       {/* Visão geral */}
       <Section id="visao-geral" kicker="Visão geral" title="O projeto em números">
         <div className="ledger">
           {[
-            [String(processes.length), '', 'Processos mapeados', processes.map((p) => p.title).join(' · ')],
             [String(tasks), '', 'Tarefas desenhadas nos fluxogramas', `${processes.map((p) => `${p.title}: ${p.counts.tasks}`).join(' · ')}`],
-            [String(journey.length), '', 'Etapas cronometradas', 'Todas no processo de Glaucoma'],
             [String(totalN), '', 'Medições válidas', 'Cada etapa tem sua própria contagem de pacientes observados'],
-            [fmt(lo.seconds), '', 'Menor tempo observado', `${lo.step.label} · linha ${lo.row} da planilha`],
-            [fmt(hi.seconds), '', 'Maior tempo observado', `${hi.step.label} · linha ${hi.row} da planilha — acima do padrão das demais, vale conferir`],
+            [fmt(lo.seconds), '', 'Menor tempo observado', `${lo.step.label} · linha ${lo.row} da planilha${lo.seconds === 0 ? ' · início e fim no mesmo minuto' : ''}`],
           ].map(([v, u, l, d]) => (
             <div className="row" key={l}>
               <div className="big num">{v}<small>{u}</small></div>
@@ -100,9 +100,48 @@ export default function Home({ data }: { data: Dataset }) {
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 24 }}>
-            <Extreme tone="amber" title="Maior tempo individual" step={hi.step.label} value={fmt(hi.seconds)} note={`linha ${hi.row} da planilha${hi.start ? ` · ${hi.start}–${hi.end}` : ''}`} />
-            <Extreme tone="iris" title="Menor tempo individual" step={lo.step.label} value={fmt(lo.seconds)} note={`linha ${lo.row} da planilha`} />
+            <Extreme tone="iris" title="Menor tempo individual" step={lo.step.label} value={fmt(lo.seconds)} note={`linha ${lo.row} da planilha${lo.seconds === 0 ? ' · início e fim no mesmo minuto' : ''}`} />
             <Extreme tone="amber" title="Maior tempo médio" step={byMean[0].label} value={fmt(byMean[0].mean)} note={`${byMean[0].n} medições`} />
+          </div>
+        </div>
+      </Section>
+
+      {/* Cronograma de coleta */}
+      <Section id="cronograma" kicker="Próximas coletas" title={`${plan.visits} visitas para fechar as ${plan.target} medições`}
+        lead={`Meta de ${plan.target} medições por etapa, com cerca de ${plan.perVisit} novas por visita e ${plan.perWeek} visitas por semana. Ficam de fora desta conta: ${plan.excluded.join(', ').replace(/, ([^,]*)$/, ' e $1')}.`}>
+        <div className="plan-kpis">
+          <div><b className="num">{plan.visits}</b><span>visitas necessárias</span></div>
+          <div><b className="num">{plan.perVisit}</b><span>medições por visita (média)</span></div>
+          <div><b className="num">{planDate(plan.end)}</b><span>{weekday(plan.end)} · fim das medições</span></div>
+          <div><b className="num">{Math.max(...plan.steps.map((s) => s.missing))}</b><span>medições a mais na etapa mais atrasada ({plan.steps.reduce((a, b) => (b.missing > a.missing ? b : a)).label})</span></div>
+        </div>
+        <div className="plan-grid">
+          <div>
+            <h3 style={{ fontSize: 20, marginBottom: 6 }}>Onde cada etapa está hoje</h3>
+            <p style={{ color: 'var(--color-muted)', marginTop: 0 }}>Barra escura: medições já feitas. Barra clara: o que falta para {plan.target}.</p>
+            {[...plan.steps].sort((a, b) => b.missing - a.missing).map((s) => (
+              <div key={s.id} className={`plan-row ${s.visits === plan.visits ? 'hot' : ''}`}>
+                <span>{s.label}</span>
+                <span className="trk" title={`${s.n} feitas · faltam ${s.missing}`}><i style={{ width: `${Math.min(100, (s.n / plan.target) * 100)}%` }} /><u style={{ left: `${Math.min(100, (s.n / plan.target) * 100)}%`, right: 0 }} /></span>
+                <span className="v num">{s.n} / {plan.target}</span>
+              </div>
+            ))}
+          </div>
+          <div>
+            <h3 style={{ fontSize: 20, marginBottom: 6 }}>Calendário das visitas</h3>
+            <p style={{ color: 'var(--color-muted)', marginTop: 0 }}>Seguindo os mesmos dias da semana das últimas coletas ({plan.weekdays.map((w) => WD[w]).join(' e ')}), a partir de {planDate(plan.schedule[0].date)}.</p>
+            {plan.schedule.map((v, i) => (
+              <div key={v.n} className={`visit ${i === plan.schedule.length - 1 ? 'last' : ''}`}>
+                <div className="d"><small>{weekday(v.date).slice(0, 3)}</small><b className="num">{planDate(v.date)}</b></div>
+                <div>
+                  <div style={{ fontWeight: 600 }}>Visita {v.n}</div>
+                  <div style={{ color: 'var(--color-muted)', fontSize: 14 }}>
+                    {v.closes.length ? `Completam ${plan.target}: ${v.closes.join(', ')}.` : 'Nenhuma etapa fecha a meta ainda.'} A etapa mais atrasada chega a {v.lowest} de {plan.target}.
+                  </div>
+                </div>
+              </div>
+            ))}
+            <p style={{ color: 'var(--color-muted)', fontSize: 13, marginTop: 16 }}>Se a visita de {planDate(plan.schedule[0].date)} não acontecer, o fim passa para {planDate(plan.next)} ({weekday(plan.next)}).</p>
           </div>
         </div>
       </Section>
@@ -123,7 +162,7 @@ export default function Home({ data }: { data: Dataset }) {
                 <dl style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, margin: 0 }}>
                   <div><dd className="big num" style={{ fontSize: 34, margin: 0 }}>{p.counts.tasks}</dd><dt style={{ fontSize: 13, color: 'var(--color-muted)' }}>tarefas</dt></div>
                   <div><dd className="big num" style={{ fontSize: 34, margin: 0 }}>{p.counts.lanes}</dd><dt style={{ fontSize: 13, color: 'var(--color-muted)' }}>raias</dt></div>
-                  <div><dd className="big num" style={{ fontSize: 34, margin: 0 }}>{st.length ? st.length : p.totalLabel ? p.totalLabel.value : '—'}</dd><dt style={{ fontSize: 13, color: 'var(--color-muted)' }}>{st.length ? 'etapas medidas' : p.totalLabel ? 'tempo total no diagrama' : ''}</dt></div>
+                  <div><dd className="big num" style={{ fontSize: 34, margin: 0 }}>{st.length ? st.length : p.totalLabel ? p.totalLabel.value : '—'}</dd><dt style={{ fontSize: 13, color: 'var(--color-muted)' }}>{st.length ? 'etapas medidas' : p.totalLabel ? 'tempo no diagrama' : ''}</dt></div>
                 </dl>
               </a>
             )

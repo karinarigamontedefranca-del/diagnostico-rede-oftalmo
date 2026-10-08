@@ -28,8 +28,23 @@ export default function Home({ data }: { data: Dataset }) {
   const journey = JOURNEY(m.steps)
   const totalN = journey.reduce((a, s) => a + s.n, 0)
   const all = journey.flatMap((s) => s.samples.map((x) => ({ ...x, step: s })))
-  const lo = all.reduce((a, b) => (b.seconds < a.seconds ? b : a))
+  const lo = all.filter((x) => x.seconds > 0).reduce((a, b) => (b.seconds < a.seconds ? b : a))
   const byMean = [...journey].sort((a, b) => b.mean - a.mean)
+  // cronograma de coleta: meta de 100 por etapa, 40 medições por dia de coleta, todas as etapas
+  const coll = useMemo(() => {
+    const target = plan.target, perVisit = 40
+    const rows = journey.map((s) => ({ id: s.id, label: s.label, n: s.n, missing: Math.max(0, target - s.n) })).filter((r) => r.missing > 0).sort((a, b) => b.missing - a.missing)
+    const total = rows.reduce((a, r) => a + r.missing, 0)
+    const visits = Math.ceil(total / perVisit)
+    const dates: string[] = []
+    const d = new Date(plan.schedule[0].date + 'T12:00')
+    while (dates.length < visits) {
+      if (plan.weekdays.includes((d.getDay() + 6) % 7)) dates.push(d.toISOString().slice(0, 10))
+      d.setDate(d.getDate() + 1)
+    }
+    const scen = [25, 34, 35, 40].map((per) => { const v = Math.ceil(total / per); return { per, visits: v, weeks: v / plan.perWeek } })
+    return { target, perVisit, rows, total, visits, last: total - perVisit * (visits - 1), weeks: visits / plan.perWeek, dates, end: dates[dates.length - 1], scen }
+  }, [journey, plan])
 
   return (
     <main>
@@ -41,49 +56,54 @@ export default function Home({ data }: { data: Dataset }) {
           <Reveal><RangePlot steps={journey} /></Reveal>
 
           <Reveal style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 24 }}>
-            <Extreme tone="iris" title="Menor tempo individual" step={lo.step.label} value={fmt(lo.seconds)} note={`linha ${lo.row} da planilha${lo.seconds === 0 ? ' · início e fim no mesmo minuto' : ''}`} />
+            <Extreme tone="iris" title="Menor tempo individual" step={lo.step.label} value={fmt(lo.seconds)} note={`linha ${lo.row} da planilha`} />
             <Extreme tone="amber" title="Maior tempo médio" step={byMean[0].label} value={fmt(byMean[0].mean)} note={`${byMean[0].n} medições`} />
           </Reveal>
         </div>
       </Section>
 
       {/* Cronograma de coleta */}
-      <Section id="cronograma" kicker="Próximas coletas" title={`${plan.visits} visitas para fechar as ${plan.target} medições`}
-        lead={`Meta de ${plan.target} medições por etapa, com cerca de ${plan.perVisit} novas por visita e ${plan.perWeek} visitas por semana. Ficam de fora desta conta: ${plan.excluded.join(', ').replace(/, ([^,]*)$/, ' e $1')}.`}>
+      <Section id="cronograma" kicker="Próximas coletas" title={`${coll.visits} visitas para fechar as ${coll.target} medições de cada etapa`}
+        lead={`Com ${coll.perVisit} medições por dia de coleta, faltam ${coll.total} medições no total: ${coll.total} ÷ ${coll.perVisit} dá ${(coll.total / coll.perVisit).toFixed(1).replace('.', ',')}, então a ${coll.visits}ª visita é a última e fica com ${coll.last} medições. Indo ${plan.perWeek} vezes por semana, são ${coll.weeks} semanas.`}>
         <Reveal>
         <div className="plan-kpis">
-          <div><b className="num">{plan.visits}</b><span>visitas necessárias</span></div>
-          <div><b className="num">{plan.perVisit}</b><span>medições por visita (média)</span></div>
-          <div><b className="num">{planDate(plan.end)}</b><span>{weekday(plan.end)} · fim das medições</span></div>
-          <div><b className="num">{Math.max(...plan.steps.map((s) => s.missing))}</b><span>medições a mais na etapa mais atrasada ({plan.steps.reduce((a, b) => (b.missing > a.missing ? b : a)).label})</span></div>
+          <div><b className="num">{coll.visits}</b><span>visitas necessárias</span></div>
+          <div><b className="num">{coll.total}</b><span>medições que faltam ({coll.perVisit} por visita)</span></div>
+          <div><b className="num">{coll.weeks}</b><span>semanas, com {plan.perWeek} visitas por semana</span></div>
+          <div><b className="num">{planDate(coll.end)}</b><span>{weekday(coll.end)} · última visita, em {coll.end.slice(0, 4)}</span></div>
         </div>
         <div className="plan-grid">
           <div>
             <h3 style={{ fontSize: 20, marginBottom: 6 }}>Onde cada etapa está hoje</h3>
-            <p style={{ color: 'var(--color-muted)', marginTop: 0 }}>Barra escura: medições já feitas. Barra clara: o que falta para {plan.target}.</p>
-            {[...plan.steps].sort((a, b) => b.missing - a.missing).map((s) => (
-              <div key={s.id} className={`plan-row ${s.visits === plan.visits ? 'hot' : ''}`}>
+            <p style={{ color: 'var(--color-muted)', marginTop: 0 }}>Barra escura: medições já feitas. Barra clara: o que falta para {coll.target}.</p>
+            {coll.rows.map((s) => (
+              <div key={s.id} className="plan-row">
                 <span>{s.label}</span>
-                <span className="trk" title={`${s.n} feitas · faltam ${s.missing}`}><i style={{ width: `${Math.min(100, (s.n / plan.target) * 100)}%` }} /><u style={{ left: `${Math.min(100, (s.n / plan.target) * 100)}%`, right: 0 }} /></span>
-                <span className="v num">{s.n} / {plan.target}</span>
+                <span className="trk" title={`${s.n} feitas · faltam ${s.missing}`}><i style={{ width: `${Math.min(100, (s.n / coll.target) * 100)}%` }} /><u style={{ left: `${Math.min(100, (s.n / coll.target) * 100)}%`, right: 0 }} /></span>
+                <span className="v num">{s.n} / {coll.target}</span>
               </div>
             ))}
           </div>
           <div>
-            <h3 style={{ fontSize: 20, marginBottom: 6 }}>Calendário das visitas</h3>
-            <p style={{ color: 'var(--color-muted)', marginTop: 0 }}>Seguindo os mesmos dias da semana das últimas coletas ({plan.weekdays.map((w) => WD[w]).join(' e ')}), a partir de {planDate(plan.schedule[0].date)}.</p>
-            {plan.schedule.map((v, i) => (
-              <div key={v.n} className={`visit ${i === plan.schedule.length - 1 ? 'last' : ''}`}>
-                <div className="d"><small>{weekday(v.date).slice(0, 3)}</small><b className="num">{planDate(v.date)}</b></div>
-                <div>
-                  <div style={{ fontWeight: 600 }}>Visita {v.n}</div>
-                  <div style={{ color: 'var(--color-muted)', fontSize: 14 }}>
-                    {v.closes.length ? `Completam ${plan.target}: ${v.closes.join(', ')}.` : 'Nenhuma etapa fecha a meta ainda.'} A etapa mais atrasada chega a {v.lowest} de {plan.target}.
-                  </div>
-                </div>
-              </div>
-            ))}
-            <p style={{ color: 'var(--color-muted)', fontSize: 13, marginTop: 16 }}>Se a visita de {planDate(plan.schedule[0].date)} não acontecer, o fim passa para {planDate(plan.next)} ({weekday(plan.next)}).</p>
+            <h3 style={{ fontSize: 20, marginBottom: 6 }}>E se mudar o ritmo?</h3>
+            <p style={{ color: 'var(--color-muted)', marginTop: 0 }}>Quantas visitas e semanas para as {coll.total} medições, conforme quantas se coleta por dia.</p>
+            <table className="t scen">
+              <thead><tr><th>Medições por visita</th><th>Visitas</th><th>Semanas</th></tr></thead>
+              <tbody>
+                {coll.scen.map((r) => (
+                  <tr key={r.per} className={r.per === coll.perVisit ? 'sel' : ''}>
+                    <td className="num">{r.per}{r.per === 34 ? ' (ritmo atual)' : r.per === coll.perVisit ? ' (proposta)' : ''}</td>
+                    <td className="num">{r.visits}</td><td className="num">{String(r.weeks).replace('.', ',')}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p style={{ color: 'var(--color-muted)', fontSize: 14, marginTop: 14 }}>Passar de 34 para {coll.perVisit} por visita adianta o fim em cerca de {String(Math.round((coll.scen.find((r) => r.per === 34)!.weeks - coll.weeks) * 10) / 10).replace('.', ',')} semanas.</p>
+            <h3 style={{ fontSize: 20, margin: '28px 0 10px' }}>Calendário das {coll.visits} visitas</h3>
+            <p style={{ color: 'var(--color-muted)', marginTop: 0, fontSize: 14 }}>Nos mesmos dias da semana das últimas coletas ({plan.weekdays.map((w) => WD[w]).join(' e ')}), a partir de {planDate(coll.dates[0])}.</p>
+            <div className="cal">
+              {coll.dates.map((d, i) => <span key={d} className={i === coll.dates.length - 1 ? 'last' : ''} title={`Visita ${i + 1} · ${weekday(d)}`}><small>{i + 1}</small>{planDate(d)}</span>)}
+            </div>
           </div>
         </div>
         </Reveal>

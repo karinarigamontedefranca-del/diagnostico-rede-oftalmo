@@ -16,7 +16,7 @@ export default function ProcessPage({ data, id, step }: { data: Dataset; id: str
   const tasks = p.nodes.filter((n) => n.kind === 'task')
   const all = journey.flatMap((s) => s.samples.map((x) => x.seconds))
   const kpis: [string, string][] = journey.length
-    ? [[String(p.counts.tasks), 'tarefas no fluxograma'], [String(journey.length), 'etapas cronometradas'], [String(all.reduce((a) => a + 1, 0)), 'medições válidas'], [fmt(Math.min(...all)), 'menor tempo observado'], [fmt(Math.max(...all)), 'maior tempo observado']]
+    ? [[String(p.counts.tasks), 'tarefas no fluxograma'], [String(journey.length), 'etapas cronometradas'], [String(all.reduce((a) => a + 1, 0)), 'medições válidas'], [fmt(Math.min(...all.filter((x) => x > 0))), 'menor tempo observado'], [fmt(Math.max(...all)), 'maior tempo observado']]
     : [[String(p.counts.tasks), 'tarefas no fluxograma'], [String(p.counts.lanes), 'raias (equipes)'], [String(p.counts.gateways), 'decisões'], ...(p.totalLabel ? ([[p.totalLabel.value, `tempo registrado no diagrama (mm:ss)${p.totalLabel.note ? ` · ${p.totalLabel.note}` : ''}`]] as [string, string][]) : [])]
 
   return (

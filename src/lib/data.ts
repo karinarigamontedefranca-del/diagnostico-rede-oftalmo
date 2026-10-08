@@ -6,9 +6,10 @@ export type Step = {
   samples: Sample[]; excluded: Excluded[]; source: string; kind: string; link: Link
 }
 export type NodeInfo = { id: string; name: string; kind: string; lane: string | null; doc: string; gw: string | null; origin?: string; x: number; y: number; via: string | null; seq: number }
+export type Flow = { id: string; src: string; dst: string; name: string }
 export type Process = {
   id: string; title: string; short: string; poolName: string; sourceFile: string; bpmn: string
-  lanes: { id: string; name: string }[]; nodes: NodeInfo[]
+  lanes: { id: string; name: string }[]; nodes: NodeInfo[]; flows: Flow[]
   counts: { tasks: number; gateways: number; events: number; flows: number; lanes: number }
   totalLabel: { value: string; note: string; text: string } | null
 }

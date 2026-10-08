@@ -159,6 +159,7 @@ def convert(proc):
                 bpmn='bpmn/%s.bpmn' % proc['id'],
                 lanes=[dict(id=l['id'], name=l['name']) for l in lanes],
                 nodes=[node_out(n, via_map(nodes, flows), seq_map(nodes, flows)) for n in nodes],
+                flows=[dict(id=f['id'], src=f['src'], dst=f['dst'], name=f['name']) for f in flows],
                 counts=dict(tasks=sum(n['kind'] == 'task' for n in nodes), gateways=sum(n['kind'] == 'exclusiveGateway' for n in nodes),
                             events=sum(n['kind'].endswith('Event') for n in nodes), flows=len(flows), lanes=len(lanes)))
 
@@ -254,6 +255,7 @@ def convert_bpmn(proc):
                 bpmn='bpmn/%s.bpmn' % proc['id'],
                 lanes=[dict(id=l['id'], name=l['name']) for l in lanes],
                 nodes=[node_out(n, via_map(nodes, flows), seq_map(nodes, flows)) for n in nodes],
+                flows=[dict(id=f['id'], src=f['src'], dst=f['dst'], name=f['name']) for f in flows],
                 notes=[dict(id=t['id'], text=t['text']) for t in notes],
                 counts=dict(tasks=sum(n['kind'] == 'task' for n in nodes), gateways=sum(n['kind'] == 'exclusiveGateway' for n in nodes),
                             events=sum(n['kind'].endswith('Event') for n in nodes), flows=len(flows), lanes=len(lanes)))

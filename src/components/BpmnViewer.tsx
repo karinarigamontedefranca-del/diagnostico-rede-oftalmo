@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import NavigatedViewer from 'bpmn-js/lib/NavigatedViewer'
 import { Process, Step, fmt } from '../lib/data'
+import { makeGraph, autoNext, restarts } from '../lib/walk'
 
 type Sel = { id: string; type: 'node' | 'lane' } | null
 
@@ -12,6 +13,15 @@ export default function BpmnViewer({ process, steps, focusStep }: { process: Pro
   const [tip, setTip] = useState<{ x: number; y: number; text: string } | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [ready, setReady] = useState(false)
+  // percurso guiado: a pessoa decide o caminho em cada decisão
+  const graph = useMemo(() => makeGraph(process), [process])
+  const [walk, setWalk] = useState<{ nodes: string[]; segs: string[][] } | null>(null)
+  const walkCur = walk ? walk.nodes[walk.nodes.length - 1] : null
+  const walkOpts = walkCur && graph.isDecision(walkCur) ? graph.out(walkCur) : []
+  const step1 = (o: ReturnType<typeof graph.out>[number] | null, from: string) => {
+    if (!o || !walk || restarts(graph, o, from)) return
+    setWalk({ nodes: [...walk.nodes, o.to], segs: [...walk.segs, o.flowIds] })
+  }
 
   const laneName = (id: string | null) => process.lanes.find((l) => l.id === id)?.name
   const byNode = useMemo(() => {
@@ -101,6 +111,15 @@ export default function BpmnViewer({ process, steps, focusStep }: { process: Pro
     else if (s?.link.lane) setSel({ id: s.link.lane, type: 'lane' })
   }, [ready, focusStep, steps])
 
+  useEffect(() => {
+    const v = viewer.current; if (!ready || !v) return
+    const canvas = v.get('canvas'), registry = v.get('elementRegistry')
+    registry.forEach((el: any) => { ['walk-done', 'walk-cur'].forEach((m) => canvas.removeMarker(el.id, m)) })
+    if (!walk) return
+    walk.nodes.forEach((id, i) => canvas.addMarker(id, i === walk.nodes.length - 1 ? 'walk-cur' : 'walk-done'))
+    walk.segs.flat().forEach((id) => canvas.addMarker(id, 'walk-done'))
+  }, [walk, ready])
+
   const zoom = (f: number | 'fit') => {
     const c = viewer.current?.get('canvas'); if (!c) return
     f === 'fit' ? c.zoom('fit-viewport', 'auto') : c.zoom(c.zoom() * f)
@@ -156,6 +175,20 @@ export default function BpmnViewer({ process, steps, focusStep }: { process: Pro
           ))}
         </div>
       )}
+      <div className="walkbox">
+        {!walk ? (
+          <button className="btn walk-start" onClick={() => setWalk({ nodes: [graph.startId], segs: [] })}>▶ Percorrer o fluxo escolhendo os caminhos</button>
+        ) : (
+          <div className="walk-panel">
+            <b>{graph.node(walkCur!).name || (graph.isEnd(walkCur!) ? 'Fim do processo' : 'Início')}</b>
+            {graph.isEnd(walkCur!) ? <span>Fim do percurso · {walk.nodes.length} passos</span>
+              : walkOpts.length > 1 ? (<><span>Escolha o caminho:</span>{walkOpts.map((o) => <button key={o.to + o.label} className="chip" onClick={() => step1(o, walkCur!)}>{o.label || graph.node(o.to).name}</button>)}</>)
+              : <button className="chip" aria-pressed="true" onClick={() => step1(autoNext(graph, walkCur!), walkCur!)}>Próximo passo →</button>}
+            {walk.nodes.length > 1 && <button className="chip" onClick={() => setWalk({ nodes: walk.nodes.slice(0, -1), segs: walk.segs.slice(0, -1) })}>← Voltar</button>}
+            <button className="chip" onClick={() => setWalk(null)}>Sair do percurso</button>
+          </div>
+        )}
+      </div>
       <div className="zoomctl">
         <button aria-label="Aproximar" onClick={() => zoom(1.25)}>+</button>
         <button aria-label="Afastar" onClick={() => zoom(0.8)}>−</button>

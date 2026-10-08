@@ -1,0 +1,88 @@
+/* ================================================================ Personagem (paciente) */
+.pt {
+  --skin: #e9b896; --skin-s: #d49c78; --hair: #2a2230; --hair-hl: #4a3f55;
+  --jacket: #80bba9; --jacket-s: #6aa896; --shirt: #f6f5f3; --lapel: #4f8f7c;
+  --pants: #3a4a96; --pants-s: #2b3877; --shoe: #f6f5f3; --shoe-s: #d7d6e0; --sole: #80bba9;
+  width: 100%; height: auto; overflow: visible; display: block;
+  filter: drop-shadow(0 14px 14px rgba(0, 0, 0, .28));
+}
+.pt[data-look="b"] { --skin: #c98d65; --skin-s: #b2744d; --hair: #cfd3e6; --hair-hl: #f0f1fa; --jacket: #2b3b86; --jacket-s: #1d2a61; --lapel: #151f4d; --shirt: #dcede8; --pants: #55608f; --pants-s: #414b78; --shoe: #1d2a61; --shoe-s: #151f4d; --sole: #f6f5f3; }
+.pt[data-look="c"] { --skin: #f1c9a9; --skin-s: #dba984; --hair: #7a4a35; --hair-hl: #a2705a; --jacket: #e7c6a4; --jacket-s: #d3ad88; --lapel: #b88f6a; --shirt: #ffffff; --pants: #1d2a61; --pants-s: #131d49; --shoe: #80bba9; --shoe-s: #6aa896; --sole: #f6f5f3; }
+
+.pt .skin { fill: var(--skin); } .pt .skin-s { fill: var(--skin-s); }
+.pt .hair { fill: var(--hair); } .pt .hair-hl { fill: none; stroke: var(--hair-hl); stroke-width: 2; stroke-linecap: round; }
+.pt .jacket { fill: var(--jacket); } .pt .jacket-s { fill: var(--jacket-s); opacity: .55; }
+.pt .sleeve { fill: var(--jacket); } .pt .sleeve-s { fill: var(--jacket-s); }
+.pt .shirt { fill: var(--shirt); }
+.pt .lapel { fill: none; stroke: var(--lapel); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; opacity: .75; }
+.pt .pocket { fill: none; stroke: var(--lapel); stroke-width: 1.8; stroke-linecap: round; opacity: .6; }
+.pt .belt { fill: var(--pants-s); }
+.pt .pants { fill: var(--pants); } .pt .pants-s { fill: var(--pants-s); }
+.pt .shoe { fill: var(--shoe); } .pt .shoe-s { fill: var(--shoe-s); } .pt .sole { fill: var(--sole); }
+.pt .lens { fill: rgba(255, 255, 255, .38); stroke: #1d2a61; stroke-width: 1.8; }
+.pt .frame { fill: none; stroke: #1d2a61; stroke-width: 1.8; stroke-linecap: round; }
+.pt .eye { fill: #1d2a61; } .pt .brow { fill: none; stroke: var(--hair); stroke-width: 1.8; stroke-linecap: round; }
+.pt .mouth { fill: none; stroke: #8a4a3e; stroke-width: 1.8; stroke-linecap: round; }
+.pt .blush { fill: #e58f86; opacity: .35; }
+.pt .pt-shadow { fill: rgba(0, 0, 0, .34); }
+.pt .board-b { fill: #1d2a61; } .pt .board-p { fill: #fff; } .pt .board-c { fill: #80bba9; } .pt .board-l { stroke: #80bba9; stroke-width: 1.5; stroke-linecap: round; fill: none; }
+.pt .bubble { fill: #fff; stroke: #1d2a61; stroke-width: 2; }
+.pt .ask text { font: 800 26px var(--font-display); fill: #1d2a61; }
+
+/* articulações: cada parte gira em torno do próprio pivô (coordenadas do desenho) */
+.pt * { transform-box: view-box; }
+.pt .leg { transform-origin: 70px 128px; }
+.pt .shin { transform-origin: 70px 170px; }
+.pt .arm { transform-origin: 72px 84px; }
+.pt .arm-b .fore { transform-origin: 72px 112px; transform: rotate(-6deg); }
+.pt .arm-f .fore { transform-origin: 71px 112px; }
+.pt .head-g { transform-origin: 72px 62px; }
+.pt .torso, .pt .head-g, .pt .arm-f, .pt .arm-b { will-change: transform; }
+.pt .eye { transform-origin: 83.500px 38.500px; animation: blink 5.200s infinite; }
+.pt .ask { opacity: 0; transform-origin: 100px 30px; transform: scale(.4) translateY(10px); transition: opacity .25s, transform .35s cubic-bezier(.34, 1.56, .64, 1); }
+
+/* respiração (parado) */
+.pt .torso { transform-origin: 72px 130px; animation: breathe 3.600s ease-in-out infinite; }
+.pt .head-g { animation: headIdle 3.600s ease-in-out infinite; }
+
+/* caminhada: período de 0,86 s por passada completa */
+.walking .pt .torso, .walking .pt .head-g { animation: none; }
+.walking .pt .leg-f { animation: thigh .86s linear infinite; }
+.walking .pt .leg-b { animation: thigh .86s linear infinite -.43s; }
+.walking .pt .shin-f { animation: knee .86s linear infinite; }
+.walking .pt .shin-b { animation: knee .86s linear infinite -.43s; }
+.walking .pt .arm-b { animation: armB .86s ease-in-out infinite; }
+.walking .pt .arm-b .fore { animation: foreB .86s ease-in-out infinite; }
+.walking .pt .arm-f { animation: armF .86s ease-in-out infinite; }
+.walking .pt .torso-wrap, .walking .pt .head-g { animation: bounce .43s ease-in-out infinite; }
+.walking .pt .head-g { transform-origin: 72px 62px; }
+.walking .pt .torso { animation: bounce .43s ease-in-out infinite; }
+.walking .pt .pt-shadow { animation: shadowStep .43s ease-in-out infinite; transform-origin: 72px 232px; }
+
+@keyframes thigh { 0% { transform: rotate(-30deg); } 50% { transform: rotate(24deg); } 100% { transform: rotate(-30deg); } }
+@keyframes knee { 0% { transform: rotate(4deg); } 30% { transform: rotate(8deg); } 55% { transform: rotate(52deg); } 78% { transform: rotate(46deg); } 100% { transform: rotate(4deg); } }
+@keyframes armB { 0% { transform: rotate(26deg); } 50% { transform: rotate(-26deg); } 100% { transform: rotate(26deg); } }
+@keyframes foreB { 0% { transform: rotate(-4deg); } 50% { transform: rotate(-40deg); } 100% { transform: rotate(-4deg); } }
+@keyframes armF { 0%, 100% { transform: rotate(5deg); } 50% { transform: rotate(-5deg); } }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2.600px); } }
+@keyframes shadowStep { 0%, 100% { transform: scaleX(1); } 50% { transform: scaleX(.92); } }
+@keyframes breathe { 0%, 100% { transform: scale(1, 1); } 50% { transform: scale(1.008, 1.012); } }
+@keyframes headIdle { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(1.400deg) translateY(-.6px); } }
+@keyframes blink { 0%, 94%, 100% { transform: scaleY(1); } 96.500% { transform: scaleY(.08); } }
+
+/* pose: decidindo (cabeça levemente inclinada + balão de dúvida) */
+.thinking .pt .ask { opacity: 1; transform: none; animation: askBob 1.800s ease-in-out infinite .4s; }
+.thinking .pt .head-g { animation: none; transform: rotate(-7deg); transition: transform .4s; }
+.thinking .pt .arm-f { animation: none; }
+@keyframes askBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+
+/* pose: chegou ao fim (pulinho + braço de trás erguido) */
+.cheer .pt .arm-b { animation: wave .7s ease-in-out infinite alternate; transform: rotate(150deg); }
+.cheer .pt .arm-b .fore { animation: none; transform: rotate(-10deg); }
+.cheer .pt .torso, .cheer .pt .head-g { animation: hop 1.1s ease-in-out infinite; }
+@keyframes wave { from { transform: rotate(140deg); } to { transform: rotate(168deg); } }
+@keyframes hop { 0%, 100% { transform: translateY(0); } 40% { transform: translateY(-5px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .pt *, .walking .pt *, .thinking .pt *, .cheer .pt * { animation: none !important; }
+}

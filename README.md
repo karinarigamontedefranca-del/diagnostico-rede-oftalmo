@@ -18,15 +18,15 @@ Para atualizar: substitua os arquivos em `source/`, rode `npm run data` e `npm r
 ## Logos
 Logos em `public/logos/` (`skema-branca.png`, `skema.png`, `rede-oftalmo.png`); troque por arquivos oficiais mantendo os nomes. Identidade: Brand Book SKEMA (azul #1d2a61, off-white #f6f5f3, verde-menta #80bba9 só em detalhes, Montserrat) — tokens no topo de `src/index.css`.
 
-## Associações e ressalvas (também visíveis no site, seção “Notas sobre os dados”)
-- A planilha se intitula “Córnea”, mas suas etapas são as do fluxograma de **Glaucoma**; as medições foram associadas a ele.
-- **Exame de córnea** (fluxograma completo da portaria à saída, montado com o desenho original + Glaucoma + entrevista; etapas da entrevista aparecem tracejadas) e **Teste de lente** não têm medições na planilha; mostram só o fluxograma e o tempo total escrito no próprio diagrama (16:05 e 41:52, interpretados como mm:ss).
-- Associação etapa↔medição por tarefa (marcada como “provável”): Recepção (Portaria) → tarefas Portaria e Recepção; Auto refratário → Refração; Tonometria de sopro e Retinografia → Mapeamento de retina e tonometria. Microscopia, Topografia, OCT, Paquimetria, Campo visual, Glaucoma Consulta e Pós-consulta ficam ligados à raia “Exames”. “Atendimento Glaucoma” não tem tarefa equivalente.
-- Cada etapa foi medida em pacientes diferentes: não há tempo total de jornada (as colunas de total da planilha dão #REF!).
-- Campo visual: 20 durações com fórmula apontando para a linha errada foram recalculadas a partir de início/fim; valores inválidos (ex.: “00:17”, “x”) foram desconsiderados e listados por etapa.
-- Valores como 1 h 15 min (Campo visual, linha 40) foram mantidos e sinalizados “acima do usual”.
+## Estrutura do site (versão 4.0)
+- **Abertura com resultados** (`Hero.tsx`): KPIs que contam até o valor e as etapas mais longas; botão **Iniciar jornada** (também na barra superior) leva direto à animação, sem precisar rolar a página.
+- **Resultados que aparecem ao rolar** (`Reveal.tsx`, `Explorer.tsx`): o gráfico muda de leitura (média, mediana, maior tempo, nº de medições) conforme a rolagem e também por clique, com as barras reordenando em animação.
+- **Jornada do paciente** (`Journey.tsx`, `Patient.tsx`, `lib/walk.ts`): o paciente percorre o fluxo real (grafo do BPMN). **Em cada decisão a pessoa escolhe o caminho** (botões ou teclas 1/2), pode voltar e escolher o outro. Setas ← → navegam. Três visuais de paciente.
+- **Fluxograma** (`BpmnViewer.tsx`): botão "Percorrer o fluxo escolhendo os caminhos" destaca o percurso no diagrama.
+- A seção "Notas sobre os dados" foi removida do site.
 
-## Jornada do paciente e cronograma (atualização)
-- `src/components/Journey.tsx`: animação ligada à rolagem (cena fixa por capítulo; o paciente anda pelas etapas na ordem causal do fluxograma — `seq` gerado em `scripts/build_data.py`). Os tempos exibidos vêm de `measurements.json`.
-- Cronograma de coletas (`plan` em `measurements.json`): meta 100 por etapa, 35 por visita, dias da semana inferidos da agenda; exclui OCT, Campo visual, Retinografia e Paquimetria.
-- `source/Agenda_horarios.xlsx` só é usada para conferir que seus tempos já estão na cronoanálise (não é somada).
+## Dados
+`Cronoanalise_Rede_Oftalmo.xlsx` e `Agenda_horarios.xlsx` em `source/` conferidos com as planilhas enviadas (idênticas; nenhum número mudou). `processes.json` agora inclui as ligações (`flows`) do fluxograma, usadas para o percurso.
+- Campo visual: durações com fórmula errada foram recalculadas a partir de início/fim; valores inválidos foram desconsiderados.
+- Exame de córnea e Teste de lente não têm medições na planilha; mostram só o fluxograma e o tempo escrito no diagrama.
+- `Agenda_horarios.xlsx` só confere que seus tempos já estão na cronoanálise.

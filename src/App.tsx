@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Dataset, loadDataset } from './lib/data'
 import { useRoute } from './lib/router'
-import Intro from './components/Intro'
+import Hero from './components/Hero'
 import Nav from './components/Nav'
 import Home from './components/Home'
 import ProcessPage from './components/ProcessPage'
@@ -18,7 +18,7 @@ export default function App() {
       <Nav route={route} processes={data.processes} />
       {route.name === 'home' ? (
         <>
-          <Intro onStart={() => document.getElementById('contexto')?.scrollIntoView({ behavior: 'smooth' })} />
+          <Hero data={data} />
           <Home data={data} />
         </>
       ) : (

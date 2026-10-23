@@ -31,7 +31,7 @@ export default function Explorer({ steps }: { steps: Step[] }) {
     const byN = [...steps].sort((a, b) => b.n - a.n)
     const fewest = byN[byN.length - 1]
     return [
-      { metric: 'mean' as Metric, kick: '1 · Onde o tempo se concentra', title: `${byMean[0].label} lidera: ${fmt(byMean[0].mean)} em média`, text: `Em ${byMean[0].n} medições, é a etapa mais longa do processo de Glaucoma. ${byMean[1].label} vem logo atrás, com ${fmt(byMean[1].mean)}.` },
+      { metric: 'mean' as Metric, kick: '1 · Onde o tempo se concentra', title: `${byMean[0].label} lidera: ${fmt(byMean[0].mean)} em média`, text: `Em ${byMean[0].n} medições, é a etapa mais longa entre as medidas no 1º andar. ${byMean[1].label} vem logo atrás, com ${fmt(byMean[1].mean)}.` },
       { metric: 'median' as Metric, kick: '2 · Média ou mediana?', title: `Em ${skew.label}, a média passa em ${Math.round((skew.mean / skew.median - 1) * 100)}% a mediana`, text: `A média é ${fmt(skew.mean)}, a mediana ${fmt(skew.median)}: poucos atendimentos longos puxam a média para cima. A mediana mostra o que é típico.` },
       { metric: 'max' as Metric, kick: '3 · Os casos extremos', title: `O maior tempo individual: ${fmt(byMax.max)}`, text: `Aconteceu em ${byMax.label}. Já o menor tempo médio, ${fmt(byMean[byMean.length - 1].mean)}, é de ${byMean[byMean.length - 1].label}.` },
       { metric: 'n' as Metric, kick: '4 · Quanto confiar em cada número', title: `${byN[0].label} tem ${byN[0].n} medições; ${fewest.label}, só ${fewest.n}`, text: 'Etapas com poucas medições pedem cautela: um único caso muda a média. As próximas coletas miram justamente essas etapas.' },
@@ -55,7 +55,7 @@ export default function Explorer({ steps }: { steps: Step[] }) {
         <p className="cap" style={{ margin: '12px 0 14px', minHeight: 44 }}>{METRICS.find((m) => m.id === metric)!.hint}</p>
         <div className="ex-rows" style={{ height: steps.length * RH }}>
           {steps.map((s) => (
-            <button key={s.id} className={`ex-row ${hover === s.id ? 'hov' : ''}`} style={{ transform: `translateY(${rank(s.id) * RH}px)` }} onClick={() => goProcess('glaucoma', s.id)}
+            <button key={s.id} className={`ex-row ${hover === s.id ? 'hov' : ''}`} style={{ transform: `translateY(${rank(s.id) * RH}px)` }} onClick={() => goProcess(s.link.process, s.id)}
               onMouseEnter={() => setHover(s.id)} onMouseLeave={() => setHover(null)} onFocus={() => setHover(s.id)} onBlur={() => setHover(null)}
               title={`${s.label}: média ${fmt(s.mean)} · mediana ${fmt(s.median)} · menor ${fmt(s.min)} · maior ${fmt(s.max)} · ${s.n} medições`}>
               <span className="lab">{s.label}</span>

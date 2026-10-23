@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Logo } from './Brand'
-import { Dataset, JOURNEY, WD, describe, fmt, planDate, weekday } from '../lib/data'
+import { Dataset, JOURNEY, RETINA, WD, describe, fmt, planDate, weekday } from '../lib/data'
 import { goProcess as go } from '../lib/router'
 import Journey from './Journey'
 import Explorer from './Explorer'
@@ -26,6 +26,7 @@ export default function Home({ data }: { data: Dataset }) {
   const { processes, m } = data
   const plan = m.plan
   const journey = JOURNEY(m.steps)
+  const retina = RETINA(m.steps)
   const totalN = journey.reduce((a, s) => a + s.n, 0)
   const all = journey.flatMap((s) => s.samples.map((x) => ({ ...x, step: s })))
   const lo = all.filter((x) => x.seconds > 0).reduce((a, b) => (b.seconds < a.seconds ? b : a))
@@ -37,7 +38,7 @@ export default function Home({ data }: { data: Dataset }) {
     const total = rows.reduce((a, r) => a + r.missing, 0)
     const visits = Math.ceil(total / perVisit)
     const dates: string[] = []
-    const d = new Date(plan.schedule[0].date + 'T12:00')
+    const d = new Date(plan.start + 'T12:00')
     while (dates.length < visits) {
       if (plan.weekdays.includes((d.getDay() + 6) % 7)) dates.push(d.toISOString().slice(0, 10))
       d.setDate(d.getDate() + 1)
@@ -49,7 +50,7 @@ export default function Home({ data }: { data: Dataset }) {
   return (
     <main>
       {/* Dashboard */}
-      <Section id="dashboard" kicker="Resultados" title="Onde o tempo se concentra" lead="Comparação das etapas cronometradas no processo de Glaucoma. Clique em uma etapa para abrir suas medições.">
+      <Section id="dashboard" kicker="Resultados" title="Onde o tempo se concentra" lead="Comparação das etapas cronometradas no 1º andar (Glaucoma e Córnea). Clique em uma etapa para abrir suas medições.">
         <div style={{ display: 'grid', gap: 24 }}>
           <Explorer steps={journey} />
 
@@ -60,6 +61,21 @@ export default function Home({ data }: { data: Dataset }) {
             <Extreme tone="amber" title="Maior tempo médio" step={byMean[0].label} value={fmt(byMean[0].mean)} note={`${byMean[0].n} medições`} />
           </Reveal>
         </div>
+      </Section>
+
+      {/* Retina (2º andar) */}
+      <Section id="retina" kicker="2º andar" title="Retina: primeiras medições" lead={`Etapas da Retina cronometradas no 2º andar. As amostras ainda são pequenas (de ${Math.min(...retina.map((s) => s.n))} a ${Math.max(...retina.map((s) => s.n))} medições por etapa): leia as médias com cautela.`}>
+        <Reveal>
+          <div className="figure">
+            {[...retina].sort((a, b) => b.mean - a.mean).map((s) => (
+              <div key={s.id} className="hbar" style={{ cursor: 'default', gridTemplateColumns: 'minmax(120px,190px) 1fr 140px' }} title={`${s.label}: média ${fmt(s.mean)} · menor ${fmt(s.min)} · maior ${fmt(s.max)} · ${s.n} medições`}>
+                <span className="lab">{s.label}</span>
+                <span className="track"><span className="fill" style={{ width: `${(s.mean / Math.max(...retina.map((x) => x.mean))) * 100}%` }} /></span>
+                <span className="val num">{fmt(s.mean, { compact: true })} <small style={{ color: 'var(--color-muted)', fontWeight: 500 }}>· n={s.n}</small></span>
+              </div>
+            ))}
+          </div>
+        </Reveal>
       </Section>
 
       {/* Cronograma de coleta */}
@@ -122,7 +138,7 @@ export default function Home({ data }: { data: Dataset }) {
                 A SKEMA Consultoria Júnior mapeou {processes.length} processos da Rede Oftalmo — {processes.map((p) => p.title).join(', ').replace(/, ([^,]*)$/, ' e $1')} — e os desenhou em fluxogramas BPMN, com as responsabilidades de cada equipe separadas em raias.
               </p>
               <p>
-                Para o processo de Glaucoma, as etapas também foram cronometradas por observação direta: {journey.length} etapas, {totalN} medições. Cada número pode ser conferido na etapa de onde veio.
+                As etapas do 1º andar (Glaucoma e Córnea) também foram cronometradas por observação direta: {journey.length} etapas, {totalN} medições — e, no 2º andar, {retina.length} etapas da Retina. Cada número pode ser conferido na etapa de onde veio.
               </p>
             </div>
           </Reveal>
@@ -133,7 +149,7 @@ export default function Home({ data }: { data: Dataset }) {
       <Section id="processos" kicker="Processos mapeados" title="Três fluxos, um mesmo olhar" lead="Abra um processo para ver o fluxograma interativo e as medições associadas.">
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24 }}>
           {processes.map((p) => {
-            const st = m.steps.filter((s) => s.link.process === p.id && s.id !== 'pos-consulta-ociosidade')
+            const st = m.steps.filter((s) => s.link.process === p.id && s.kind !== 'intervalo do posto')
             const n = st.reduce((a, s) => a + s.n, 0)
             return (
               <a key={p.id} className="pcard" href={`#/processo/${p.id}`}>
@@ -191,7 +207,7 @@ function RangePlot({ steps }: { steps: Dataset['m']['steps'] }) {
       <div style={{ overflowX: 'auto' }}>
         <div style={{ minWidth: 560 }}>
           {rows.map(({ s, d }) => (
-            <button key={s.id} className="hbar" style={{ gridTemplateColumns: 'minmax(120px,190px) 1fr 120px' }} onClick={() => go('glaucoma', s.id)} onMouseEnter={() => setHov(s.id)} onMouseLeave={() => setHov(null)}>
+            <button key={s.id} className="hbar" style={{ gridTemplateColumns: 'minmax(120px,190px) 1fr 120px' }} onClick={() => go(s.link.process, s.id)} onMouseEnter={() => setHov(s.id)} onMouseLeave={() => setHov(null)}>
               <span className="lab">{s.label}</span>
               <span style={{ position: 'relative', height: 22 }}>
                 {ticks.map((t) => <span key={t} style={{ position: 'absolute', left: pos(t), top: 0, bottom: 0, width: 1, background: '#e4e3ea' }} />)}

@@ -26,7 +26,7 @@ Logos em `public/logos/` (`skema-branca.png`, `skema.png`, `rede-oftalmo.png`); 
 - A seção "Notas sobre os dados" foi removida do site.
 
 ## Dados
-`Cronoanalise_Rede_Oftalmo.xlsx` e `Agenda_horarios.xlsx` em `source/` conferidos com as planilhas enviadas (idênticas; nenhum número mudou). `processes.json` agora inclui as ligações (`flows`) do fluxograma, usadas para o percurso.
+`source/Medicoes_Rede_Oftalmo.xlsx` (abas 1ºandar e 2ºandar) substitui a antiga cronoanálise: tempos como “2:17” são lidos como 2 min 17 s; “Pós-consulta” passou a se chamar “Atendimento Córnea” e agora é associado ao processo de córnea (raia do médico); a aba 2ºandar traz a Recepção ampliada e as etapas da Retina. `processes.json` agora inclui as ligações (`flows`) do fluxograma, usadas para o percurso.
 - Campo visual: durações com fórmula errada foram recalculadas a partir de início/fim; valores inválidos foram desconsiderados.
-- Exame de córnea e Teste de lente não têm medições na planilha; mostram só o fluxograma e o tempo escrito no diagrama.
+- Teste de lente não tem medições; mostra só o fluxograma e o tempo escrito no diagrama. Retina não tem fluxograma: aparece só nos resultados.
 - `Agenda_horarios.xlsx` só confere que seus tempos já estão na cronoanálise.

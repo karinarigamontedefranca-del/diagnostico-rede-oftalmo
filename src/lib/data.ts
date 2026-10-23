@@ -3,7 +3,7 @@ export type Excluded = { row: number; raw: string; reason: string }
 export type Link = { process: string; nodes: string[]; lane?: string; confidence: string; note: string | null }
 export type Step = {
   id: string; label: string; phase: string; n: number; mean: number; median: number; min: number; max: number; stdev: number | null
-  samples: Sample[]; excluded: Excluded[]; source: string; kind: string; link: Link
+  samples: Sample[]; excluded: Excluded[]; source: string; kind: string; group: 'principal' | 'retina'; link: Link
 }
 export type NodeInfo = { id: string; name: string; kind: string; lane: string | null; doc: string; gw: string | null; origin?: string; x: number; y: number; via: string | null; seq: number }
 export type Flow = { id: string; src: string; dst: string; name: string }
@@ -20,7 +20,7 @@ export type Measurements = {
   plan: Plan
 }
 export type Plan = {
-  target: number; perVisit: number; perWeek: number; excluded: string[]; visits: number; lastDone: string; end: string; next: string; bottleneck: string[]; weekdays: number[]
+  start: string; target: number; perVisit: number; perWeek: number; excluded: string[]; visits: number; lastDone: string; end: string; next: string; bottleneck: string[]; weekdays: number[]
   steps: { id: string; label: string; n: number; missing: number; visits: number }[]
   schedule: { n: number; date: string; closes: string[]; lowest: number }[]
 }
@@ -59,7 +59,10 @@ export function describe(step: Step) {
   return { q1, q3, fence, outliers: step.samples.filter((s) => s.seconds > fence) }
 }
 
-export const JOURNEY = (steps: Step[]) => steps.filter((s) => s.id !== 'pos-consulta-ociosidade')
+/** etapas cronometradas do 1º andar (Glaucoma e Córnea), sem os intervalos “tempo sem paciente” */
+export const JOURNEY = (steps: Step[]) => steps.filter((s) => s.group === 'principal' && s.kind !== 'intervalo do posto')
+/** etapas cronometradas na Retina (2º andar) */
+export const RETINA = (steps: Step[]) => steps.filter((s) => s.group === 'retina' && s.n > 0)
 
 export const WD = ['segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado', 'domingo']
 export const planDate = (iso: string) => { const [, m, d] = iso.split('-'); return `${d}/${m}` }

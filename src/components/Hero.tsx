@@ -18,8 +18,8 @@ export default function Hero({ data }: { data: Dataset }) {
   const kpis: { v: number; f?: (v: number) => string; l: string; d: string }[] = [
     { v: processes.length, l: 'processos mapeados', d: processes.map((p) => p.title).join(' · ') },
     { v: tasks, l: 'etapas desenhadas', d: `${decisions} decisões · ${processes.reduce((a, p) => a + p.counts.lanes, 0)} raias de equipes` },
-    { v: totalN, l: 'medições de tempo', d: `${journey.length} etapas do Glaucoma cronometradas` },
-    { v: byMean[0].mean, f: (v) => fmt(v), l: 'etapa mais longa (média)', d: byMean[0].label },
+    { v: totalN, l: 'medições de tempo', d: `${journey.length} etapas cronometradas (Glaucoma e Córnea)` },
+    { v: byMean[0].mean, f: (v) => fmt(v, { compact: true }), l: 'etapa mais longa (média)', d: byMean[0].label },
   ]
   return (
     <header className="hero" id="topo">
@@ -48,7 +48,7 @@ export default function Hero({ data }: { data: Dataset }) {
           <div className="hero-spark" role="img" aria-label={`Etapas mais longas: ${top.map((s) => `${s.label} ${fmt(s.mean)}`).join(', ')}`}>
             <p>Tempo médio das etapas mais longas</p>
             {top.map((s, i) => (
-              <button key={s.id} className="hs-row" style={{ ['--i' as string]: i }} onClick={() => goProcess('glaucoma', s.id)} title={`${s.label}: média ${fmt(s.mean)} · ${s.n} medições`}>
+              <button key={s.id} className="hs-row" style={{ ['--i' as string]: i }} onClick={() => goProcess(s.link.process, s.id)} title={`${s.label}: média ${fmt(s.mean)} · ${s.n} medições`}>
                 <span>{s.label}</span>
                 <i><u style={{ ['--w' as string]: `${(s.mean / max) * 100}%` }} /></i>
                 <b className="num">{fmt(s.mean, { compact: true })}</b>

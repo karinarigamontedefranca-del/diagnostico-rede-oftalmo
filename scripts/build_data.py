@@ -272,171 +272,161 @@ for _p in procs:
         _n['origin'] = ('diagrama' if _n['id'] in _ORIG else 'entrevista') if _p['id'] == 'exame-de-cornea' else 'diagrama'
 
 # ---------------------------------------------------------------- planilha
-wb = openpyxl.load_workbook(os.path.join(SRC, 'Cronoanalise_Rede_Oftalmo.xlsx'), data_only=True)
-ws = wb['Coleta de Dados']
-FIRST, LAST = 5, 303
-def sec(v):
-    if isinstance(v, datetime.timedelta): return int(round(v.total_seconds()))
-    return None
-def tod(v):
-    return v.hour * 3600 + v.minute * 60 + v.second if isinstance(v, datetime.time) else None
+# Medicoes_Rede_Oftalmo.xlsx: aba "1ºandar" (dados a partir da linha 3) e aba "2ºandar".
+# Os tempos digitados como "2:17" ficam guardados como horário 02:17 — na planilha significam 2 min 17 s
+# (hora = minutos, minuto = segundos). Início/Fim, ao contrário, são horários do relógio.
+wb = openpyxl.load_workbook(os.path.join(SRC, 'Medicoes_Rede_Oftalmo.xlsx'), data_only=True)
+W1, W2 = wb['1ºandar'], wb['2ºandar']
+FIRST = 3
+def mmss(v): return v.hour * 60 + v.minute if isinstance(v, datetime.time) else None
+def tod(v): return v.hour * 3600 + v.minute * 60 + v.second if isinstance(v, datetime.time) else None
 def hhmm(v): return v.strftime('%H:%M') if isinstance(v, datetime.time) else None
-def cell(col, r): return ws['%s%d' % (col, r)].value
+def cell(ws, col, r): return ws['%s%d' % (col, r)].value
+def rows_of(ws): return range(FIRST, ws.max_row + 1)
 
-quality = []   # lista de observações sobre a qualidade dos dados
 steps = []
-
 def add_step(id_, label, phase, samples, excluded=None, **kw):
     vals = [s['seconds'] for s in samples]
-    st = dict(id=id_, label=label, phase=phase, n=len(vals),
+    steps.append(dict(id=id_, label=label, phase=phase, n=len(vals),
               mean=round(statistics.mean(vals), 2) if vals else None,
               median=statistics.median(vals) if vals else None,
               min=min(vals) if vals else None, max=max(vals) if vals else None,
               stdev=round(statistics.stdev(vals), 2) if len(vals) > 1 else None,
-              samples=samples, excluded=excluded or [], **kw)
-    steps.append(st)
+              samples=samples, excluded=excluded or [], **kw))
 
-# --- blocos "Nº Pacientes / Tempo / Observação" (tempo cronometrado direto, em segundos)
-direct = [
-  ('recepcao', 'Recepção (Portaria)', 'Chegada', 'C', 'D', 'E'),
-  ('atendimento-glaucoma', 'Atendimento Glaucoma', 'Chegada', 'F', 'G', 'H'),
-  ('microscopia', 'Microscopia', 'Exames', 'I', 'J', 'K'),
-  ('topografia', 'Topografia', 'Exames', 'L', 'M', 'N'),
-  ('tonometria-sopro', 'Tonometria de sopro', 'Exames', 'O', 'P', 'Q'),
-  ('auto-refratario', 'Auto refratário', 'Exames', 'R', 'S', 'T'),
-  ('glaucoma-consulta', 'Glaucoma Consulta', 'Consulta', 'U', 'V', 'W'),
-]
-for id_, label, phase, cn, ct, co in direct:
+def direct(ws, id_, label, phase, ncol, tcol, ocol=None, kind='cronometrado', **kw):
     smp, exc = [], []
-    for r in range(FIRST, LAST + 1):
-        v = cell(ct, r)
+    for r in rows_of(ws):
+        v = cell(ws, tcol, r)
         if v in (None, ''): continue
-        s = sec(v)
-        if s is None:
-            exc.append(dict(row=r, raw=str(v), reason='valor não é uma duração')); continue
-        obs = cell(co, r)
-        smp.append(dict(row=r, obs=cell(cn, r), seconds=s, note=clean(obs) if obs else None))
-    add_step(id_, label, phase, smp, exc, source='Colunas %s–%s' % (cn, co), kind='cronometrado')
+        sx = mmss(v)
+        if sx is None: exc.append(dict(row=r, raw=str(v), reason='valor não é uma duração')); continue
+        obs = cell(ws, ocol, r) if ocol else None
+        smp.append(dict(row=r, obs=cell(ws, ncol, r) if ncol else None, seconds=sx, note=clean(obs) if obs else None))
+    add_step(id_, label, phase, smp, exc, source='Colunas %s%s' % (ncol + '–' if ncol else '', tcol), kind=kind, **kw)
 
-# --- Campo visual: planilha tem duas colunas (Y = tempo direto; BA/BB/BC = início/fim) para as MESMAS observações.
+def start_end(ws, id_, label, phase, a, b, d):
+    smp, exc = [], []
+    for r in rows_of(ws):
+        sa, sb = cell(ws, a, r), cell(ws, b, r)
+        ta, tb = tod(sa), tod(sb)
+        if ta is None and tb is None: continue
+        if ta is None or tb is None: exc.append(dict(row=r, raw='%s – %s' % (sa, sb), reason='início ou fim ausente')); continue
+        if tb - ta < 0: exc.append(dict(row=r, raw='%s – %s' % (hhmm(sa), hhmm(sb)), reason='horário de fim anterior ao de início')); continue
+        smp.append(dict(row=r, obs=cell(ws, 'A', r), seconds=tb - ta, start=hhmm(sa), end=hhmm(sb), note=None))
+    add_step(id_, label, phase, smp, exc, source='Colunas %s–%s' % (a, d), kind='início / fim')
+
+# --- 1º andar: tempos cronometrados direto (mm:ss)
+for id_, label, phase, cn, ct, co in [
+  ('atendimento-glaucoma', 'Atendimento Glaucoma', 'Chegada', 'A', 'B', 'C'),
+  ('microscopia', 'Microscopia', 'Exames', 'D', 'E', 'F'),
+  ('topografia', 'Topografia', 'Exames', 'G', 'H', 'I'),
+  ('tonometria-sopro', 'Tonometria de sopro', 'Exames', 'J', 'K', 'L'),
+  ('auto-refratario', 'Auto refratário', 'Exames', 'M', 'N', 'O'),
+  ('glaucoma-consulta', 'Glaucoma Consulta', 'Consulta', 'P', 'Q', 'R')]:
+    direct(W1, id_, label, phase, cn, ct, co)
+# --- Recepção (Portaria): aba 2ºandar, colunas A (nº) e B (tempo)
+direct(W2, 'recepcao', 'Recepção (Portaria)', 'Chegada', 'A', 'B')
+# a Recepção vem antes das demais etapas na lista
+steps.insert(0, steps.pop())
+
+# --- Campo visual: início/fim; nas linhas sem horário ("x") vale a duração cronometrada (coluna AA)
 smp, exc = [], []
-for r in range(FIRST, LAST + 1):
-    a, b, d, y = cell('BA', r), cell('BB', r), cell('BC', r), cell('Y', r)
+for r in rows_of(W1):
+    a, b, d = cell(W1, 'Y', r), cell(W1, 'Z', r), cell(W1, 'AA', r)
     ta, tb = tod(a), tod(b)
     if ta is not None and tb is not None:
         calc = tb - ta
-        cached = sec(d)
-        item = dict(row=r, obs=cell('A', r), seconds=calc, start=hhmm(a), end=hhmm(b), note=None)
-        if cached is not None and cached != calc:
-            item['flag'] = 'recalculado'
-            item['note'] = 'A planilha trazia %d s (fórmula apontando para outra linha); recalculado a partir do início/fim registrados.' % cached
+        if calc < 0: exc.append(dict(row=r, raw='%s – %s' % (hhmm(a), hhmm(b)), reason='horário de fim anterior ao de início')); continue
+        item = dict(row=r, obs=cell(W1, 'A', r), seconds=calc, start=hhmm(a), end=hhmm(b), note=None)
+        if isinstance(d, datetime.time) and mmss(d) != calc:
+            item['flag'] = 'conferir'; item['note'] = 'A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.'
         smp.append(item)
-    elif isinstance(d, datetime.timedelta) and d.total_seconds() > 0 and a == 'x':
-        smp.append(dict(row=r, obs=cell('A', r), seconds=sec(d), note='Tempo cronometrado direto (sem horário de início/fim)'))
-    # Y fora do bloco 5-13 (valor estranho)
-for r in range(FIRST, LAST + 1):
-    y = cell('Y', r)
-    if y not in (None, '') and not isinstance(y, datetime.timedelta):
-        exc.append(dict(row=r, raw=str(y), reason='valor em formato de horário (00:17), não de duração; desconsiderado'))
-add_step('campo-visual', 'Campo visual', 'Exames', smp, exc, source='Colunas X–Z e BA–BC', kind='cronometrado / início-fim')
+    elif a == 'x' and isinstance(d, datetime.time):
+        smp.append(dict(row=r, obs=cell(W1, 'A', r), seconds=mmss(d), note='Tempo cronometrado direto (sem horário de início/fim)'))
+add_step('campo-visual', 'Campo visual', 'Exames', smp, exc, source='Colunas Y–AA', kind='cronometrado / início-fim')
 
-# --- blocos Início/Fim/Duração
-def start_end(id_, label, phase, a, b, d):
-    smp, exc = [], []
-    for r in range(FIRST, LAST + 1):
-        sa, sb = cell(a, r), cell(b, r)
-        ta, tb = tod(sa), tod(sb)
-        if ta is None and tb is None: continue
-        if ta is None or tb is None:
-            exc.append(dict(row=r, raw='%s – %s' % (sa, sb), reason='início ou fim ausente')); continue
-        dur = tb - ta
-        if dur < 0:
-            exc.append(dict(row=r, raw='%s – %s' % (hhmm(sa), hhmm(sb)), reason='horário de fim anterior ao de início')); continue
-        smp.append(dict(row=r, obs=cell('A', r), seconds=dur, start=hhmm(sa), end=hhmm(sb), note=None))
-    add_step(id_, label, phase, smp, exc, source='Colunas %s–%s' % (a, d), kind='início / fim')
-start_end('oct', 'OCT', 'Exames', 'AR', 'AS', 'AT')
-start_end('paquimetria', 'Paquimetria corneana', 'Exames', 'AU', 'AV', 'AW')
-start_end('retinografia', 'Retinografia', 'Exames', 'BD', 'BE', 'BF')
+start_end(W1, 'oct', 'OCT', 'Exames', 'S', 'T', 'U')
+start_end(W1, 'paquimetria', 'Paquimetria corneana', 'Exames', 'V', 'W', 'X')
+start_end(W1, 'retinografia', 'Retinografia', 'Exames', 'AB', 'AC', 'AD')
 
-# --- Pós-consulta: BG/BH início/fim (linhas 5-8 trazem 'x' e valores sem sentido em BJ -> ignoradas)
+# --- Atendimento Córnea (antes "Pós-consulta"): tempo de atendimento (AH) + início/fim quando houver
 smp, exc = [], []
-for r in range(FIRST, LAST + 1):
-    sa, sb = cell('BG', r), cell('BH', r); ta, tb = tod(sa), tod(sb)
-    if ta is None and tb is None:
-        if sa == 'x' or sb == 'x': exc.append(dict(row=r, raw='x / x', reason='sem horários registrados (BJ traz valor sem sentido)'))
-        continue
-    if ta is None or tb is None: exc.append(dict(row=r, raw='%s – %s' % (sa, sb), reason='início ou fim ausente')); continue
-    if tb - ta < 0: exc.append(dict(row=r, raw='%s – %s' % (hhmm(sa), hhmm(sb)), reason='horário de fim anterior ao de início')); continue
-    smp.append(dict(row=r, obs=cell('A', r), seconds=tb - ta, start=hhmm(sa), end=hhmm(sb), note=None))
-add_step('pos-consulta', 'Pós-consulta', 'Pós-consulta', smp, exc, source='Colunas BG–BH (BJ)', kind='início / fim')
-
-# --- Pós-consulta: tempo sem paciente (BI) — intervalo entre atendimentos consecutivos do posto
-smp, exc = [], []
-for r in range(FIRST, LAST + 1):
-    v = cell('BI', r)
+for r in rows_of(W1):
+    v = cell(W1, 'AH', r)
     if v in (None, ''): continue
-    s = sec(v)
-    if s is None: exc.append(dict(row=r, raw=str(v), reason='marcado com "x" (sem valor)')); continue
-    smp.append(dict(row=r, obs=cell('A', r), seconds=s, note=None))
-add_step('pos-consulta-ociosidade', 'Pós-consulta · tempo sem paciente', 'Pós-consulta', smp, exc, source='Coluna BI', kind='intervalo do posto')
+    sx = mmss(v)
+    if sx is None: exc.append(dict(row=r, raw=str(v), reason='valor não é uma duração')); continue
+    a, b = cell(W1, 'AE', r), cell(W1, 'AF', r)
+    item = dict(row=r, obs=cell(W1, 'A', r), seconds=sx, note=None)
+    if tod(a) is not None and tod(b) is not None: item.update(start=hhmm(a), end=hhmm(b))
+    smp.append(item)
+add_step('atendimento-cornea', 'Atendimento Córnea', 'Córnea', smp, exc, source='Colunas AE–AF e AH', kind='cronometrado / início-fim')
+# tempo sem paciente do posto da córnea (AG): só valores em mm:ss são válidos
+smp, exc = [], []
+for r in rows_of(W1):
+    v = cell(W1, 'AG', r)
+    if v in (None, ''): continue
+    sx = mmss(v)
+    if sx is None: exc.append(dict(row=r, raw=str(v) if v == 'x' else 'valor fora do formato', reason='sem valor ("x") ou fora do formato de tempo' )); continue
+    smp.append(dict(row=r, obs=cell(W1, 'A', r), seconds=sx, note=None))
+add_step('atendimento-cornea-ociosidade', 'Atendimento Córnea · tempo sem paciente', 'Córnea', smp, exc, source='Coluna AG', kind='intervalo do posto')
 
-# etapas previstas na planilha, mas sem nenhum dado
-empty_cols = [('Teste provocativo de Glaucoma', 'AX–AZ'), ('Consulta oftalmológica', 'AD–AF'),
-              ('Encaminhamento / Agendamento / Faturamento', 'AG–AI'), ('Horário de saída da clínica', 'AJ'), ('Médico', 'AO')]
+# --- 2º andar: Retina
+direct(W2, 'retina-mario', 'Retina Dr. Mário Carlos', 'Retina', 'D', 'E', None)
+smp = []
+for col, nome in (('G', '1ª dilatação'), ('H', '2ª dilatação'), ('I', '3ª dilatação')):
+    for r in rows_of(W2):
+        v = cell(W2, col, r)
+        if mmss(v) is not None: smp.append(dict(row=r, obs=nome, seconds=mmss(v), note=clean(cell(W2, 'J', r)) if cell(W2, 'J', r) else None))
+add_step('dilatacao', 'Dilatação de colírio', 'Retina', smp, [], source='Colunas G–I', kind='cronometrado')
+direct(W2, 'consultorio-retina', 'Consultório Retina', 'Retina', 'K', 'L', 'N')
+direct(W2, 'ecobiometria', 'Ecobiometria / Ecografia', 'Retina', 'O', 'P', 'R')
+direct(W2, 'atendimento-retina', 'Atendimento Retina', 'Retina', None, 'T', None)
+RETINA = {'retina-mario', 'dilatacao', 'consultorio-retina', 'ecobiometria', 'atendimento-retina'}
 empty_steps = []
-for name, cols in empty_cols:
-    first = cols.split('–')[0]
-    assert all(cell(first, r) in (None, '') for r in range(FIRST, LAST + 1)), name
-    empty_steps.append(dict(label=name, cols=cols))
 
-# ---------------------------------------------------------------- associação etapa-do-fluxograma ↔ medição (Glaucoma)
+# ---------------------------------------------------------------- associação etapa-do-fluxograma ↔ medição
 g = next(p for p in procs if p['id'] == 'glaucoma')
+cor = next(p for p in procs if p['id'] == 'exame-de-cornea')
 def node(name_part):
     hits = [n for n in g['nodes'] if name_part.lower() in n['name'].lower() and n['kind'] == 'task']
     assert len(hits) == 1, (name_part, hits)
     return hits[0]['id']
 lane_exames = next(l['id'] for l in g['lanes'] if l['name'] == 'Exames')
-lane_recep = next(l['id'] for l in g['lanes'] if l['name'] == 'Recepção')
-lane_port = next(l['id'] for l in g['lanes'] if l['name'] == 'Portaria')
+lane_medico_cor = next(l['id'] for l in cor['lanes'] if 'dico' in l['name'].lower())
 LINK = {
   'recepcao': dict(process='glaucoma', nodes=[node('Portaria identifica'), node('Recepção abre a ficha')], confidence='provável',
        note='A planilha mede “Recepção (Portaria)” como uma etapa única; no fluxograma ela corresponde às duas tarefas da entrada (Portaria e Recepção). O mesmo tempo é exibido nas duas, sem soma.'),
-  'auto-refratario': dict(process='glaucoma', nodes=[node('Refração')], confidence='provável',
-       note='O auto refrator é o equipamento da etapa de refração.'),
+  'auto-refratario': dict(process='glaucoma', nodes=[node('Refração')], confidence='provável', note='O auto refrator é o equipamento da etapa de refração.'),
   'tonometria-sopro': dict(process='glaucoma', nodes=[node('Mapeamento de')], confidence='provável',
        note='A tarefa do fluxograma une “mapeamento de retina e tonometria”; a planilha mede a tonometria de sopro separadamente.'),
   'retinografia': dict(process='glaucoma', nodes=[node('Mapeamento de')], confidence='provável',
        note='A tarefa do fluxograma une “mapeamento de retina e tonometria”; a planilha mede a retinografia separadamente.'),
 }
-for lane_id, ids in {lane_exames: ['microscopia', 'topografia', 'oct', 'paquimetria', 'campo-visual', 'glaucoma-consulta', 'tonometria-sopro', 'auto-refratario', 'retinografia', 'pos-consulta', 'pos-consulta-ociosidade']}.items(): pass
-for s in steps:
-    s['process'] = 'glaucoma'
-    s['link'] = LINK.get(s['id'], dict(process='glaucoma', nodes=[], confidence='sem etapa equivalente', note=None))
-    s['lane'] = None
-LANE_STEPS = {  # medições ligadas à raia (não a uma tarefa específica)
-  lane_exames: ['microscopia', 'topografia', 'oct', 'paquimetria', 'campo-visual', 'glaucoma-consulta', 'pos-consulta'],
-}
-for s in steps:
-    if s['id'] in LANE_STEPS[lane_exames]:
-        s['link'] = dict(process='glaucoma', nodes=[], lane=lane_exames, confidence='raia',
-                         note='O fluxograma não detalha este exame/etapa individualmente; a medição é associada à raia “Exames”.')
-    if s['id'] == 'atendimento-glaucoma':
-        s['link'] = dict(process='glaucoma', nodes=[], confidence='sem etapa equivalente',
-                         note='Não há tarefa com este nome no fluxograma; mantida apenas nos dados do processo.')
-    if s['id'] == 'pos-consulta-ociosidade':
-        s['link'] = dict(process='glaucoma', nodes=[], confidence='sem etapa equivalente',
-                         note='Intervalo em que o posto de pós-consulta ficou sem paciente; não é uma etapa da jornada.')
+LANE_STEPS = {lane_exames: ['microscopia', 'topografia', 'oct', 'paquimetria', 'campo-visual', 'glaucoma-consulta']}
+for st in steps:
+    sid = st['id']
+    st['group'] = 'retina' if sid in RETINA else 'principal'
+    if sid in RETINA:
+        st['link'] = dict(process='retina', nodes=[], confidence='sem fluxograma', note='A Retina não tem fluxograma mapeado; as medições aparecem só nos resultados.')
+    elif sid.startswith('atendimento-cornea'):
+        st['link'] = dict(process='exame-de-cornea', nodes=[], lane=lane_medico_cor, confidence='raia',
+                          note='A planilha mede o atendimento da córnea como um bloco, do início ao fim; no fluxograma ele corresponde à raia do médico (da conversa inicial à entrega da receita). Associação por raia.')
+    elif sid in LINK: st['link'] = LINK[sid]
+    elif sid in LANE_STEPS[lane_exames]:
+        st['link'] = dict(process='glaucoma', nodes=[], lane=lane_exames, confidence='raia', note='O fluxograma não detalha este exame/etapa individualmente; a medição é associada à raia “Exames”.')
+    else:
+        st['link'] = dict(process='glaucoma', nodes=[], confidence='sem etapa equivalente', note='Não há tarefa com este nome no fluxograma; mantida apenas nos dados do processo.')
+    st['process'] = st['link']['process']
+    if st['kind'] == 'intervalo do posto':
+        st['link'] = dict(process=st['link']['process'], nodes=[], confidence='sem etapa equivalente', note='Intervalo em que o posto ficou sem paciente; não é uma etapa da jornada.')
 
-# observações de campo (tags)
+n_valid = sum(len(x['samples']) for x in steps if x['kind'] != 'intervalo do posto')
 quality = [
- dict(id='titulo', level='atenção', title='Título da planilha × conteúdo', text='A planilha se intitula “Consulta e Exames de Córnea”, mas as etapas medidas (Atendimento Glaucoma, Glaucoma Consulta, Teste provocativo de Glaucoma, tonometria, OCT, campo visual…) correspondem ao fluxograma de Glaucoma. As medições foram associadas ao processo de Glaucoma.'),
- dict(id='sem-medicoes', level='atenção', title='Córnea e Teste de lente sem medições', text='Não há medições para “Exame de córnea” e “Teste de lente” na planilha recebida. Para esses processos o site mostra apenas o fluxograma e o tempo escrito no próprio diagrama (16:05, que vale só para a etapa de consulta, no fluxograma de córnea; e 41:52 no Teste de lente).'),
- dict(id='independentes', level='info', title='Medições independentes por etapa', text='Cada etapa tem a sua própria contagem de pacientes (“Nº Pacientes”), ou seja, as etapas não foram cronometradas para os mesmos pacientes. Por isso o site não soma etapas nem calcula tempo total de permanência — as colunas de totais da planilha também estão com erro (#REF!).'),
- dict(id='campo-visual', level='corrigido', title='Campo visual — durações recalculadas', text='Em %d observações a coluna de duração (BC) tinha fórmulas apontando para a linha errada. A duração foi recalculada a partir do início e fim registrados nas colunas BA/BB; cada linha afetada está marcada na tabela.' % sum(1 for s in steps if s['id']=='campo-visual' for x in s['samples'] if x.get('flag'))),
- dict(id='excluidos', level='corrigido', title='Valores desconsiderados', text='Foram desconsiderados valores que não são durações válidas (ex.: horário “00:17” na coluna de Campo visual; “x” nas linhas 5–8 de Pós-consulta). Todos estão listados em cada etapa. Nenhum valor válido foi alterado.'),
- dict(id='vazias', level='info', title='Etapas previstas sem dados', text='Previstas na planilha, mas sem nenhuma medição: ' + '; '.join(e['label'] for e in empty_steps) + '.'),
- dict(id='entrevista', level='atenção', title='Fluxograma de córnea ampliado com a entrevista', text='O desenho original da córnea cobria só o atendimento técnico. A parte da portaria, recepção, exames, decisão de agendar e marcação foi acrescentada a partir da entrevista com a equipe da córnea e da estrutura do fluxograma de Glaucoma, e depois revisada no diagrama atualizado. Cada etapa informa sua origem.'),
- dict(id='outliers', level='info', title='Valores extremos', text='Os valores foram mantidos como registrados. Valores muito acima da mediana aparecem destacados nos gráficos e tabelas e merecem conferência em campo.'),
+ dict(id='fonte', level='info', title='Fonte dos dados', text='Medicoes_Rede_Oftalmo.xlsx (abas 1ºandar e 2ºandar). Tempos digitados como “2:17” foram lidos como 2 min 17 s.'),
+ dict(id='independentes', level='info', title='Medições independentes por etapa', text='Cada etapa tem a sua própria contagem de pacientes; por isso o site não soma etapas nem calcula tempo total de permanência.'),
+ dict(id='excluidos', level='corrigido', title='Valores desconsiderados', text='Valores que não são durações válidas (“x”, horários fora do formato) foram desconsiderados e estão listados em cada etapa. Nenhum valor válido foi alterado.'),
 ]
 
 # ---------------------------------------------------------------- agenda de horários × cronoanálise (sem contar 2 vezes)
@@ -460,7 +450,7 @@ quality.append(dict(id='agenda', level='info', title='Agenda de horários já es
 # ---------------------------------------------------------------- cronograma de coleta
 PLAN_TARGET, PLAN_PER_VISIT, PLAN_PER_WEEK = 100, 35, 2
 PLAN_EXCLUDED = ['oct', 'campo-visual', 'retinografia', 'paquimetria']
-plan_steps = [st for st in steps if st['id'] not in PLAN_EXCLUDED and st['id'] != 'pos-consulta-ociosidade']
+plan_steps = [st for st in steps if st['id'] not in PLAN_EXCLUDED and st['group'] == 'principal' and st['kind'] != 'intervalo do posto']
 rows_ = [dict(id=st['id'], label=st['label'], n=st['n'], missing=max(0, PLAN_TARGET - st['n']),
               visits=math.ceil(max(0, PLAN_TARGET - st['n']) / PLAN_PER_VISIT)) for st in plan_steps]
 n_visits = max(r['visits'] for r in rows_)
@@ -476,10 +466,13 @@ for i, dt in enumerate(visits_dates, 1):
                         lowest=min(after(i, r) for r in rows_)))
 nxt = d
 while nxt.weekday() not in weekdays: nxt += datetime.timedelta(days=1)
+# início do calendário: próximo dia de coleta (qui/sex) depois da data em que o site é gerado
+start = datetime.date.today() + datetime.timedelta(days=1)
+while start.weekday() not in weekdays: start += datetime.timedelta(days=1)
 plan = dict(target=PLAN_TARGET, perVisit=PLAN_PER_VISIT, perWeek=PLAN_PER_WEEK, excluded=[st['label'] for st in steps if st['id'] in PLAN_EXCLUDED],
             steps=rows_, visits=n_visits, schedule=visits_, lastDone=ag_dates[-1].isoformat(), end=visits_dates[-1].isoformat(), next=nxt.isoformat(),
             bottleneck=[r['label'] for r in rows_ if r['visits'] == n_visits],
-            weekdays=weekdays)
+            weekdays=weekdays, start=start.isoformat())
 print('plano:', n_visits, 'visitas →', plan['end'], [r['label'] + ' ' + str(r['visits']) for r in rows_])
 
 # ---------------------------------------------------------------- rótulos de tempo total dentro dos fluxogramas
@@ -493,7 +486,7 @@ for p in procs:
 
 # ---------------------------------------------------------------- saída
 json.dump(dict(processes=procs), open(os.path.join(OUT_D, 'processes.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-json.dump(dict(source='Cronoanalise_Rede_Oftalmo.xlsx · aba “Coleta de Dados”', unit='segundos', steps=steps,
+json.dump(dict(source='Medicoes_Rede_Oftalmo.xlsx · abas “1ºandar” e “2ºandar”', unit='segundos', steps=steps,
                plan=plan, emptySteps=empty_steps, laneSteps={k: v for k, v in LANE_STEPS.items()}, quality=quality),
           open(os.path.join(OUT_D, 'measurements.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 for s in steps: print('%-34s n=%-3d mean=%-8s med=%-6s min=%-5s max=%-6s exc=%d' % (s['label'], s['n'], s['mean'], s['median'], s['min'], s['max'], len(s['excluded'])))

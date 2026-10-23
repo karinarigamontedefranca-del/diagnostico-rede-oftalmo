@@ -50,8 +50,8 @@ function buildChapters(data: Dataset): Chapter[] {
     flow('exame-de-cornea', 'Córnea', 'Processo 2 de 3', 'Da portaria à saída da clínica — ou ao setor de marcação.'),
     flow('teste-de-lente', 'Teste de lente', 'Processo 3 de 3', 'A consulta de teste de lente, com a decisão de aprovar ou trocar a lente.'),
     {
-      id: 'tempos', nav: 'Glaucoma · tempos', kicker: 'Cronoanálise', title: 'Quanto tempo cada etapa leva',
-      lead: 'As etapas do Glaucoma, uma a uma, com o tempo médio medido na clínica.', mode: 'timed', steps: journey,
+      id: 'tempos', nav: 'Tempos medidos', kicker: 'Cronoanálise', title: 'Quanto tempo cada etapa leva',
+      lead: 'As etapas medidas no 1º andar (Glaucoma e Córnea), uma a uma, com o tempo médio medido na clínica.', mode: 'timed', steps: journey,
       stats: [[String(journey.length), 'etapas'], [String(totalN), 'medições']],
     },
   ]

@@ -57,7 +57,7 @@ export default function ProcessPage({ data, id, step }: { data: Dataset; id: str
           ) : (
             <div className="figure" style={{ marginTop: 24 }}>
               <h3>Sem medições na planilha recebida</h3>
-              <p className="cap" style={{ marginBottom: 0 }}>A planilha de cronoanálise contém apenas etapas do processo de Glaucoma. Quando houver medições para {p.title}, basta incluí-las na planilha em <code>source/</code> e rodar <code>npm run data</code>.</p>
+              <p className="cap" style={{ marginBottom: 0 }}>A planilha de medições recebida não traz etapas de {p.title}. Quando houver medições, basta incluí-las na planilha em <code>source/</code> e rodar <code>npm run data</code>.</p>
             </div>
           )}
         </section>

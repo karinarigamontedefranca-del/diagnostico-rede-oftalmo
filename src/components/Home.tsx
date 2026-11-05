@@ -145,6 +145,19 @@ export default function Home({ data }: { data: Dataset }) {
         </div>
       </section>
 
+      {/* Tempo médio por tarefa */}
+      <Section id="tarefas" kicker="Tempo médio de execução" title="Quanto dura cada tarefa" lead="Média das medições de cada tarefa cronometrada, com o número de observações.">
+        <div style={{ borderTop: '1px solid var(--color-ink)' }}>
+          {[...journey, ...retina].map((s) => (
+            <a key={s.id} href={`#/processo/${s.link.process}?etapa=${s.id}`} style={{ display: 'grid', gridTemplateColumns: 'minmax(180px,2fr) minmax(110px,1fr) 90px', gap: 16, padding: '12px 0', borderBottom: '1px solid var(--color-line)', color: 'inherit', textDecoration: 'none' }}>
+              <b>{s.label}{s.group === 'retina' && <span className="pill gray" style={{ marginLeft: 8 }}>Retina</span>}</b>
+              <span className="num"><b>{fmt(s.mean)}</b></span>
+              <span className="num" style={{ color: 'var(--color-muted)', whiteSpace: 'nowrap' }}>{s.n} med.</span>
+            </a>
+          ))}
+        </div>
+      </Section>
+
       {/* Processos */}
       <Section id="processos" kicker="Processos mapeados" title="Três fluxos, um mesmo olhar" lead="Abra um processo para ver o fluxograma interativo e as medições associadas.">
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24 }}>

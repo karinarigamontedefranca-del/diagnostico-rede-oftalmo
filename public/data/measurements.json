@@ -6,12 +6,12 @@
    "id": "recepcao",
    "label": "Recepção (Portaria)",
    "phase": "Chegada",
-   "n": 87,
-   "mean": 65.95,
-   "median": 56,
+   "n": 122,
+   "mean": 65.44,
+   "median": 58.0,
    "min": 8,
    "max": 267,
-   "stdev": 44.0,
+   "stdev": 41.31,
    "samples": [
     {
      "row": 3,
@@ -534,6 +534,216 @@
      "obs": 87.0,
      "seconds": 21,
      "note": null
+    },
+    {
+     "row": 90,
+     "obs": 88.0,
+     "seconds": 122,
+     "note": null
+    },
+    {
+     "row": 91,
+     "obs": 89.0,
+     "seconds": 55,
+     "note": null
+    },
+    {
+     "row": 92,
+     "obs": 90.0,
+     "seconds": 19,
+     "note": null
+    },
+    {
+     "row": 93,
+     "obs": 91.0,
+     "seconds": 54,
+     "note": null
+    },
+    {
+     "row": 94,
+     "obs": 92.0,
+     "seconds": 62,
+     "note": null
+    },
+    {
+     "row": 95,
+     "obs": 93.0,
+     "seconds": 94,
+     "note": null
+    },
+    {
+     "row": 96,
+     "obs": 94.0,
+     "seconds": 85,
+     "note": null
+    },
+    {
+     "row": 97,
+     "obs": 95.0,
+     "seconds": 70,
+     "note": null
+    },
+    {
+     "row": 98,
+     "obs": 96.0,
+     "seconds": 63,
+     "note": null
+    },
+    {
+     "row": 99,
+     "obs": 97.0,
+     "seconds": 57,
+     "note": null
+    },
+    {
+     "row": 100,
+     "obs": 98.0,
+     "seconds": 60,
+     "note": null
+    },
+    {
+     "row": 101,
+     "obs": 99.0,
+     "seconds": 151,
+     "note": null
+    },
+    {
+     "row": 102,
+     "obs": 100.0,
+     "seconds": 50,
+     "note": null
+    },
+    {
+     "row": 103,
+     "obs": 101.0,
+     "seconds": 20,
+     "note": null
+    },
+    {
+     "row": 104,
+     "obs": 102.0,
+     "seconds": 36,
+     "note": null
+    },
+    {
+     "row": 105,
+     "obs": 103.0,
+     "seconds": 90,
+     "note": null
+    },
+    {
+     "row": 106,
+     "obs": 104.0,
+     "seconds": 56,
+     "note": null
+    },
+    {
+     "row": 107,
+     "obs": 105.0,
+     "seconds": 50,
+     "note": null
+    },
+    {
+     "row": 108,
+     "obs": 106.0,
+     "seconds": 72,
+     "note": null
+    },
+    {
+     "row": 109,
+     "obs": 107.0,
+     "seconds": 125,
+     "note": null
+    },
+    {
+     "row": 110,
+     "obs": 108.0,
+     "seconds": 59,
+     "note": null
+    },
+    {
+     "row": 111,
+     "obs": 109.0,
+     "seconds": 95,
+     "note": null
+    },
+    {
+     "row": 112,
+     "obs": 110.0,
+     "seconds": 82,
+     "note": null
+    },
+    {
+     "row": 113,
+     "obs": 111.0,
+     "seconds": 15,
+     "note": null
+    },
+    {
+     "row": 114,
+     "obs": 112.0,
+     "seconds": 80,
+     "note": null
+    },
+    {
+     "row": 115,
+     "obs": 113.0,
+     "seconds": 43,
+     "note": null
+    },
+    {
+     "row": 116,
+     "obs": 114.0,
+     "seconds": 64,
+     "note": null
+    },
+    {
+     "row": 117,
+     "obs": 115.0,
+     "seconds": 39,
+     "note": null
+    },
+    {
+     "row": 118,
+     "obs": 116.0,
+     "seconds": 43,
+     "note": null
+    },
+    {
+     "row": 119,
+     "obs": 117.0,
+     "seconds": 138,
+     "note": null
+    },
+    {
+     "row": 120,
+     "obs": 118.0,
+     "seconds": 89,
+     "note": null
+    },
+    {
+     "row": 121,
+     "obs": 119.0,
+     "seconds": 26,
+     "note": null
+    },
+    {
+     "row": 122,
+     "obs": 120.0,
+     "seconds": 17,
+     "note": null
+    },
+    {
+     "row": 123,
+     "obs": 121.0,
+     "seconds": 49,
+     "note": null
+    },
+    {
+     "row": 124,
+     "obs": 122.0,
+     "seconds": 16,
+     "note": null
     }
    ],
    "excluded": [],
@@ -555,12 +765,12 @@
    "id": "atendimento-glaucoma",
    "label": "Atendimento Glaucoma",
    "phase": "Chegada",
-   "n": 24,
-   "mean": 177.5,
-   "median": 152.5,
-   "min": 82,
-   "max": 331,
-   "stdev": 70.18,
+   "n": 47,
+   "mean": 181.89,
+   "median": 142,
+   "min": 37,
+   "max": 577,
+   "stdev": 121.97,
    "samples": [
     {
      "row": 3,
@@ -705,6 +915,144 @@
      "obs": 24.0,
      "seconds": 251,
      "note": null
+    },
+    {
+     "row": 27,
+     "obs": 25.0,
+     "seconds": 100,
+     "note": null
+    },
+    {
+     "row": 28,
+     "obs": 26.0,
+     "seconds": 87,
+     "note": null
+    },
+    {
+     "row": 29,
+     "obs": 27.0,
+     "seconds": 108,
+     "note": null
+    },
+    {
+     "row": 30,
+     "obs": 28.0,
+     "seconds": 65,
+     "note": null
+    },
+    {
+     "row": 31,
+     "obs": 29.0,
+     "seconds": 359,
+     "note": null
+    },
+    {
+     "row": 32,
+     "obs": 30.0,
+     "seconds": 114,
+     "note": null
+    },
+    {
+     "row": 33,
+     "obs": 31.0,
+     "seconds": 48,
+     "note": null
+    },
+    {
+     "row": 34,
+     "obs": 32.0,
+     "seconds": 85,
+     "note": null
+    },
+    {
+     "row": 35,
+     "obs": 33.0,
+     "seconds": 213,
+     "note": null
+    },
+    {
+     "row": 36,
+     "obs": 34.0,
+     "seconds": 143,
+     "note": null
+    },
+    {
+     "row": 37,
+     "obs": 35.0,
+     "seconds": 144,
+     "note": null
+    },
+    {
+     "row": 38,
+     "obs": 36.0,
+     "seconds": 85,
+     "note": null
+    },
+    {
+     "row": 39,
+     "obs": 37.0,
+     "seconds": 80,
+     "note": null
+    },
+    {
+     "row": 40,
+     "obs": 38.0,
+     "seconds": 37,
+     "note": null
+    },
+    {
+     "row": 41,
+     "obs": 39.0,
+     "seconds": 577,
+     "note": null
+    },
+    {
+     "row": 42,
+     "obs": 40.0,
+     "seconds": 141,
+     "note": null
+    },
+    {
+     "row": 43,
+     "obs": 41.0,
+     "seconds": 571,
+     "note": null
+    },
+    {
+     "row": 44,
+     "obs": 42.0,
+     "seconds": 209,
+     "note": null
+    },
+    {
+     "row": 45,
+     "obs": 43.0,
+     "seconds": 86,
+     "note": null
+    },
+    {
+     "row": 46,
+     "obs": 44.0,
+     "seconds": 43,
+     "note": null
+    },
+    {
+     "row": 47,
+     "obs": 45.0,
+     "seconds": 216,
+     "note": null
+    },
+    {
+     "row": 48,
+     "obs": 46.0,
+     "seconds": 424,
+     "note": null
+    },
+    {
+     "row": 49,
+     "obs": 47.0,
+     "seconds": 354,
+     "note": null
     }
    ],
    "excluded": [],
@@ -723,12 +1071,12 @@
    "id": "microscopia",
    "label": "Microscopia",
    "phase": "Exames",
-   "n": 13,
-   "mean": 187,
-   "median": 167,
+   "n": 22,
+   "mean": 188.91,
+   "median": 168.0,
    "min": 84,
    "max": 421,
-   "stdev": 92.06,
+   "stdev": 81.68,
    "samples": [
     {
      "row": 3,
@@ -807,6 +1155,60 @@
      "obs": 13.0,
      "seconds": 421,
      "note": null
+    },
+    {
+     "row": 16,
+     "obs": 14.0,
+     "seconds": 153,
+     "note": null
+    },
+    {
+     "row": 17,
+     "obs": 15.0,
+     "seconds": 179,
+     "note": null
+    },
+    {
+     "row": 18,
+     "obs": 16.0,
+     "seconds": 339,
+     "note": null
+    },
+    {
+     "row": 19,
+     "obs": 17.0,
+     "seconds": 276,
+     "note": null
+    },
+    {
+     "row": 20,
+     "obs": 18.0,
+     "seconds": 169,
+     "note": null
+    },
+    {
+     "row": 21,
+     "obs": 19.0,
+     "seconds": 136,
+     "note": null
+    },
+    {
+     "row": 22,
+     "obs": 20.0,
+     "seconds": 179,
+     "note": null
+    },
+    {
+     "row": 23,
+     "obs": 21.0,
+     "seconds": 152,
+     "note": null
+    },
+    {
+     "row": 24,
+     "obs": 22.0,
+     "seconds": 142,
+     "note": null
     }
    ],
    "excluded": [],
@@ -826,12 +1228,12 @@
    "id": "topografia",
    "label": "Topografia",
    "phase": "Exames",
-   "n": 17,
-   "mean": 329.76,
-   "median": 255,
+   "n": 23,
+   "mean": 343.43,
+   "median": 334,
    "min": 50,
    "max": 915,
-   "stdev": 233.39,
+   "stdev": 207.04,
    "samples": [
     {
      "row": 3,
@@ -934,6 +1336,42 @@
      "obs": 17.0,
      "seconds": 315,
      "note": null
+    },
+    {
+     "row": 20,
+     "obs": 18.0,
+     "seconds": 441,
+     "note": null
+    },
+    {
+     "row": 21,
+     "obs": 19.0,
+     "seconds": 351,
+     "note": null
+    },
+    {
+     "row": 22,
+     "obs": 20.0,
+     "seconds": 258,
+     "note": null
+    },
+    {
+     "row": 23,
+     "obs": 21.0,
+     "seconds": 570,
+     "note": null
+    },
+    {
+     "row": 24,
+     "obs": 22.0,
+     "seconds": 339,
+     "note": null
+    },
+    {
+     "row": 25,
+     "obs": 23.0,
+     "seconds": 334,
+     "note": null
     }
    ],
    "excluded": [],
@@ -953,12 +1391,12 @@
    "id": "tonometria-sopro",
    "label": "Tonometria de sopro",
    "phase": "Exames",
-   "n": 45,
-   "mean": 78.22,
-   "median": 72,
+   "n": 60,
+   "mean": 73.47,
+   "median": 64.0,
    "min": 20,
    "max": 170,
-   "stdev": 36.14,
+   "stdev": 34.24,
    "samples": [
     {
      "row": 3,
@@ -1229,6 +1667,96 @@
      "obs": 45.0,
      "seconds": 68,
      "note": null
+    },
+    {
+     "row": 48,
+     "obs": 46.0,
+     "seconds": 72,
+     "note": null
+    },
+    {
+     "row": 49,
+     "obs": 47.0,
+     "seconds": 32,
+     "note": null
+    },
+    {
+     "row": 50,
+     "obs": 48.0,
+     "seconds": 34,
+     "note": null
+    },
+    {
+     "row": 51,
+     "obs": 49.0,
+     "seconds": 51,
+     "note": null
+    },
+    {
+     "row": 52,
+     "obs": 50.0,
+     "seconds": 68,
+     "note": null
+    },
+    {
+     "row": 53,
+     "obs": 51.0,
+     "seconds": 110,
+     "note": null
+    },
+    {
+     "row": 54,
+     "obs": 52.0,
+     "seconds": 57,
+     "note": null
+    },
+    {
+     "row": 55,
+     "obs": 53.0,
+     "seconds": 60,
+     "note": null
+    },
+    {
+     "row": 56,
+     "obs": 54.0,
+     "seconds": 44,
+     "note": null
+    },
+    {
+     "row": 57,
+     "obs": 55.0,
+     "seconds": 65,
+     "note": null
+    },
+    {
+     "row": 58,
+     "obs": 56.0,
+     "seconds": 105,
+     "note": null
+    },
+    {
+     "row": 59,
+     "obs": 57.0,
+     "seconds": 40,
+     "note": null
+    },
+    {
+     "row": 60,
+     "obs": 58.0,
+     "seconds": 36,
+     "note": null
+    },
+    {
+     "row": 61,
+     "obs": 59.0,
+     "seconds": 51,
+     "note": null
+    },
+    {
+     "row": 62,
+     "obs": 60.0,
+     "seconds": 63,
+     "note": null
     }
    ],
    "excluded": [],
@@ -1249,12 +1777,12 @@
    "id": "auto-refratario",
    "label": "Auto refratário",
    "phase": "Exames",
-   "n": 41,
-   "mean": 69.32,
-   "median": 60,
+   "n": 56,
+   "mean": 70.39,
+   "median": 60.0,
    "min": 33,
-   "max": 178,
-   "stdev": 28.78,
+   "max": 257,
+   "stdev": 36.1,
    "samples": [
     {
      "row": 3,
@@ -1501,6 +2029,96 @@
      "obs": 41.0,
      "seconds": 78,
      "note": null
+    },
+    {
+     "row": 44,
+     "obs": 42.0,
+     "seconds": 39,
+     "note": null
+    },
+    {
+     "row": 45,
+     "obs": 43.0,
+     "seconds": 75,
+     "note": null
+    },
+    {
+     "row": 46,
+     "obs": 44.0,
+     "seconds": 48,
+     "note": null
+    },
+    {
+     "row": 47,
+     "obs": 45.0,
+     "seconds": 48,
+     "note": null
+    },
+    {
+     "row": 48,
+     "obs": 46.0,
+     "seconds": 257,
+     "note": null
+    },
+    {
+     "row": 49,
+     "obs": 47.0,
+     "seconds": 50,
+     "note": null
+    },
+    {
+     "row": 50,
+     "obs": 48.0,
+     "seconds": 47,
+     "note": null
+    },
+    {
+     "row": 51,
+     "obs": 49.0,
+     "seconds": 74,
+     "note": null
+    },
+    {
+     "row": 52,
+     "obs": 50.0,
+     "seconds": 74,
+     "note": null
+    },
+    {
+     "row": 53,
+     "obs": 51.0,
+     "seconds": 49,
+     "note": null
+    },
+    {
+     "row": 54,
+     "obs": 52.0,
+     "seconds": 75,
+     "note": null
+    },
+    {
+     "row": 55,
+     "obs": 53.0,
+     "seconds": 58,
+     "note": null
+    },
+    {
+     "row": 56,
+     "obs": 54.0,
+     "seconds": 72,
+     "note": null
+    },
+    {
+     "row": 57,
+     "obs": 55.0,
+     "seconds": 70,
+     "note": null
+    },
+    {
+     "row": 58,
+     "obs": 56.0,
+     "seconds": 64,
+     "note": null
     }
    ],
    "excluded": [],
@@ -1521,12 +2139,12 @@
    "id": "glaucoma-consulta",
    "label": "Glaucoma Consulta",
    "phase": "Consulta",
-   "n": 28,
-   "mean": 563.57,
-   "median": 546.0,
+   "n": 40,
+   "mean": 566.95,
+   "median": 502.5,
    "min": 142,
-   "max": 1336,
-   "stdev": 283.47,
+   "max": 1490,
+   "stdev": 302.24,
    "samples": [
     {
      "row": 3,
@@ -1695,6 +2313,78 @@
      "obs": 28.0,
      "seconds": 631,
      "note": null
+    },
+    {
+     "row": 31,
+     "obs": 29.0,
+     "seconds": 747,
+     "note": null
+    },
+    {
+     "row": 32,
+     "obs": 30.0,
+     "seconds": 854,
+     "note": null
+    },
+    {
+     "row": 33,
+     "obs": 31.0,
+     "seconds": 746,
+     "note": null
+    },
+    {
+     "row": 34,
+     "obs": 32.0,
+     "seconds": 1490,
+     "note": "Digitado em outro formato (24:50); lido como 24 min 50 s."
+    },
+    {
+     "row": 35,
+     "obs": 33.0,
+     "seconds": 679,
+     "note": null
+    },
+    {
+     "row": 36,
+     "obs": 34.0,
+     "seconds": 340,
+     "note": null
+    },
+    {
+     "row": 37,
+     "obs": 35.0,
+     "seconds": 405,
+     "note": null
+    },
+    {
+     "row": 38,
+     "obs": 36.0,
+     "seconds": 331,
+     "note": null
+    },
+    {
+     "row": 39,
+     "obs": 37.0,
+     "seconds": 428,
+     "note": null
+    },
+    {
+     "row": 40,
+     "obs": 38.0,
+     "seconds": 330,
+     "note": null
+    },
+    {
+     "row": 41,
+     "obs": 39.0,
+     "seconds": 293,
+     "note": null
+    },
+    {
+     "row": 42,
+     "obs": 40.0,
+     "seconds": 255,
+     "note": null
     }
    ],
    "excluded": [],
@@ -1714,12 +2404,12 @@
    "id": "campo-visual",
    "label": "Campo visual",
    "phase": "Exames",
-   "n": 116,
-   "mean": 677.77,
+   "n": 118,
+   "mean": 671.36,
    "median": 600.0,
    "min": 120,
    "max": 2400,
-   "stdev": 342.46,
+   "stdev": 343.39,
    "samples": [
     {
      "row": 3,
@@ -2648,6 +3338,22 @@
      "start": "07:15",
      "end": "07:28",
      "note": null
+    },
+    {
+     "row": 119,
+     "obs": 117.0,
+     "seconds": 420,
+     "start": "06:37",
+     "end": "06:44",
+     "note": null
+    },
+    {
+     "row": 120,
+     "obs": 118.0,
+     "seconds": 180,
+     "start": "08:37",
+     "end": "08:40",
+     "note": null
     }
    ],
    "excluded": [],
@@ -2667,12 +3373,12 @@
    "id": "oct",
    "label": "OCT",
    "phase": "Exames",
-   "n": 68,
-   "mean": 365.29,
-   "median": 360.0,
+   "n": 81,
+   "mean": 351.11,
+   "median": 300,
    "min": 60,
    "max": 1200,
-   "stdev": 187.38,
+   "stdev": 183.49,
    "samples": [
     {
      "row": 3,
@@ -3217,6 +3923,110 @@
      "start": "09:46",
      "end": "09:50",
      "note": null
+    },
+    {
+     "row": 71,
+     "obs": 69.0,
+     "seconds": 420,
+     "start": "08:13",
+     "end": "08:20",
+     "note": null
+    },
+    {
+     "row": 72,
+     "obs": 70.0,
+     "seconds": 240,
+     "start": "09:11",
+     "end": "09:15",
+     "note": null
+    },
+    {
+     "row": 73,
+     "obs": 71.0,
+     "seconds": 480,
+     "start": "09:25",
+     "end": "09:33",
+     "note": null
+    },
+    {
+     "row": 74,
+     "obs": 72.0,
+     "seconds": 240,
+     "start": "08:45",
+     "end": "08:49",
+     "note": null
+    },
+    {
+     "row": 75,
+     "obs": 73.0,
+     "seconds": 420,
+     "start": "07:19",
+     "end": "07:26",
+     "note": null
+    },
+    {
+     "row": 76,
+     "obs": 74.0,
+     "seconds": 480,
+     "start": "07:44",
+     "end": "07:52",
+     "note": null
+    },
+    {
+     "row": 77,
+     "obs": 75.0,
+     "seconds": 300,
+     "start": "16:26",
+     "end": "16:31",
+     "note": null
+    },
+    {
+     "row": 78,
+     "obs": 76.0,
+     "seconds": 60,
+     "start": "15:31",
+     "end": "15:32",
+     "note": null
+    },
+    {
+     "row": 79,
+     "obs": 77.0,
+     "seconds": 360,
+     "start": "10:04",
+     "end": "10:10",
+     "note": null
+    },
+    {
+     "row": 80,
+     "obs": 78.0,
+     "seconds": 120,
+     "start": "10:35",
+     "end": "10:37",
+     "note": null
+    },
+    {
+     "row": 81,
+     "obs": 79.0,
+     "seconds": 240,
+     "start": "09:06",
+     "end": "09:10",
+     "note": null
+    },
+    {
+     "row": 82,
+     "obs": 80.0,
+     "seconds": 120,
+     "start": "10:15",
+     "end": "10:17",
+     "note": null
+    },
+    {
+     "row": 83,
+     "obs": 81.0,
+     "seconds": 120,
+     "start": "17:09",
+     "end": "17:11",
+     "note": null
     }
    ],
    "excluded": [],
@@ -3236,12 +4046,12 @@
    "id": "paquimetria",
    "label": "Paquimetria corneana",
    "phase": "Exames",
-   "n": 27,
-   "mean": 75.56,
+   "n": 31,
+   "mean": 79.35,
    "median": 60,
    "min": 0,
    "max": 240,
-   "stdev": 48.78,
+   "stdev": 54.52,
    "samples": [
     {
      "row": 3,
@@ -3458,6 +4268,38 @@
      "start": "10:43",
      "end": "10:44",
      "note": null
+    },
+    {
+     "row": 30,
+     "obs": 28.0,
+     "seconds": 240,
+     "start": "07:26",
+     "end": "07:30",
+     "note": null
+    },
+    {
+     "row": 31,
+     "obs": 29.0,
+     "seconds": 60,
+     "start": "09:11",
+     "end": "09:12",
+     "note": null
+    },
+    {
+     "row": 32,
+     "obs": 30.0,
+     "seconds": 60,
+     "start": "10:12",
+     "end": "10:13",
+     "note": null
+    },
+    {
+     "row": 33,
+     "obs": 31.0,
+     "seconds": 60,
+     "start": "17:11",
+     "end": "17:12",
+     "note": null
     }
    ],
    "excluded": [],
@@ -3477,12 +4319,12 @@
    "id": "retinografia",
    "label": "Retinografia",
    "phase": "Exames",
-   "n": 68,
-   "mean": 163.24,
-   "median": 180.0,
+   "n": 81,
+   "mean": 161.48,
+   "median": 180,
    "min": 60,
    "max": 300,
-   "stdev": 49.55,
+   "stdev": 51.65,
    "samples": [
     {
      "row": 3,
@@ -4027,6 +4869,110 @@
      "start": "09:09",
      "end": "09:12",
      "note": null
+    },
+    {
+     "row": 71,
+     "obs": 69.0,
+     "seconds": 120,
+     "start": "08:11",
+     "end": "08:13",
+     "note": null
+    },
+    {
+     "row": 72,
+     "obs": 70.0,
+     "seconds": 120,
+     "start": "09:05",
+     "end": "09:07",
+     "note": null
+    },
+    {
+     "row": 73,
+     "obs": 71.0,
+     "seconds": 180,
+     "start": "09:34",
+     "end": "09:37",
+     "note": null
+    },
+    {
+     "row": 74,
+     "obs": 72.0,
+     "seconds": 180,
+     "start": "08:41",
+     "end": "08:44",
+     "note": null
+    },
+    {
+     "row": 75,
+     "obs": 73.0,
+     "seconds": 120,
+     "start": "07:30",
+     "end": "07:32",
+     "note": null
+    },
+    {
+     "row": 76,
+     "obs": 74.0,
+     "seconds": 180,
+     "start": "07:40",
+     "end": "07:43",
+     "note": null
+    },
+    {
+     "row": 77,
+     "obs": 75.0,
+     "seconds": 60,
+     "start": "15:56",
+     "end": "15:57",
+     "note": null
+    },
+    {
+     "row": 78,
+     "obs": 76.0,
+     "seconds": 120,
+     "start": "16:23",
+     "end": "16:25",
+     "note": null
+    },
+    {
+     "row": 79,
+     "obs": 77.0,
+     "seconds": 240,
+     "start": "15:32",
+     "end": "15:36",
+     "note": null
+    },
+    {
+     "row": 80,
+     "obs": 78.0,
+     "seconds": 240,
+     "start": "19:53",
+     "end": "19:57",
+     "note": null
+    },
+    {
+     "row": 81,
+     "obs": 79.0,
+     "seconds": 120,
+     "start": "10:24",
+     "end": "10:26",
+     "note": null
+    },
+    {
+     "row": 82,
+     "obs": 80.0,
+     "seconds": 240,
+     "start": "09:11",
+     "end": "09:15",
+     "note": null
+    },
+    {
+     "row": 83,
+     "obs": 81.0,
+     "seconds": 60,
+     "start": "10:11",
+     "end": "10:12",
+     "note": null
     }
    ],
    "excluded": [],
@@ -4526,7 +5472,7 @@
     }
    ],
    "excluded": [],
-   "source": "Colunas AE–AF e AH",
+   "source": "Colunas AE–AG",
    "kind": "cronometrado / início-fim",
    "group": "principal",
    "link": {
@@ -4537,417 +5483,6 @@
     "note": "A planilha mede o atendimento da córnea como um bloco, do início ao fim; no fluxograma ele corresponde à raia do médico (da conversa inicial à entrega da receita). Associação por raia."
    },
    "process": "exame-de-cornea"
-  },
-  {
-   "id": "atendimento-cornea-ociosidade",
-   "label": "Atendimento Córnea · tempo sem paciente",
-   "phase": "Córnea",
-   "n": 39,
-   "mean": 280.54,
-   "median": 120,
-   "min": 0,
-   "max": 1320,
-   "stdev": 352.68,
-   "samples": [
-    {
-     "row": 3,
-     "obs": 1.0,
-     "seconds": 10,
-     "note": null
-    },
-    {
-     "row": 4,
-     "obs": 2.0,
-     "seconds": 52,
-     "note": null
-    },
-    {
-     "row": 5,
-     "obs": 3.0,
-     "seconds": 113,
-     "note": null
-    },
-    {
-     "row": 6,
-     "obs": 4.0,
-     "seconds": 26,
-     "note": null
-    },
-    {
-     "row": 7,
-     "obs": 5.0,
-     "seconds": 1020,
-     "note": null
-    },
-    {
-     "row": 8,
-     "obs": 6.0,
-     "seconds": 1080,
-     "note": null
-    },
-    {
-     "row": 9,
-     "obs": 7.0,
-     "seconds": 240,
-     "note": null
-    },
-    {
-     "row": 10,
-     "obs": 8.0,
-     "seconds": 0,
-     "note": null
-    },
-    {
-     "row": 11,
-     "obs": 9.0,
-     "seconds": 0,
-     "note": null
-    },
-    {
-     "row": 12,
-     "obs": 10.0,
-     "seconds": 120,
-     "note": null
-    },
-    {
-     "row": 13,
-     "obs": 11.0,
-     "seconds": 120,
-     "note": null
-    },
-    {
-     "row": 14,
-     "obs": 12.0,
-     "seconds": 360,
-     "note": null
-    },
-    {
-     "row": 15,
-     "obs": 13.0,
-     "seconds": 480,
-     "note": null
-    },
-    {
-     "row": 17,
-     "obs": 15.0,
-     "seconds": 720,
-     "note": null
-    },
-    {
-     "row": 18,
-     "obs": 16.0,
-     "seconds": 120,
-     "note": null
-    },
-    {
-     "row": 19,
-     "obs": 17.0,
-     "seconds": 180,
-     "note": null
-    },
-    {
-     "row": 21,
-     "obs": 19.0,
-     "seconds": 120,
-     "note": null
-    },
-    {
-     "row": 22,
-     "obs": 20.0,
-     "seconds": 60,
-     "note": null
-    },
-    {
-     "row": 23,
-     "obs": 21.0,
-     "seconds": 60,
-     "note": null
-    },
-    {
-     "row": 25,
-     "obs": 23.0,
-     "seconds": 60,
-     "note": null
-    },
-    {
-     "row": 27,
-     "obs": 25.0,
-     "seconds": 600,
-     "note": null
-    },
-    {
-     "row": 28,
-     "obs": 26.0,
-     "seconds": 60,
-     "note": null
-    },
-    {
-     "row": 30,
-     "obs": 28.0,
-     "seconds": 120,
-     "note": null
-    },
-    {
-     "row": 34,
-     "obs": 32.0,
-     "seconds": 0,
-     "note": null
-    },
-    {
-     "row": 36,
-     "obs": 34.0,
-     "seconds": 60,
-     "note": null
-    },
-    {
-     "row": 38,
-     "obs": 36.0,
-     "seconds": 840,
-     "note": null
-    },
-    {
-     "row": 39,
-     "obs": 37.0,
-     "seconds": 420,
-     "note": null
-    },
-    {
-     "row": 40,
-     "obs": 38.0,
-     "seconds": 1320,
-     "note": null
-    },
-    {
-     "row": 41,
-     "obs": 39.0,
-     "seconds": 360,
-     "note": null
-    },
-    {
-     "row": 44,
-     "obs": 42.0,
-     "seconds": 0,
-     "note": null
-    },
-    {
-     "row": 45,
-     "obs": 43.0,
-     "seconds": 0,
-     "note": null
-    },
-    {
-     "row": 46,
-     "obs": 44.0,
-     "seconds": 60,
-     "note": null
-    },
-    {
-     "row": 47,
-     "obs": 45.0,
-     "seconds": 120,
-     "note": null
-    },
-    {
-     "row": 48,
-     "obs": 46.0,
-     "seconds": 60,
-     "note": null
-    },
-    {
-     "row": 49,
-     "obs": 47.0,
-     "seconds": 60,
-     "note": null
-    },
-    {
-     "row": 51,
-     "obs": 49.0,
-     "seconds": 900,
-     "note": null
-    },
-    {
-     "row": 52,
-     "obs": 50.0,
-     "seconds": 180,
-     "note": null
-    },
-    {
-     "row": 53,
-     "obs": 51.0,
-     "seconds": 120,
-     "note": null
-    },
-    {
-     "row": 54,
-     "obs": 52.0,
-     "seconds": 720,
-     "note": null
-    }
-   ],
-   "excluded": [
-    {
-     "row": 16,
-     "raw": "x",
-     "reason": "sem valor (\"x\") ou fora do formato de tempo"
-    },
-    {
-     "row": 20,
-     "raw": "valor fora do formato",
-     "reason": "sem valor (\"x\") ou fora do formato de tempo"
-    },
-    {
-     "row": 24,
-     "raw": "valor fora do formato",
-     "reason": "sem valor (\"x\") ou fora do formato de tempo"
-    },
-    {
-     "row": 26,
-     "raw": "valor fora do formato",
-     "reason": "sem valor (\"x\") ou fora do formato de tempo"
-    },
-    {
-     "row": 29,
-     "raw": "x",
-     "reason": "sem valor (\"x\") ou fora do formato de tempo"
-    },
-    {
-     "row": 31,
-     "raw": "x",
-     "reason": "sem valor (\"x\") ou fora do formato de tempo"
-    },
-    {
-     "row": 32,
-     "raw": "valor fora do formato",
-     "reason": "sem valor (\"x\") ou fora do formato de tempo"
-    },
-    {
-     "row": 33,
-     "raw": "valor fora do formato",
-     "reason": "sem valor (\"x\") ou fora do formato de tempo"
-    },
-    {
-     "row": 35,
-     "raw": "valor fora do formato",
-     "reason": "sem valor (\"x\") ou fora do formato de tempo"
-    },
-    {
-     "row": 42,
-     "raw": "valor fora do formato",
-     "reason": "sem valor (\"x\") ou fora do formato de tempo"
-    },
-    {
-     "row": 43,
-     "raw": "x",
-     "reason": "sem valor (\"x\") ou fora do formato de tempo"
-    },
-    {
-     "row": 50,
-     "raw": "x",
-     "reason": "sem valor (\"x\") ou fora do formato de tempo"
-    },
-    {
-     "row": 55,
-     "raw": "x",
-     "reason": "sem valor (\"x\") ou fora do formato de tempo"
-    },
-    {
-     "row": 56,
-     "raw": "x",
-     "reason": "sem valor (\"x\") ou fora do formato de tempo"
-    },
-    {
-     "row": 57,
-     "raw": "x",
-     "reason": "sem valor (\"x\") ou fora do formato de tempo"
-    },
-    {
-     "row": 58,
-     "raw": "x",
-     "reason": "sem valor (\"x\") ou fora do formato de tempo"
-    },
-    {
-     "row": 59,
-     "raw": "x",
-     "reason": "sem valor (\"x\") ou fora do formato de tempo"
-    },
-    {
-     "row": 60,
-     "raw": "x",
-     "reason": "sem valor (\"x\") ou fora do formato de tempo"
-    },
-    {
-     "row": 61,
-     "raw": "x",
-     "reason": "sem valor (\"x\") ou fora do formato de tempo"
-    },
-    {
-     "row": 62,
-     "raw": "x",
-     "reason": "sem valor (\"x\") ou fora do formato de tempo"
-    },
-    {
-     "row": 63,
-     "raw": "x",
-     "reason": "sem valor (\"x\") ou fora do formato de tempo"
-    },
-    {
-     "row": 64,
-     "raw": "x",
-     "reason": "sem valor (\"x\") ou fora do formato de tempo"
-    }
-   ],
-   "source": "Coluna AG",
-   "kind": "intervalo do posto",
-   "group": "principal",
-   "link": {
-    "process": "exame-de-cornea",
-    "nodes": [],
-    "confidence": "sem etapa equivalente",
-    "note": "Intervalo em que o posto ficou sem paciente; não é uma etapa da jornada."
-   },
-   "process": "exame-de-cornea"
-  },
-  {
-   "id": "retina-mario",
-   "label": "Retina Dr. Mário Carlos",
-   "phase": "Retina",
-   "n": 3,
-   "mean": 688,
-   "median": 479,
-   "min": 440,
-   "max": 1145,
-   "stdev": 396.25,
-   "samples": [
-    {
-     "row": 3,
-     "obs": 1.0,
-     "seconds": 1145,
-     "note": null
-    },
-    {
-     "row": 4,
-     "obs": 2.0,
-     "seconds": 440,
-     "note": null
-    },
-    {
-     "row": 5,
-     "obs": 3.0,
-     "seconds": 479,
-     "note": null
-    }
-   ],
-   "excluded": [],
-   "source": "Colunas D–E",
-   "kind": "cronometrado",
-   "group": "retina",
-   "link": {
-    "process": "retina",
-    "nodes": [],
-    "confidence": "sem fluxograma",
-    "note": "A Retina não tem fluxograma mapeado; as medições aparecem só nos resultados."
-   },
-   "process": "retina"
   },
   {
    "id": "dilatacao",
@@ -4980,7 +5515,7 @@
     }
    ],
    "excluded": [],
-   "source": "Colunas G–I",
+   "source": "Colunas D–F",
    "kind": "cronometrado",
    "group": "retina",
    "link": {
@@ -4995,12 +5530,12 @@
    "id": "consultorio-retina",
    "label": "Consultório Retina",
    "phase": "Retina",
-   "n": 6,
-   "mean": 588.33,
-   "median": 646.5,
+   "n": 9,
+   "mean": 621.56,
+   "median": 479,
    "min": 144,
-   "max": 916,
-   "stdev": 353.06,
+   "max": 1145,
+   "stdev": 345.89,
    "samples": [
     {
      "row": 3,
@@ -5037,10 +5572,28 @@
      "obs": 6.0,
      "seconds": 144,
      "note": "Dr. Hélio de Andrade"
+    },
+    {
+     "row": 9,
+     "obs": 7.0,
+     "seconds": 1145,
+     "note": "Dr. Mário Carlos"
+    },
+    {
+     "row": 10,
+     "obs": 8.0,
+     "seconds": 440,
+     "note": "Dr. Mário Carlos"
+    },
+    {
+     "row": 11,
+     "obs": 9.0,
+     "seconds": 479,
+     "note": "Dr. Mário Carlos"
     }
    ],
    "excluded": [],
-   "source": "Colunas K–L",
+   "source": "Colunas H–I",
    "kind": "cronometrado",
    "group": "retina",
    "link": {
@@ -5070,7 +5623,7 @@
     }
    ],
    "excluded": [],
-   "source": "Colunas O–P",
+   "source": "Colunas L–M",
    "kind": "cronometrado",
    "group": "retina",
    "link": {
@@ -5085,124 +5638,178 @@
    "id": "atendimento-retina",
    "label": "Atendimento Retina",
    "phase": "Retina",
-   "n": 18,
-   "mean": 322.61,
-   "median": 268.0,
+   "n": 27,
+   "mean": 314.37,
+   "median": 264,
    "min": 91,
    "max": 763,
-   "stdev": 202.59,
+   "stdev": 199.01,
    "samples": [
     {
      "row": 3,
-     "obs": null,
+     "obs": 1.0,
      "seconds": 381,
      "note": null
     },
     {
      "row": 4,
-     "obs": null,
+     "obs": 2.0,
      "seconds": 454,
      "note": null
     },
     {
      "row": 5,
-     "obs": null,
+     "obs": 3.0,
      "seconds": 121,
      "note": null
     },
     {
      "row": 6,
-     "obs": null,
+     "obs": 4.0,
      "seconds": 177,
      "note": null
     },
     {
      "row": 7,
-     "obs": null,
+     "obs": 5.0,
      "seconds": 148,
      "note": null
     },
     {
      "row": 8,
-     "obs": null,
+     "obs": 6.0,
      "seconds": 712,
      "note": null
     },
     {
      "row": 9,
-     "obs": null,
+     "obs": 7.0,
      "seconds": 763,
      "note": null
     },
     {
      "row": 10,
-     "obs": null,
+     "obs": 8.0,
      "seconds": 271,
      "note": null
     },
     {
      "row": 11,
-     "obs": null,
+     "obs": 9.0,
      "seconds": 96,
      "note": null
     },
     {
      "row": 12,
-     "obs": null,
+     "obs": 10.0,
      "seconds": 265,
      "note": null
     },
     {
      "row": 13,
-     "obs": null,
+     "obs": 11.0,
      "seconds": 227,
      "note": null
     },
     {
      "row": 14,
-     "obs": null,
+     "obs": 12.0,
      "seconds": 356,
      "note": null
     },
     {
      "row": 15,
-     "obs": null,
+     "obs": 13.0,
      "seconds": 91,
      "note": null
     },
     {
      "row": 16,
-     "obs": null,
+     "obs": 14.0,
      "seconds": 530,
      "note": null
     },
     {
      "row": 17,
-     "obs": null,
+     "obs": 15.0,
      "seconds": 358,
      "note": null
     },
     {
      "row": 18,
-     "obs": null,
+     "obs": 16.0,
      "seconds": 216,
      "note": null
     },
     {
      "row": 19,
-     "obs": null,
+     "obs": 17.0,
      "seconds": 144,
      "note": null
     },
     {
      "row": 20,
-     "obs": null,
+     "obs": 18.0,
      "seconds": 497,
+     "note": null
+    },
+    {
+     "row": 21,
+     "obs": 19.0,
+     "seconds": 182,
+     "note": null
+    },
+    {
+     "row": 22,
+     "obs": 20.0,
+     "seconds": 110,
+     "note": null
+    },
+    {
+     "row": 23,
+     "obs": 21.0,
+     "seconds": 264,
+     "note": null
+    },
+    {
+     "row": 24,
+     "obs": 22.0,
+     "seconds": 145,
+     "note": null
+    },
+    {
+     "row": 25,
+     "obs": 23.0,
+     "seconds": 549,
+     "note": null
+    },
+    {
+     "row": 26,
+     "obs": 24.0,
+     "seconds": 185,
+     "note": null
+    },
+    {
+     "row": 27,
+     "obs": 25.0,
+     "seconds": 712,
+     "note": null
+    },
+    {
+     "row": 28,
+     "obs": 26.0,
+     "seconds": 321,
+     "note": null
+    },
+    {
+     "row": 29,
+     "obs": 27.0,
+     "seconds": 213,
      "note": null
     }
    ],
    "excluded": [],
-   "source": "Colunas T",
+   "source": "Colunas P–Q",
    "kind": "cronometrado",
    "group": "retina",
    "link": {
@@ -5228,51 +5835,51 @@
    {
     "id": "recepcao",
     "label": "Recepção (Portaria)",
-    "n": 87,
-    "missing": 13,
-    "visits": 1
+    "n": 122,
+    "missing": 0,
+    "visits": 0
    },
    {
     "id": "atendimento-glaucoma",
     "label": "Atendimento Glaucoma",
-    "n": 24,
-    "missing": 76,
-    "visits": 3
+    "n": 47,
+    "missing": 53,
+    "visits": 2
    },
    {
     "id": "microscopia",
     "label": "Microscopia",
-    "n": 13,
-    "missing": 87,
+    "n": 22,
+    "missing": 78,
     "visits": 3
    },
    {
     "id": "topografia",
     "label": "Topografia",
-    "n": 17,
-    "missing": 83,
+    "n": 23,
+    "missing": 77,
     "visits": 3
    },
    {
     "id": "tonometria-sopro",
     "label": "Tonometria de sopro",
-    "n": 45,
-    "missing": 55,
+    "n": 60,
+    "missing": 40,
     "visits": 2
    },
    {
     "id": "auto-refratario",
     "label": "Auto refratário",
-    "n": 41,
-    "missing": 59,
+    "n": 56,
+    "missing": 44,
     "visits": 2
    },
    {
     "id": "glaucoma-consulta",
     "label": "Glaucoma Consulta",
-    "n": 28,
-    "missing": 72,
-    "visits": 3
+    "n": 40,
+    "missing": 60,
+    "visits": 2
    },
    {
     "id": "atendimento-cornea",
@@ -5287,29 +5894,27 @@
    {
     "n": 1,
     "date": "2026-10-08",
-    "closes": [
-     "Recepção (Portaria)"
-    ],
-    "lowest": 48
+    "closes": [],
+    "lowest": 57
    },
    {
     "n": 2,
     "date": "2026-10-09",
     "closes": [
+     "Atendimento Glaucoma",
      "Tonometria de sopro",
      "Auto refratário",
+     "Glaucoma Consulta",
      "Atendimento Córnea"
     ],
-    "lowest": 83
+    "lowest": 92
    },
    {
     "n": 3,
     "date": "2026-10-15",
     "closes": [
-     "Atendimento Glaucoma",
      "Microscopia",
-     "Topografia",
-     "Glaucoma Consulta"
+     "Topografia"
     ],
     "lowest": 100
    }
@@ -5318,16 +5923,14 @@
   "end": "2026-10-15",
   "next": "2026-10-16",
   "bottleneck": [
-   "Atendimento Glaucoma",
    "Microscopia",
-   "Topografia",
-   "Glaucoma Consulta"
+   "Topografia"
   ],
   "weekdays": [
    3,
    4
   ],
-  "start": "2026-10-29"
+  "start": "2026-11-06"
  },
  "emptySteps": [],
  "laneSteps": {

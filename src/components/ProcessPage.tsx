@@ -64,14 +64,19 @@ export default function ProcessPage({ data, id, step }: { data: Dataset; id: str
 
         <section style={{ marginTop: 88 }}>
           <h2 style={{ fontSize: 'clamp(28px,3.4vw,42px)', fontWeight: 700 }}>Etapas do fluxograma</h2>
+          <p className="lead measure" style={{ marginTop: 12 }}>Tempo médio de execução de cada tarefa, calculado a partir das medições da planilha. Tarefas sem cronometragem aparecem como “sem medição”.</p>
           <div style={{ marginTop: 28, borderTop: '1px solid var(--color-ink)' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'minmax(220px,2fr) minmax(120px,1fr) minmax(150px,1.3fr) 70px', gap: 16, padding: '10px 0', borderBottom: '1px solid var(--color-line)', color: 'var(--color-muted)', fontSize: 13 }}>
+              <span>Tarefa</span><span>Raia</span><span>Tempo médio</span><span>Medições</span>
+            </div>
             {tasks.map((t) => {
-              const ss = steps.filter((s) => s.link.nodes.includes(t.id))
+              const ss = steps.filter((s) => s.link.nodes.includes(t.id) && s.n > 0)
               return (
-                <div key={t.id} style={{ display: 'grid', gridTemplateColumns: 'minmax(220px,2fr) minmax(120px,1fr) minmax(120px,1fr)', gap: 16, padding: '14px 0', borderBottom: '1px solid var(--color-line)' }}>
+                <div key={t.id} style={{ display: 'grid', gridTemplateColumns: 'minmax(220px,2fr) minmax(120px,1fr) minmax(150px,1.3fr) 70px', gap: 16, padding: '14px 0', borderBottom: '1px solid var(--color-line)' }}>
                   <div><b>{t.name}</b>{t.origin && t.origin !== 'diagrama' && <span className="pill" style={{ marginLeft: 8 }}>entrevista</span>}{t.doc && <div style={{ color: 'var(--color-muted)', fontSize: 14 }}>{t.doc}</div>}</div>
                   <div style={{ color: 'var(--color-muted)' }}>{p.lanes.find((l) => l.id === t.lane)?.name}</div>
-                  <div className="num">{ss.length ? ss.map((s) => `${s.label}: ${fmt(s.mean, { compact: true })}`).join(' · ') : <span style={{ color: 'var(--color-muted)' }}>—</span>}</div>
+                  <div className="num">{ss.length ? ss.map((s) => <div key={s.id}><b>{fmt(s.mean)}</b>{ss.length > 1 && <span style={{ color: 'var(--color-muted)', fontSize: 13 }}> · {s.label}</span>}</div>) : <span style={{ color: 'var(--color-muted)' }}>sem medição</span>}</div>
+                  <div className="num" style={{ color: 'var(--color-muted)' }}>{ss.length ? ss.map((s) => <div key={s.id}>{s.n}</div>) : '—'}</div>
                 </div>
               )
             })}

@@ -30,3 +30,6 @@ Logos em `public/logos/` (`skema-branca.png`, `skema.png`, `rede-oftalmo.png`); 
 - Campo visual: durações com fórmula errada foram recalculadas a partir de início/fim; valores inválidos foram desconsiderados.
 - Teste de lente não tem medições; mostra só o fluxograma e o tempo escrito no diagrama. Retina não tem fluxograma: aparece só nos resultados.
 - `Agenda_horarios.xlsx` só confere que seus tempos já estão na cronoanálise.
+
+## v4.5
+`source/Medicoes_Rede_Oftalmo.xlsx` atualizado (novas medições; valores digitados como “09;05” ou “24:50” são recuperados). A página inicial ganhou a seção “Quanto dura cada tarefa” (tempo médio e nº de medições por etapa) e a tabela “Etapas do fluxograma” de cada processo mostra o tempo médio por tarefa (“sem medição” quando não há cronometragem). Retina do Dr. Mário foi unificada em Consultório Retina; a coluna ociosa do Atendimento Córnea foi removida.

@@ -279,8 +279,13 @@ wb = openpyxl.load_workbook(os.path.join(SRC, 'Medicoes_Rede_Oftalmo.xlsx'), dat
 W1, W2 = wb['1ºandar'], wb['2ºandar']
 FIRST = 3
 def mmss(v): return v.hour * 60 + v.minute if isinstance(v, datetime.time) else None
-def tod(v): return v.hour * 3600 + v.minute * 60 + v.second if isinstance(v, datetime.time) else None
-def hhmm(v): return v.strftime('%H:%M') if isinstance(v, datetime.time) else None
+def tod(v):
+    if isinstance(v, str) and re.fullmatch(r'\d{1,2}[;.]\d{2}', v.strip()):   # erro de digitação: “09;05” = 09:05
+        h, m = re.split(r'[;.]', v.strip()); return int(h) * 3600 + int(m) * 60
+    return v.hour * 3600 + v.minute * 60 + v.second if isinstance(v, datetime.time) else None
+def hhmm(v):
+    t = tod(v)
+    return '%02d:%02d' % (t // 3600, t % 3600 // 60) if t is not None else None
 def cell(ws, col, r): return ws['%s%d' % (col, r)].value
 def rows_of(ws): return range(FIRST, ws.max_row + 1)
 
@@ -299,10 +304,12 @@ def direct(ws, id_, label, phase, ncol, tcol, ocol=None, kind='cronometrado', **
     for r in rows_of(ws):
         v = cell(ws, tcol, r)
         if v in (None, ''): continue
-        sx = mmss(v)
+        sx, note = mmss(v), None
+        if sx is None and isinstance(v, datetime.timedelta):   # digitado como hh:mm:ss (ex.: 0:24:50) — vale 24 min 50 s
+            sx, note = int(v.total_seconds()), 'Digitado em outro formato (0:24:50); lido como 24 min 50 s.'.replace('0:24:50', '%d:%02d' % divmod(int(v.total_seconds()), 60)).replace('24 min 50 s', '%d min %d s' % divmod(int(v.total_seconds()), 60))
         if sx is None: exc.append(dict(row=r, raw=str(v), reason='valor não é uma duração')); continue
         obs = cell(ws, ocol, r) if ocol else None
-        smp.append(dict(row=r, obs=cell(ws, ncol, r) if ncol else None, seconds=sx, note=clean(obs) if obs else None))
+        smp.append(dict(row=r, obs=cell(ws, ncol, r) if ncol else None, seconds=sx, note=clean(obs) if obs else note))
     add_step(id_, label, phase, smp, exc, source='Colunas %s%s' % (ncol + '–' if ncol else '', tcol), kind=kind, **kw)
 
 def start_end(ws, id_, label, phase, a, b, d):
@@ -353,7 +360,7 @@ start_end(W1, 'retinografia', 'Retinografia', 'Exames', 'AB', 'AC', 'AD')
 # --- Atendimento Córnea (antes "Pós-consulta"): tempo de atendimento (AH) + início/fim quando houver
 smp, exc = [], []
 for r in rows_of(W1):
-    v = cell(W1, 'AH', r)
+    v = cell(W1, 'AG', r)
     if v in (None, ''): continue
     sx = mmss(v)
     if sx is None: exc.append(dict(row=r, raw=str(v), reason='valor não é uma duração')); continue
@@ -361,29 +368,18 @@ for r in rows_of(W1):
     item = dict(row=r, obs=cell(W1, 'A', r), seconds=sx, note=None)
     if tod(a) is not None and tod(b) is not None: item.update(start=hhmm(a), end=hhmm(b))
     smp.append(item)
-add_step('atendimento-cornea', 'Atendimento Córnea', 'Córnea', smp, exc, source='Colunas AE–AF e AH', kind='cronometrado / início-fim')
-# tempo sem paciente do posto da córnea (AG): só valores em mm:ss são válidos
-smp, exc = [], []
-for r in rows_of(W1):
-    v = cell(W1, 'AG', r)
-    if v in (None, ''): continue
-    sx = mmss(v)
-    if sx is None: exc.append(dict(row=r, raw=str(v) if v == 'x' else 'valor fora do formato', reason='sem valor ("x") ou fora do formato de tempo' )); continue
-    smp.append(dict(row=r, obs=cell(W1, 'A', r), seconds=sx, note=None))
-add_step('atendimento-cornea-ociosidade', 'Atendimento Córnea · tempo sem paciente', 'Córnea', smp, exc, source='Coluna AG', kind='intervalo do posto')
-
+add_step('atendimento-cornea', 'Atendimento Córnea', 'Córnea', smp, exc, source='Colunas AE–AG', kind='cronometrado / início-fim')
 # --- 2º andar: Retina
-direct(W2, 'retina-mario', 'Retina Dr. Mário Carlos', 'Retina', 'D', 'E', None)
 smp = []
-for col, nome in (('G', '1ª dilatação'), ('H', '2ª dilatação'), ('I', '3ª dilatação')):
+for col, nome in (('D', '1ª dilatação'), ('E', '2ª dilatação'), ('F', '3ª dilatação')):
     for r in rows_of(W2):
         v = cell(W2, col, r)
-        if mmss(v) is not None: smp.append(dict(row=r, obs=nome, seconds=mmss(v), note=clean(cell(W2, 'J', r)) if cell(W2, 'J', r) else None))
-add_step('dilatacao', 'Dilatação de colírio', 'Retina', smp, [], source='Colunas G–I', kind='cronometrado')
-direct(W2, 'consultorio-retina', 'Consultório Retina', 'Retina', 'K', 'L', 'N')
-direct(W2, 'ecobiometria', 'Ecobiometria / Ecografia', 'Retina', 'O', 'P', 'R')
-direct(W2, 'atendimento-retina', 'Atendimento Retina', 'Retina', None, 'T', None)
-RETINA = {'retina-mario', 'dilatacao', 'consultorio-retina', 'ecobiometria', 'atendimento-retina'}
+        if mmss(v) is not None: smp.append(dict(row=r, obs=nome, seconds=mmss(v), note=clean(cell(W2, 'G', r)) if cell(W2, 'G', r) else None))
+add_step('dilatacao', 'Dilatação de colírio', 'Retina', smp, [], source='Colunas D–F', kind='cronometrado')
+direct(W2, 'consultorio-retina', 'Consultório Retina', 'Retina', 'H', 'I', 'K')
+direct(W2, 'ecobiometria', 'Ecobiometria / Ecografia', 'Retina', 'L', 'M', 'O')
+direct(W2, 'atendimento-retina', 'Atendimento Retina', 'Retina', 'P', 'Q', None)
+RETINA = {'dilatacao', 'consultorio-retina', 'ecobiometria', 'atendimento-retina'}
 empty_steps = []
 
 # ---------------------------------------------------------------- associação etapa-do-fluxograma ↔ medição

@@ -33,3 +33,6 @@ Logos em `public/logos/` (`skema-branca.png`, `skema.png`, `rede-oftalmo.png`); 
 
 ## v4.5
 `source/Medicoes_Rede_Oftalmo.xlsx` atualizado (novas medições; valores digitados como “09;05” ou “24:50” são recuperados). A página inicial ganhou a seção “Quanto dura cada tarefa” (tempo médio e nº de medições por etapa) e a tabela “Etapas do fluxograma” de cada processo mostra o tempo médio por tarefa (“sem medição” quando não há cronometragem). Retina do Dr. Mário foi unificada em Consultório Retina; a coluna ociosa do Atendimento Córnea foi removida.
+
+## v4.6
+Planilha `Medicoes_Rede_Oftalmo.xlsx` atualizada (1ºandar: 150 linhas). As colunas foram renomeadas para Recepção Glaucoma, Recepção Córnea e Recepção Retina (mesmas colunas de antes). Valores inválidos ficam listados na etapa: consulta de glaucoma de “1800:00” (linha 47) e duas paquimetrias com início = fim.

@@ -763,14 +763,14 @@
   },
   {
    "id": "atendimento-glaucoma",
-   "label": "Atendimento Glaucoma",
+   "label": "Recepção Glaucoma",
    "phase": "Chegada",
-   "n": 47,
-   "mean": 181.89,
-   "median": 142,
+   "n": 48,
+   "mean": 181.17,
+   "median": 142.5,
    "min": 37,
    "max": 577,
-   "stdev": 121.97,
+   "stdev": 120.77,
    "samples": [
     {
      "row": 3,
@@ -1053,6 +1053,12 @@
      "obs": 47.0,
      "seconds": 354,
      "note": null
+    },
+    {
+     "row": 50,
+     "obs": 48.0,
+     "seconds": 147,
+     "note": null
     }
    ],
    "excluded": [],
@@ -1071,12 +1077,12 @@
    "id": "microscopia",
    "label": "Microscopia",
    "phase": "Exames",
-   "n": 22,
-   "mean": 188.91,
+   "n": 26,
+   "mean": 182.31,
    "median": 168.0,
    "min": 84,
    "max": 421,
-   "stdev": 81.68,
+   "stdev": 77.11,
    "samples": [
     {
      "row": 3,
@@ -1209,6 +1215,30 @@
      "obs": 22.0,
      "seconds": 142,
      "note": null
+    },
+    {
+     "row": 25,
+     "obs": 23.0,
+     "seconds": 126,
+     "note": null
+    },
+    {
+     "row": 26,
+     "obs": 24.0,
+     "seconds": 170,
+     "note": null
+    },
+    {
+     "row": 27,
+     "obs": 25.0,
+     "seconds": 170,
+     "note": null
+    },
+    {
+     "row": 28,
+     "obs": 26.0,
+     "seconds": 118,
+     "note": null
     }
    ],
    "excluded": [],
@@ -1228,12 +1258,12 @@
    "id": "topografia",
    "label": "Topografia",
    "phase": "Exames",
-   "n": 23,
-   "mean": 343.43,
+   "n": 29,
+   "mean": 326.62,
    "median": 334,
    "min": 50,
    "max": 915,
-   "stdev": 207.04,
+   "stdev": 191.73,
    "samples": [
     {
      "row": 3,
@@ -1372,6 +1402,42 @@
      "obs": 23.0,
      "seconds": 334,
      "note": null
+    },
+    {
+     "row": 26,
+     "obs": 24.0,
+     "seconds": 256,
+     "note": null
+    },
+    {
+     "row": 27,
+     "obs": 25.0,
+     "seconds": 220,
+     "note": null
+    },
+    {
+     "row": 28,
+     "obs": 26.0,
+     "seconds": 345,
+     "note": null
+    },
+    {
+     "row": 29,
+     "obs": 27.0,
+     "seconds": 76,
+     "note": null
+    },
+    {
+     "row": 30,
+     "obs": 28.0,
+     "seconds": 342,
+     "note": null
+    },
+    {
+     "row": 31,
+     "obs": 29.0,
+     "seconds": 334,
+     "note": null
     }
    ],
    "excluded": [],
@@ -1391,12 +1457,12 @@
    "id": "tonometria-sopro",
    "label": "Tonometria de sopro",
    "phase": "Exames",
-   "n": 60,
-   "mean": 73.47,
-   "median": 64.0,
+   "n": 105,
+   "mean": 63.36,
+   "median": 55,
    "min": 20,
    "max": 170,
-   "stdev": 34.24,
+   "stdev": 31.34,
    "samples": [
     {
      "row": 3,
@@ -1757,6 +1823,276 @@
      "obs": 60.0,
      "seconds": 63,
      "note": null
+    },
+    {
+     "row": 63,
+     "obs": 61.0,
+     "seconds": 76,
+     "note": null
+    },
+    {
+     "row": 64,
+     "obs": 62.0,
+     "seconds": 31,
+     "note": null
+    },
+    {
+     "row": 65,
+     "obs": 63.0,
+     "seconds": 30,
+     "note": null
+    },
+    {
+     "row": 66,
+     "obs": 64.0,
+     "seconds": 30,
+     "note": null
+    },
+    {
+     "row": 67,
+     "obs": 65.0,
+     "seconds": 23,
+     "note": null
+    },
+    {
+     "row": 68,
+     "obs": 66.0,
+     "seconds": 96,
+     "note": null
+    },
+    {
+     "row": 69,
+     "obs": 67.0,
+     "seconds": 47,
+     "note": null
+    },
+    {
+     "row": 70,
+     "obs": 68.0,
+     "seconds": 40,
+     "note": null
+    },
+    {
+     "row": 71,
+     "obs": 69.0,
+     "seconds": 34,
+     "note": null
+    },
+    {
+     "row": 72,
+     "obs": 70.0,
+     "seconds": 63,
+     "note": null
+    },
+    {
+     "row": 73,
+     "obs": 71.0,
+     "seconds": 32,
+     "note": null
+    },
+    {
+     "row": 74,
+     "obs": 72.0,
+     "seconds": 33,
+     "note": null
+    },
+    {
+     "row": 75,
+     "obs": 73.0,
+     "seconds": 62,
+     "note": null
+    },
+    {
+     "row": 76,
+     "obs": 74.0,
+     "seconds": 33,
+     "note": null
+    },
+    {
+     "row": 77,
+     "obs": 75.0,
+     "seconds": 30,
+     "note": null
+    },
+    {
+     "row": 78,
+     "obs": 76.0,
+     "seconds": 36,
+     "note": null
+    },
+    {
+     "row": 79,
+     "obs": 77.0,
+     "seconds": 40,
+     "note": null
+    },
+    {
+     "row": 80,
+     "obs": 78.0,
+     "seconds": 30,
+     "note": null
+    },
+    {
+     "row": 81,
+     "obs": 79.0,
+     "seconds": 39,
+     "note": null
+    },
+    {
+     "row": 82,
+     "obs": 80.0,
+     "seconds": 45,
+     "note": null
+    },
+    {
+     "row": 83,
+     "obs": 81.0,
+     "seconds": 35,
+     "note": null
+    },
+    {
+     "row": 84,
+     "obs": 82.0,
+     "seconds": 55,
+     "note": null
+    },
+    {
+     "row": 85,
+     "obs": 83.0,
+     "seconds": 40,
+     "note": null
+    },
+    {
+     "row": 86,
+     "obs": 84.0,
+     "seconds": 111,
+     "note": null
+    },
+    {
+     "row": 87,
+     "obs": 85.0,
+     "seconds": 83,
+     "note": null
+    },
+    {
+     "row": 88,
+     "obs": 86.0,
+     "seconds": 53,
+     "note": null
+    },
+    {
+     "row": 89,
+     "obs": 87.0,
+     "seconds": 40,
+     "note": null
+    },
+    {
+     "row": 90,
+     "obs": 88.0,
+     "seconds": 82,
+     "note": null
+    },
+    {
+     "row": 91,
+     "obs": 89.0,
+     "seconds": 36,
+     "note": null
+    },
+    {
+     "row": 92,
+     "obs": 90.0,
+     "seconds": 87,
+     "note": null
+    },
+    {
+     "row": 93,
+     "obs": 91.0,
+     "seconds": 58,
+     "note": null
+    },
+    {
+     "row": 94,
+     "obs": 92.0,
+     "seconds": 63,
+     "note": null
+    },
+    {
+     "row": 95,
+     "obs": 93.0,
+     "seconds": 40,
+     "note": null
+    },
+    {
+     "row": 96,
+     "obs": 94.0,
+     "seconds": 59,
+     "note": null
+    },
+    {
+     "row": 97,
+     "obs": 95.0,
+     "seconds": 27,
+     "note": null
+    },
+    {
+     "row": 98,
+     "obs": 96.0,
+     "seconds": 48,
+     "note": null
+    },
+    {
+     "row": 99,
+     "obs": 97.0,
+     "seconds": 60,
+     "note": null
+    },
+    {
+     "row": 100,
+     "obs": 98.0,
+     "seconds": 35,
+     "note": null
+    },
+    {
+     "row": 101,
+     "obs": 99.0,
+     "seconds": 74,
+     "note": null
+    },
+    {
+     "row": 102,
+     "obs": 100.0,
+     "seconds": 84,
+     "note": null
+    },
+    {
+     "row": 103,
+     "obs": 101.0,
+     "seconds": 57,
+     "note": null
+    },
+    {
+     "row": 104,
+     "obs": 102.0,
+     "seconds": 42,
+     "note": null
+    },
+    {
+     "row": 105,
+     "obs": 103.0,
+     "seconds": 38,
+     "note": null
+    },
+    {
+     "row": 106,
+     "obs": 104.0,
+     "seconds": 43,
+     "note": null
+    },
+    {
+     "row": 107,
+     "obs": 105.0,
+     "seconds": 45,
+     "note": null
     }
    ],
    "excluded": [],
@@ -1777,12 +2113,12 @@
    "id": "auto-refratario",
    "label": "Auto refratário",
    "phase": "Exames",
-   "n": 56,
-   "mean": 70.39,
-   "median": 60.0,
-   "min": 33,
-   "max": 257,
-   "stdev": 36.1,
+   "n": 104,
+   "mean": 73.88,
+   "median": 70.0,
+   "min": 16,
+   "max": 304,
+   "stdev": 38.29,
    "samples": [
     {
      "row": 3,
@@ -2119,6 +2455,294 @@
      "obs": 56.0,
      "seconds": 64,
      "note": null
+    },
+    {
+     "row": 59,
+     "obs": 57.0,
+     "seconds": 82,
+     "note": null
+    },
+    {
+     "row": 60,
+     "obs": 58.0,
+     "seconds": 63,
+     "note": null
+    },
+    {
+     "row": 61,
+     "obs": 59.0,
+     "seconds": 55,
+     "note": null
+    },
+    {
+     "row": 62,
+     "obs": 60.0,
+     "seconds": 130,
+     "note": null
+    },
+    {
+     "row": 63,
+     "obs": 61.0,
+     "seconds": 38,
+     "note": null
+    },
+    {
+     "row": 64,
+     "obs": 62.0,
+     "seconds": 31,
+     "note": null
+    },
+    {
+     "row": 65,
+     "obs": 63.0,
+     "seconds": 75,
+     "note": null
+    },
+    {
+     "row": 66,
+     "obs": 64.0,
+     "seconds": 92,
+     "note": null
+    },
+    {
+     "row": 67,
+     "obs": 65.0,
+     "seconds": 62,
+     "note": null
+    },
+    {
+     "row": 68,
+     "obs": 66.0,
+     "seconds": 83,
+     "note": null
+    },
+    {
+     "row": 69,
+     "obs": 67.0,
+     "seconds": 90,
+     "note": null
+    },
+    {
+     "row": 70,
+     "obs": 68.0,
+     "seconds": 56,
+     "note": null
+    },
+    {
+     "row": 71,
+     "obs": 69.0,
+     "seconds": 38,
+     "note": null
+    },
+    {
+     "row": 72,
+     "obs": 70.0,
+     "seconds": 16,
+     "note": null
+    },
+    {
+     "row": 73,
+     "obs": 71.0,
+     "seconds": 54,
+     "note": null
+    },
+    {
+     "row": 74,
+     "obs": 72.0,
+     "seconds": 46,
+     "note": null
+    },
+    {
+     "row": 75,
+     "obs": 73.0,
+     "seconds": 74,
+     "note": null
+    },
+    {
+     "row": 76,
+     "obs": 74.0,
+     "seconds": 50,
+     "note": null
+    },
+    {
+     "row": 77,
+     "obs": 75.0,
+     "seconds": 53,
+     "note": null
+    },
+    {
+     "row": 78,
+     "obs": 76.0,
+     "seconds": 86,
+     "note": null
+    },
+    {
+     "row": 79,
+     "obs": 77.0,
+     "seconds": 76,
+     "note": null
+    },
+    {
+     "row": 80,
+     "obs": 78.0,
+     "seconds": 80,
+     "note": null
+    },
+    {
+     "row": 81,
+     "obs": 79.0,
+     "seconds": 50,
+     "note": null
+    },
+    {
+     "row": 82,
+     "obs": 80.0,
+     "seconds": 71,
+     "note": null
+    },
+    {
+     "row": 83,
+     "obs": 81.0,
+     "seconds": 71,
+     "note": null
+    },
+    {
+     "row": 84,
+     "obs": 82.0,
+     "seconds": 92,
+     "note": null
+    },
+    {
+     "row": 85,
+     "obs": 83.0,
+     "seconds": 75,
+     "note": null
+    },
+    {
+     "row": 86,
+     "obs": 84.0,
+     "seconds": 122,
+     "note": null
+    },
+    {
+     "row": 87,
+     "obs": 85.0,
+     "seconds": 59,
+     "note": null
+    },
+    {
+     "row": 88,
+     "obs": 86.0,
+     "seconds": 82,
+     "note": null
+    },
+    {
+     "row": 89,
+     "obs": 87.0,
+     "seconds": 109,
+     "note": null
+    },
+    {
+     "row": 90,
+     "obs": 88.0,
+     "seconds": 48,
+     "note": null
+    },
+    {
+     "row": 91,
+     "obs": 89.0,
+     "seconds": 90,
+     "note": null
+    },
+    {
+     "row": 92,
+     "obs": 90.0,
+     "seconds": 58,
+     "note": null
+    },
+    {
+     "row": 93,
+     "obs": 91.0,
+     "seconds": 86,
+     "note": null
+    },
+    {
+     "row": 94,
+     "obs": 92.0,
+     "seconds": 65,
+     "note": null
+    },
+    {
+     "row": 95,
+     "obs": 93.0,
+     "seconds": 70,
+     "note": null
+    },
+    {
+     "row": 96,
+     "obs": 94.0,
+     "seconds": 100,
+     "note": null
+    },
+    {
+     "row": 97,
+     "obs": 95.0,
+     "seconds": 104,
+     "note": null
+    },
+    {
+     "row": 98,
+     "obs": 96.0,
+     "seconds": 59,
+     "note": null
+    },
+    {
+     "row": 99,
+     "obs": 97.0,
+     "seconds": 99,
+     "note": null
+    },
+    {
+     "row": 100,
+     "obs": 98.0,
+     "seconds": 80,
+     "note": null
+    },
+    {
+     "row": 101,
+     "obs": 99.0,
+     "seconds": 101,
+     "note": null
+    },
+    {
+     "row": 102,
+     "obs": 100.0,
+     "seconds": 82,
+     "note": null
+    },
+    {
+     "row": 103,
+     "obs": 101.0,
+     "seconds": 304,
+     "note": null
+    },
+    {
+     "row": 104,
+     "obs": 102.0,
+     "seconds": 90,
+     "note": null
+    },
+    {
+     "row": 105,
+     "obs": 103.0,
+     "seconds": 49,
+     "note": null
+    },
+    {
+     "row": 106,
+     "obs": 104.0,
+     "seconds": 95,
+     "note": null
     }
    ],
    "excluded": [],
@@ -2139,12 +2763,12 @@
    "id": "glaucoma-consulta",
    "label": "Glaucoma Consulta",
    "phase": "Consulta",
-   "n": 40,
-   "mean": 566.95,
-   "median": 502.5,
+   "n": 46,
+   "mean": 592.48,
+   "median": 582.0,
    "min": 142,
    "max": 1490,
-   "stdev": 302.24,
+   "stdev": 293.82,
    "samples": [
     {
      "row": 3,
@@ -2385,9 +3009,51 @@
      "obs": 40.0,
      "seconds": 255,
      "note": null
+    },
+    {
+     "row": 43,
+     "obs": 41.0,
+     "seconds": 532,
+     "note": null
+    },
+    {
+     "row": 44,
+     "obs": 42.0,
+     "seconds": 780,
+     "note": null
+    },
+    {
+     "row": 45,
+     "obs": 43.0,
+     "seconds": 1020,
+     "note": null
+    },
+    {
+     "row": 46,
+     "obs": 44.0,
+     "seconds": 758,
+     "note": null
+    },
+    {
+     "row": 48,
+     "obs": 46.0,
+     "seconds": 774,
+     "note": null
+    },
+    {
+     "row": 49,
+     "obs": 47.0,
+     "seconds": 712,
+     "note": null
     }
    ],
-   "excluded": [],
+   "excluded": [
+    {
+     "row": 47,
+     "raw": "1 day, 6:00:00",
+     "reason": "duração implausível (≥ 3 h); provável erro de digitação"
+    }
+   ],
    "source": "Colunas P–Q",
    "kind": "cronometrado",
    "group": "principal",
@@ -2404,12 +3070,12 @@
    "id": "campo-visual",
    "label": "Campo visual",
    "phase": "Exames",
-   "n": 118,
-   "mean": 671.36,
+   "n": 136,
+   "mean": 662.8,
    "median": 600.0,
    "min": 120,
    "max": 2400,
-   "stdev": 343.39,
+   "stdev": 345.8,
    "samples": [
     {
      "row": 3,
@@ -2471,7 +3137,8 @@
      "seconds": 1260,
      "start": "14:08",
      "end": "14:29",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 13,
@@ -2479,7 +3146,8 @@
      "seconds": 720,
      "start": "13:07",
      "end": "13:19",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 14,
@@ -2487,7 +3155,8 @@
      "seconds": 720,
      "start": "13:23",
      "end": "13:35",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 15,
@@ -2495,7 +3164,8 @@
      "seconds": 840,
      "start": "13:41",
      "end": "13:55",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 16,
@@ -2503,7 +3173,8 @@
      "seconds": 480,
      "start": "14:03",
      "end": "14:11",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 17,
@@ -2511,7 +3182,8 @@
      "seconds": 1020,
      "start": "06:47",
      "end": "07:04",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 18,
@@ -2519,7 +3191,8 @@
      "seconds": 1080,
      "start": "07:16",
      "end": "07:34",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 19,
@@ -2527,7 +3200,8 @@
      "seconds": 1200,
      "start": "08:04",
      "end": "08:24",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 20,
@@ -2535,7 +3209,8 @@
      "seconds": 900,
      "start": "07:43",
      "end": "07:58",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 21,
@@ -2543,7 +3218,8 @@
      "seconds": 600,
      "start": "09:46",
      "end": "09:56",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 22,
@@ -2551,7 +3227,8 @@
      "seconds": 660,
      "start": "08:31",
      "end": "08:42",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 23,
@@ -2559,7 +3236,8 @@
      "seconds": 960,
      "start": "07:33",
      "end": "07:49",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 24,
@@ -2567,7 +3245,8 @@
      "seconds": 1020,
      "start": "13:17",
      "end": "13:34",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 25,
@@ -2575,7 +3254,8 @@
      "seconds": 720,
      "start": "13:39",
      "end": "13:51",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 26,
@@ -2583,7 +3263,8 @@
      "seconds": 660,
      "start": "13:02",
      "end": "13:13",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 27,
@@ -2591,7 +3272,8 @@
      "seconds": 600,
      "start": "13:56",
      "end": "14:06",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 28,
@@ -2599,7 +3281,8 @@
      "seconds": 720,
      "start": "14:10",
      "end": "14:22",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 29,
@@ -2607,7 +3290,8 @@
      "seconds": 420,
      "start": "14:21",
      "end": "14:28",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 30,
@@ -2615,7 +3299,8 @@
      "seconds": 780,
      "start": "15:31",
      "end": "15:44",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 31,
@@ -2623,7 +3308,8 @@
      "seconds": 240,
      "start": "14:55",
      "end": "14:59",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 32,
@@ -2631,7 +3317,8 @@
      "seconds": 300,
      "start": "15:03",
      "end": "15:08",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 33,
@@ -2747,7 +3434,8 @@
      "seconds": 960,
      "start": "11:40",
      "end": "11:56",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 46,
@@ -2782,7 +3470,8 @@
      "seconds": 600,
      "start": "11:35",
      "end": "11:45",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 50,
@@ -2817,7 +3506,8 @@
      "seconds": 540,
      "start": "12:43",
      "end": "12:52",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 54,
@@ -2825,7 +3515,8 @@
      "seconds": 240,
      "start": "13:48",
      "end": "13:52",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 55,
@@ -2833,7 +3524,8 @@
      "seconds": 360,
      "start": "13:17",
      "end": "13:23",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 56,
@@ -2841,7 +3533,8 @@
      "seconds": 300,
      "start": "13:33",
      "end": "13:38",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 57,
@@ -2849,7 +3542,8 @@
      "seconds": 660,
      "start": "13:00",
      "end": "13:11",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 58,
@@ -2857,7 +3551,8 @@
      "seconds": 480,
      "start": "14:01",
      "end": "14:09",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 59,
@@ -2865,7 +3560,8 @@
      "seconds": 660,
      "start": "15:17",
      "end": "15:28",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 60,
@@ -2873,7 +3569,8 @@
      "seconds": 360,
      "start": "15:02",
      "end": "15:08",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 61,
@@ -2881,7 +3578,8 @@
      "seconds": 600,
      "start": "06:48",
      "end": "06:58",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 62,
@@ -2889,7 +3587,8 @@
      "seconds": 540,
      "start": "08:49",
      "end": "08:58",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 63,
@@ -2897,7 +3596,8 @@
      "seconds": 540,
      "start": "09:19",
      "end": "09:28",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 64,
@@ -2905,7 +3605,8 @@
      "seconds": 360,
      "start": "08:13",
      "end": "08:19",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 65,
@@ -2913,7 +3614,8 @@
      "seconds": 840,
      "start": "10:14",
      "end": "10:28",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 66,
@@ -2921,7 +3623,8 @@
      "seconds": 660,
      "start": "09:55",
      "end": "10:06",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 67,
@@ -2929,7 +3632,8 @@
      "seconds": 780,
      "start": "07:15",
      "end": "07:28",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 68,
@@ -2937,7 +3641,8 @@
      "seconds": 300,
      "start": "06:37",
      "end": "06:42",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 69,
@@ -2945,7 +3650,8 @@
      "seconds": 540,
      "start": "08:24",
      "end": "08:33",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 70,
@@ -2953,7 +3659,8 @@
      "seconds": 960,
      "start": "06:59",
      "end": "07:15",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 71,
@@ -2961,7 +3668,8 @@
      "seconds": 480,
      "start": "06:22",
      "end": "06:30",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 72,
@@ -2969,7 +3677,8 @@
      "seconds": 480,
      "start": "09:37",
      "end": "09:45",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 73,
@@ -2977,7 +3686,8 @@
      "seconds": 420,
      "start": "09:08",
      "end": "09:15",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 74,
@@ -2985,7 +3695,8 @@
      "seconds": 780,
      "start": "07:45",
      "end": "07:58",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 75,
@@ -2993,7 +3704,8 @@
      "seconds": 420,
      "start": "13:33",
      "end": "13:40",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 76,
@@ -3001,7 +3713,8 @@
      "seconds": 900,
      "start": "12:51",
      "end": "13:06",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 77,
@@ -3009,7 +3722,8 @@
      "seconds": 660,
      "start": "12:30",
      "end": "12:41",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 78,
@@ -3017,7 +3731,8 @@
      "seconds": 480,
      "start": "15:07",
      "end": "15:15",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 79,
@@ -3025,7 +3740,8 @@
      "seconds": 480,
      "start": "07:34",
      "end": "07:42",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 80,
@@ -3033,7 +3749,8 @@
      "seconds": 480,
      "start": "08:36",
      "end": "08:44",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 81,
@@ -3041,7 +3758,8 @@
      "seconds": 480,
      "start": "08:00",
      "end": "08:08",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 82,
@@ -3049,7 +3767,8 @@
      "seconds": 660,
      "start": "11:57",
      "end": "12:08",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 83,
@@ -3057,7 +3776,8 @@
      "seconds": 600,
      "start": "06:17",
      "end": "06:27",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 84,
@@ -3065,7 +3785,8 @@
      "seconds": 540,
      "start": "06:49",
      "end": "06:58",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 85,
@@ -3073,7 +3794,8 @@
      "seconds": 480,
      "start": "06:33",
      "end": "06:41",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 86,
@@ -3081,7 +3803,8 @@
      "seconds": 420,
      "start": "08:07",
      "end": "08:14",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 87,
@@ -3089,7 +3812,8 @@
      "seconds": 540,
      "start": "11:10",
      "end": "11:19",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 88,
@@ -3097,7 +3821,8 @@
      "seconds": 480,
      "start": "07:18",
      "end": "07:26",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 89,
@@ -3105,7 +3830,8 @@
      "seconds": 540,
      "start": "08:50",
      "end": "08:59",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 90,
@@ -3113,7 +3839,8 @@
      "seconds": 420,
      "start": "10:55",
      "end": "11:02",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 91,
@@ -3121,7 +3848,8 @@
      "seconds": 600,
      "start": "10:30",
      "end": "10:40",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 92,
@@ -3129,7 +3857,8 @@
      "seconds": 480,
      "start": "10:03",
      "end": "10:11",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 93,
@@ -3137,7 +3866,8 @@
      "seconds": 600,
      "start": "09:20",
      "end": "09:30",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 94,
@@ -3145,7 +3875,8 @@
      "seconds": 360,
      "start": "08:25",
      "end": "08:31",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 95,
@@ -3153,7 +3884,8 @@
      "seconds": 300,
      "start": "09:35",
      "end": "09:40",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 96,
@@ -3161,7 +3893,8 @@
      "seconds": 480,
      "start": "07:41",
      "end": "07:49",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 97,
@@ -3169,7 +3902,8 @@
      "seconds": 600,
      "start": "10:12",
      "end": "10:22",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 98,
@@ -3177,7 +3911,8 @@
      "seconds": 780,
      "start": "10:50",
      "end": "11:03",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 99,
@@ -3185,7 +3920,8 @@
      "seconds": 360,
      "start": "09:45",
      "end": "09:51",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 100,
@@ -3193,7 +3929,8 @@
      "seconds": 540,
      "start": "07:21",
      "end": "07:30",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 101,
@@ -3201,7 +3938,8 @@
      "seconds": 300,
      "start": "08:46",
      "end": "08:51",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 102,
@@ -3209,7 +3947,8 @@
      "seconds": 360,
      "start": "07:52",
      "end": "07:58",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 103,
@@ -3217,7 +3956,8 @@
      "seconds": 300,
      "start": "12:29",
      "end": "12:34",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 104,
@@ -3225,7 +3965,8 @@
      "seconds": 360,
      "start": "12:42",
      "end": "12:48",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 105,
@@ -3233,7 +3974,8 @@
      "seconds": 540,
      "start": "10:28",
      "end": "10:37",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 106,
@@ -3241,7 +3983,8 @@
      "seconds": 840,
      "start": "12:13",
      "end": "12:27",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 107,
@@ -3249,7 +3992,8 @@
      "seconds": 2400,
      "start": "12:35",
      "end": "13:15",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 108,
@@ -3257,7 +4001,8 @@
      "seconds": 540,
      "start": "10:28",
      "end": "10:37",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 109,
@@ -3265,7 +4010,8 @@
      "seconds": 840,
      "start": "12:13",
      "end": "12:27",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 110,
@@ -3273,7 +4019,8 @@
      "seconds": 2400,
      "start": "12:35",
      "end": "13:15",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 111,
@@ -3281,7 +4028,8 @@
      "seconds": 780,
      "start": "12:18",
      "end": "12:31",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 112,
@@ -3289,7 +4037,8 @@
      "seconds": 420,
      "start": "12:53",
      "end": "13:00",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 113,
@@ -3297,7 +4046,8 @@
      "seconds": 600,
      "start": "06:48",
      "end": "06:58",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 114,
@@ -3305,7 +4055,8 @@
      "seconds": 540,
      "start": "08:49",
      "end": "08:58",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 115,
@@ -3313,7 +4064,8 @@
      "seconds": 540,
      "start": "09:19",
      "end": "09:28",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 116,
@@ -3321,7 +4073,8 @@
      "seconds": 120,
      "start": "08:13",
      "end": "08:15",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 117,
@@ -3329,7 +4082,8 @@
      "seconds": 660,
      "start": "09:55",
      "end": "10:06",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 118,
@@ -3337,7 +4091,8 @@
      "seconds": 780,
      "start": "07:15",
      "end": "07:28",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 119,
@@ -3345,7 +4100,8 @@
      "seconds": 420,
      "start": "06:37",
      "end": "06:44",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     },
     {
      "row": 120,
@@ -3353,7 +4109,170 @@
      "seconds": 180,
      "start": "08:37",
      "end": "08:40",
-     "note": null
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
+    },
+    {
+     "row": 121,
+     "obs": 119.0,
+     "seconds": 900,
+     "start": "07:05",
+     "end": "07:20",
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
+    },
+    {
+     "row": 122,
+     "obs": 120.0,
+     "seconds": 360,
+     "start": "07:35",
+     "end": "07:41",
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
+    },
+    {
+     "row": 123,
+     "obs": 121.0,
+     "seconds": 300,
+     "start": "08:32",
+     "end": "08:37",
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
+    },
+    {
+     "row": 124,
+     "obs": 122.0,
+     "seconds": 1080,
+     "start": "06:59",
+     "end": "07:17",
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
+    },
+    {
+     "row": 125,
+     "obs": 123.0,
+     "seconds": 1680,
+     "start": "08:49",
+     "end": "09:17",
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
+    },
+    {
+     "row": 126,
+     "obs": 124.0,
+     "seconds": 720,
+     "start": "07:18",
+     "end": "07:30",
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
+    },
+    {
+     "row": 127,
+     "obs": 125.0,
+     "seconds": 360,
+     "start": "07:45",
+     "end": "07:51",
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
+    },
+    {
+     "row": 128,
+     "obs": 126.0,
+     "seconds": 360,
+     "start": "06:50",
+     "end": "06:56",
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
+    },
+    {
+     "row": 129,
+     "obs": 127.0,
+     "seconds": 360,
+     "start": "07:50",
+     "end": "07:56",
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
+    },
+    {
+     "row": 130,
+     "obs": 128.0,
+     "seconds": 420,
+     "start": "07:01",
+     "end": "07:08",
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
+    },
+    {
+     "row": 131,
+     "obs": 129.0,
+     "seconds": 660,
+     "start": "15:40",
+     "end": "15:51",
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
+    },
+    {
+     "row": 132,
+     "obs": 130.0,
+     "seconds": 420,
+     "start": "07:37",
+     "end": "07:44",
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
+    },
+    {
+     "row": 133,
+     "obs": 131.0,
+     "seconds": 840,
+     "start": "08:06",
+     "end": "08:20",
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
+    },
+    {
+     "row": 134,
+     "obs": 132.0,
+     "seconds": 960,
+     "start": "07:53",
+     "end": "08:09",
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
+    },
+    {
+     "row": 135,
+     "obs": 133.0,
+     "seconds": 360,
+     "start": "08:02",
+     "end": "08:08",
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
+    },
+    {
+     "row": 136,
+     "obs": 134.0,
+     "seconds": 420,
+     "start": "07:27",
+     "end": "07:34",
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
+    },
+    {
+     "row": 137,
+     "obs": 135.0,
+     "seconds": 360,
+     "start": "08:53",
+     "end": "08:59",
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
+    },
+    {
+     "row": 138,
+     "obs": 136.0,
+     "seconds": 360,
+     "start": "06:41",
+     "end": "06:47",
+     "note": "A duração escrita na planilha difere do intervalo início–fim; usado o intervalo registrado.",
+     "flag": "conferir"
     }
    ],
    "excluded": [],
@@ -3373,12 +4292,12 @@
    "id": "oct",
    "label": "OCT",
    "phase": "Exames",
-   "n": 81,
-   "mean": 351.11,
+   "n": 133,
+   "mean": 339.25,
    "median": 300,
    "min": 60,
    "max": 1200,
-   "stdev": 183.49,
+   "stdev": 205.74,
    "samples": [
     {
      "row": 3,
@@ -4027,6 +4946,422 @@
      "start": "17:09",
      "end": "17:11",
      "note": null
+    },
+    {
+     "row": 84,
+     "obs": 82.0,
+     "seconds": 420,
+     "start": "09:47",
+     "end": "09:54",
+     "note": null
+    },
+    {
+     "row": 85,
+     "obs": 83.0,
+     "seconds": 360,
+     "start": "07:36",
+     "end": "07:42",
+     "note": null
+    },
+    {
+     "row": 86,
+     "obs": 84.0,
+     "seconds": 360,
+     "start": "10:50",
+     "end": "10:56",
+     "note": null
+    },
+    {
+     "row": 87,
+     "obs": 85.0,
+     "seconds": 180,
+     "start": "10:59",
+     "end": "11:02",
+     "note": null
+    },
+    {
+     "row": 88,
+     "obs": 86.0,
+     "seconds": 60,
+     "start": "08:25",
+     "end": "08:26",
+     "note": null
+    },
+    {
+     "row": 89,
+     "obs": 87.0,
+     "seconds": 120,
+     "start": "09:12",
+     "end": "09:14",
+     "note": null
+    },
+    {
+     "row": 90,
+     "obs": 88.0,
+     "seconds": 240,
+     "start": "07:51",
+     "end": "07:55",
+     "note": null
+    },
+    {
+     "row": 91,
+     "obs": 89.0,
+     "seconds": 120,
+     "start": "07:28",
+     "end": "07:30",
+     "note": null
+    },
+    {
+     "row": 92,
+     "obs": 90.0,
+     "seconds": 240,
+     "start": "09:59",
+     "end": "10:03",
+     "note": null
+    },
+    {
+     "row": 93,
+     "obs": 91.0,
+     "seconds": 240,
+     "start": "09:02",
+     "end": "09:06",
+     "note": null
+    },
+    {
+     "row": 94,
+     "obs": 92.0,
+     "seconds": 1200,
+     "start": "10:26",
+     "end": "10:46",
+     "note": null
+    },
+    {
+     "row": 95,
+     "obs": 93.0,
+     "seconds": 360,
+     "start": "11:21",
+     "end": "11:27",
+     "note": null
+    },
+    {
+     "row": 96,
+     "obs": 94.0,
+     "seconds": 1020,
+     "start": "08:35",
+     "end": "08:52",
+     "note": null
+    },
+    {
+     "row": 97,
+     "obs": 95.0,
+     "seconds": 120,
+     "start": "11:14",
+     "end": "11:16",
+     "note": null
+    },
+    {
+     "row": 98,
+     "obs": 96.0,
+     "seconds": 180,
+     "start": "11:07",
+     "end": "11:10",
+     "note": null
+    },
+    {
+     "row": 99,
+     "obs": 97.0,
+     "seconds": 120,
+     "start": "14:47",
+     "end": "14:49",
+     "note": null
+    },
+    {
+     "row": 100,
+     "obs": 98.0,
+     "seconds": 120,
+     "start": "10:07",
+     "end": "10:09",
+     "note": null
+    },
+    {
+     "row": 101,
+     "obs": 99.0,
+     "seconds": 1020,
+     "start": "09:48",
+     "end": "10:05",
+     "note": null
+    },
+    {
+     "row": 102,
+     "obs": 100.0,
+     "seconds": 60,
+     "start": "17:01",
+     "end": "17:02",
+     "note": null
+    },
+    {
+     "row": 103,
+     "obs": 101.0,
+     "seconds": 360,
+     "start": "07:38",
+     "end": "07:44",
+     "note": null
+    },
+    {
+     "row": 104,
+     "obs": 102.0,
+     "seconds": 300,
+     "start": "08:12",
+     "end": "08:17",
+     "note": null
+    },
+    {
+     "row": 105,
+     "obs": 103.0,
+     "seconds": 240,
+     "start": "13:20",
+     "end": "13:24",
+     "note": null
+    },
+    {
+     "row": 106,
+     "obs": 104.0,
+     "seconds": 300,
+     "start": "07:11",
+     "end": "07:16",
+     "note": null
+    },
+    {
+     "row": 107,
+     "obs": 105.0,
+     "seconds": 360,
+     "start": "09:50",
+     "end": "09:56",
+     "note": null
+    },
+    {
+     "row": 108,
+     "obs": 106.0,
+     "seconds": 180,
+     "start": "07:46",
+     "end": "07:49",
+     "note": null
+    },
+    {
+     "row": 109,
+     "obs": 107.0,
+     "seconds": 360,
+     "start": "09:22",
+     "end": "09:28",
+     "note": null
+    },
+    {
+     "row": 110,
+     "obs": 108.0,
+     "seconds": 360,
+     "start": "09:43",
+     "end": "09:49",
+     "note": null
+    },
+    {
+     "row": 111,
+     "obs": 109.0,
+     "seconds": 180,
+     "start": "08:18",
+     "end": "08:21",
+     "note": null
+    },
+    {
+     "row": 112,
+     "obs": 110.0,
+     "seconds": 240,
+     "start": "07:59",
+     "end": "08:03",
+     "note": null
+    },
+    {
+     "row": 113,
+     "obs": 111.0,
+     "seconds": 480,
+     "start": "08:40",
+     "end": "08:48",
+     "note": null
+    },
+    {
+     "row": 114,
+     "obs": 112.0,
+     "seconds": 180,
+     "start": "10:38",
+     "end": "10:41",
+     "note": null
+    },
+    {
+     "row": 115,
+     "obs": 113.0,
+     "seconds": 240,
+     "start": "10:26",
+     "end": "10:30",
+     "note": null
+    },
+    {
+     "row": 116,
+     "obs": 114.0,
+     "seconds": 420,
+     "start": "08:12",
+     "end": "08:19",
+     "note": null
+    },
+    {
+     "row": 117,
+     "obs": 115.0,
+     "seconds": 300,
+     "start": "08:39",
+     "end": "08:44",
+     "note": null
+    },
+    {
+     "row": 118,
+     "obs": 116.0,
+     "seconds": 420,
+     "start": "08:02",
+     "end": "08:09",
+     "note": null
+    },
+    {
+     "row": 119,
+     "obs": 117.0,
+     "seconds": 780,
+     "start": "07:40",
+     "end": "07:53",
+     "note": null
+    },
+    {
+     "row": 120,
+     "obs": 118.0,
+     "seconds": 300,
+     "start": "09:30",
+     "end": "09:35",
+     "note": null
+    },
+    {
+     "row": 121,
+     "obs": 119.0,
+     "seconds": 240,
+     "start": "08:16",
+     "end": "08:20",
+     "note": null
+    },
+    {
+     "row": 122,
+     "obs": 120.0,
+     "seconds": 240,
+     "start": "09:06",
+     "end": "09:10",
+     "note": null
+    },
+    {
+     "row": 123,
+     "obs": 121.0,
+     "seconds": 300,
+     "start": "09:21",
+     "end": "09:26",
+     "note": null
+    },
+    {
+     "row": 124,
+     "obs": 122.0,
+     "seconds": 240,
+     "start": "08:54",
+     "end": "08:58",
+     "note": null
+    },
+    {
+     "row": 125,
+     "obs": 123.0,
+     "seconds": 600,
+     "start": "08:26",
+     "end": "08:36",
+     "note": null
+    },
+    {
+     "row": 126,
+     "obs": 124.0,
+     "seconds": 300,
+     "start": "07:20",
+     "end": "07:25",
+     "note": null
+    },
+    {
+     "row": 127,
+     "obs": 125.0,
+     "seconds": 120,
+     "start": "17:09",
+     "end": "17:11",
+     "note": null
+    },
+    {
+     "row": 128,
+     "obs": 126.0,
+     "seconds": 180,
+     "start": "16:11",
+     "end": "16:14",
+     "note": null
+    },
+    {
+     "row": 129,
+     "obs": 127.0,
+     "seconds": 240,
+     "start": "08:35",
+     "end": "08:39",
+     "note": null
+    },
+    {
+     "row": 130,
+     "obs": 128.0,
+     "seconds": 120,
+     "start": "09:20",
+     "end": "09:22",
+     "note": null
+    },
+    {
+     "row": 131,
+     "obs": 129.0,
+     "seconds": 660,
+     "start": "09:19",
+     "end": "09:30",
+     "note": null
+    },
+    {
+     "row": 132,
+     "obs": 130.0,
+     "seconds": 180,
+     "start": "09:35",
+     "end": "09:38",
+     "note": null
+    },
+    {
+     "row": 133,
+     "obs": 131.0,
+     "seconds": 240,
+     "start": "08:32",
+     "end": "08:36",
+     "note": null
+    },
+    {
+     "row": 134,
+     "obs": 132.0,
+     "seconds": 240,
+     "start": "07:52",
+     "end": "07:56",
+     "note": null
+    },
+    {
+     "row": 135,
+     "obs": 133.0,
+     "seconds": 240,
+     "start": "07:26",
+     "end": "07:30",
+     "note": null
     }
    ],
    "excluded": [],
@@ -4046,12 +5381,12 @@
    "id": "paquimetria",
    "label": "Paquimetria corneana",
    "phase": "Exames",
-   "n": 31,
-   "mean": 79.35,
+   "n": 73,
+   "mean": 69.86,
    "median": 60,
-   "min": 0,
+   "min": 60,
    "max": 240,
-   "stdev": 54.52,
+   "stdev": 34.66,
    "samples": [
     {
      "row": 3,
@@ -4166,14 +5501,6 @@
      "note": null
     },
     {
-     "row": 17,
-     "obs": 15.0,
-     "seconds": 0,
-     "start": "09:45",
-     "end": "09:45",
-     "note": null
-    },
-    {
      "row": 18,
      "obs": 16.0,
      "seconds": 60,
@@ -4254,14 +5581,6 @@
      "note": null
     },
     {
-     "row": 28,
-     "obs": 26.0,
-     "seconds": 0,
-     "start": "09:45",
-     "end": "09:45",
-     "note": null
-    },
-    {
      "row": 29,
      "obs": 27.0,
      "seconds": 60,
@@ -4300,9 +5619,372 @@
      "start": "17:11",
      "end": "17:12",
      "note": null
+    },
+    {
+     "row": 34,
+     "obs": 32.0,
+     "seconds": 60,
+     "start": "09:34",
+     "end": "09:35",
+     "note": null
+    },
+    {
+     "row": 35,
+     "obs": 33.0,
+     "seconds": 60,
+     "start": "08:15",
+     "end": "08:16",
+     "note": null
+    },
+    {
+     "row": 36,
+     "obs": 34.0,
+     "seconds": 60,
+     "start": "07:44",
+     "end": "07:45",
+     "note": null
+    },
+    {
+     "row": 37,
+     "obs": 35.0,
+     "seconds": 60,
+     "start": "10:09",
+     "end": "10:10",
+     "note": null
+    },
+    {
+     "row": 38,
+     "obs": 36.0,
+     "seconds": 60,
+     "start": "08:52",
+     "end": "08:53",
+     "note": null
+    },
+    {
+     "row": 39,
+     "obs": 37.0,
+     "seconds": 60,
+     "start": "11:34",
+     "end": "11:35",
+     "note": null
+    },
+    {
+     "row": 40,
+     "obs": 38.0,
+     "seconds": 60,
+     "start": "10:47",
+     "end": "10:48",
+     "note": null
+    },
+    {
+     "row": 41,
+     "obs": 39.0,
+     "seconds": 60,
+     "start": "09:07",
+     "end": "09:08",
+     "note": null
+    },
+    {
+     "row": 42,
+     "obs": 40.0,
+     "seconds": 60,
+     "start": "08:06",
+     "end": "08:07",
+     "note": null
+    },
+    {
+     "row": 43,
+     "obs": 41.0,
+     "seconds": 60,
+     "start": "08:33",
+     "end": "08:34",
+     "note": null
+    },
+    {
+     "row": 44,
+     "obs": 42.0,
+     "seconds": 60,
+     "start": "08:27",
+     "end": "08:28",
+     "note": null
+    },
+    {
+     "row": 45,
+     "obs": 43.0,
+     "seconds": 60,
+     "start": "07:16",
+     "end": "07:17",
+     "note": null
+    },
+    {
+     "row": 46,
+     "obs": 44.0,
+     "seconds": 60,
+     "start": "07:58",
+     "end": "07:59",
+     "note": null
+    },
+    {
+     "row": 47,
+     "obs": 45.0,
+     "seconds": 60,
+     "start": "09:56",
+     "end": "09:57",
+     "note": null
+    },
+    {
+     "row": 48,
+     "obs": 46.0,
+     "seconds": 60,
+     "start": "07:49",
+     "end": "07:50",
+     "note": null
+    },
+    {
+     "row": 49,
+     "obs": 47.0,
+     "seconds": 60,
+     "start": "09:28",
+     "end": "09:29",
+     "note": null
+    },
+    {
+     "row": 50,
+     "obs": 48.0,
+     "seconds": 60,
+     "start": "07:49",
+     "end": "07:50",
+     "note": null
+    },
+    {
+     "row": 51,
+     "obs": 49.0,
+     "seconds": 60,
+     "start": "08:21",
+     "end": "08:22",
+     "note": null
+    },
+    {
+     "row": 52,
+     "obs": 50.0,
+     "seconds": 60,
+     "start": "08:03",
+     "end": "08:04",
+     "note": null
+    },
+    {
+     "row": 53,
+     "obs": 51.0,
+     "seconds": 60,
+     "start": "08:48",
+     "end": "08:49",
+     "note": null
+    },
+    {
+     "row": 54,
+     "obs": 52.0,
+     "seconds": 60,
+     "start": "10:41",
+     "end": "10:42",
+     "note": null
+    },
+    {
+     "row": 55,
+     "obs": 53.0,
+     "seconds": 60,
+     "start": "07:53",
+     "end": "07:54",
+     "note": null
+    },
+    {
+     "row": 56,
+     "obs": 54.0,
+     "seconds": 60,
+     "start": "08:16",
+     "end": "08:17",
+     "note": null
+    },
+    {
+     "row": 57,
+     "obs": 55.0,
+     "seconds": 60,
+     "start": "09:11",
+     "end": "09:12",
+     "note": null
+    },
+    {
+     "row": 58,
+     "obs": 56.0,
+     "seconds": 60,
+     "start": "08:50",
+     "end": "08:51",
+     "note": null
+    },
+    {
+     "row": 59,
+     "obs": 57.0,
+     "seconds": 60,
+     "start": "08:37",
+     "end": "08:38",
+     "note": null
+    },
+    {
+     "row": 60,
+     "obs": 58.0,
+     "seconds": 60,
+     "start": "08:30",
+     "end": "08:31",
+     "note": null
+    },
+    {
+     "row": 61,
+     "obs": 59.0,
+     "seconds": 60,
+     "start": "07:29",
+     "end": "07:30",
+     "note": null
+    },
+    {
+     "row": 62,
+     "obs": 60.0,
+     "seconds": 60,
+     "start": "14:15",
+     "end": "14:16",
+     "note": null
+    },
+    {
+     "row": 63,
+     "obs": 61.0,
+     "seconds": 60,
+     "start": "14:27",
+     "end": "14:28",
+     "note": null
+    },
+    {
+     "row": 64,
+     "obs": 62.0,
+     "seconds": 60,
+     "start": "14:03",
+     "end": "14:04",
+     "note": null
+    },
+    {
+     "row": 65,
+     "obs": 63.0,
+     "seconds": 60,
+     "start": "14:53",
+     "end": "14:54",
+     "note": null
+    },
+    {
+     "row": 66,
+     "obs": 64.0,
+     "seconds": 60,
+     "start": "11:00",
+     "end": "11:01",
+     "note": null
+    },
+    {
+     "row": 67,
+     "obs": 65.0,
+     "seconds": 60,
+     "start": "17:11",
+     "end": "17:12",
+     "note": null
+    },
+    {
+     "row": 68,
+     "obs": 66.0,
+     "seconds": 60,
+     "start": "16:50",
+     "end": "16:51",
+     "note": null
+    },
+    {
+     "row": 69,
+     "obs": 67.0,
+     "seconds": 60,
+     "start": "10:33",
+     "end": "10:34",
+     "note": null
+    },
+    {
+     "row": 70,
+     "obs": 68.0,
+     "seconds": 60,
+     "start": "16:54",
+     "end": "16:55",
+     "note": null
+    },
+    {
+     "row": 71,
+     "obs": 69.0,
+     "seconds": 60,
+     "start": "16:14",
+     "end": "16:15",
+     "note": null
+    },
+    {
+     "row": 72,
+     "obs": 70.0,
+     "seconds": 60,
+     "start": "08:39",
+     "end": "08:40",
+     "note": null
+    },
+    {
+     "row": 73,
+     "obs": 71.0,
+     "seconds": 60,
+     "start": "09:22",
+     "end": "09:23",
+     "note": null
+    },
+    {
+     "row": 74,
+     "obs": 72.0,
+     "seconds": 60,
+     "start": "09:30",
+     "end": "09:31",
+     "note": null
+    },
+    {
+     "row": 75,
+     "obs": 73.0,
+     "seconds": 60,
+     "start": "09:38",
+     "end": "09:39",
+     "note": null
+    },
+    {
+     "row": 76,
+     "obs": 74.0,
+     "seconds": 60,
+     "start": "09:27",
+     "end": "09:28",
+     "note": null
+    },
+    {
+     "row": 77,
+     "obs": 75.0,
+     "seconds": 60,
+     "start": "09:01",
+     "end": "09:02",
+     "note": null
     }
    ],
-   "excluded": [],
+   "excluded": [
+    {
+     "row": 17,
+     "raw": "09:45 – 09:45",
+     "reason": "início e fim iguais (duração 0 s); não é uma medição válida"
+    },
+    {
+     "row": 28,
+     "raw": "09:45 – 09:45",
+     "reason": "início e fim iguais (duração 0 s); não é uma medição válida"
+    }
+   ],
    "source": "Colunas V–X",
    "kind": "início / fim",
    "group": "principal",
@@ -4319,12 +6001,12 @@
    "id": "retinografia",
    "label": "Retinografia",
    "phase": "Exames",
-   "n": 81,
-   "mean": 161.48,
+   "n": 131,
+   "mean": 201.98,
    "median": 180,
    "min": 60,
-   "max": 300,
-   "stdev": 51.65,
+   "max": 3840,
+   "stdev": 329.49,
    "samples": [
     {
      "row": 3,
@@ -4973,6 +6655,406 @@
      "start": "10:11",
      "end": "10:12",
      "note": null
+    },
+    {
+     "row": 84,
+     "obs": 82.0,
+     "seconds": 60,
+     "start": "13:18",
+     "end": "13:19",
+     "note": null
+    },
+    {
+     "row": 85,
+     "obs": 83.0,
+     "seconds": 180,
+     "start": "09:32",
+     "end": "09:35",
+     "note": null
+    },
+    {
+     "row": 86,
+     "obs": 84.0,
+     "seconds": 420,
+     "start": "08:00",
+     "end": "08:07",
+     "note": null
+    },
+    {
+     "row": 87,
+     "obs": 85.0,
+     "seconds": 240,
+     "start": "08:11",
+     "end": "08:15",
+     "note": null
+    },
+    {
+     "row": 88,
+     "obs": 86.0,
+     "seconds": 300,
+     "start": "07:33",
+     "end": "07:38",
+     "note": null
+    },
+    {
+     "row": 89,
+     "obs": 87.0,
+     "seconds": 240,
+     "start": "08:35",
+     "end": "08:39",
+     "note": null
+    },
+    {
+     "row": 90,
+     "obs": 88.0,
+     "seconds": 480,
+     "start": "10:11",
+     "end": "10:19",
+     "note": null
+    },
+    {
+     "row": 91,
+     "obs": 89.0,
+     "seconds": 300,
+     "start": "13:54",
+     "end": "13:59",
+     "note": null
+    },
+    {
+     "row": 92,
+     "obs": 90.0,
+     "seconds": 300,
+     "start": "11:04",
+     "end": "11:09",
+     "note": null
+    },
+    {
+     "row": 93,
+     "obs": 91.0,
+     "seconds": 180,
+     "start": "11:11",
+     "end": "11:14",
+     "note": null
+    },
+    {
+     "row": 94,
+     "obs": 92.0,
+     "seconds": 300,
+     "start": "08:30",
+     "end": "08:35",
+     "note": null
+    },
+    {
+     "row": 95,
+     "obs": 93.0,
+     "seconds": 360,
+     "start": "11:28",
+     "end": "11:34",
+     "note": null
+    },
+    {
+     "row": 96,
+     "obs": 94.0,
+     "seconds": 60,
+     "start": "10:46",
+     "end": "10:47",
+     "note": null
+    },
+    {
+     "row": 97,
+     "obs": 95.0,
+     "seconds": 180,
+     "start": "08:46",
+     "end": "08:49",
+     "note": null
+    },
+    {
+     "row": 98,
+     "obs": 96.0,
+     "seconds": 60,
+     "start": "08:04",
+     "end": "08:05",
+     "note": null
+    },
+    {
+     "row": 99,
+     "obs": 97.0,
+     "seconds": 120,
+     "start": "08:30",
+     "end": "08:32",
+     "note": null
+    },
+    {
+     "row": 100,
+     "obs": 98.0,
+     "seconds": 60,
+     "start": "07:25",
+     "end": "07:26",
+     "note": null
+    },
+    {
+     "row": 101,
+     "obs": 99.0,
+     "seconds": 60,
+     "start": "09:14",
+     "end": "09:15",
+     "note": null
+    },
+    {
+     "row": 102,
+     "obs": 100.0,
+     "seconds": 60,
+     "start": "10:48",
+     "end": "10:49",
+     "note": null
+    },
+    {
+     "row": 103,
+     "obs": 101.0,
+     "seconds": 120,
+     "start": "10:35",
+     "end": "10:37",
+     "note": null
+    },
+    {
+     "row": 104,
+     "obs": 102.0,
+     "seconds": 60,
+     "start": "08:28",
+     "end": "08:29",
+     "note": null
+    },
+    {
+     "row": 105,
+     "obs": 103.0,
+     "seconds": 60,
+     "start": "07:42",
+     "end": "07:43",
+     "note": null
+    },
+    {
+     "row": 106,
+     "obs": 104.0,
+     "seconds": 60,
+     "start": "09:54",
+     "end": "09:55",
+     "note": null
+    },
+    {
+     "row": 107,
+     "obs": 105.0,
+     "seconds": 60,
+     "start": "08:29",
+     "end": "08:30",
+     "note": null
+    },
+    {
+     "row": 108,
+     "obs": 106.0,
+     "seconds": 240,
+     "start": "07:17",
+     "end": "07:21",
+     "note": null
+    },
+    {
+     "row": 109,
+     "obs": 107.0,
+     "seconds": 300,
+     "start": "07:53",
+     "end": "07:58",
+     "note": null
+    },
+    {
+     "row": 110,
+     "obs": 108.0,
+     "seconds": 240,
+     "start": "09:57",
+     "end": "10:01",
+     "note": null
+    },
+    {
+     "row": 111,
+     "obs": 109.0,
+     "seconds": 300,
+     "start": "09:28",
+     "end": "09:33",
+     "note": null
+    },
+    {
+     "row": 112,
+     "obs": 110.0,
+     "seconds": 240,
+     "start": "07:39",
+     "end": "07:43",
+     "note": null
+    },
+    {
+     "row": 113,
+     "obs": 111.0,
+     "seconds": 180,
+     "start": "06:40",
+     "end": "06:43",
+     "note": null
+    },
+    {
+     "row": 114,
+     "obs": 112.0,
+     "seconds": 180,
+     "start": "08:22",
+     "end": "08:25",
+     "note": null
+    },
+    {
+     "row": 115,
+     "obs": 113.0,
+     "seconds": 240,
+     "start": "08:04",
+     "end": "08:08",
+     "note": null
+    },
+    {
+     "row": 116,
+     "obs": 114.0,
+     "seconds": 300,
+     "start": "08:48",
+     "end": "08:53",
+     "note": null
+    },
+    {
+     "row": 117,
+     "obs": 115.0,
+     "seconds": 360,
+     "start": "10:29",
+     "end": "10:35",
+     "note": null
+    },
+    {
+     "row": 118,
+     "obs": 116.0,
+     "seconds": 3840,
+     "start": "10:30",
+     "end": "11:34",
+     "note": null
+    },
+    {
+     "row": 119,
+     "obs": 117.0,
+     "seconds": 180,
+     "start": "08:20",
+     "end": "08:23",
+     "note": null
+    },
+    {
+     "row": 120,
+     "obs": 118.0,
+     "seconds": 180,
+     "start": "08:32",
+     "end": "08:35",
+     "note": null
+    },
+    {
+     "row": 121,
+     "obs": 119.0,
+     "seconds": 120,
+     "start": "07:53",
+     "end": "07:55",
+     "note": null
+    },
+    {
+     "row": 122,
+     "obs": 120.0,
+     "seconds": 240,
+     "start": "09:36",
+     "end": "09:40",
+     "note": null
+    },
+    {
+     "row": 123,
+     "obs": 121.0,
+     "seconds": 120,
+     "start": "08:13",
+     "end": "08:15",
+     "note": null
+    },
+    {
+     "row": 124,
+     "obs": 122.0,
+     "seconds": 120,
+     "start": "08:20",
+     "end": "08:22",
+     "note": null
+    },
+    {
+     "row": 125,
+     "obs": 123.0,
+     "seconds": 120,
+     "start": "09:12",
+     "end": "09:14",
+     "note": null
+    },
+    {
+     "row": 126,
+     "obs": 124.0,
+     "seconds": 180,
+     "start": "09:26",
+     "end": "09:29",
+     "note": null
+    },
+    {
+     "row": 127,
+     "obs": 125.0,
+     "seconds": 360,
+     "start": "09:00",
+     "end": "09:06",
+     "note": null
+    },
+    {
+     "row": 128,
+     "obs": 126.0,
+     "seconds": 180,
+     "start": "08:52",
+     "end": "08:55",
+     "note": null
+    },
+    {
+     "row": 129,
+     "obs": 127.0,
+     "seconds": 180,
+     "start": "08:30",
+     "end": "08:33",
+     "note": null
+    },
+    {
+     "row": 130,
+     "obs": 128.0,
+     "seconds": 180,
+     "start": "07:26",
+     "end": "07:29",
+     "note": null
+    },
+    {
+     "row": 131,
+     "obs": 129.0,
+     "seconds": 180,
+     "start": "16:16",
+     "end": "16:19",
+     "note": null
+    },
+    {
+     "row": 132,
+     "obs": 130.0,
+     "seconds": 180,
+     "start": "09:32",
+     "end": "09:35",
+     "note": null
+    },
+    {
+     "row": 133,
+     "obs": 131.0,
+     "seconds": 120,
+     "start": "08:46",
+     "end": "08:48",
+     "note": null
     }
    ],
    "excluded": [],
@@ -4991,14 +7073,14 @@
   },
   {
    "id": "atendimento-cornea",
-   "label": "Atendimento Córnea",
+   "label": "Recepção Córnea",
    "phase": "Córnea",
-   "n": 62,
-   "mean": 290.76,
-   "median": 240.0,
+   "n": 75,
+   "mean": 278.99,
+   "median": 217,
    "min": 60,
    "max": 1263,
-   "stdev": 227.61,
+   "stdev": 216.6,
    "samples": [
     {
      "row": 3,
@@ -5469,6 +7551,84 @@
      "obs": 62.0,
      "seconds": 732,
      "note": null
+    },
+    {
+     "row": 65,
+     "obs": 63.0,
+     "seconds": 173,
+     "note": null
+    },
+    {
+     "row": 66,
+     "obs": 64.0,
+     "seconds": 132,
+     "note": null
+    },
+    {
+     "row": 67,
+     "obs": 65.0,
+     "seconds": 164,
+     "note": null
+    },
+    {
+     "row": 68,
+     "obs": 66.0,
+     "seconds": 134,
+     "note": null
+    },
+    {
+     "row": 69,
+     "obs": 67.0,
+     "seconds": 72,
+     "note": null
+    },
+    {
+     "row": 70,
+     "obs": 68.0,
+     "seconds": 92,
+     "note": null
+    },
+    {
+     "row": 71,
+     "obs": 69.0,
+     "seconds": 212,
+     "note": null
+    },
+    {
+     "row": 72,
+     "obs": 70.0,
+     "seconds": 118,
+     "note": null
+    },
+    {
+     "row": 73,
+     "obs": 71.0,
+     "seconds": 621,
+     "note": null
+    },
+    {
+     "row": 74,
+     "obs": 72.0,
+     "seconds": 281,
+     "note": null
+    },
+    {
+     "row": 75,
+     "obs": 73.0,
+     "seconds": 335,
+     "note": null
+    },
+    {
+     "row": 76,
+     "obs": 74.0,
+     "seconds": 221,
+     "note": null
+    },
+    {
+     "row": 77,
+     "obs": 75.0,
+     "seconds": 342,
+     "note": null
     }
    ],
    "excluded": [],
@@ -5480,7 +7640,7 @@
     "nodes": [],
     "lane": "Lane_medico",
     "confidence": "raia",
-    "note": "A planilha mede o atendimento da córnea como um bloco, do início ao fim; no fluxograma ele corresponde à raia do médico (da conversa inicial à entrega da receita). Associação por raia."
+    "note": "A planilha mede a recepção da córnea (atendimento) como um bloco, do início ao fim; no fluxograma ele corresponde à raia do médico (da conversa inicial à entrega da receita). Associação por raia."
    },
    "process": "exame-de-cornea"
   },
@@ -5636,14 +7796,14 @@
   },
   {
    "id": "atendimento-retina",
-   "label": "Atendimento Retina",
+   "label": "Recepção Retina",
    "phase": "Retina",
-   "n": 27,
-   "mean": 314.37,
-   "median": 264,
-   "min": 91,
-   "max": 763,
-   "stdev": 199.01,
+   "n": 36,
+   "mean": 349.31,
+   "median": 296.0,
+   "min": 53,
+   "max": 813,
+   "stdev": 215.7,
    "samples": [
     {
      "row": 3,
@@ -5806,6 +7966,60 @@
      "obs": 27.0,
      "seconds": 213,
      "note": null
+    },
+    {
+     "row": 30,
+     "obs": 28.0,
+     "seconds": 368,
+     "note": null
+    },
+    {
+     "row": 31,
+     "obs": 29.0,
+     "seconds": 717,
+     "note": null
+    },
+    {
+     "row": 32,
+     "obs": 30.0,
+     "seconds": 53,
+     "note": null
+    },
+    {
+     "row": 33,
+     "obs": 31.0,
+     "seconds": 450,
+     "note": null
+    },
+    {
+     "row": 34,
+     "obs": 32.0,
+     "seconds": 382,
+     "note": null
+    },
+    {
+     "row": 35,
+     "obs": 33.0,
+     "seconds": 197,
+     "note": null
+    },
+    {
+     "row": 36,
+     "obs": 34.0,
+     "seconds": 484,
+     "note": null
+    },
+    {
+     "row": 37,
+     "obs": 35.0,
+     "seconds": 813,
+     "note": null
+    },
+    {
+     "row": 38,
+     "obs": 36.0,
+     "seconds": 623,
+     "note": null
     }
    ],
    "excluded": [],
@@ -5841,52 +8055,52 @@
    },
    {
     "id": "atendimento-glaucoma",
-    "label": "Atendimento Glaucoma",
-    "n": 47,
-    "missing": 53,
+    "label": "Recepção Glaucoma",
+    "n": 48,
+    "missing": 52,
     "visits": 2
    },
    {
     "id": "microscopia",
     "label": "Microscopia",
-    "n": 22,
-    "missing": 78,
+    "n": 26,
+    "missing": 74,
     "visits": 3
    },
    {
     "id": "topografia",
     "label": "Topografia",
-    "n": 23,
-    "missing": 77,
+    "n": 29,
+    "missing": 71,
     "visits": 3
    },
    {
     "id": "tonometria-sopro",
     "label": "Tonometria de sopro",
-    "n": 60,
-    "missing": 40,
-    "visits": 2
+    "n": 105,
+    "missing": 0,
+    "visits": 0
    },
    {
     "id": "auto-refratario",
     "label": "Auto refratário",
-    "n": 56,
-    "missing": 44,
-    "visits": 2
+    "n": 104,
+    "missing": 0,
+    "visits": 0
    },
    {
     "id": "glaucoma-consulta",
     "label": "Glaucoma Consulta",
-    "n": 40,
-    "missing": 60,
+    "n": 46,
+    "missing": 54,
     "visits": 2
    },
    {
     "id": "atendimento-cornea",
-    "label": "Atendimento Córnea",
-    "n": 62,
-    "missing": 38,
-    "visits": 2
+    "label": "Recepção Córnea",
+    "n": 75,
+    "missing": 25,
+    "visits": 1
    }
   ],
   "visits": 3,
@@ -5894,20 +8108,19 @@
    {
     "n": 1,
     "date": "2026-10-08",
-    "closes": [],
-    "lowest": 57
+    "closes": [
+     "Recepção Córnea"
+    ],
+    "lowest": 61
    },
    {
     "n": 2,
     "date": "2026-10-09",
     "closes": [
-     "Atendimento Glaucoma",
-     "Tonometria de sopro",
-     "Auto refratário",
-     "Glaucoma Consulta",
-     "Atendimento Córnea"
+     "Recepção Glaucoma",
+     "Glaucoma Consulta"
     ],
-    "lowest": 92
+    "lowest": 96
    },
    {
     "n": 3,
@@ -5930,7 +8143,7 @@
    3,
    4
   ],
-  "start": "2026-11-06"
+  "start": "2026-11-12"
  },
  "emptySteps": [],
  "laneSteps": {
@@ -5966,7 +8179,7 @@
    "id": "agenda",
    "level": "info",
    "title": "Agenda de horários já está na cronoanálise",
-   "text": "A planilha “agenda de horários” (42 pacientes em 01/10 e 02/10) traz Campo visual, Retinografia, Paquimetria e OCT. Dos 127 tempos de exame dela, 127 já constam na cronoanálise (mesmo início e fim) e não foram somados de novo: o site usa só a cronoanálise."
+   "text": "A planilha “agenda de horários” (42 pacientes em 01/10 e 02/10) traz Campo visual, Retinografia, Paquimetria e OCT. Dos 127 tempos de exame dela, 126 já constam na cronoanálise (mesmo início e fim) e não foram somados de novo: o site usa só a cronoanálise."
   }
  ]
 }

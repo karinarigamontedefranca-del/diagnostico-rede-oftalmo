@@ -308,6 +308,7 @@ def direct(ws, id_, label, phase, ncol, tcol, ocol=None, kind='cronometrado', **
         if sx is None and isinstance(v, datetime.timedelta):   # digitado como hh:mm:ss (ex.: 0:24:50) — vale 24 min 50 s
             sx, note = int(v.total_seconds()), 'Digitado em outro formato (0:24:50); lido como 24 min 50 s.'.replace('0:24:50', '%d:%02d' % divmod(int(v.total_seconds()), 60)).replace('24 min 50 s', '%d min %d s' % divmod(int(v.total_seconds()), 60))
         if sx is None: exc.append(dict(row=r, raw=str(v), reason='valor não é uma duração')); continue
+        if sx >= 3 * 3600: exc.append(dict(row=r, raw=str(v), reason='duração implausível (≥ 3 h); provável erro de digitação')); continue
         obs = cell(ws, ocol, r) if ocol else None
         smp.append(dict(row=r, obs=cell(ws, ncol, r) if ncol else None, seconds=sx, note=clean(obs) if obs else note))
     add_step(id_, label, phase, smp, exc, source='Colunas %s%s' % (ncol + '–' if ncol else '', tcol), kind=kind, **kw)
@@ -320,12 +321,13 @@ def start_end(ws, id_, label, phase, a, b, d):
         if ta is None and tb is None: continue
         if ta is None or tb is None: exc.append(dict(row=r, raw='%s – %s' % (sa, sb), reason='início ou fim ausente')); continue
         if tb - ta < 0: exc.append(dict(row=r, raw='%s – %s' % (hhmm(sa), hhmm(sb)), reason='horário de fim anterior ao de início')); continue
+        if tb == ta: exc.append(dict(row=r, raw='%s – %s' % (hhmm(sa), hhmm(sb)), reason='início e fim iguais (duração 0 s); não é uma medição válida')); continue
         smp.append(dict(row=r, obs=cell(ws, 'A', r), seconds=tb - ta, start=hhmm(sa), end=hhmm(sb), note=None))
     add_step(id_, label, phase, smp, exc, source='Colunas %s–%s' % (a, d), kind='início / fim')
 
 # --- 1º andar: tempos cronometrados direto (mm:ss)
 for id_, label, phase, cn, ct, co in [
-  ('atendimento-glaucoma', 'Atendimento Glaucoma', 'Chegada', 'A', 'B', 'C'),
+  ('atendimento-glaucoma', 'Recepção Glaucoma', 'Chegada', 'A', 'B', 'C'),
   ('microscopia', 'Microscopia', 'Exames', 'D', 'E', 'F'),
   ('topografia', 'Topografia', 'Exames', 'G', 'H', 'I'),
   ('tonometria-sopro', 'Tonometria de sopro', 'Exames', 'J', 'K', 'L'),
@@ -368,7 +370,7 @@ for r in rows_of(W1):
     item = dict(row=r, obs=cell(W1, 'A', r), seconds=sx, note=None)
     if tod(a) is not None and tod(b) is not None: item.update(start=hhmm(a), end=hhmm(b))
     smp.append(item)
-add_step('atendimento-cornea', 'Atendimento Córnea', 'Córnea', smp, exc, source='Colunas AE–AG', kind='cronometrado / início-fim')
+add_step('atendimento-cornea', 'Recepção Córnea', 'Córnea', smp, exc, source='Colunas AE–AG', kind='cronometrado / início-fim')
 # --- 2º andar: Retina
 smp = []
 for col, nome in (('D', '1ª dilatação'), ('E', '2ª dilatação'), ('F', '3ª dilatação')):
@@ -378,7 +380,7 @@ for col, nome in (('D', '1ª dilatação'), ('E', '2ª dilatação'), ('F', '3ª
 add_step('dilatacao', 'Dilatação de colírio', 'Retina', smp, [], source='Colunas D–F', kind='cronometrado')
 direct(W2, 'consultorio-retina', 'Consultório Retina', 'Retina', 'H', 'I', 'K')
 direct(W2, 'ecobiometria', 'Ecobiometria / Ecografia', 'Retina', 'L', 'M', 'O')
-direct(W2, 'atendimento-retina', 'Atendimento Retina', 'Retina', 'P', 'Q', None)
+direct(W2, 'atendimento-retina', 'Recepção Retina', 'Retina', 'P', 'Q', None)
 RETINA = {'dilatacao', 'consultorio-retina', 'ecobiometria', 'atendimento-retina'}
 empty_steps = []
 
@@ -408,7 +410,7 @@ for st in steps:
         st['link'] = dict(process='retina', nodes=[], confidence='sem fluxograma', note='A Retina não tem fluxograma mapeado; as medições aparecem só nos resultados.')
     elif sid.startswith('atendimento-cornea'):
         st['link'] = dict(process='exame-de-cornea', nodes=[], lane=lane_medico_cor, confidence='raia',
-                          note='A planilha mede o atendimento da córnea como um bloco, do início ao fim; no fluxograma ele corresponde à raia do médico (da conversa inicial à entrega da receita). Associação por raia.')
+                          note='A planilha mede a recepção da córnea (atendimento) como um bloco, do início ao fim; no fluxograma ele corresponde à raia do médico (da conversa inicial à entrega da receita). Associação por raia.')
     elif sid in LINK: st['link'] = LINK[sid]
     elif sid in LANE_STEPS[lane_exames]:
         st['link'] = dict(process='glaucoma', nodes=[], lane=lane_exames, confidence='raia', note='O fluxograma não detalha este exame/etapa individualmente; a medição é associada à raia “Exames”.')

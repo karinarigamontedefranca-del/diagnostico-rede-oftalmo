@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { Dataset, JOURNEY, Process, Step, fmt } from '../lib/data'
+import { Dataset, JOURNEY, RETINA, Process, Step, fmt } from '../lib/data'
 import { Graph, Option, autoNext, makeGraph, restarts } from '../lib/walk'
 import Patient, { LOOKS, Look } from './Patient'
 import '../patient.css'
@@ -36,7 +36,7 @@ function smoothDamp(cur: number, target: number, vel: number, smoothTime: number
 
 function buildChapters(data: Dataset): Chapter[] {
   const { processes, m } = data
-  const journey = JOURNEY(m.steps)
+  const journey = [...JOURNEY(m.steps), ...RETINA(m.steps)]
   const totalN = journey.reduce((a, s) => a + s.n, 0)
   const flow = (id: string, nav: string, kicker: string, lead: string): Chapter => {
     const p = processes.find((x) => x.id === id)!
@@ -46,12 +46,13 @@ function buildChapters(data: Dataset): Chapter[] {
     }
   }
   return [
-    flow('glaucoma', 'Glaucoma', 'Processo 1 de 3', 'Da chegada com o encaminhamento até a liberação ou o agendamento.'),
-    flow('exame-de-cornea', 'Córnea', 'Processo 2 de 3', 'Da portaria à saída da clínica — ou ao setor de marcação.'),
-    flow('teste-de-lente', 'Teste de lente', 'Processo 3 de 3', 'A consulta de teste de lente, com a decisão de aprovar ou trocar a lente.'),
+    flow('glaucoma', 'Glaucoma', 'Processo 1 de 4', 'Da chegada com o encaminhamento até a liberação ou o agendamento.'),
+    flow('exame-de-cornea', 'Córnea', 'Processo 2 de 4', 'Da portaria à saída da clínica — ou ao setor de marcação.'),
+    flow('retina', 'Retina', 'Processo 3 de 4', 'Da senha no totem à liberação: consulta, exames, laser, ecografia e marcações no 2º andar.'),
+    flow('teste-de-lente', 'Teste de lente', 'Processo 4 de 4', 'A consulta de teste de lente, com a decisão de aprovar ou trocar a lente.'),
     {
       id: 'tempos', nav: 'Tempos medidos', kicker: 'Cronoanálise', title: 'Quanto tempo cada etapa leva',
-      lead: 'As etapas medidas no 1º andar (Glaucoma e Córnea), uma a uma, com o tempo médio medido na clínica.', mode: 'timed', steps: journey,
+      lead: 'As etapas medidas na clínica (1º e 2º andar), uma a uma, com o tempo médio medido na clínica.', mode: 'timed', steps: journey,
       stats: [[String(journey.length), 'etapas'], [String(totalN), 'medições']],
     },
   ]

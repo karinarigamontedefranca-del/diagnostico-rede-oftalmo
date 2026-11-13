@@ -5,538 +5,691 @@
    "title": "Glaucoma",
    "short": "Jornada do paciente com glaucoma",
    "poolName": "Processo do glaucoma",
-   "sourceFile": "Fluxograma_Glaucoma.bpm",
+   "sourceFile": "Glaucoma.bpmn",
    "bpmn": "bpmn/glaucoma.bpmn",
    "lanes": [
     {
-     "id": "Lane_9ed2805e",
+     "id": "Id_72532a83-2627-49a6-808b-f7d6fd1d619c",
      "name": "Portaria"
     },
     {
-     "id": "Lane_5c0614e3",
+     "id": "Id_7f79719a-5250-4c3b-a890-84f4eca4650e",
      "name": "Recepção"
     },
     {
-     "id": "Lane_33ed1915",
+     "id": "Id_ddf0e9f8-6753-4d3b-a4da-15b5449a5e9c",
      "name": "Exames"
+    },
+    {
+     "id": "Id_1c732e4a-9f54-4fa9-8d5f-bb048ad78a43",
+     "name": "Consultório médico"
+    },
+    {
+     "id": "Id_d325afed-15a5-45c1-b3ef-34fd4e10b196",
+     "name": "Consultoria cirúrgica (2º andar)"
     }
    ],
    "nodes": [
     {
-     "id": "Node_d4e21356",
+     "id": "Id_fa8d753e-8300-4904-b6ba-3efa02201c1e",
      "name": "",
      "kind": "startEvent",
-     "lane": "Lane_9ed2805e",
+     "lane": "Id_72532a83-2627-49a6-808b-f7d6fd1d619c",
      "doc": "",
      "gw": null,
-     "x": 216,
-     "y": 266,
+     "x": 191,
+     "y": 155,
      "via": null,
      "seq": 0,
      "origin": "diagrama"
     },
     {
-     "id": "Node_dd887a25",
-     "name": "Paciente chega encaminhado pelo médico",
+     "id": "Id_658d778d-3829-47d5-922f-b52075cf953c",
+     "name": "Paciente chega encaminhado pelo call center / agendamento online / agendamento interno",
      "kind": "task",
-     "lane": "Lane_9ed2805e",
+     "lane": "Id_72532a83-2627-49a6-808b-f7d6fd1d619c",
      "doc": "",
      "gw": null,
-     "x": 294,
-     "y": 251,
+     "x": 245,
+     "y": 128,
      "via": null,
      "seq": 1,
      "origin": "diagrama"
     },
     {
-     "id": "Node_b1a6b13f",
-     "name": "Portaria identifica o paciente e direciona para o local.",
+     "id": "Id_688ca65d-b560-40a9-a344-a9e2f43b2c0f",
+     "name": "Portaria identifica o paciente e direciona para o primeiro andar",
      "kind": "task",
-     "lane": "Lane_9ed2805e",
+     "lane": "Id_72532a83-2627-49a6-808b-f7d6fd1d619c",
      "doc": "",
      "gw": null,
-     "x": 430,
-     "y": 251,
+     "x": 422,
+     "y": 138,
      "via": null,
      "seq": 2,
      "origin": "diagrama"
     },
     {
-     "id": "Node_030b3116",
-     "name": "Recepção abre a ficha do paciente",
+     "id": "Id_057e746d-f492-4d0c-9edd-7a6ed339fe3b",
+     "name": "Recepção recebe o paciente e confere: agendamento, documentos e convênio",
      "kind": "task",
-     "lane": "Lane_5c0614e3",
+     "lane": "Id_7f79719a-5250-4c3b-a890-84f4eca4650e",
      "doc": "",
      "gw": null,
-     "x": 445,
-     "y": 391,
+     "x": 221,
+     "y": 308,
      "via": null,
      "seq": 3,
      "origin": "diagrama"
     },
     {
-     "id": "Node_9be543c1",
-     "name": "Exame ou Consulta?",
+     "id": "Id_4e86714a-5643-4aff-9a5c-62297e1420c3",
+     "name": "Tipo de atendimento?",
      "kind": "exclusiveGateway",
-     "lane": "Lane_5c0614e3",
+     "lane": "Id_7f79719a-5250-4c3b-a890-84f4eca4650e",
      "doc": "",
-     "gw": "Diverging",
-     "x": 639,
-     "y": 401,
+     "gw": null,
+     "x": 590,
+     "y": 320,
      "via": null,
-     "seq": 4,
-     "origin": "diagrama"
-    },
-    {
-     "id": "Node_e858f5cb",
-     "name": "Refração*",
-     "kind": "task",
-     "lane": "Lane_33ed1915",
-     "doc": "",
-     "gw": null,
-     "x": 743,
-     "y": 570,
-     "via": "Consulta",
-     "seq": 12,
-     "origin": "diagrama"
-    },
-    {
-     "id": "Node_3a9ca350",
-     "name": "Direcionado a fazer os exames de propedeutica",
-     "kind": "task",
-     "lane": "Lane_33ed1915",
-     "doc": "",
-     "gw": null,
-     "x": 524,
-     "y": 570,
-     "via": "Exame",
      "seq": 5,
      "origin": "diagrama"
     },
     {
-     "id": "Node_0e5d739f",
-     "name": "Optou por pingar colirio",
-     "kind": "exclusiveGateway",
-     "lane": "Lane_33ed1915",
-     "doc": "",
-     "gw": "Diverging",
-     "x": 768,
-     "y": 659,
-     "via": null,
-     "seq": 13,
-     "origin": "diagrama"
-    },
-    {
-     "id": "Node_65192337",
-     "name": "Esperar dilatar",
+     "id": "Id_d4086e16-2b50-42f4-9f8f-62b236b213e0",
+     "name": "Recepção numera as fichas manuais por ordem de chegada",
      "kind": "task",
-     "lane": "Lane_33ed1915",
+     "lane": "Id_7f79719a-5250-4c3b-a890-84f4eca4650e",
      "doc": "",
      "gw": null,
-     "x": 905,
-     "y": 570,
-     "via": "Sim",
-     "seq": 16,
-     "origin": "diagrama"
-    },
-    {
-     "id": "Node_4cdd1a2e",
-     "name": "Direcionado para a consulta com o médico",
-     "kind": "task",
-     "lane": "Lane_33ed1915",
-     "doc": "",
-     "gw": null,
-     "x": 906,
-     "y": 726,
-     "via": "Não",
-     "seq": 17,
-     "origin": "diagrama"
-    },
-    {
-     "id": "Node_f3e97cd1",
-     "name": "Mapeamento de retina e tonometria",
-     "kind": "task",
-     "lane": "Lane_33ed1915",
-     "doc": "",
-     "gw": null,
-     "x": 1053,
-     "y": 726,
-     "via": null,
-     "seq": 20,
-     "origin": "diagrama"
-    },
-    {
-     "id": "Node_70b7bc1b",
-     "name": "Possui glaucoma?",
-     "kind": "exclusiveGateway",
-     "lane": "Lane_33ed1915",
-     "doc": "",
-     "gw": "Diverging",
-     "x": 1321,
-     "y": 736,
-     "via": null,
-     "seq": 22,
-     "origin": "diagrama"
-    },
-    {
-     "id": "Node_8c6ad279",
-     "name": "Direcionamento para marcar nova propedeutica",
-     "kind": "task",
-     "lane": "Lane_33ed1915",
-     "doc": "",
-     "gw": null,
-     "x": 1464,
-     "y": 649,
-     "via": "Sim",
-     "seq": 23,
-     "origin": "diagrama"
-    },
-    {
-     "id": "Node_5cc5f1e1",
-     "name": "Retorna após um ano para acompanhamento",
-     "kind": "task",
-     "lane": "Lane_33ed1915",
-     "doc": "",
-     "gw": null,
-     "x": 1466,
-     "y": 776,
-     "via": "Não",
-     "seq": 24,
-     "origin": "diagrama"
-    },
-    {
-     "id": "Node_28da4531",
-     "name": "Analise dos resultados dos exames",
-     "kind": "task",
-     "lane": "Lane_33ed1915",
-     "doc": "",
-     "gw": null,
-     "x": 1192,
-     "y": 726,
-     "via": null,
-     "seq": 21,
-     "origin": "diagrama"
-    },
-    {
-     "id": "Node_b697f175",
-     "name": "",
-     "kind": "endEvent",
-     "lane": "Lane_33ed1915",
-     "doc": "",
-     "gw": null,
-     "x": 1626,
-     "y": 791,
-     "via": null,
-     "seq": 25,
-     "origin": "diagrama"
-    },
-    {
-     "id": "Node_d7fed599",
-     "name": "Medico pediu exames opcionais?",
-     "kind": "exclusiveGateway",
-     "lane": "Lane_33ed1915",
-     "doc": "",
-     "gw": "Diverging",
-     "x": 291,
-     "y": 893,
-     "via": null,
+     "x": 700,
+     "y": 308,
+     "via": "Propedêutica",
      "seq": 8,
      "origin": "diagrama"
     },
     {
-     "id": "Node_fe63c813",
-     "name": "Médico avalia os resultados com o paciente",
+     "id": "Id_c83cb1a4-1a60-4c13-b3bc-fa546d25a12f",
+     "name": "Técnicas chamam os pacientes pela numeração da ficha e distribuem os exames",
      "kind": "task",
-     "lane": "Lane_33ed1915",
+     "lane": "Id_ddf0e9f8-6753-4d3b-a4da-15b5449a5e9c",
      "doc": "",
      "gw": null,
-     "x": 562,
-     "y": 851,
-     "via": "Não",
-     "seq": 10,
-     "origin": "diagrama"
-    },
-    {
-     "id": "Node_7e6f8a45",
-     "name": "Realizar exames",
-     "kind": "task",
-     "lane": "Lane_33ed1915",
-     "doc": "",
-     "gw": null,
-     "x": 426,
-     "y": 921,
-     "via": "Sim",
+     "x": 700,
+     "y": 498,
+     "via": null,
      "seq": 9,
      "origin": "diagrama"
     },
     {
-     "id": "Node_fb1fb52c",
-     "name": "Teve intercorrencia?",
-     "kind": "exclusiveGateway",
-     "lane": "Lane_33ed1915",
+     "id": "Id_b1bd75df-ac0c-4c83-a56d-1a3b7b6b738d",
+     "name": "Analisar quais exames o paciente precisa fazer",
+     "kind": "task",
+     "lane": "Id_ddf0e9f8-6753-4d3b-a4da-15b5449a5e9c",
      "doc": "",
-     "gw": "Diverging",
-     "x": 705,
-     "y": 861,
+     "gw": null,
+     "x": 850,
+     "y": 498,
      "via": null,
      "seq": 11,
      "origin": "diagrama"
     },
     {
-     "id": "Node_4d0479df",
-     "name": "Médico direciona para os próximos passos",
+     "id": "Id_5bdd5a79-1a31-4e00-bbef-0e2a71aa2c61",
+     "name": "Realizar pré-exames no setor de córnea (tonometria, autorrefração e microscopia)",
      "kind": "task",
-     "lane": "Lane_33ed1915",
+     "lane": "Id_ddf0e9f8-6753-4d3b-a4da-15b5449a5e9c",
      "doc": "",
      "gw": null,
-     "x": 800,
-     "y": 806,
+     "x": 989,
+     "y": 498,
      "via": null,
      "seq": 14,
      "origin": "diagrama"
     },
     {
-     "id": "Node_9504e40a",
-     "name": "Paciente é liberado",
+     "id": "Id_7406ae74-4380-451d-88ee-30a905b146fc",
+     "name": "Volta para o setor do glaucoma para realizar exames obrigatórios.",
      "kind": "task",
-     "lane": "Lane_33ed1915",
+     "lane": "Id_ddf0e9f8-6753-4d3b-a4da-15b5449a5e9c",
      "doc": "",
      "gw": null,
-     "x": 800,
-     "y": 893,
+     "x": 1150,
+     "y": 498,
      "via": null,
      "seq": 15,
      "origin": "diagrama"
     },
     {
-     "id": "Node_146d68a3",
-     "name": "",
-     "kind": "endEvent",
-     "lane": "Lane_33ed1915",
+     "id": "Id_7a1316f0-18e0-460f-99b0-d387c84d22fb",
+     "name": "Médico pediu exames extras?",
+     "kind": "exclusiveGateway",
+     "lane": "Id_ddf0e9f8-6753-4d3b-a4da-15b5449a5e9c",
      "doc": "",
      "gw": null,
-     "x": 944,
-     "y": 908,
+     "x": 1340,
+     "y": 510,
+     "via": null,
+     "seq": 16,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_9c5f0e3d-2230-48a5-b0d7-91b6010db53c",
+     "name": "Realizar exames extras",
+     "kind": "task",
+     "lane": "Id_ddf0e9f8-6753-4d3b-a4da-15b5449a5e9c",
+     "doc": "",
+     "gw": null,
+     "x": 1300,
+     "y": 603,
+     "via": "Sim",
+     "seq": 17,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_cdef26a4-7001-4829-add7-9688aa56432c",
+     "name": "Imprimir os exames, conferir e colocar na pasta do paciente",
+     "kind": "task",
+     "lane": "Id_ddf0e9f8-6753-4d3b-a4da-15b5449a5e9c",
+     "doc": "",
+     "gw": null,
+     "x": 1450,
+     "y": 498,
+     "via": "Não",
+     "seq": 18,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_569afcfe-ac61-4193-a7ff-f3b288e758f1",
+     "name": "Realizar o exame avulso (sem ficha manual), imprimir e colocar na pasta do paciente",
+     "kind": "task",
+     "lane": "Id_ddf0e9f8-6753-4d3b-a4da-15b5449a5e9c",
+     "doc": "",
+     "gw": null,
+     "x": 690,
+     "y": 603,
+     "via": "Exame avulso",
+     "seq": 6,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_8875bb5d-df0e-497e-87b3-268dd4020ef7",
+     "name": "Exame avulso concluído",
+     "kind": "endEvent",
+     "lane": "Id_ddf0e9f8-6753-4d3b-a4da-15b5449a5e9c",
+     "doc": "",
+     "gw": null,
+     "x": 881,
+     "y": 620,
+     "via": null,
+     "seq": 12,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_2d831c85-f966-459e-bb11-a194fe13b3f0",
+     "name": "Optou por pingar colírio?",
+     "kind": "exclusiveGateway",
+     "lane": "Id_ddf0e9f8-6753-4d3b-a4da-15b5449a5e9c",
+     "doc": "",
+     "gw": null,
+     "x": 1640,
+     "y": 700,
+     "via": null,
+     "seq": 20,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_629c779b-5973-41e5-bcec-edb700c2cd7b",
+     "name": "Esperar dilatar",
+     "kind": "task",
+     "lane": "Id_ddf0e9f8-6753-4d3b-a4da-15b5449a5e9c",
+     "doc": "",
+     "gw": null,
+     "x": 1750,
+     "y": 603,
+     "via": "Sim",
+     "seq": 21,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_476958bc-8f75-43f1-ae70-613ce3f68bb5",
+     "name": "Direcionado para a consulta com o médico",
+     "kind": "task",
+     "lane": "Id_ddf0e9f8-6753-4d3b-a4da-15b5449a5e9c",
+     "doc": "",
+     "gw": null,
+     "x": 1900,
+     "y": 603,
+     "via": "Não",
+     "seq": 22,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_499ce294-e7ea-40eb-b5fa-cdf8992024be",
+     "name": "Médico do glaucoma realiza o laser (procedimento pago; também feito por convênio)",
+     "kind": "task",
+     "lane": "Id_1c732e4a-9f54-4fa9-8d5f-bb048ad78a43",
+     "doc": "",
+     "gw": null,
+     "x": 690,
+     "y": 798,
+     "via": "Laser",
+     "seq": 7,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_3f8d84c2-f3d3-4f8b-9e6f-f75e0150ee17",
+     "name": "Laser realizado",
+     "kind": "endEvent",
+     "lane": "Id_1c732e4a-9f54-4fa9-8d5f-bb048ad78a43",
+     "doc": "",
+     "gw": null,
+     "x": 895,
+     "y": 815,
+     "via": null,
+     "seq": 13,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_9a739eb9-bbb3-41a9-bf5d-1cb505404fee",
+     "name": "Médico verifica os exames feitos pelas técnicas (pasta do paciente)",
+     "kind": "task",
+     "lane": "Id_1c732e4a-9f54-4fa9-8d5f-bb048ad78a43",
+     "doc": "",
+     "gw": null,
+     "x": 2050,
+     "y": 798,
+     "via": null,
+     "seq": 23,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_dcb9ccc7-f3b8-4b01-b402-20563ec8752c",
+     "name": "Médico realiza exames no consultório: gonioscopia, biomicroscopia e tonometria",
+     "kind": "task",
+     "lane": "Id_1c732e4a-9f54-4fa9-8d5f-bb048ad78a43",
+     "doc": "",
+     "gw": null,
+     "x": 2200,
+     "y": 790,
+     "via": null,
+     "seq": 24,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_d695cead-706a-48c9-948e-88a8dbbb2274",
+     "name": "Médico finaliza a consulta: diagnóstico, opções de tratamento, tratamento e conduta de acompanhamento",
+     "kind": "task",
+     "lane": "Id_1c732e4a-9f54-4fa9-8d5f-bb048ad78a43",
+     "doc": "",
+     "gw": null,
+     "x": 2345,
+     "y": 792,
+     "via": null,
+     "seq": 25,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_04c5509e-6daa-4635-8d41-76ac6947e06a",
+     "name": "Indicada cirurgia?",
+     "kind": "exclusiveGateway",
+     "lane": "Id_1c732e4a-9f54-4fa9-8d5f-bb048ad78a43",
+     "doc": "",
+     "gw": null,
+     "x": 2540,
+     "y": 810,
+     "via": null,
+     "seq": 26,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_d7f4e7ed-29da-49f9-8197-31f937385231",
+     "name": "Possui glaucoma?",
+     "kind": "exclusiveGateway",
+     "lane": "Id_1c732e4a-9f54-4fa9-8d5f-bb048ad78a43",
+     "doc": "",
+     "gw": null,
+     "x": 2690,
+     "y": 810,
+     "via": "Não",
+     "seq": 28,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_aff8c72f-7e8c-43c4-b28e-8be9e4a4eed1",
+     "name": "Paciente leva a guia de encaminhamento e marca a cirurgia na consultoria cirúrgica",
+     "kind": "task",
+     "lane": "Id_d325afed-15a5-45c1-b3ef-34fd4e10b196",
+     "doc": "",
+     "gw": null,
+     "x": 2650,
+     "y": 1028,
+     "via": "Sim",
+     "seq": 27,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_f7917e9c-2fe7-4f9f-a40e-dffe5f944aa0",
+     "name": "Cirurgia agendada",
+     "kind": "endEvent",
+     "lane": "Id_d325afed-15a5-45c1-b3ef-34fd4e10b196",
+     "doc": "",
+     "gw": null,
+     "x": 2845,
+     "y": 1045,
+     "via": null,
+     "seq": 30,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_ff0e2783-8e88-40d2-baa1-50ce63f0f62c",
+     "name": "Recepcionista faz o pedido médico da próxima propedêutica e marca",
+     "kind": "task",
+     "lane": "Id_7f79719a-5250-4c3b-a890-84f4eca4650e",
+     "doc": "",
+     "gw": null,
+     "x": 2795,
+     "y": 304,
+     "via": "Sim",
+     "seq": 29,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_340083fb-73c1-46a8-859d-b0e419042786",
+     "name": "Recepção marca o retorno para acompanhamento (daqui a 1 ano)",
+     "kind": "task",
+     "lane": "Id_7f79719a-5250-4c3b-a890-84f4eca4650e",
+     "doc": "",
+     "gw": null,
+     "x": 2950,
+     "y": 308,
+     "via": "Não",
+     "seq": 31,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_363896c6-df48-446e-bf2e-a22c97e61501",
+     "name": "Retorno agendado",
+     "kind": "endEvent",
+     "lane": "Id_7f79719a-5250-4c3b-a890-84f4eca4650e",
+     "doc": "",
+     "gw": null,
+     "x": 3145,
+     "y": 325,
+     "via": null,
+     "seq": 32,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_859fe7aa-43b3-4e9e-904a-99f70efd3d73",
+     "name": "Recepção abre ficha do paciente",
+     "kind": "task",
+     "lane": "Id_7f79719a-5250-4c3b-a890-84f4eca4650e",
+     "doc": "",
+     "gw": null,
+     "x": 422,
+     "y": 310,
+     "via": null,
+     "seq": 4,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_98e75c1d-6d93-4685-90db-9454980051a8",
+     "name": "Exames chegam na porta do medico",
+     "kind": "task",
+     "lane": "Id_ddf0e9f8-6753-4d3b-a4da-15b5449a5e9c",
+     "doc": "",
+     "gw": null,
+     "x": 1615,
+     "y": 500,
      "via": null,
      "seq": 19,
      "origin": "diagrama"
     },
     {
-     "id": "Node_d0ae69bf",
-     "name": "",
-     "kind": "endEvent",
-     "lane": "Lane_33ed1915",
-     "doc": "",
-     "gw": null,
-     "x": 944,
-     "y": 821,
-     "via": null,
-     "seq": 18,
-     "origin": "diagrama"
-    },
-    {
-     "id": "Node_ba2c7744",
-     "name": "Analisar quais exames o paciente precisa fazer",
+     "id": "Id_03ffb9df-44f5-43ca-878f-3525b0496817",
+     "name": "Refração",
      "kind": "task",
-     "lane": "Lane_33ed1915",
+     "lane": "Id_ddf0e9f8-6753-4d3b-a4da-15b5449a5e9c",
      "doc": "",
      "gw": null,
-     "x": 384,
-     "y": 570,
-     "via": null,
-     "seq": 6,
-     "origin": "diagrama"
-    },
-    {
-     "id": "Node_a0831d15",
-     "name": "Realizar exames obrigatórios",
-     "kind": "task",
-     "lane": "Lane_33ed1915",
-     "doc": "",
-     "gw": null,
-     "x": 266,
-     "y": 666,
-     "via": null,
-     "seq": 7,
+     "x": 730,
+     "y": 690,
+     "via": "Consulta normal",
+     "seq": 10,
      "origin": "diagrama"
     }
    ],
    "flows": [
     {
-     "id": "Flow_5697d45f",
-     "src": "Node_d4e21356",
-     "dst": "Node_dd887a25",
+     "id": "Id_a1a9dc95-9d90-49a4-894c-eec9ba00d2de",
+     "src": "Id_fa8d753e-8300-4904-b6ba-3efa02201c1e",
+     "dst": "Id_658d778d-3829-47d5-922f-b52075cf953c",
      "name": ""
     },
     {
-     "id": "Flow_e9b0d7cb",
-     "src": "Node_dd887a25",
-     "dst": "Node_b1a6b13f",
+     "id": "Id_58603ba4-9659-4207-97ac-31c211b2d45b",
+     "src": "Id_658d778d-3829-47d5-922f-b52075cf953c",
+     "dst": "Id_688ca65d-b560-40a9-a344-a9e2f43b2c0f",
      "name": ""
     },
     {
-     "id": "Flow_dd3d09f1",
-     "src": "Node_b1a6b13f",
-     "dst": "Node_030b3116",
+     "id": "Id_4527d14d-e265-4eab-adab-d566e1dc63e5",
+     "src": "Id_688ca65d-b560-40a9-a344-a9e2f43b2c0f",
+     "dst": "Id_057e746d-f492-4d0c-9edd-7a6ed339fe3b",
      "name": ""
     },
     {
-     "id": "Flow_bb34edb2",
-     "src": "Node_030b3116",
-     "dst": "Node_9be543c1",
+     "id": "Id_0e1f2a5c-e560-4a11-a72c-a45c8febaf5e",
+     "src": "Id_4e86714a-5643-4aff-9a5c-62297e1420c3",
+     "dst": "Id_d4086e16-2b50-42f4-9f8f-62b236b213e0",
+     "name": "Propedêutica"
+    },
+    {
+     "id": "Id_0f954fa0-7694-489f-b098-8fdf2bd87b5b",
+     "src": "Id_4e86714a-5643-4aff-9a5c-62297e1420c3",
+     "dst": "Id_569afcfe-ac61-4193-a7ff-f3b288e758f1",
+     "name": "Exame avulso"
+    },
+    {
+     "id": "Id_2c8b7a5d-87d9-4e9c-a709-2dc8278efc6d",
+     "src": "Id_4e86714a-5643-4aff-9a5c-62297e1420c3",
+     "dst": "Id_03ffb9df-44f5-43ca-878f-3525b0496817",
+     "name": "Consulta normal"
+    },
+    {
+     "id": "Id_ca7a43db-a253-4293-a86f-0228a8a37983",
+     "src": "Id_4e86714a-5643-4aff-9a5c-62297e1420c3",
+     "dst": "Id_499ce294-e7ea-40eb-b5fa-cdf8992024be",
+     "name": "Laser"
+    },
+    {
+     "id": "Id_234e1ad4-7690-4b60-9e2d-1717d773e147",
+     "src": "Id_d4086e16-2b50-42f4-9f8f-62b236b213e0",
+     "dst": "Id_c83cb1a4-1a60-4c13-b3bc-fa546d25a12f",
      "name": ""
     },
     {
-     "id": "Flow_0d77033b",
-     "src": "Node_9be543c1",
-     "dst": "Node_3a9ca350",
-     "name": "Exame"
-    },
-    {
-     "id": "Flow_85dfa6ce",
-     "src": "Node_e858f5cb",
-     "dst": "Node_0e5d739f",
+     "id": "Id_5592667c-962a-40fc-9ecc-ee260afa1f33",
+     "src": "Id_c83cb1a4-1a60-4c13-b3bc-fa546d25a12f",
+     "dst": "Id_b1bd75df-ac0c-4c83-a56d-1a3b7b6b738d",
      "name": ""
     },
     {
-     "id": "Flow_f693ee92",
-     "src": "Node_0e5d739f",
-     "dst": "Node_65192337",
-     "name": "Sim"
+     "id": "Id_317e22ef-a603-41d4-910f-95d95685f780",
+     "src": "Id_b1bd75df-ac0c-4c83-a56d-1a3b7b6b738d",
+     "dst": "Id_5bdd5a79-1a31-4e00-bbef-0e2a71aa2c61",
+     "name": ""
     },
     {
-     "id": "Flow_6b5b11f2",
-     "src": "Node_0e5d739f",
-     "dst": "Node_4cdd1a2e",
+     "id": "Id_2c12f1c1-1c2e-4689-9d4a-bb98a11fd404",
+     "src": "Id_5bdd5a79-1a31-4e00-bbef-0e2a71aa2c61",
+     "dst": "Id_7406ae74-4380-451d-88ee-30a905b146fc",
+     "name": ""
+    },
+    {
+     "id": "Id_3cb71b1c-bfaf-4ff0-b1c3-cc3d7d1f6d53",
+     "src": "Id_7406ae74-4380-451d-88ee-30a905b146fc",
+     "dst": "Id_7a1316f0-18e0-460f-99b0-d387c84d22fb",
+     "name": ""
+    },
+    {
+     "id": "Id_47978962-20fb-4e90-b5de-9b93bf9e0984",
+     "src": "Id_7a1316f0-18e0-460f-99b0-d387c84d22fb",
+     "dst": "Id_cdef26a4-7001-4829-add7-9688aa56432c",
      "name": "Não"
     },
     {
-     "id": "Flow_71a4640c",
-     "src": "Node_9be543c1",
-     "dst": "Node_e858f5cb",
-     "name": "Consulta"
-    },
-    {
-     "id": "Flow_3398d2d5",
-     "src": "Node_65192337",
-     "dst": "Node_4cdd1a2e",
-     "name": ""
-    },
-    {
-     "id": "Flow_0e4e4872",
-     "src": "Node_4cdd1a2e",
-     "dst": "Node_f3e97cd1",
-     "name": ""
-    },
-    {
-     "id": "Flow_fd53ff47",
-     "src": "Node_f3e97cd1",
-     "dst": "Node_28da4531",
-     "name": ""
-    },
-    {
-     "id": "Flow_094adc5a",
-     "src": "Node_70b7bc1b",
-     "dst": "Node_8c6ad279",
+     "id": "Id_d7953d4a-e542-4d18-ab9d-567d274f0dfd",
+     "src": "Id_7a1316f0-18e0-460f-99b0-d387c84d22fb",
+     "dst": "Id_9c5f0e3d-2230-48a5-b0d7-91b6010db53c",
      "name": "Sim"
     },
     {
-     "id": "Flow_6b25cf69",
-     "src": "Node_70b7bc1b",
-     "dst": "Node_5cc5f1e1",
-     "name": "Não"
-    },
-    {
-     "id": "Flow_54290054",
-     "src": "Node_28da4531",
-     "dst": "Node_70b7bc1b",
+     "id": "Id_a934709c-2603-4e74-ad3a-7acd0b0558bf",
+     "src": "Id_9c5f0e3d-2230-48a5-b0d7-91b6010db53c",
+     "dst": "Id_cdef26a4-7001-4829-add7-9688aa56432c",
      "name": ""
     },
     {
-     "id": "Flow_70b78a94",
-     "src": "Node_8c6ad279",
-     "dst": "Node_dd887a25",
+     "id": "Id_6125f9d8-5434-40af-939e-ae15a056bd6b",
+     "src": "Id_cdef26a4-7001-4829-add7-9688aa56432c",
+     "dst": "Id_98e75c1d-6d93-4685-90db-9454980051a8",
      "name": ""
     },
     {
-     "id": "Flow_72cd728a",
-     "src": "Node_5cc5f1e1",
-     "dst": "Node_b697f175",
-     "name": ""
-    },
-    {
-     "id": "Flow_551fc3a3",
-     "src": "Node_d7fed599",
-     "dst": "Node_fe63c813",
-     "name": "Não"
-    },
-    {
-     "id": "Flow_290aa4fd",
-     "src": "Node_d7fed599",
-     "dst": "Node_7e6f8a45",
+     "id": "Id_e8f267cf-68f7-4651-a450-0cb96be99d80",
+     "src": "Id_2d831c85-f966-459e-bb11-a194fe13b3f0",
+     "dst": "Id_629c779b-5973-41e5-bcec-edb700c2cd7b",
      "name": "Sim"
     },
     {
-     "id": "Flow_75475f41",
-     "src": "Node_fe63c813",
-     "dst": "Node_fb1fb52c",
+     "id": "Id_8622b439-ae89-42d9-aa20-9fbf51e760cb",
+     "src": "Id_2d831c85-f966-459e-bb11-a194fe13b3f0",
+     "dst": "Id_476958bc-8f75-43f1-ae70-613ce3f68bb5",
+     "name": "Não"
+    },
+    {
+     "id": "Id_37dce476-692e-4cad-8de8-9e5a04fd7193",
+     "src": "Id_629c779b-5973-41e5-bcec-edb700c2cd7b",
+     "dst": "Id_476958bc-8f75-43f1-ae70-613ce3f68bb5",
      "name": ""
     },
     {
-     "id": "Flow_6da1edde",
-     "src": "Node_fb1fb52c",
-     "dst": "Node_4d0479df",
+     "id": "Id_37e4e72e-ef4e-4d7b-8c5e-755a47fe3d1d",
+     "src": "Id_476958bc-8f75-43f1-ae70-613ce3f68bb5",
+     "dst": "Id_9a739eb9-bbb3-41a9-bf5d-1cb505404fee",
      "name": ""
     },
     {
-     "id": "Flow_51b8ec6a",
-     "src": "Node_fb1fb52c",
-     "dst": "Node_9504e40a",
+     "id": "Id_1ea0b072-1d3f-44df-b7a8-de3d48d368fa",
+     "src": "Id_9a739eb9-bbb3-41a9-bf5d-1cb505404fee",
+     "dst": "Id_dcb9ccc7-f3b8-4b01-b402-20563ec8752c",
      "name": ""
     },
     {
-     "id": "Flow_37d1e7e4",
-     "src": "Node_9504e40a",
-     "dst": "Node_146d68a3",
+     "id": "Id_5ef86aae-524a-494f-b928-d25d4ca9e3d0",
+     "src": "Id_dcb9ccc7-f3b8-4b01-b402-20563ec8752c",
+     "dst": "Id_d695cead-706a-48c9-948e-88a8dbbb2274",
      "name": ""
     },
     {
-     "id": "Flow_e31f4c3d",
-     "src": "Node_7e6f8a45",
-     "dst": "Node_fe63c813",
+     "id": "Id_b1a14003-6fa7-4be6-9e61-15ae3102b30a",
+     "src": "Id_d695cead-706a-48c9-948e-88a8dbbb2274",
+     "dst": "Id_04c5509e-6daa-4635-8d41-76ac6947e06a",
      "name": ""
     },
     {
-     "id": "Flow_d14d40d9",
-     "src": "Node_4d0479df",
-     "dst": "Node_d0ae69bf",
+     "id": "Id_1c4ea463-90eb-408f-9bb3-af388e655544",
+     "src": "Id_04c5509e-6daa-4635-8d41-76ac6947e06a",
+     "dst": "Id_aff8c72f-7e8c-43c4-b28e-8be9e4a4eed1",
+     "name": "Sim"
+    },
+    {
+     "id": "Id_8924df6f-240b-4ac7-8b5e-73dd91a7c990",
+     "src": "Id_04c5509e-6daa-4635-8d41-76ac6947e06a",
+     "dst": "Id_d7f4e7ed-29da-49f9-8197-31f937385231",
+     "name": "Não"
+    },
+    {
+     "id": "Id_87e3fee5-6486-4af4-b5a7-1e9eeaed9cec",
+     "src": "Id_d7f4e7ed-29da-49f9-8197-31f937385231",
+     "dst": "Id_ff0e2783-8e88-40d2-baa1-50ce63f0f62c",
+     "name": "Sim"
+    },
+    {
+     "id": "Id_97957463-4a50-4003-88fe-d3f09678d74e",
+     "src": "Id_d7f4e7ed-29da-49f9-8197-31f937385231",
+     "dst": "Id_340083fb-73c1-46a8-859d-b0e419042786",
+     "name": "Não"
+    },
+    {
+     "id": "Id_d71e16fc-aafa-458b-bb39-3ef68dae9e4a",
+     "src": "Id_ff0e2783-8e88-40d2-baa1-50ce63f0f62c",
+     "dst": "Id_658d778d-3829-47d5-922f-b52075cf953c",
      "name": ""
     },
     {
-     "id": "Flow_cc2be99f",
-     "src": "Node_3a9ca350",
-     "dst": "Node_ba2c7744",
+     "id": "Id_2e38a5ba-4567-4fbd-ae9f-b20ae329975f",
+     "src": "Id_340083fb-73c1-46a8-859d-b0e419042786",
+     "dst": "Id_363896c6-df48-446e-bf2e-a22c97e61501",
      "name": ""
     },
     {
-     "id": "Flow_76b4e0c9",
-     "src": "Node_ba2c7744",
-     "dst": "Node_a0831d15",
+     "id": "Id_aa44f526-ed97-4769-ab15-f81b87afdd44",
+     "src": "Id_569afcfe-ac61-4193-a7ff-f3b288e758f1",
+     "dst": "Id_8875bb5d-df0e-497e-87b3-268dd4020ef7",
      "name": ""
     },
     {
-     "id": "Flow_8eac909b",
-     "src": "Node_a0831d15",
-     "dst": "Node_d7fed599",
+     "id": "Id_e8e8402a-839c-4c17-bb24-e7eb0f297b49",
+     "src": "Id_499ce294-e7ea-40eb-b5fa-cdf8992024be",
+     "dst": "Id_3f8d84c2-f3d3-4f8b-9e6f-f75e0150ee17",
+     "name": ""
+    },
+    {
+     "id": "Id_b6ec08d9-307d-4412-81dc-df48981471d8",
+     "src": "Id_aff8c72f-7e8c-43c4-b28e-8be9e4a4eed1",
+     "dst": "Id_f7917e9c-2fe7-4f9f-a40e-dffe5f944aa0",
+     "name": ""
+    },
+    {
+     "id": "Id_bd67447f-fb9f-4e89-93e8-2c2817ee8e16",
+     "src": "Id_057e746d-f492-4d0c-9edd-7a6ed339fe3b",
+     "dst": "Id_859fe7aa-43b3-4e9e-904a-99f70efd3d73",
+     "name": ""
+    },
+    {
+     "id": "Id_e3977395-6d3d-41d9-bf7e-0c6186c0deed",
+     "src": "Id_859fe7aa-43b3-4e9e-904a-99f70efd3d73",
+     "dst": "Id_4e86714a-5643-4aff-9a5c-62297e1420c3",
+     "name": ""
+    },
+    {
+     "id": "Id_5d2458db-715a-4e35-9fe2-a17f215ec819",
+     "src": "Id_98e75c1d-6d93-4685-90db-9454980051a8",
+     "dst": "Id_476958bc-8f75-43f1-ae70-613ce3f68bb5",
+     "name": ""
+    },
+    {
+     "id": "Id_230a025d-e401-4ec4-9d2a-bc0219601eb7",
+     "src": "Id_03ffb9df-44f5-43ca-878f-3525b0496817",
+     "dst": "Id_2d831c85-f966-459e-bb11-a194fe13b3f0",
      "name": ""
     }
    ],
+   "notes": [
+    {
+     "id": "Id_e3cc957a-d080-41e5-bee6-4a2b00dd9aa7",
+     "text": "Campo visual Tonometria Gonioscopia Retinografia Paquimetria OCT TSH Microscopia Autorrefração"
+    }
+   ],
    "counts": {
-    "tasks": 17,
+    "tasks": 23,
     "gateways": 5,
-    "events": 4,
-    "flows": 28,
-    "lanes": 3
+    "events": 5,
+    "flows": 36,
+    "lanes": 5
    },
    "totalLabel": null
   },
@@ -545,432 +698,1430 @@
    "title": "Exame de córnea",
    "short": "Exame de córnea (paciente nova)",
    "poolName": "Processo 1 - Exame de cornea 2 (paciente nova) - da portaria à saída",
-   "sourceFile": "Diagrama_Cornea.bpmn",
+   "sourceFile": "Cornea.bpmn",
    "bpmn": "bpmn/exame-de-cornea.bpmn",
    "lanes": [
     {
-     "id": "Lane_portaria",
+     "id": "Id_6207a09a-a08f-4c60-af60-423c0f0b3ba0",
      "name": "Portaria"
     },
     {
-     "id": "Lane_recepcao",
+     "id": "Id_ea5a175e-8671-4de1-b1be-fd6d26c245fb",
      "name": "Recepção"
     },
     {
-     "id": "Lane_enfermeira",
-     "name": "Enfermeira"
+     "id": "Id_69cbfb1a-ea4e-4167-9ded-5cd69b2bebf6",
+     "name": "Técnicas da córnea"
     },
     {
-     "id": "Lane_medico",
-     "name": "Medico / tecnico do exame"
+     "id": "Id_a9eb32c2-c6a6-4cec-95ce-6524b89923ba",
+     "name": "Médico / técnico do exame"
     },
     {
-     "id": "Lane_marcacao",
-     "name": "Marcação (2º andar)"
+     "id": "Id_1d7b6b85-734f-49e9-9a22-3540487f5bbf",
+     "name": "Lente de contato"
+    },
+    {
+     "id": "Id_c878253d-7287-409b-8219-96a8d6db2bd2",
+     "name": "Marcação de cirurgia (2º andar)"
     }
    ],
    "nodes": [
     {
-     "id": "Node_inicio",
+     "id": "Id_8ce75007-f14a-49c9-89a0-3ff5a75fe0d3",
      "name": "Inicio - paciente chega na portaria",
      "kind": "startEvent",
-     "lane": "Lane_portaria",
+     "lane": "Id_6207a09a-a08f-4c60-af60-423c0f0b3ba0",
      "doc": "",
      "gw": null,
-     "x": 122,
-     "y": 107,
+     "x": 162,
+     "y": 147,
      "via": null,
      "seq": 0,
-     "origin": "entrevista"
+     "origin": "diagrama"
     },
     {
-     "id": "Node_nome",
-     "name": "Paciente informa o nome na portaria",
+     "id": "Id_be3ed8e5-4541-46c0-9cdd-10ab55914f84",
+     "name": "Paciente chega encaminhado pelo call center / agendamento online",
      "kind": "task",
-     "lane": "Lane_portaria",
+     "lane": "Id_6207a09a-a08f-4c60-af60-423c0f0b3ba0",
      "doc": "",
      "gw": null,
-     "x": 215,
-     "y": 88,
+     "x": 255,
+     "y": 128,
      "via": null,
      "seq": 1,
-     "origin": "entrevista"
+     "origin": "diagrama"
     },
     {
-     "id": "Node_lanca",
-     "name": "Porteiro lança o paciente no sistema (córnea) e o direciona para a recepção",
+     "id": "Id_196eb9d9-cd84-4498-96cd-93d9d08bf48f",
+     "name": "Porteiro identifica o paciente no sistema (córnea) e o direciona para a recepção do primeiro andar",
      "kind": "task",
-     "lane": "Lane_portaria",
+     "lane": "Id_6207a09a-a08f-4c60-af60-423c0f0b3ba0",
      "doc": "Segundo a entrevista, o porteiro lança o paciente para a córnea e o direciona para baixo, onde a recepção o chama.",
      "gw": null,
-     "x": 360,
-     "y": 82,
+     "x": 400,
+     "y": 122,
      "via": null,
      "seq": 2,
-     "origin": "entrevista"
+     "origin": "diagrama"
     },
     {
-     "id": "Node_chama",
-     "name": "Recepção chama o paciente",
+     "id": "Id_5375d9f9-bff7-4d93-898b-c159d6eb951d",
+     "name": "Recepção recebe o paciente e confere: agendamento, documentos e convênio",
      "kind": "task",
-     "lane": "Lane_recepcao",
+     "lane": "Id_ea5a175e-8671-4de1-b1be-fd6d26c245fb",
      "doc": "",
      "gw": null,
-     "x": 360,
-     "y": 258,
+     "x": 400,
+     "y": 298,
      "via": null,
      "seq": 3,
-     "origin": "entrevista"
+     "origin": "diagrama"
     },
     {
-     "id": "Node_ficha",
+     "id": "Id_e7e075dc-af34-4a5b-b044-4c0fe4cb65c8",
      "name": "Recepção faz a ficha do paciente",
      "kind": "task",
-     "lane": "Lane_recepcao",
+     "lane": "Id_ea5a175e-8671-4de1-b1be-fd6d26c245fb",
      "doc": "",
      "gw": null,
-     "x": 535,
-     "y": 258,
+     "x": 575,
+     "y": 298,
      "via": null,
      "seq": 4,
-     "origin": "entrevista"
+     "origin": "diagrama"
     },
     {
-     "id": "Node_recebe",
+     "id": "Id_15a23bca-f26c-42ed-8503-84f2637de2b5",
      "name": "Paciente leva a ficha e a equipe da córnea a recebe",
      "kind": "task",
-     "lane": "Lane_enfermeira",
-     "doc": "Raia “Enfermeira” assumida a partir de “a gente faz o exame” na entrevista; confirmar o cargo de quem recebe a ficha e faz os exames.",
+     "lane": "Id_69cbfb1a-ea4e-4167-9ded-5cd69b2bebf6",
+     "doc": "Raia renomeada de \"Enfermeira\" para \"Técnicas da córnea\": na transcrição, quem faz os exames são as técnicas do setor. Confirmar o cargo.",
      "gw": null,
-     "x": 535,
-     "y": 428,
+     "x": 575,
+     "y": 468,
      "via": null,
      "seq": 5,
-     "origin": "entrevista"
+     "origin": "diagrama"
     },
     {
-     "id": "Node_g_pedido",
+     "id": "Id_6ed81df5-be2b-4b11-b964-9ec101d93db1",
      "name": "Paciente chegou com exames pedidos?",
      "kind": "exclusiveGateway",
-     "lane": "Lane_enfermeira",
+     "lane": "Id_69cbfb1a-ea4e-4167-9ded-5cd69b2bebf6",
      "doc": "",
      "gw": null,
-     "x": 705,
-     "y": 440,
+     "x": 745,
+     "y": 480,
      "via": null,
      "seq": 6,
-     "origin": "entrevista"
+     "origin": "diagrama"
     },
     {
-     "id": "Node_exames",
-     "name": "Equipe faz os exames (microscopia, topografia, paquimetria, autorefrator e tonometria)",
+     "id": "Id_47923264-4bce-4180-b652-3395be1094af",
+     "name": "Equipe faz os exames (microscopia, topografia, paquimetria, autorrefração e tonometria)",
      "kind": "task",
-     "lane": "Lane_enfermeira",
-     "doc": "Lista citada na entrevista: microscopia, topografia, paquimetria (trecho pouco claro no áudio), autorefrator e tonometria. O pedido vem da última consulta ou do médico.",
+     "lane": "Id_69cbfb1a-ea4e-4167-9ded-5cd69b2bebf6",
+     "doc": "Lista citada na entrevista: microscopia, topografia, paquimetria (trecho pouco claro no áudio), autorrefração e tonometria. O pedido vem da última consulta ou do médico.",
      "gw": null,
-     "x": 805,
-     "y": 413,
+     "x": 845,
+     "y": 453,
      "via": "Sim",
      "seq": 7,
-     "origin": "entrevista"
+     "origin": "diagrama"
     },
     {
-     "id": "Node_g_merge",
-     "name": "",
-     "kind": "exclusiveGateway",
-     "lane": "Lane_enfermeira",
-     "doc": "",
-     "gw": null,
-     "x": 1025,
-     "y": 440,
-     "via": "Não",
-     "seq": 8,
-     "origin": "entrevista"
-    },
-    {
-     "id": "Node_entender",
+     "id": "Id_8123c7d8-bbe3-48b2-b3d4-b5f30b04e0f9",
      "name": "Entender o caso do paciente",
      "kind": "task",
-     "lane": "Lane_medico",
+     "lane": "Id_a9eb32c2-c6a6-4cec-95ce-6524b89923ba",
      "doc": "",
      "gw": null,
-     "x": 1135,
-     "y": 598,
+     "x": 1175,
+     "y": 638,
+     "via": "Não",
+     "seq": 8,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_27ceb70a-3709-4f4f-98b0-4c313d0f655f",
+     "name": "Biomicroscopia (fundo de olho)",
+     "kind": "task",
+     "lane": "Id_a9eb32c2-c6a6-4cec-95ce-6524b89923ba",
+     "doc": "Biomicroscopia é o nome do exame (fundo de olho); lâmpada de fenda é o equipamento em que ele é feito.",
+     "gw": null,
+     "x": 1320,
+     "y": 638,
      "via": null,
      "seq": 9,
      "origin": "diagrama"
     },
     {
-     "id": "Node_fenda",
-     "name": "Teste na lâmpada de fenda",
+     "id": "Id_e1cfd6e6-6e06-4878-a8bf-4bb6644972f7",
+     "name": "Medir o grau dos óculos do paciente",
      "kind": "task",
-     "lane": "Lane_medico",
-     "doc": "",
+     "lane": "Id_a9eb32c2-c6a6-4cec-95ce-6524b89923ba",
+     "doc": "Executado em paralelo à biomicroscopia, a pedido do médico.",
      "gw": null,
-     "x": 1280,
-     "y": 598,
+     "x": 1465,
+     "y": 638,
      "via": null,
      "seq": 10,
      "origin": "diagrama"
     },
     {
-     "id": "Node_grau",
-     "name": "Medir o grau dos óculos do paciente",
+     "id": "Id_85cca87e-eba1-422d-818f-ea5c6e0c97c0",
+     "name": "Exame de refração - máquina Grins",
      "kind": "task",
-     "lane": "Lane_medico",
-     "doc": "Executado em paralelo ao teste de lampada de fenda (T2), a pedido do medico.",
+     "lane": "Id_a9eb32c2-c6a6-4cec-95ce-6524b89923ba",
+     "doc": "",
      "gw": null,
-     "x": 1425,
-     "y": 598,
+     "x": 1610,
+     "y": 638,
      "via": null,
      "seq": 11,
      "origin": "diagrama"
     },
     {
-     "id": "Node_grins",
-     "name": "Exame de refração - máquina Grins",
+     "id": "Id_529dd5bb-292a-4b1a-844a-f688702c3160",
+     "name": "Preenchimento do relatório",
      "kind": "task",
-     "lane": "Lane_medico",
+     "lane": "Id_a9eb32c2-c6a6-4cec-95ce-6524b89923ba",
      "doc": "",
      "gw": null,
-     "x": 1570,
-     "y": 598,
+     "x": 1755,
+     "y": 638,
      "via": null,
      "seq": 12,
      "origin": "diagrama"
     },
     {
-     "id": "Node_relatorio",
-     "name": "Preenchimento do relatório",
+     "id": "Id_1f8d30f2-f09c-4229-9354-0c1c3b420900",
+     "name": "Finaliza a consulta com diagnóstico do paciente, opções de tratamento, tratamento e conduta de acompanhamento (entrega a receita)",
      "kind": "task",
-     "lane": "Lane_medico",
-     "doc": "",
+     "lane": "Id_a9eb32c2-c6a6-4cec-95ce-6524b89923ba",
+     "doc": "Conforme a transcrição: não usar \"explicação do caso\"; finalizar com diagnóstico, opções de tratamento, tratamento e conduta de acompanhamento. A entrega da receita (colírio) foi citada como etapa que faltava: confirmar.",
      "gw": null,
-     "x": 1715,
-     "y": 598,
+     "x": 1905,
+     "y": 633,
      "via": null,
      "seq": 13,
      "origin": "diagrama"
     },
     {
-     "id": "Node_entrega",
-     "name": "Entrega de amostra de colírio, receita e explicação do caso",
-     "kind": "task",
-     "lane": "Lane_medico",
+     "id": "Id_90eb5a4c-2d4d-40a1-840a-48dd6ce7d77d",
+     "name": "Encaminhamentos do médico?",
+     "kind": "exclusiveGateway",
+     "lane": "Id_a9eb32c2-c6a6-4cec-95ce-6524b89923ba",
      "doc": "",
      "gw": null,
-     "x": 1865,
-     "y": 593,
+     "x": 2085,
+     "y": 650,
      "via": null,
      "seq": 14,
      "origin": "diagrama"
     },
     {
-     "id": "Node_g_agendar",
-     "name": "Médico pediu para agendar?",
-     "kind": "exclusiveGateway",
-     "lane": "Lane_medico",
-     "doc": "",
-     "gw": null,
-     "x": 2045,
-     "y": 610,
-     "via": null,
-     "seq": 15,
-     "origin": "entrevista"
-    },
-    {
-     "id": "Node_fim_casa",
+     "id": "Id_fe7ba47a-9e23-4cb1-aa23-f32d9dbeaebc",
      "name": "Fim - paciente vai embora",
      "kind": "endEvent",
-     "lane": "Lane_medico",
+     "lane": "Id_a9eb32c2-c6a6-4cec-95ce-6524b89923ba",
      "doc": "",
      "gw": null,
-     "x": 2172,
-     "y": 617,
-     "via": "Não",
-     "seq": 17,
-     "origin": "entrevista"
-    },
-    {
-     "id": "Node_sobe",
-     "name": "Paciente sobe ao setor de marcação (2º andar, ao lado da lanchonete)",
-     "kind": "task",
-     "lane": "Lane_marcacao",
-     "doc": "Na entrevista: antes o agendamento era feito na recepção; hoje a marcação fica no andar de cima, para tirar o gargalo de quem espera exame e de quem vai marcar.",
-     "gw": null,
-     "x": 2120,
-     "y": 762,
-     "via": "Sim",
-     "seq": 16,
-     "origin": "entrevista"
-    },
-    {
-     "id": "Node_agenda",
-     "name": "Marcação agenda o que o médico pediu",
-     "kind": "task",
-     "lane": "Lane_marcacao",
-     "doc": "",
-     "gw": null,
-     "x": 2305,
-     "y": 768,
-     "via": null,
+     "x": 2212,
+     "y": 657,
+     "via": "Nenhum",
      "seq": 18,
-     "origin": "entrevista"
+     "origin": "diagrama"
     },
     {
-     "id": "Node_fim_agenda",
+     "id": "Id_5a2de679-ab99-472c-911b-98c6545e00c0",
+     "name": "Paciente volta na recepcionista da córnea para marcar a próxima consulta ou exame",
+     "kind": "task",
+     "lane": "Id_ea5a175e-8671-4de1-b1be-fd6d26c245fb",
+     "doc": "",
+     "gw": null,
+     "x": 2170,
+     "y": 298,
+     "via": "Retorno ou exame",
+     "seq": 15,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_a95e51b8-dd53-4ad4-bdb2-824136c281ed",
      "name": "Fim - paciente agendado",
      "kind": "endEvent",
-     "lane": "Lane_marcacao",
+     "lane": "Id_ea5a175e-8671-4de1-b1be-fd6d26c245fb",
      "doc": "",
      "gw": null,
-     "x": 2462,
-     "y": 787,
+     "x": 2402,
+     "y": 317,
+     "via": null,
+     "seq": 21,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_70a2c40e-4d11-4b0b-8e60-a155be44dfbf",
+     "name": "Paciente leva a guia de encaminhamento do médico e sobe ao 2º andar (consultoria cirúrgica)",
+     "kind": "task",
+     "lane": "Id_c878253d-7287-409b-8219-96a8d6db2bd2",
+     "doc": "Correção (transcrição): o paciente só sobe ao 2º andar quando tem cirurgia. Marcação de consulta e de exame é feita no mesmo andar, na recepção.",
+     "gw": null,
+     "x": 2170,
+     "y": 947,
+     "via": "Cirurgia",
+     "seq": 16,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_f7a08030-d58d-48a9-b75b-7bf223b40199",
+     "name": "Marcação de cirurgia agenda a cirurgia (a agenda do bloco é só da equipe da cirurgia)",
+     "kind": "task",
+     "lane": "Id_c878253d-7287-409b-8219-96a8d6db2bd2",
+     "doc": "",
+     "gw": null,
+     "x": 2355,
+     "y": 953,
      "via": null,
      "seq": 19,
-     "origin": "entrevista"
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_ebd4e6a5-c4de-47b4-a12e-645ea1aedd3f",
+     "name": "Fim - cirurgia agendada",
+     "kind": "endEvent",
+     "lane": "Id_c878253d-7287-409b-8219-96a8d6db2bd2",
+     "doc": "",
+     "gw": null,
+     "x": 2542,
+     "y": 972,
+     "via": null,
+     "seq": 22,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_a6a76563-e9c1-4364-826f-0650899f236f",
+     "name": "Setor de lente de contato faz o teste de lente no paciente",
+     "kind": "task",
+     "lane": "Id_1d7b6b85-734f-49e9-9a22-3540487f5bbf",
+     "doc": "",
+     "gw": null,
+     "x": 2185,
+     "y": 808,
+     "via": "Lente de contato",
+     "seq": 17,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_105f9eef-11e0-427b-833d-57a7fec4e623",
+     "name": "Médico avalia o teste e faz o pedido da lente",
+     "kind": "task",
+     "lane": "Id_a9eb32c2-c6a6-4cec-95ce-6524b89923ba",
+     "doc": "",
+     "gw": null,
+     "x": 2385,
+     "y": 638,
+     "via": null,
+     "seq": 20,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_359d50c2-7889-43c5-99cd-3cb37bb14826",
+     "name": "Setor de lente de contato faz o pedido e compra a lente",
+     "kind": "task",
+     "lane": "Id_1d7b6b85-734f-49e9-9a22-3540487f5bbf",
+     "doc": "",
+     "gw": null,
+     "x": 2545,
+     "y": 808,
+     "via": null,
+     "seq": 23,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_2fcd50ab-10b3-4427-8f50-8f9379b1a389",
+     "name": "Paciente retorna, retira a lente e a coloca; se necessário, volta ao médico",
+     "kind": "task",
+     "lane": "Id_1d7b6b85-734f-49e9-9a22-3540487f5bbf",
+     "doc": "",
+     "gw": null,
+     "x": 2685,
+     "y": 808,
+     "via": null,
+     "seq": 24,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_c746205b-5baf-40df-b5d0-8bdb875f131b",
+     "name": "Fim - paciente com a lente",
+     "kind": "endEvent",
+     "lane": "Id_1d7b6b85-734f-49e9-9a22-3540487f5bbf",
+     "doc": "",
+     "gw": null,
+     "x": 2912,
+     "y": 827,
+     "via": null,
+     "seq": 25,
+     "origin": "diagrama"
     }
    ],
    "flows": [
     {
-     "id": "Flow_1",
-     "src": "Node_inicio",
-     "dst": "Node_nome",
+     "id": "Id_f9c68fbf-94a1-4ad5-b0aa-7843d40f4d78",
+     "src": "Id_8ce75007-f14a-49c9-89a0-3ff5a75fe0d3",
+     "dst": "Id_be3ed8e5-4541-46c0-9cdd-10ab55914f84",
      "name": ""
     },
     {
-     "id": "Flow_2",
-     "src": "Node_nome",
-     "dst": "Node_lanca",
+     "id": "Id_c84a5140-4405-44c8-8649-aea4e4119eae",
+     "src": "Id_be3ed8e5-4541-46c0-9cdd-10ab55914f84",
+     "dst": "Id_196eb9d9-cd84-4498-96cd-93d9d08bf48f",
      "name": ""
     },
     {
-     "id": "Flow_3",
-     "src": "Node_lanca",
-     "dst": "Node_chama",
+     "id": "Id_8d39ba18-0349-4cc4-bace-31fca6d2c0c8",
+     "src": "Id_196eb9d9-cd84-4498-96cd-93d9d08bf48f",
+     "dst": "Id_5375d9f9-bff7-4d93-898b-c159d6eb951d",
      "name": ""
     },
     {
-     "id": "Flow_4",
-     "src": "Node_chama",
-     "dst": "Node_ficha",
+     "id": "Id_b332eaa4-6e82-40d9-932a-0f977e829738",
+     "src": "Id_5375d9f9-bff7-4d93-898b-c159d6eb951d",
+     "dst": "Id_e7e075dc-af34-4a5b-b044-4c0fe4cb65c8",
      "name": ""
     },
     {
-     "id": "Flow_5",
-     "src": "Node_ficha",
-     "dst": "Node_recebe",
+     "id": "Id_499473d5-89e6-4701-8317-006137cb51d0",
+     "src": "Id_e7e075dc-af34-4a5b-b044-4c0fe4cb65c8",
+     "dst": "Id_15a23bca-f26c-42ed-8503-84f2637de2b5",
      "name": ""
     },
     {
-     "id": "Flow_6",
-     "src": "Node_recebe",
-     "dst": "Node_g_pedido",
+     "id": "Id_d79847a3-9b62-4500-82d1-74e31831bf55",
+     "src": "Id_15a23bca-f26c-42ed-8503-84f2637de2b5",
+     "dst": "Id_6ed81df5-be2b-4b11-b964-9ec101d93db1",
      "name": ""
     },
     {
-     "id": "Flow_7",
-     "src": "Node_g_pedido",
-     "dst": "Node_exames",
+     "id": "Id_a76a5ff2-8b75-477a-90c5-b14c6cf4fa26",
+     "src": "Id_6ed81df5-be2b-4b11-b964-9ec101d93db1",
+     "dst": "Id_47923264-4bce-4180-b652-3395be1094af",
      "name": "Sim"
     },
     {
-     "id": "Flow_8",
-     "src": "Node_g_pedido",
-     "dst": "Node_g_merge",
+     "id": "Id_2db7f90e-5fd4-47e5-bc8c-85852509ebe8",
+     "src": "Id_6ed81df5-be2b-4b11-b964-9ec101d93db1",
+     "dst": "Id_8123c7d8-bbe3-48b2-b3d4-b5f30b04e0f9",
      "name": "Não"
     },
     {
-     "id": "Flow_9",
-     "src": "Node_exames",
-     "dst": "Node_g_merge",
+     "id": "Id_6b543700-94c2-4138-af1e-a8bcb1fc8cf8",
+     "src": "Id_47923264-4bce-4180-b652-3395be1094af",
+     "dst": "Id_8123c7d8-bbe3-48b2-b3d4-b5f30b04e0f9",
      "name": ""
     },
     {
-     "id": "Flow_10",
-     "src": "Node_g_merge",
-     "dst": "Node_entender",
+     "id": "Id_47cec006-6c96-4dfe-9f68-2a92e4e603d7",
+     "src": "Id_8123c7d8-bbe3-48b2-b3d4-b5f30b04e0f9",
+     "dst": "Id_27ceb70a-3709-4f4f-98b0-4c313d0f655f",
      "name": ""
     },
     {
-     "id": "Flow_11",
-     "src": "Node_entender",
-     "dst": "Node_fenda",
+     "id": "Id_0234f522-f638-40b1-9a4a-bd2c3550ee7a",
+     "src": "Id_27ceb70a-3709-4f4f-98b0-4c313d0f655f",
+     "dst": "Id_e1cfd6e6-6e06-4878-a8bf-4bb6644972f7",
      "name": ""
     },
     {
-     "id": "Flow_12",
-     "src": "Node_fenda",
-     "dst": "Node_grau",
+     "id": "Id_e4d58d3b-e22d-4322-ac9a-b0459c53e36c",
+     "src": "Id_e1cfd6e6-6e06-4878-a8bf-4bb6644972f7",
+     "dst": "Id_85cca87e-eba1-422d-818f-ea5c6e0c97c0",
      "name": ""
     },
     {
-     "id": "Flow_13",
-     "src": "Node_grau",
-     "dst": "Node_grins",
+     "id": "Id_3f4adf40-0bd9-4a70-a4a0-39032956e4dc",
+     "src": "Id_85cca87e-eba1-422d-818f-ea5c6e0c97c0",
+     "dst": "Id_529dd5bb-292a-4b1a-844a-f688702c3160",
      "name": ""
     },
     {
-     "id": "Flow_14",
-     "src": "Node_grins",
-     "dst": "Node_relatorio",
+     "id": "Id_f640d837-65a8-49f8-84a1-e927e0123f64",
+     "src": "Id_529dd5bb-292a-4b1a-844a-f688702c3160",
+     "dst": "Id_1f8d30f2-f09c-4229-9354-0c1c3b420900",
      "name": ""
     },
     {
-     "id": "Flow_15",
-     "src": "Node_relatorio",
-     "dst": "Node_entrega",
+     "id": "Id_c8d7103a-189b-457b-acc9-de02d9bad6f1",
+     "src": "Id_1f8d30f2-f09c-4229-9354-0c1c3b420900",
+     "dst": "Id_90eb5a4c-2d4d-40a1-840a-48dd6ce7d77d",
      "name": ""
     },
     {
-     "id": "Flow_16",
-     "src": "Node_entrega",
-     "dst": "Node_g_agendar",
+     "id": "Id_0f4fe1e8-f62c-4808-b3d9-809931977b1d",
+     "src": "Id_90eb5a4c-2d4d-40a1-840a-48dd6ce7d77d",
+     "dst": "Id_fe7ba47a-9e23-4cb1-aa23-f32d9dbeaebc",
+     "name": "Nenhum"
+    },
+    {
+     "id": "Id_8bc19fa6-ead1-4257-81e2-6e2b1f61630e",
+     "src": "Id_90eb5a4c-2d4d-40a1-840a-48dd6ce7d77d",
+     "dst": "Id_5a2de679-ab99-472c-911b-98c6545e00c0",
+     "name": "Retorno ou exame"
+    },
+    {
+     "id": "Id_0148ac9b-2dfb-4a95-baa9-359447f8c5b3",
+     "src": "Id_90eb5a4c-2d4d-40a1-840a-48dd6ce7d77d",
+     "dst": "Id_70a2c40e-4d11-4b0b-8e60-a155be44dfbf",
+     "name": "Cirurgia"
+    },
+    {
+     "id": "Id_2d09f92d-69cf-4653-aef4-091f396aedfc",
+     "src": "Id_90eb5a4c-2d4d-40a1-840a-48dd6ce7d77d",
+     "dst": "Id_a6a76563-e9c1-4364-826f-0650899f236f",
+     "name": "Lente de contato"
+    },
+    {
+     "id": "Id_29a05867-66e3-42cf-9dfe-0aae5fa8d460",
+     "src": "Id_5a2de679-ab99-472c-911b-98c6545e00c0",
+     "dst": "Id_a95e51b8-dd53-4ad4-bdb2-824136c281ed",
      "name": ""
     },
     {
-     "id": "Flow_17",
-     "src": "Node_g_agendar",
-     "dst": "Node_fim_casa",
-     "name": "Não"
-    },
-    {
-     "id": "Flow_18",
-     "src": "Node_g_agendar",
-     "dst": "Node_sobe",
-     "name": "Sim"
-    },
-    {
-     "id": "Flow_19",
-     "src": "Node_sobe",
-     "dst": "Node_agenda",
+     "id": "Id_17cb720f-5526-4dc6-b86d-99fa57fdf925",
+     "src": "Id_70a2c40e-4d11-4b0b-8e60-a155be44dfbf",
+     "dst": "Id_f7a08030-d58d-48a9-b75b-7bf223b40199",
      "name": ""
     },
     {
-     "id": "Flow_20",
-     "src": "Node_agenda",
-     "dst": "Node_fim_agenda",
+     "id": "Id_310ff1e9-19fd-47ac-9424-16829f543270",
+     "src": "Id_f7a08030-d58d-48a9-b75b-7bf223b40199",
+     "dst": "Id_ebd4e6a5-c4de-47b4-a12e-645ea1aedd3f",
+     "name": ""
+    },
+    {
+     "id": "Id_cbe6d0c5-a4d4-4e6a-9ff8-5bb47472a7b9",
+     "src": "Id_a6a76563-e9c1-4364-826f-0650899f236f",
+     "dst": "Id_105f9eef-11e0-427b-833d-57a7fec4e623",
+     "name": ""
+    },
+    {
+     "id": "Id_570346a5-c6cb-437b-8a44-cb484109e78e",
+     "src": "Id_105f9eef-11e0-427b-833d-57a7fec4e623",
+     "dst": "Id_359d50c2-7889-43c5-99cd-3cb37bb14826",
+     "name": ""
+    },
+    {
+     "id": "Id_665358ba-fe3a-40f2-8b01-95fd6f306df4",
+     "src": "Id_359d50c2-7889-43c5-99cd-3cb37bb14826",
+     "dst": "Id_2fcd50ab-10b3-4427-8f50-8f9379b1a389",
+     "name": ""
+    },
+    {
+     "id": "Id_4d91c0c1-c01d-4cb4-9919-d92639afa6b8",
+     "src": "Id_2fcd50ab-10b3-4427-8f50-8f9379b1a389",
+     "dst": "Id_c746205b-5baf-40df-b5d0-8bdb875f131b",
      "name": ""
     }
    ],
    "notes": [
     {
-     "id": "Note_1605",
-     "text": "Tempo registrado no desenho original, só da etapa de consulta (do início do atendimento à entrega): aprox. 16:05"
+     "id": "Id_90805167-b4b0-442a-bed8-5c55bab8addf",
+     "text": "Biomicroscopia = fundo de olho. A lâmpada de fenda é o equipamento onde o exame é feito."
     }
    ],
    "counts": {
-    "tasks": 14,
-    "gateways": 3,
-    "events": 3,
-    "flows": 20,
+    "tasks": 19,
+    "gateways": 2,
+    "events": 5,
+    "flows": 26,
+    "lanes": 6
+   },
+   "totalLabel": null
+  },
+  {
+   "id": "retina",
+   "title": "Retina",
+   "short": "Consulta, exames e procedimentos na retina (2º andar)",
+   "poolName": "Processo da retina",
+   "sourceFile": "Retina.bpmn",
+   "bpmn": "bpmn/retina.bpmn",
+   "lanes": [
+    {
+     "id": "Id_b3b5fe6f-e6c5-4000-a776-c1719b7f0451",
+     "name": "Portaria"
+    },
+    {
+     "id": "Id_eb20164d-4f92-4afa-bac6-96735f3d1785",
+     "name": "Recepção"
+    },
+    {
+     "id": "Id_ffe43849-44f1-441f-bc4f-82aa3a24f8e1",
+     "name": "Técnicas de retina (triagem e exames)"
+    },
+    {
+     "id": "Id_c6073dbc-6266-4ecf-b8a9-124b30399827",
+     "name": "Consultório médico"
+    },
+    {
+     "id": "Id_16e0f1a3-14bb-4182-a31a-dba229885d31",
+     "name": "Cirurgia (marcação de cirurgia e consultoria cirúrgica)"
+    }
+   ],
+   "nodes": [
+    {
+     "id": "Id_8c6c49fb-311e-472c-811a-0ac8caec00f5",
+     "name": "",
+     "kind": "startEvent",
+     "lane": "Id_b3b5fe6f-e6c5-4000-a776-c1719b7f0451",
+     "doc": "",
+     "gw": null,
+     "x": 236,
+     "y": 150,
+     "via": null,
+     "seq": 0,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_f361334c-ce5f-417e-b70c-c3d653e9fe40",
+     "name": "Paciente chega para consulta, exame ou procedimento (agendado ou encaixe)",
+     "kind": "task",
+     "lane": "Id_b3b5fe6f-e6c5-4000-a776-c1719b7f0451",
+     "doc": "",
+     "gw": null,
+     "x": 352,
+     "y": 123,
+     "via": null,
+     "seq": 1,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_026c0828-03f9-4f18-87b4-26d632370d21",
+     "name": "Portaria identifica o paciente e o direciona ao setor da retina",
+     "kind": "task",
+     "lane": "Id_b3b5fe6f-e6c5-4000-a776-c1719b7f0451",
+     "doc": "",
+     "gw": null,
+     "x": 537,
+     "y": 133,
+     "via": null,
+     "seq": 2,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_71160906-d216-4180-bf58-106432ef08da",
+     "name": "Paciente retira a senha no totem e aguarda ser chamado",
+     "kind": "task",
+     "lane": "Id_eb20164d-4f92-4afa-bac6-96735f3d1785",
+     "doc": "",
+     "gw": null,
+     "x": 387,
+     "y": 308,
+     "via": null,
+     "seq": 3,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_497f8c50-fda3-4969-b423-9d8282f0e3cc",
+     "name": "Recepcionista chama a senha e dá entrada do paciente no painel (sistema MV)",
+     "kind": "task",
+     "lane": "Id_eb20164d-4f92-4afa-bac6-96735f3d1785",
+     "doc": "",
+     "gw": null,
+     "x": 537,
+     "y": 308,
+     "via": null,
+     "seq": 4,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_c2831c6e-191b-4956-bc8a-e58fdd2c8d2c",
+     "name": "Recepcionista confere o cadastro e verifica o paciente na agenda do médico",
+     "kind": "task",
+     "lane": "Id_eb20164d-4f92-4afa-bac6-96735f3d1785",
+     "doc": "",
+     "gw": null,
+     "x": 687,
+     "y": 308,
+     "via": null,
+     "seq": 5,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_331dcb58-40bb-425d-af39-ea5d6a5e56ac",
+     "name": "Paciente está na agenda?",
+     "kind": "exclusiveGateway",
+     "lane": "Id_eb20164d-4f92-4afa-bac6-96735f3d1785",
+     "doc": "",
+     "gw": null,
+     "x": 877,
+     "y": 320,
+     "via": null,
+     "seq": 6,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_48383600-4dc4-4ca1-8909-f574736ec248",
+     "name": "Encaixe: recepcionista confirma com o médico e valida no sistema que o paciente é dele",
+     "kind": "task",
+     "lane": "Id_eb20164d-4f92-4afa-bac6-96735f3d1785",
+     "doc": "",
+     "gw": null,
+     "x": 837,
+     "y": 428,
+     "via": "Não",
+     "seq": 7,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_a31dfc7d-cc7d-46b7-a5d0-afdeba9c9d41",
+     "name": "Atendimento particular?",
+     "kind": "exclusiveGateway",
+     "lane": "Id_eb20164d-4f92-4afa-bac6-96735f3d1785",
+     "doc": "",
+     "gw": null,
+     "x": 1027,
+     "y": 320,
+     "via": "Sim",
+     "seq": 8,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_d7d82464-1e40-4940-bc5f-524b415c0540",
+     "name": "Recepção solicita a autorização no convênio (consulta e exames)",
+     "kind": "task",
+     "lane": "Id_eb20164d-4f92-4afa-bac6-96735f3d1785",
+     "doc": "",
+     "gw": null,
+     "x": 1137,
+     "y": 308,
+     "via": "Não",
+     "seq": 9,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_95f4cda7-f557-487f-a42b-5f15a0acbd74",
+     "name": "Recepção recebe o valor particular",
+     "kind": "task",
+     "lane": "Id_eb20164d-4f92-4afa-bac6-96735f3d1785",
+     "doc": "",
+     "gw": null,
+     "x": 1137,
+     "y": 428,
+     "via": "Sim",
+     "seq": 10,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_561088af-648c-4319-b5ee-05031023b8bf",
+     "name": "Recepção abre o atendimento (consulta e exames conforme as autorizações; ficha própria para laser), imprime a guia e o paciente assina",
+     "kind": "task",
+     "lane": "Id_eb20164d-4f92-4afa-bac6-96735f3d1785",
+     "doc": "",
+     "gw": null,
+     "x": 1287,
+     "y": 300,
+     "via": null,
+     "seq": 11,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_63d5729a-9b68-4508-80e9-8289e83fc551",
+     "name": "Recepcionista lança o paciente no painel conforme o que ele fará",
+     "kind": "task",
+     "lane": "Id_eb20164d-4f92-4afa-bac6-96735f3d1785",
+     "doc": "",
+     "gw": null,
+     "x": 1501,
+     "y": 308,
+     "via": null,
+     "seq": 12,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_04df60cb-c5b4-40d1-a4ea-b6f341c2e158",
+     "name": "Procedimento a laser?",
+     "kind": "exclusiveGateway",
+     "lane": "Id_eb20164d-4f92-4afa-bac6-96735f3d1785",
+     "doc": "",
+     "gw": null,
+     "x": 1686,
+     "y": 320,
+     "via": null,
+     "seq": 13,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_d2d9d216-422e-44ed-8e37-49cfc454ed15",
+     "name": "Técnicas chamam o paciente pelo nome (painel)",
+     "kind": "task",
+     "lane": "Id_ffe43849-44f1-441f-bc4f-82aa3a24f8e1",
+     "doc": "",
+     "gw": null,
+     "x": 1757,
+     "y": 698,
+     "via": "Não",
+     "seq": 14,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_27175b0e-28ca-48f9-8953-84b1d18829fb",
+     "name": "Precisa dilatar?",
+     "kind": "exclusiveGateway",
+     "lane": "Id_ffe43849-44f1-441f-bc4f-82aa3a24f8e1",
+     "doc": "",
+     "gw": null,
+     "x": 1947,
+     "y": 710,
+     "via": null,
+     "seq": 16,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_12ef7ba3-b0f3-4da6-88a0-54bdd59436ec",
+     "name": "Técnicas dilatam o paciente",
+     "kind": "task",
+     "lane": "Id_ffe43849-44f1-441f-bc4f-82aa3a24f8e1",
+     "doc": "",
+     "gw": null,
+     "x": 2057,
+     "y": 808,
+     "via": "Sim",
+     "seq": 17,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_45eaca1e-c30c-444c-a211-534b9649e813",
+     "name": "Técnicas realizam os exames do pedido (se houver)",
+     "kind": "task",
+     "lane": "Id_ffe43849-44f1-441f-bc4f-82aa3a24f8e1",
+     "doc": "",
+     "gw": null,
+     "x": 2207,
+     "y": 698,
+     "via": "Não",
+     "seq": 18,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_f4b8dc2e-658d-4398-a9dc-f556197cfc62",
+     "name": "Inclui consulta com o médico?",
+     "kind": "exclusiveGateway",
+     "lane": "Id_ffe43849-44f1-441f-bc4f-82aa3a24f8e1",
+     "doc": "",
+     "gw": null,
+     "x": 2397,
+     "y": 710,
+     "via": null,
+     "seq": 19,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_f0c1aaeb-7131-4414-bd75-1fb62d1901d6",
+     "name": "Paciente liberado",
+     "kind": "endEvent",
+     "lane": "Id_ffe43849-44f1-441f-bc4f-82aa3a24f8e1",
+     "doc": "",
+     "gw": null,
+     "x": 2552,
+     "y": 715,
+     "via": "Não (exame avulso)",
+     "seq": 21,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_94e32d14-ea4e-48c5-8d97-9ef7c8c79b05",
+     "name": "Paciente vai à sala de laser e o médico realiza a fotocoagulação a laser",
+     "kind": "task",
+     "lane": "Id_c6073dbc-6266-4ecf-b8a9-124b30399827",
+     "doc": "",
+     "gw": null,
+     "x": 1757,
+     "y": 1198,
+     "via": "Sim",
+     "seq": 15,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_eb7fb807-eab7-46b6-bd8a-cef0ba9dc364",
+     "name": "Médico atende: avalia os exames das técnicas e faz fundoscopia / biomicroscopia (parte da consulta)",
+     "kind": "task",
+     "lane": "Id_c6073dbc-6266-4ecf-b8a9-124b30399827",
+     "doc": "",
+     "gw": null,
+     "x": 2502,
+     "y": 982,
+     "via": "Sim",
+     "seq": 20,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_3d3769b9-092c-4e3b-b33e-925c99d1b9b1",
+     "name": "Precisa de ecografia?",
+     "kind": "exclusiveGateway",
+     "lane": "Id_c6073dbc-6266-4ecf-b8a9-124b30399827",
+     "doc": "",
+     "gw": null,
+     "x": 2697,
+     "y": 1000,
+     "via": null,
+     "seq": 22,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_8d9674ea-3e29-4ed4-a953-555594729089",
+     "name": "Ecografia: o próprio médico faz ou encaminha ao médico da sala de ecografia",
+     "kind": "task",
+     "lane": "Id_c6073dbc-6266-4ecf-b8a9-124b30399827",
+     "doc": "",
+     "gw": null,
+     "x": 2807,
+     "y": 1093,
+     "via": "Sim",
+     "seq": 23,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_fa2eeacd-3cd5-4af3-8f03-1ce8cd96a3eb",
+     "name": "Médico orienta o paciente e entrega os papéis (pedido de exame, retorno, cirurgia)",
+     "kind": "task",
+     "lane": "Id_c6073dbc-6266-4ecf-b8a9-124b30399827",
+     "doc": "",
+     "gw": null,
+     "x": 2945,
+     "y": 988,
+     "via": "Não",
+     "seq": 24,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_9105d3b9-b5c9-4374-8c08-2d8840e73e72",
+     "name": "Conduta do médico?",
+     "kind": "exclusiveGateway",
+     "lane": "Id_c6073dbc-6266-4ecf-b8a9-124b30399827",
+     "doc": "",
+     "gw": null,
+     "x": 3147,
+     "y": 1000,
+     "via": null,
+     "seq": 25,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_2fe22de6-495e-41c1-a300-19c077b70468",
+     "name": "Paciente liberado",
+     "kind": "endEvent",
+     "lane": "Id_c6073dbc-6266-4ecf-b8a9-124b30399827",
+     "doc": "",
+     "gw": null,
+     "x": 3302,
+     "y": 1005,
+     "via": "Sem pendências",
+     "seq": 30,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_543c554b-d9dc-4550-905d-dc51a59f9343",
+     "name": "Paciente retira a senha no totem (marcação de consulta/exame); recepção marca o retorno",
+     "kind": "task",
+     "lane": "Id_eb20164d-4f92-4afa-bac6-96735f3d1785",
+     "doc": "",
+     "gw": null,
+     "x": 3242,
+     "y": 298,
+     "via": "Retorno (consulta ou exame)",
+     "seq": 26,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_35ef48dd-f5d7-4e2e-a4c3-98315785d0c7",
+     "name": "Paciente liberado",
+     "kind": "endEvent",
+     "lane": "Id_eb20164d-4f92-4afa-bac6-96735f3d1785",
+     "doc": "",
+     "gw": null,
+     "x": 3752,
+     "y": 325,
+     "via": null,
+     "seq": 38,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_42251834-7313-41ee-8207-e8df1641ee0f",
+     "name": "Paciente volta à recepção com o pedido; recepcionista abre novo atendimento (um por dia) e solicita autorização",
+     "kind": "task",
+     "lane": "Id_eb20164d-4f92-4afa-bac6-96735f3d1785",
+     "doc": "",
+     "gw": null,
+     "x": 3242,
+     "y": 418,
+     "via": "Pedido de exame",
+     "seq": 27,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_280d048c-6fa1-43c6-a919-2e9091f46d5e",
+     "name": "Autorizado na hora?",
+     "kind": "exclusiveGateway",
+     "lane": "Id_eb20164d-4f92-4afa-bac6-96735f3d1785",
+     "doc": "",
+     "gw": null,
+     "x": 3447,
+     "y": 440,
+     "via": null,
+     "seq": 31,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_b5adeee8-40c9-41fb-be20-ae8da05b6afb",
+     "name": "Exame agendado para outra data",
+     "kind": "task",
+     "lane": "Id_eb20164d-4f92-4afa-bac6-96735f3d1785",
+     "doc": "",
+     "gw": null,
+     "x": 3557,
+     "y": 428,
+     "via": "Não",
+     "seq": 35,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_eed4e4e8-602a-4935-bebb-0c771f78e4b4",
+     "name": "Paciente liberado",
+     "kind": "endEvent",
+     "lane": "Id_eb20164d-4f92-4afa-bac6-96735f3d1785",
+     "doc": "",
+     "gw": null,
+     "x": 3752,
+     "y": 445,
+     "via": null,
+     "seq": 39,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_5dfe1f46-7237-498c-9938-ae7bd3d865b2",
+     "name": "Técnicas realizam o exame no mesmo dia",
+     "kind": "task",
+     "lane": "Id_ffe43849-44f1-441f-bc4f-82aa3a24f8e1",
+     "doc": "",
+     "gw": null,
+     "x": 3557,
+     "y": 698,
+     "via": "Sim",
+     "seq": 36,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_8bbace7d-3019-4626-83a1-161aceedd3a6",
+     "name": "Paciente liberado",
+     "kind": "endEvent",
+     "lane": "Id_ffe43849-44f1-441f-bc4f-82aa3a24f8e1",
+     "doc": "",
+     "gw": null,
+     "x": 3752,
+     "y": 715,
+     "via": null,
+     "seq": 40,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_d9413dbd-4eec-4363-8d36-83aa15f2bc23",
+     "name": "Paciente retira a senha no totem (marcação de cirurgia); equipe recebe a solicitação e pede a autorização",
+     "kind": "task",
+     "lane": "Id_16e0f1a3-14bb-4182-a31a-dba229885d31",
+     "doc": "",
+     "gw": null,
+     "x": 3242,
+     "y": 1318,
+     "via": "Cirurgia",
+     "seq": 28,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_2a9b25aa-b6b1-4e3f-ad9c-b27e60eded6b",
+     "name": "Cirurgia urgente?",
+     "kind": "exclusiveGateway",
+     "lane": "Id_16e0f1a3-14bb-4182-a31a-dba229885d31",
+     "doc": "",
+     "gw": null,
+     "x": 3447,
+     "y": 1340,
+     "via": null,
+     "seq": 32,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_9e5d44ec-656a-43ea-bf58-70a8a3db8b50",
+     "name": "Marca a cirurgia para o mesmo dia",
+     "kind": "task",
+     "lane": "Id_16e0f1a3-14bb-4182-a31a-dba229885d31",
+     "doc": "",
+     "gw": null,
+     "x": 3557,
+     "y": 1328,
+     "via": "Sim",
+     "seq": 37,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_0bbe54c5-c6e2-4d12-8730-74ec3a3c1119",
+     "name": "Paciente liberado",
+     "kind": "endEvent",
+     "lane": "Id_16e0f1a3-14bb-4182-a31a-dba229885d31",
+     "doc": "",
+     "gw": null,
+     "x": 3752,
+     "y": 1345,
+     "via": null,
+     "seq": 41,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_cfa56be2-a026-4c6a-b898-6b5a78212b4a",
+     "name": "Marca na data indicada pelo médico (considerando risco cirúrgico e demais exigências)",
+     "kind": "task",
+     "lane": "Id_16e0f1a3-14bb-4182-a31a-dba229885d31",
+     "doc": "",
+     "gw": null,
+     "x": 3536,
+     "y": 1438,
+     "via": "Não",
+     "seq": 34,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_fd07a86e-ef05-4157-8bac-34905e0155a7",
+     "name": "Paciente liberado",
+     "kind": "endEvent",
+     "lane": "Id_16e0f1a3-14bb-4182-a31a-dba229885d31",
+     "doc": "",
+     "gw": null,
+     "x": 3752,
+     "y": 1455,
+     "via": null,
+     "seq": 42,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_403901f3-1927-48d6-af09-1d6996649e6e",
+     "name": "Paciente retira a senha no totem (consultoria cirúrgica); equipe explica valores e funcionamento da lente específica (custo não coberto)",
+     "kind": "task",
+     "lane": "Id_16e0f1a3-14bb-4182-a31a-dba229885d31",
+     "doc": "",
+     "gw": null,
+     "x": 3242,
+     "y": 1532,
+     "via": "Lente específica (consultoria)",
+     "seq": 29,
+     "origin": "diagrama"
+    },
+    {
+     "id": "Id_b8ffeda3-38d9-4813-a5c7-b7cedb0d03bd",
+     "name": "Paciente liberado",
+     "kind": "endEvent",
+     "lane": "Id_16e0f1a3-14bb-4182-a31a-dba229885d31",
+     "doc": "",
+     "gw": null,
+     "x": 3452,
+     "y": 1565,
+     "via": null,
+     "seq": 33,
+     "origin": "diagrama"
+    }
+   ],
+   "flows": [
+    {
+     "id": "Id_d8cb7252-9485-4ca9-a1d2-aa04b706a10d",
+     "src": "Id_8c6c49fb-311e-472c-811a-0ac8caec00f5",
+     "dst": "Id_f361334c-ce5f-417e-b70c-c3d653e9fe40",
+     "name": ""
+    },
+    {
+     "id": "Id_d5a899b0-7747-45ad-9be2-4ead691a082a",
+     "src": "Id_f361334c-ce5f-417e-b70c-c3d653e9fe40",
+     "dst": "Id_026c0828-03f9-4f18-87b4-26d632370d21",
+     "name": ""
+    },
+    {
+     "id": "Id_a12374d8-7c77-4d67-a892-b30825447d0b",
+     "src": "Id_026c0828-03f9-4f18-87b4-26d632370d21",
+     "dst": "Id_71160906-d216-4180-bf58-106432ef08da",
+     "name": ""
+    },
+    {
+     "id": "Id_e91d5027-35f1-4417-94cf-3e490252ac97",
+     "src": "Id_71160906-d216-4180-bf58-106432ef08da",
+     "dst": "Id_497f8c50-fda3-4969-b423-9d8282f0e3cc",
+     "name": ""
+    },
+    {
+     "id": "Id_8c9d27c3-5886-4a7a-b7b7-46dcfca9097e",
+     "src": "Id_497f8c50-fda3-4969-b423-9d8282f0e3cc",
+     "dst": "Id_c2831c6e-191b-4956-bc8a-e58fdd2c8d2c",
+     "name": ""
+    },
+    {
+     "id": "Id_42b8fcb7-ab3e-4d5d-be02-7be90b46f9ff",
+     "src": "Id_c2831c6e-191b-4956-bc8a-e58fdd2c8d2c",
+     "dst": "Id_331dcb58-40bb-425d-af39-ea5d6a5e56ac",
+     "name": ""
+    },
+    {
+     "id": "Id_6e7b7bd3-dbbb-4c8c-adfe-f2f508555f54",
+     "src": "Id_331dcb58-40bb-425d-af39-ea5d6a5e56ac",
+     "dst": "Id_a31dfc7d-cc7d-46b7-a5d0-afdeba9c9d41",
+     "name": "Sim"
+    },
+    {
+     "id": "Id_83ad57d7-0b4f-4813-9627-bd0c22ca8be5",
+     "src": "Id_331dcb58-40bb-425d-af39-ea5d6a5e56ac",
+     "dst": "Id_48383600-4dc4-4ca1-8909-f574736ec248",
+     "name": "Não"
+    },
+    {
+     "id": "Id_ae2d52cd-ed37-46a3-9321-d3842cc309fa",
+     "src": "Id_48383600-4dc4-4ca1-8909-f574736ec248",
+     "dst": "Id_a31dfc7d-cc7d-46b7-a5d0-afdeba9c9d41",
+     "name": ""
+    },
+    {
+     "id": "Id_dffe1dd7-a2a1-4501-8e85-3ab4531fb41c",
+     "src": "Id_a31dfc7d-cc7d-46b7-a5d0-afdeba9c9d41",
+     "dst": "Id_d7d82464-1e40-4940-bc5f-524b415c0540",
+     "name": "Não"
+    },
+    {
+     "id": "Id_27fa48ce-c8eb-4ed6-938b-eab9f22bafdf",
+     "src": "Id_a31dfc7d-cc7d-46b7-a5d0-afdeba9c9d41",
+     "dst": "Id_95f4cda7-f557-487f-a42b-5f15a0acbd74",
+     "name": "Sim"
+    },
+    {
+     "id": "Id_1247495e-ccc5-46f8-96eb-c2a9c2cf2845",
+     "src": "Id_d7d82464-1e40-4940-bc5f-524b415c0540",
+     "dst": "Id_561088af-648c-4319-b5ee-05031023b8bf",
+     "name": ""
+    },
+    {
+     "id": "Id_dde9c2da-23b9-4f72-a0b7-0842a6340e81",
+     "src": "Id_95f4cda7-f557-487f-a42b-5f15a0acbd74",
+     "dst": "Id_561088af-648c-4319-b5ee-05031023b8bf",
+     "name": ""
+    },
+    {
+     "id": "Id_cae96ee0-2d51-4cd9-909a-087a7dab386c",
+     "src": "Id_561088af-648c-4319-b5ee-05031023b8bf",
+     "dst": "Id_63d5729a-9b68-4508-80e9-8289e83fc551",
+     "name": ""
+    },
+    {
+     "id": "Id_c6f1d6d0-d26c-493d-b6d4-63a582b49f39",
+     "src": "Id_63d5729a-9b68-4508-80e9-8289e83fc551",
+     "dst": "Id_04df60cb-c5b4-40d1-a4ea-b6f341c2e158",
+     "name": ""
+    },
+    {
+     "id": "Id_5cebeefc-95e7-4644-9cc1-08e682ed015c",
+     "src": "Id_04df60cb-c5b4-40d1-a4ea-b6f341c2e158",
+     "dst": "Id_d2d9d216-422e-44ed-8e37-49cfc454ed15",
+     "name": "Não"
+    },
+    {
+     "id": "Id_8cbde239-3069-4955-9c3f-487a67d0215a",
+     "src": "Id_04df60cb-c5b4-40d1-a4ea-b6f341c2e158",
+     "dst": "Id_94e32d14-ea4e-48c5-8d97-9ef7c8c79b05",
+     "name": "Sim"
+    },
+    {
+     "id": "Id_9c748a7c-ebd4-48cf-b6df-25c1d8c120db",
+     "src": "Id_d2d9d216-422e-44ed-8e37-49cfc454ed15",
+     "dst": "Id_27175b0e-28ca-48f9-8953-84b1d18829fb",
+     "name": ""
+    },
+    {
+     "id": "Id_5e7182af-7f0e-447d-90d7-3dce6a95f4d5",
+     "src": "Id_27175b0e-28ca-48f9-8953-84b1d18829fb",
+     "dst": "Id_12ef7ba3-b0f3-4da6-88a0-54bdd59436ec",
+     "name": "Sim"
+    },
+    {
+     "id": "Id_03843ce1-8531-4786-be77-425636e3b732",
+     "src": "Id_27175b0e-28ca-48f9-8953-84b1d18829fb",
+     "dst": "Id_45eaca1e-c30c-444c-a211-534b9649e813",
+     "name": "Não"
+    },
+    {
+     "id": "Id_02a68fca-31cf-45bd-bcde-ed84403c80e2",
+     "src": "Id_12ef7ba3-b0f3-4da6-88a0-54bdd59436ec",
+     "dst": "Id_45eaca1e-c30c-444c-a211-534b9649e813",
+     "name": ""
+    },
+    {
+     "id": "Id_ead965e2-6013-4d53-8fe6-f21e2450374e",
+     "src": "Id_45eaca1e-c30c-444c-a211-534b9649e813",
+     "dst": "Id_f4b8dc2e-658d-4398-a9dc-f556197cfc62",
+     "name": ""
+    },
+    {
+     "id": "Id_c3a9ad4c-c948-40f0-ae9d-cefedf47157c",
+     "src": "Id_f4b8dc2e-658d-4398-a9dc-f556197cfc62",
+     "dst": "Id_f0c1aaeb-7131-4414-bd75-1fb62d1901d6",
+     "name": "Não (exame avulso)"
+    },
+    {
+     "id": "Id_0f117567-76ac-4f41-9447-753df9b4af19",
+     "src": "Id_f4b8dc2e-658d-4398-a9dc-f556197cfc62",
+     "dst": "Id_eb7fb807-eab7-46b6-bd8a-cef0ba9dc364",
+     "name": "Sim"
+    },
+    {
+     "id": "Id_240cb3ba-1548-430d-8291-a7f2b8cebfc8",
+     "src": "Id_eb7fb807-eab7-46b6-bd8a-cef0ba9dc364",
+     "dst": "Id_3d3769b9-092c-4e3b-b33e-925c99d1b9b1",
+     "name": ""
+    },
+    {
+     "id": "Id_00b09da3-0cba-4578-9620-f379957ef1e1",
+     "src": "Id_3d3769b9-092c-4e3b-b33e-925c99d1b9b1",
+     "dst": "Id_8d9674ea-3e29-4ed4-a953-555594729089",
+     "name": "Sim"
+    },
+    {
+     "id": "Id_d4384937-9699-4e92-a28d-d7066fee3d82",
+     "src": "Id_3d3769b9-092c-4e3b-b33e-925c99d1b9b1",
+     "dst": "Id_fa2eeacd-3cd5-4af3-8f03-1ce8cd96a3eb",
+     "name": "Não"
+    },
+    {
+     "id": "Id_40c0e832-44e2-4f1c-8efd-1d01321c15b8",
+     "src": "Id_8d9674ea-3e29-4ed4-a953-555594729089",
+     "dst": "Id_fa2eeacd-3cd5-4af3-8f03-1ce8cd96a3eb",
+     "name": ""
+    },
+    {
+     "id": "Id_bce37958-8a4c-489e-be68-8241ce024d03",
+     "src": "Id_94e32d14-ea4e-48c5-8d97-9ef7c8c79b05",
+     "dst": "Id_fa2eeacd-3cd5-4af3-8f03-1ce8cd96a3eb",
+     "name": ""
+    },
+    {
+     "id": "Id_ea8e3cc9-2201-4d10-b601-0093973090e3",
+     "src": "Id_fa2eeacd-3cd5-4af3-8f03-1ce8cd96a3eb",
+     "dst": "Id_9105d3b9-b5c9-4374-8c08-2d8840e73e72",
+     "name": ""
+    },
+    {
+     "id": "Id_74035873-c205-4a70-bac9-9a187f288973",
+     "src": "Id_9105d3b9-b5c9-4374-8c08-2d8840e73e72",
+     "dst": "Id_2fe22de6-495e-41c1-a300-19c077b70468",
+     "name": "Sem pendências"
+    },
+    {
+     "id": "Id_d7023c6b-eb2c-4e84-a0ac-3b873bbf3f4e",
+     "src": "Id_9105d3b9-b5c9-4374-8c08-2d8840e73e72",
+     "dst": "Id_543c554b-d9dc-4550-905d-dc51a59f9343",
+     "name": "Retorno (consulta ou exame)"
+    },
+    {
+     "id": "Id_2aa42dfb-52ff-4c50-b87c-ff6699165364",
+     "src": "Id_9105d3b9-b5c9-4374-8c08-2d8840e73e72",
+     "dst": "Id_42251834-7313-41ee-8207-e8df1641ee0f",
+     "name": "Pedido de exame"
+    },
+    {
+     "id": "Id_05919142-7262-4dc1-90ea-9db6b8a8e83d",
+     "src": "Id_9105d3b9-b5c9-4374-8c08-2d8840e73e72",
+     "dst": "Id_d9413dbd-4eec-4363-8d36-83aa15f2bc23",
+     "name": "Cirurgia"
+    },
+    {
+     "id": "Id_f6b6267f-3255-4c6e-8b4a-809c536ecb32",
+     "src": "Id_9105d3b9-b5c9-4374-8c08-2d8840e73e72",
+     "dst": "Id_403901f3-1927-48d6-af09-1d6996649e6e",
+     "name": "Lente específica (consultoria)"
+    },
+    {
+     "id": "Id_888441c0-f4cd-4b6c-82e6-6ab8e3484b22",
+     "src": "Id_543c554b-d9dc-4550-905d-dc51a59f9343",
+     "dst": "Id_35ef48dd-f5d7-4e2e-a4c3-98315785d0c7",
+     "name": ""
+    },
+    {
+     "id": "Id_1e7decfd-2ca8-4f86-b3ea-97b5f2f157ab",
+     "src": "Id_42251834-7313-41ee-8207-e8df1641ee0f",
+     "dst": "Id_280d048c-6fa1-43c6-a919-2e9091f46d5e",
+     "name": ""
+    },
+    {
+     "id": "Id_be31c818-4838-4276-8c16-5212ad2cf50f",
+     "src": "Id_280d048c-6fa1-43c6-a919-2e9091f46d5e",
+     "dst": "Id_5dfe1f46-7237-498c-9938-ae7bd3d865b2",
+     "name": "Sim"
+    },
+    {
+     "id": "Id_b0034997-db0b-4455-9b7f-4ec0a26d7f6d",
+     "src": "Id_280d048c-6fa1-43c6-a919-2e9091f46d5e",
+     "dst": "Id_b5adeee8-40c9-41fb-be20-ae8da05b6afb",
+     "name": "Não"
+    },
+    {
+     "id": "Id_d0f6513b-2b4e-4d9d-9691-2ac384b8ee90",
+     "src": "Id_b5adeee8-40c9-41fb-be20-ae8da05b6afb",
+     "dst": "Id_eed4e4e8-602a-4935-bebb-0c771f78e4b4",
+     "name": ""
+    },
+    {
+     "id": "Id_b3a5ef43-04d7-4701-89b4-b9ddd4ffc254",
+     "src": "Id_5dfe1f46-7237-498c-9938-ae7bd3d865b2",
+     "dst": "Id_8bbace7d-3019-4626-83a1-161aceedd3a6",
+     "name": ""
+    },
+    {
+     "id": "Id_95a00b97-9801-4385-bd2d-cf06eb563eeb",
+     "src": "Id_d9413dbd-4eec-4363-8d36-83aa15f2bc23",
+     "dst": "Id_2a9b25aa-b6b1-4e3f-ad9c-b27e60eded6b",
+     "name": ""
+    },
+    {
+     "id": "Id_209e93b4-74ea-4447-9e92-ddd409ebf0f6",
+     "src": "Id_2a9b25aa-b6b1-4e3f-ad9c-b27e60eded6b",
+     "dst": "Id_9e5d44ec-656a-43ea-bf58-70a8a3db8b50",
+     "name": "Sim"
+    },
+    {
+     "id": "Id_738d78e8-3e18-4f29-b438-03e3a335e997",
+     "src": "Id_2a9b25aa-b6b1-4e3f-ad9c-b27e60eded6b",
+     "dst": "Id_cfa56be2-a026-4c6a-b898-6b5a78212b4a",
+     "name": "Não"
+    },
+    {
+     "id": "Id_eb49e42d-4b1a-4a8b-b4d2-9094c70dbc38",
+     "src": "Id_9e5d44ec-656a-43ea-bf58-70a8a3db8b50",
+     "dst": "Id_0bbe54c5-c6e2-4d12-8730-74ec3a3c1119",
+     "name": ""
+    },
+    {
+     "id": "Id_aa266fe2-fb24-42c5-b7eb-12126698aef8",
+     "src": "Id_cfa56be2-a026-4c6a-b898-6b5a78212b4a",
+     "dst": "Id_fd07a86e-ef05-4157-8bac-34905e0155a7",
+     "name": ""
+    },
+    {
+     "id": "Id_fc813283-32a8-4177-8059-beafd0d5c9e3",
+     "src": "Id_403901f3-1927-48d6-af09-1d6996649e6e",
+     "dst": "Id_b8ffeda3-38d9-4813-a5c7-b7cedb0d03bd",
+     "name": ""
+    }
+   ],
+   "notes": [],
+   "counts": {
+    "tasks": 25,
+    "gateways": 9,
+    "events": 9,
+    "flows": 47,
     "lanes": 5
    },
-   "totalLabel": {
-    "value": "16:05",
-    "note": "só a etapa de consulta",
-    "text": "Tempo registrado no desenho original, só da etapa de consulta (do início do atendimento à entrega): aprox. 16:05"
-   }
+   "totalLabel": null
   },
   {
    "id": "teste-de-lente",

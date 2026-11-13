@@ -15,8 +15,9 @@ clean = lambda s: re.sub(r'\s+', ' ', (s or '').replace('\xa0', ' ')).strip()
 
 # ---------------------------------------------------------------- BPMN
 PROCS = [
-  dict(id='glaucoma', file='Fluxograma_Glaucoma.bpm', title='Glaucoma', short='Jornada do paciente com glaucoma'),
-  dict(id='exame-de-cornea', file='Diagrama_Cornea.bpmn', title='Exame de córnea', short='Exame de córnea (paciente nova)'),
+  dict(id='glaucoma', file='Glaucoma.bpmn', title='Glaucoma', short='Jornada do paciente com glaucoma'),
+  dict(id='exame-de-cornea', file='Cornea.bpmn', title='Exame de córnea', short='Exame de córnea (paciente nova)'),
+  dict(id='retina', file='Retina.bpmn', title='Retina', short='Consulta, exames e procedimentos na retina (2º andar)'),
   dict(id='teste-de-lente', file='Diagrama_Teste_de_lente.bpmn', title='Teste de lente', short='Consulta de teste de lente'),
 ]
 
@@ -133,11 +134,11 @@ def convert(proc):
         P.append('</bpmn:laneSet>')
     for n in nodes:
         nm = (' name=%s' % quoteattr(n['name'])) if n['name'] else ''
-        P.append('<bpmn:%s id="%s"%s>' % (n['kind'], n['id'], nm))
+        P.append('<bpmn:%s id="%s"%s>' % (n['xk'], n['id'], nm))
         if n['doc']: P.append('<bpmn:documentation>%s</bpmn:documentation>' % escape(n['doc']))
         for i in inc[n['id']]: P.append('<bpmn:incoming>%s</bpmn:incoming>' % i)
         for o in out[n['id']]: P.append('<bpmn:outgoing>%s</bpmn:outgoing>' % o)
-        P.append('</bpmn:%s>' % n['kind'])
+        P.append('</bpmn:%s>' % n['xk'])
     for f in flows:
         nm = (' name=%s' % quoteattr(f['name'])) if f['name'] else ''
         P.append('<bpmn:sequenceFlow id="%s" sourceRef="%s" targetRef="%s"%s />' % (f['id'], f['src'], f['dst'], nm))
@@ -173,7 +174,8 @@ DI_ = '{http://www.omg.org/spec/DD/20100524/DI}'
 def convert_bpmn(proc):
     root = ET.parse(os.path.join(SRC, proc['file'])).getroot()
     coll = root.find(BM + 'collaboration')
-    part = next(p for p in coll.findall(BM + 'participant') if p.get('name'))   # a outra participante é vazia
+    _procs = {x.get('id'): x for x in root.findall(BM + 'process')}
+    part = next(p for p in coll.findall(BM + 'participant') if p.get('name') and any(True for _ in _procs[p.get('processRef')].iter(BM + 'lane')))   # a outra participante é vazia
     pr = next(p for p in root.findall(BM + 'process') if p.get('id') == part.get('processRef'))
     pool_id, pool_name = part.get('id'), clean(part.get('name'))
     shapes = {}; edges = {}
@@ -188,14 +190,14 @@ def convert_bpmn(proc):
     for l in pr.iter(BM + 'lane'):
         g = shapes[l.get('id')]
         lanes.append(dict(id=l.get('id'), name=clean(l.get('name')), **g, refs=[r.text for r in l.findall(BM + 'flowNodeRef')]))
-    KINDS = ('startEvent', 'endEvent', 'task', 'exclusiveGateway')
+    KINDS = ('startEvent', 'endEvent', 'task', 'exclusiveGateway', 'inclusiveGateway')
     nodes = []
     for e in pr:
         k = e.tag.replace(BM, '')
         if k not in KINDS: continue
         g = shapes[e.get('id')]
         doc = e.find(BM + 'documentation')
-        n = dict(id=e.get('id'), name=clean(e.get('name')), kind=k, doc=clean(doc.text) if doc is not None and doc.text else '', gw=None, **g)
+        n = dict(id=e.get('id'), name=clean(e.get('name')), kind='exclusiveGateway' if k == 'inclusiveGateway' else k, xk=k, doc=clean(doc.text) if doc is not None and doc.text else '', gw=None, **g)
         cy = g['y'] + g['h'] / 2
         n['lane'] = next((l['id'] for l in lanes if n['id'] in l['refs']), None) or \
                     next((l['id'] for l in lanes if l['y'] <= cy <= l['y'] + l['h']), None)
@@ -269,7 +271,7 @@ procs = [convert_any(p) for p in PROCS]
 _ORIG = {'Node_entender', 'Node_fenda', 'Node_grau', 'Node_grins', 'Node_relatorio', 'Node_entrega'}
 for _p in procs:
     for _n in _p['nodes']:
-        _n['origin'] = ('diagrama' if _n['id'] in _ORIG else 'entrevista') if _p['id'] == 'exame-de-cornea' else 'diagrama'
+        _n['origin'] = 'diagrama'
 
 # ---------------------------------------------------------------- planilha
 # Medicoes_Rede_Oftalmo.xlsx: aba "1ºandar" (dados a partir da linha 3) e aba "2ºandar".
@@ -278,7 +280,10 @@ for _p in procs:
 wb = openpyxl.load_workbook(os.path.join(SRC, 'Medicoes_Rede_Oftalmo.xlsx'), data_only=True)
 W1, W2 = wb['1ºandar'], wb['2ºandar']
 FIRST = 3
-def mmss(v): return v.hour * 60 + v.minute if isinstance(v, datetime.time) else None
+def mmss(v):
+    if isinstance(v, str) and re.fullmatch(r'\d{1,3}[:;.]\d{2}', v.strip()):   # digitado como texto: “25:09” = 25 min 9 s
+        m, sec = re.split(r'[:;.]', v.strip()); return int(m) * 60 + int(sec)
+    return v.hour * 60 + v.minute if isinstance(v, datetime.time) else None
 def tod(v):
     if isinstance(v, str) and re.fullmatch(r'\d{1,2}[;.]\d{2}', v.strip()):   # erro de digitação: “09;05” = 09:05
         h, m = re.split(r'[;.]', v.strip()); return int(h) * 3600 + int(m) * 60
@@ -313,7 +318,7 @@ def direct(ws, id_, label, phase, ncol, tcol, ocol=None, kind='cronometrado', **
         smp.append(dict(row=r, obs=cell(ws, ncol, r) if ncol else None, seconds=sx, note=clean(obs) if obs else note))
     add_step(id_, label, phase, smp, exc, source='Colunas %s%s' % (ncol + '–' if ncol else '', tcol), kind=kind, **kw)
 
-def start_end(ws, id_, label, phase, a, b, d):
+def start_end(ws, id_, label, phase, a, b, d, obs_col='A'):
     smp, exc = [], []
     for r in rows_of(ws):
         sa, sb = cell(ws, a, r), cell(ws, b, r)
@@ -322,7 +327,7 @@ def start_end(ws, id_, label, phase, a, b, d):
         if ta is None or tb is None: exc.append(dict(row=r, raw='%s – %s' % (sa, sb), reason='início ou fim ausente')); continue
         if tb - ta < 0: exc.append(dict(row=r, raw='%s – %s' % (hhmm(sa), hhmm(sb)), reason='horário de fim anterior ao de início')); continue
         if tb == ta: exc.append(dict(row=r, raw='%s – %s' % (hhmm(sa), hhmm(sb)), reason='início e fim iguais (duração 0 s); não é uma medição válida')); continue
-        smp.append(dict(row=r, obs=cell(ws, 'A', r), seconds=tb - ta, start=hhmm(sa), end=hhmm(sb), note=None))
+        smp.append(dict(row=r, obs=cell(ws, obs_col, r) if obs_col else None, seconds=tb - ta, start=hhmm(sa), end=hhmm(sb), note=None))
     add_step(id_, label, phase, smp, exc, source='Colunas %s–%s' % (a, d), kind='início / fim')
 
 # --- 1º andar: tempos cronometrados direto (mm:ss)
@@ -332,7 +337,8 @@ for id_, label, phase, cn, ct, co in [
   ('topografia', 'Topografia', 'Exames', 'G', 'H', 'I'),
   ('tonometria-sopro', 'Tonometria de sopro', 'Exames', 'J', 'K', 'L'),
   ('auto-refratario', 'Auto refratário', 'Exames', 'M', 'N', 'O'),
-  ('glaucoma-consulta', 'Glaucoma Consulta', 'Consulta', 'P', 'Q', 'R')]:
+  ('glaucoma-consulta', 'Glaucoma Consulta', 'Consulta', 'P', 'Q', 'R'),
+  ('cornea-consulta', 'Córnea Consulta', 'Consulta', 'S', 'T', 'U')]:
     direct(W1, id_, label, phase, cn, ct, co)
 # --- Recepção (Portaria): aba 2ºandar, colunas A (nº) e B (tempo)
 direct(W2, 'recepcao', 'Recepção (Portaria)', 'Chegada', 'A', 'B')
@@ -342,7 +348,7 @@ steps.insert(0, steps.pop())
 # --- Campo visual: início/fim; nas linhas sem horário ("x") vale a duração cronometrada (coluna AA)
 smp, exc = [], []
 for r in rows_of(W1):
-    a, b, d = cell(W1, 'Y', r), cell(W1, 'Z', r), cell(W1, 'AA', r)
+    a, b, d = cell(W1, 'AB', r), cell(W1, 'AC', r), cell(W1, 'AD', r)
     ta, tb = tod(a), tod(b)
     if ta is not None and tb is not None:
         calc = tb - ta
@@ -353,24 +359,25 @@ for r in rows_of(W1):
         smp.append(item)
     elif a == 'x' and isinstance(d, datetime.time):
         smp.append(dict(row=r, obs=cell(W1, 'A', r), seconds=mmss(d), note='Tempo cronometrado direto (sem horário de início/fim)'))
-add_step('campo-visual', 'Campo visual', 'Exames', smp, exc, source='Colunas Y–AA', kind='cronometrado / início-fim')
+add_step('campo-visual', 'Campo visual', 'Exames', smp, exc, source='Colunas AB–AD', kind='cronometrado / início-fim')
 
-start_end(W1, 'oct', 'OCT', 'Exames', 'S', 'T', 'U')
-start_end(W1, 'paquimetria', 'Paquimetria corneana', 'Exames', 'V', 'W', 'X')
-start_end(W1, 'retinografia', 'Retinografia', 'Exames', 'AB', 'AC', 'AD')
+start_end(W1, 'oct', 'OCT', 'Exames', 'V', 'W', 'X')
+start_end(W1, 'paquimetria', 'Paquimetria corneana', 'Exames', 'Y', 'Z', 'AA')
+start_end(W1, 'retinografia', 'Retinografia', 'Exames', 'AE', 'AF', 'AG')
+start_end(W2, 'oct-retina', 'OCT (Retina)', 'Retina', 'S', 'T', 'T', obs_col=None)
 
 # --- Atendimento Córnea (antes "Pós-consulta"): tempo de atendimento (AH) + início/fim quando houver
 smp, exc = [], []
 for r in rows_of(W1):
-    v = cell(W1, 'AG', r)
+    v = cell(W1, 'AJ', r)
     if v in (None, ''): continue
     sx = mmss(v)
     if sx is None: exc.append(dict(row=r, raw=str(v), reason='valor não é uma duração')); continue
-    a, b = cell(W1, 'AE', r), cell(W1, 'AF', r)
+    a, b = cell(W1, 'AH', r), cell(W1, 'AI', r)
     item = dict(row=r, obs=cell(W1, 'A', r), seconds=sx, note=None)
     if tod(a) is not None and tod(b) is not None: item.update(start=hhmm(a), end=hhmm(b))
     smp.append(item)
-add_step('atendimento-cornea', 'Recepção Córnea', 'Córnea', smp, exc, source='Colunas AE–AG', kind='cronometrado / início-fim')
+add_step('atendimento-cornea', 'Recepção Córnea', 'Córnea', smp, exc, source='Colunas AH–AJ', kind='cronometrado / início-fim')
 # --- 2º andar: Retina
 smp = []
 for col, nome in (('D', '1ª dilatação'), ('E', '2ª dilatação'), ('F', '3ª dilatação')):
@@ -381,39 +388,58 @@ add_step('dilatacao', 'Dilatação de colírio', 'Retina', smp, [], source='Colu
 direct(W2, 'consultorio-retina', 'Consultório Retina', 'Retina', 'H', 'I', 'K')
 direct(W2, 'ecobiometria', 'Ecobiometria / Ecografia', 'Retina', 'L', 'M', 'O')
 direct(W2, 'atendimento-retina', 'Recepção Retina', 'Retina', 'P', 'Q', None)
-RETINA = {'dilatacao', 'consultorio-retina', 'ecobiometria', 'atendimento-retina'}
+RETINA = {'dilatacao', 'consultorio-retina', 'ecobiometria', 'atendimento-retina', 'oct-retina'}
 empty_steps = []
 
 # ---------------------------------------------------------------- associação etapa-do-fluxograma ↔ medição
 g = next(p for p in procs if p['id'] == 'glaucoma')
 cor = next(p for p in procs if p['id'] == 'exame-de-cornea')
-def node(name_part):
-    hits = [n for n in g['nodes'] if name_part.lower() in n['name'].lower() and n['kind'] == 'task']
-    assert len(hits) == 1, (name_part, hits)
-    return hits[0]['id']
-lane_exames = next(l['id'] for l in g['lanes'] if l['name'] == 'Exames')
-lane_medico_cor = next(l['id'] for l in cor['lanes'] if 'dico' in l['name'].lower())
+ret = next(p for p in procs if p['id'] == 'retina')
+def mknode(proc):
+    def node(name_part):
+        hits = [n for n in proc['nodes'] if name_part.lower() in n['name'].lower() and n['kind'] == 'task']
+        if len(hits) > 1: hits = [n for n in hits if n['name'].lower() == name_part.lower()] or hits
+        assert len(hits) == 1, (proc['id'], name_part, hits)
+        return hits[0]['id']
+    return node
+node, cnode, rnode = mknode(g), mknode(cor), mknode(ret)
+lane = lambda proc, part: next(l['id'] for l in proc['lanes'] if part.lower() in l['name'].lower())
+lane_exames, lane_medico_g, lane_tecnicas_cor = lane(g, 'Exames'), lane(g, 'Consultório'), lane(cor, 'Técnicas')
+lane_medico_cor = lane(cor, 'Médico')
+PRE = node('Realizar pré-exames')
+OBRIG = node('exames obrigatórios')
 LINK = {
-  'recepcao': dict(process='glaucoma', nodes=[node('Portaria identifica'), node('Recepção abre a ficha')], confidence='provável',
+  'recepcao': dict(process='glaucoma', nodes=[node('Portaria identifica'), node('Recepção recebe o paciente')], confidence='provável',
        note='A planilha mede “Recepção (Portaria)” como uma etapa única; no fluxograma ela corresponde às duas tarefas da entrada (Portaria e Recepção). O mesmo tempo é exibido nas duas, sem soma.'),
+  'atendimento-glaucoma': dict(process='glaucoma', nodes=[node('Recepção abre ficha')], confidence='provável', note='“Recepção Glaucoma” é o tempo na recepção do 1º andar, associado à abertura da ficha.'),
   'auto-refratario': dict(process='glaucoma', nodes=[node('Refração')], confidence='provável', note='O auto refrator é o equipamento da etapa de refração.'),
-  'tonometria-sopro': dict(process='glaucoma', nodes=[node('Mapeamento de')], confidence='provável',
-       note='A tarefa do fluxograma une “mapeamento de retina e tonometria”; a planilha mede a tonometria de sopro separadamente.'),
-  'retinografia': dict(process='glaucoma', nodes=[node('Mapeamento de')], confidence='provável',
-       note='A tarefa do fluxograma une “mapeamento de retina e tonometria”; a planilha mede a retinografia separadamente.'),
+  'microscopia': dict(process='glaucoma', nodes=[PRE], confidence='provável', note='A tarefa do fluxograma reúne os pré-exames (tonometria, autorrefração e microscopia); a planilha mede cada um separadamente.'),
+  'tonometria-sopro': dict(process='glaucoma', nodes=[PRE], confidence='provável', note='A tarefa do fluxograma reúne os pré-exames (tonometria, autorrefração e microscopia); a planilha mede cada um separadamente.'),
+  **{k: dict(process='glaucoma', nodes=[OBRIG], confidence='provável', note='Exame obrigatório do glaucoma; o fluxograma reúne todos na mesma tarefa e a planilha mede cada um separadamente.')
+     for k in ('oct', 'paquimetria', 'campo-visual', 'retinografia')},
 }
-LANE_STEPS = {lane_exames: ['microscopia', 'topografia', 'oct', 'paquimetria', 'campo-visual', 'glaucoma-consulta']}
+RETLINK = {
+  'atendimento-retina': dict(process='retina', nodes=[rnode('Recepcionista chama a senha')], confidence='provável', note='“Recepção Retina” é o tempo na recepção, da chamada da senha à entrada do paciente.'),
+  'dilatacao': dict(process='retina', nodes=[rnode('Técnicas dilatam')], confidence='provável', note=None),
+  'oct-retina': dict(process='retina', nodes=[rnode('Técnicas realizam os exames do pedido')], confidence='provável', note='O OCT é um dos exames do pedido feitos pelas técnicas.'),
+  'consultorio-retina': dict(process='retina', nodes=[rnode('Médico atende')], confidence='provável', note=None),
+  'ecobiometria': dict(process='retina', nodes=[rnode('Ecografia')], confidence='provável', note=None),
+}
+CORLINK = {
+  'atendimento-cornea': dict(process='exame-de-cornea', nodes=[cnode('Recepção faz a ficha')], confidence='provável', note='“Recepção Córnea” é o tempo da recepção do 1º andar para a córnea, associado à criação da ficha.'),
+  'cornea-consulta': dict(process='exame-de-cornea', nodes=[], lane=lane_medico_cor, confidence='raia', note='A planilha mede a consulta da córnea como um bloco; no fluxograma ela corresponde à raia do médico. Associação por raia.'),
+}
+LANE_STEPS = {lane_exames: ['topografia'], lane_medico_g: ['glaucoma-consulta']}
 for st in steps:
     sid = st['id']
     st['group'] = 'retina' if sid in RETINA else 'principal'
-    if sid in RETINA:
-        st['link'] = dict(process='retina', nodes=[], confidence='sem fluxograma', note='A Retina não tem fluxograma mapeado; as medições aparecem só nos resultados.')
-    elif sid.startswith('atendimento-cornea'):
-        st['link'] = dict(process='exame-de-cornea', nodes=[], lane=lane_medico_cor, confidence='raia',
-                          note='A planilha mede a recepção da córnea (atendimento) como um bloco, do início ao fim; no fluxograma ele corresponde à raia do médico (da conversa inicial à entrega da receita). Associação por raia.')
+    if sid in RETLINK: st['link'] = RETLINK[sid]
+    elif sid in CORLINK: st['link'] = CORLINK[sid]
     elif sid in LINK: st['link'] = LINK[sid]
     elif sid in LANE_STEPS[lane_exames]:
-        st['link'] = dict(process='glaucoma', nodes=[], lane=lane_exames, confidence='raia', note='O fluxograma não detalha este exame/etapa individualmente; a medição é associada à raia “Exames”.')
+        st['link'] = dict(process='glaucoma', nodes=[], lane=lane_exames, confidence='raia', note='O fluxograma não detalha este exame individualmente; a medição é associada à raia “Exames”.')
+    elif sid in LANE_STEPS[lane_medico_g]:
+        st['link'] = dict(process='glaucoma', nodes=[], lane=lane_medico_g, confidence='raia', note='A consulta é associada à raia “Consultório médico”.')
     else:
         st['link'] = dict(process='glaucoma', nodes=[], confidence='sem etapa equivalente', note='Não há tarefa com este nome no fluxograma; mantida apenas nos dados do processo.')
     st['process'] = st['link']['process']

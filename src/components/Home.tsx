@@ -159,7 +159,7 @@ export default function Home({ data }: { data: Dataset }) {
       </Section>
 
       {/* Processos */}
-      <Section id="processos" kicker="Processos mapeados" title="Três fluxos, um mesmo olhar" lead="Abra um processo para ver o fluxograma interativo e as medições associadas.">
+      <Section id="processos" kicker="Processos mapeados" title="Quatro fluxos, um mesmo olhar" lead="Abra um processo para ver o fluxograma interativo e as medições associadas.">
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24 }}>
           {processes.map((p) => {
             const st = m.steps.filter((s) => s.link.process === p.id && s.kind !== 'intervalo do posto')

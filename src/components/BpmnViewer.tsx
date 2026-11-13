@@ -54,7 +54,7 @@ export default function BpmnViewer({ process, steps, focusStep }: { process: Pro
         registry.forEach((el: any) => {
           if (el.type === 'bpmn:StartEvent') canvas.addMarker(el.id, 'node-start')
           if (el.type === 'bpmn:EndEvent') canvas.addMarker(el.id, 'node-end')
-          if (el.type === 'bpmn:Task' || el.type === 'bpmn:ExclusiveGateway' || el.type === 'bpmn:StartEvent' || el.type === 'bpmn:EndEvent') canvas.addMarker(el.id, 'pickable')
+          if (el.type === 'bpmn:Task' || el.type === 'bpmn:ExclusiveGateway' || el.type === 'bpmn:InclusiveGateway' || el.type === 'bpmn:StartEvent' || el.type === 'bpmn:EndEvent') canvas.addMarker(el.id, 'pickable')
           if (byNode[el.id]) {
             canvas.addMarker(el.id, 'has-data')
             const ss = byNode[el.id]
@@ -159,7 +159,7 @@ export default function BpmnViewer({ process, steps, focusStep }: { process: Pro
             <a className="btn" style={{ marginTop: 12 }} href={`#/processo/${process.id}?etapa=${s.id}`} onClick={() => setTimeout(() => document.getElementById('medicoes')?.scrollIntoView({ behavior: 'smooth' }), 50)}>Ver medições</a>
           </div>
         ))}
-        {!ss.length && <p style={{ fontSize: 14, color: 'var(--color-muted)', margin: '14px 0 0' }}>{process.id === 'glaucoma' ? 'Sem medição associada a esta etapa na planilha.' : 'Este processo não tem medições na planilha recebida.'}</p>}
+        {!ss.length && <p style={{ fontSize: 14, color: 'var(--color-muted)', margin: '14px 0 0' }}>{steps.length ? 'Sem medição associada a esta etapa na planilha.' : 'Este processo não tem medições na planilha recebida.'}</p>}
       </aside>
     )
   }

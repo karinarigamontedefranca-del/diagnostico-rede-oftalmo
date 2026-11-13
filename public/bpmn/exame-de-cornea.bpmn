@@ -2,260 +2,333 @@
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Defs_exame-de-cornea" targetNamespace="http://skema.jr/rede-oftalmo">
 <bpmn:collaboration id="Collab_1"><bpmn:participant id="Pool_1" name="Processo 1 - Exame de cornea 2 (paciente nova) - da portaria à saída" processRef="Process_1" /></bpmn:collaboration>
 <bpmn:process id="Process_1" isExecutable="false"><bpmn:laneSet id="LaneSet_1">
-<bpmn:lane id="Lane_portaria" name="Portaria">
-<bpmn:flowNodeRef>Node_inicio</bpmn:flowNodeRef>
-<bpmn:flowNodeRef>Node_nome</bpmn:flowNodeRef>
-<bpmn:flowNodeRef>Node_lanca</bpmn:flowNodeRef>
+<bpmn:lane id="Id_6207a09a-a08f-4c60-af60-423c0f0b3ba0" name="Portaria">
+<bpmn:flowNodeRef>Id_8ce75007-f14a-49c9-89a0-3ff5a75fe0d3</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Id_be3ed8e5-4541-46c0-9cdd-10ab55914f84</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Id_196eb9d9-cd84-4498-96cd-93d9d08bf48f</bpmn:flowNodeRef>
 </bpmn:lane>
-<bpmn:lane id="Lane_recepcao" name="Recepção">
-<bpmn:flowNodeRef>Node_chama</bpmn:flowNodeRef>
-<bpmn:flowNodeRef>Node_ficha</bpmn:flowNodeRef>
+<bpmn:lane id="Id_ea5a175e-8671-4de1-b1be-fd6d26c245fb" name="Recepção">
+<bpmn:flowNodeRef>Id_5375d9f9-bff7-4d93-898b-c159d6eb951d</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Id_e7e075dc-af34-4a5b-b044-4c0fe4cb65c8</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Id_5a2de679-ab99-472c-911b-98c6545e00c0</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Id_a95e51b8-dd53-4ad4-bdb2-824136c281ed</bpmn:flowNodeRef>
 </bpmn:lane>
-<bpmn:lane id="Lane_enfermeira" name="Enfermeira">
-<bpmn:flowNodeRef>Node_recebe</bpmn:flowNodeRef>
-<bpmn:flowNodeRef>Node_g_pedido</bpmn:flowNodeRef>
-<bpmn:flowNodeRef>Node_exames</bpmn:flowNodeRef>
-<bpmn:flowNodeRef>Node_g_merge</bpmn:flowNodeRef>
+<bpmn:lane id="Id_69cbfb1a-ea4e-4167-9ded-5cd69b2bebf6" name="Técnicas da córnea">
+<bpmn:flowNodeRef>Id_15a23bca-f26c-42ed-8503-84f2637de2b5</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Id_6ed81df5-be2b-4b11-b964-9ec101d93db1</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Id_47923264-4bce-4180-b652-3395be1094af</bpmn:flowNodeRef>
 </bpmn:lane>
-<bpmn:lane id="Lane_medico" name="Medico / tecnico do exame">
-<bpmn:flowNodeRef>Node_entender</bpmn:flowNodeRef>
-<bpmn:flowNodeRef>Node_fenda</bpmn:flowNodeRef>
-<bpmn:flowNodeRef>Node_grau</bpmn:flowNodeRef>
-<bpmn:flowNodeRef>Node_grins</bpmn:flowNodeRef>
-<bpmn:flowNodeRef>Node_relatorio</bpmn:flowNodeRef>
-<bpmn:flowNodeRef>Node_entrega</bpmn:flowNodeRef>
-<bpmn:flowNodeRef>Node_g_agendar</bpmn:flowNodeRef>
-<bpmn:flowNodeRef>Node_fim_casa</bpmn:flowNodeRef>
+<bpmn:lane id="Id_a9eb32c2-c6a6-4cec-95ce-6524b89923ba" name="Médico / técnico do exame">
+<bpmn:flowNodeRef>Id_8123c7d8-bbe3-48b2-b3d4-b5f30b04e0f9</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Id_27ceb70a-3709-4f4f-98b0-4c313d0f655f</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Id_e1cfd6e6-6e06-4878-a8bf-4bb6644972f7</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Id_85cca87e-eba1-422d-818f-ea5c6e0c97c0</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Id_529dd5bb-292a-4b1a-844a-f688702c3160</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Id_1f8d30f2-f09c-4229-9354-0c1c3b420900</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Id_90eb5a4c-2d4d-40a1-840a-48dd6ce7d77d</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Id_fe7ba47a-9e23-4cb1-aa23-f32d9dbeaebc</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Id_105f9eef-11e0-427b-833d-57a7fec4e623</bpmn:flowNodeRef>
 </bpmn:lane>
-<bpmn:lane id="Lane_marcacao" name="Marcação (2º andar)">
-<bpmn:flowNodeRef>Node_sobe</bpmn:flowNodeRef>
-<bpmn:flowNodeRef>Node_agenda</bpmn:flowNodeRef>
-<bpmn:flowNodeRef>Node_fim_agenda</bpmn:flowNodeRef>
+<bpmn:lane id="Id_1d7b6b85-734f-49e9-9a22-3540487f5bbf" name="Lente de contato">
+<bpmn:flowNodeRef>Id_a6a76563-e9c1-4364-826f-0650899f236f</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Id_359d50c2-7889-43c5-99cd-3cb37bb14826</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Id_2fcd50ab-10b3-4427-8f50-8f9379b1a389</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Id_c746205b-5baf-40df-b5d0-8bdb875f131b</bpmn:flowNodeRef>
+</bpmn:lane>
+<bpmn:lane id="Id_c878253d-7287-409b-8219-96a8d6db2bd2" name="Marcação de cirurgia (2º andar)">
+<bpmn:flowNodeRef>Id_70a2c40e-4d11-4b0b-8e60-a155be44dfbf</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Id_f7a08030-d58d-48a9-b75b-7bf223b40199</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>Id_ebd4e6a5-c4de-47b4-a12e-645ea1aedd3f</bpmn:flowNodeRef>
 </bpmn:lane>
 </bpmn:laneSet>
-<bpmn:startEvent id="Node_inicio" name="Inicio - paciente chega na portaria">
-<bpmn:outgoing>Flow_1</bpmn:outgoing>
+<bpmn:startEvent id="Id_8ce75007-f14a-49c9-89a0-3ff5a75fe0d3" name="Inicio - paciente chega na portaria">
+<bpmn:outgoing>Id_f9c68fbf-94a1-4ad5-b0aa-7843d40f4d78</bpmn:outgoing>
 </bpmn:startEvent>
-<bpmn:task id="Node_nome" name="Paciente informa o nome na portaria">
-<bpmn:incoming>Flow_1</bpmn:incoming>
-<bpmn:outgoing>Flow_2</bpmn:outgoing>
+<bpmn:task id="Id_be3ed8e5-4541-46c0-9cdd-10ab55914f84" name="Paciente chega encaminhado pelo call center / agendamento online">
+<bpmn:incoming>Id_f9c68fbf-94a1-4ad5-b0aa-7843d40f4d78</bpmn:incoming>
+<bpmn:outgoing>Id_c84a5140-4405-44c8-8649-aea4e4119eae</bpmn:outgoing>
 </bpmn:task>
-<bpmn:task id="Node_lanca" name="Porteiro lança o paciente no sistema (córnea) e o direciona para a recepção">
+<bpmn:task id="Id_196eb9d9-cd84-4498-96cd-93d9d08bf48f" name="Porteiro identifica o paciente no sistema (córnea) e o direciona para a recepção do primeiro andar">
 <bpmn:documentation>Segundo a entrevista, o porteiro lança o paciente para a córnea e o direciona para baixo, onde a recepção o chama.</bpmn:documentation>
-<bpmn:incoming>Flow_2</bpmn:incoming>
-<bpmn:outgoing>Flow_3</bpmn:outgoing>
+<bpmn:incoming>Id_c84a5140-4405-44c8-8649-aea4e4119eae</bpmn:incoming>
+<bpmn:outgoing>Id_8d39ba18-0349-4cc4-bace-31fca6d2c0c8</bpmn:outgoing>
 </bpmn:task>
-<bpmn:task id="Node_chama" name="Recepção chama o paciente">
-<bpmn:incoming>Flow_3</bpmn:incoming>
-<bpmn:outgoing>Flow_4</bpmn:outgoing>
+<bpmn:task id="Id_5375d9f9-bff7-4d93-898b-c159d6eb951d" name="Recepção recebe o paciente e confere: agendamento, documentos e convênio">
+<bpmn:incoming>Id_8d39ba18-0349-4cc4-bace-31fca6d2c0c8</bpmn:incoming>
+<bpmn:outgoing>Id_b332eaa4-6e82-40d9-932a-0f977e829738</bpmn:outgoing>
 </bpmn:task>
-<bpmn:task id="Node_ficha" name="Recepção faz a ficha do paciente">
-<bpmn:incoming>Flow_4</bpmn:incoming>
-<bpmn:outgoing>Flow_5</bpmn:outgoing>
+<bpmn:task id="Id_e7e075dc-af34-4a5b-b044-4c0fe4cb65c8" name="Recepção faz a ficha do paciente">
+<bpmn:incoming>Id_b332eaa4-6e82-40d9-932a-0f977e829738</bpmn:incoming>
+<bpmn:outgoing>Id_499473d5-89e6-4701-8317-006137cb51d0</bpmn:outgoing>
 </bpmn:task>
-<bpmn:task id="Node_recebe" name="Paciente leva a ficha e a equipe da córnea a recebe">
-<bpmn:documentation>Raia “Enfermeira” assumida a partir de “a gente faz o exame” na entrevista; confirmar o cargo de quem recebe a ficha e faz os exames.</bpmn:documentation>
-<bpmn:incoming>Flow_5</bpmn:incoming>
-<bpmn:outgoing>Flow_6</bpmn:outgoing>
+<bpmn:task id="Id_15a23bca-f26c-42ed-8503-84f2637de2b5" name="Paciente leva a ficha e a equipe da córnea a recebe">
+<bpmn:documentation>Raia renomeada de "Enfermeira" para "Técnicas da córnea": na transcrição, quem faz os exames são as técnicas do setor. Confirmar o cargo.</bpmn:documentation>
+<bpmn:incoming>Id_499473d5-89e6-4701-8317-006137cb51d0</bpmn:incoming>
+<bpmn:outgoing>Id_d79847a3-9b62-4500-82d1-74e31831bf55</bpmn:outgoing>
 </bpmn:task>
-<bpmn:exclusiveGateway id="Node_g_pedido" name="Paciente chegou com exames pedidos?">
-<bpmn:incoming>Flow_6</bpmn:incoming>
-<bpmn:outgoing>Flow_7</bpmn:outgoing>
-<bpmn:outgoing>Flow_8</bpmn:outgoing>
+<bpmn:exclusiveGateway id="Id_6ed81df5-be2b-4b11-b964-9ec101d93db1" name="Paciente chegou com exames pedidos?">
+<bpmn:incoming>Id_d79847a3-9b62-4500-82d1-74e31831bf55</bpmn:incoming>
+<bpmn:outgoing>Id_a76a5ff2-8b75-477a-90c5-b14c6cf4fa26</bpmn:outgoing>
+<bpmn:outgoing>Id_2db7f90e-5fd4-47e5-bc8c-85852509ebe8</bpmn:outgoing>
 </bpmn:exclusiveGateway>
-<bpmn:task id="Node_exames" name="Equipe faz os exames (microscopia, topografia, paquimetria, autorefrator e tonometria)">
-<bpmn:documentation>Lista citada na entrevista: microscopia, topografia, paquimetria (trecho pouco claro no áudio), autorefrator e tonometria. O pedido vem da última consulta ou do médico.</bpmn:documentation>
-<bpmn:incoming>Flow_7</bpmn:incoming>
-<bpmn:outgoing>Flow_9</bpmn:outgoing>
+<bpmn:task id="Id_47923264-4bce-4180-b652-3395be1094af" name="Equipe faz os exames (microscopia, topografia, paquimetria, autorrefração e tonometria)">
+<bpmn:documentation>Lista citada na entrevista: microscopia, topografia, paquimetria (trecho pouco claro no áudio), autorrefração e tonometria. O pedido vem da última consulta ou do médico.</bpmn:documentation>
+<bpmn:incoming>Id_a76a5ff2-8b75-477a-90c5-b14c6cf4fa26</bpmn:incoming>
+<bpmn:outgoing>Id_6b543700-94c2-4138-af1e-a8bcb1fc8cf8</bpmn:outgoing>
 </bpmn:task>
-<bpmn:exclusiveGateway id="Node_g_merge">
-<bpmn:incoming>Flow_8</bpmn:incoming>
-<bpmn:incoming>Flow_9</bpmn:incoming>
-<bpmn:outgoing>Flow_10</bpmn:outgoing>
+<bpmn:task id="Id_8123c7d8-bbe3-48b2-b3d4-b5f30b04e0f9" name="Entender o caso do paciente">
+<bpmn:incoming>Id_2db7f90e-5fd4-47e5-bc8c-85852509ebe8</bpmn:incoming>
+<bpmn:incoming>Id_6b543700-94c2-4138-af1e-a8bcb1fc8cf8</bpmn:incoming>
+<bpmn:outgoing>Id_47cec006-6c96-4dfe-9f68-2a92e4e603d7</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Id_27ceb70a-3709-4f4f-98b0-4c313d0f655f" name="Biomicroscopia (fundo de olho)">
+<bpmn:documentation>Biomicroscopia é o nome do exame (fundo de olho); lâmpada de fenda é o equipamento em que ele é feito.</bpmn:documentation>
+<bpmn:incoming>Id_47cec006-6c96-4dfe-9f68-2a92e4e603d7</bpmn:incoming>
+<bpmn:outgoing>Id_0234f522-f638-40b1-9a4a-bd2c3550ee7a</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Id_e1cfd6e6-6e06-4878-a8bf-4bb6644972f7" name="Medir o grau dos óculos do paciente">
+<bpmn:documentation>Executado em paralelo à biomicroscopia, a pedido do médico.</bpmn:documentation>
+<bpmn:incoming>Id_0234f522-f638-40b1-9a4a-bd2c3550ee7a</bpmn:incoming>
+<bpmn:outgoing>Id_e4d58d3b-e22d-4322-ac9a-b0459c53e36c</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Id_85cca87e-eba1-422d-818f-ea5c6e0c97c0" name="Exame de refração - máquina Grins">
+<bpmn:incoming>Id_e4d58d3b-e22d-4322-ac9a-b0459c53e36c</bpmn:incoming>
+<bpmn:outgoing>Id_3f4adf40-0bd9-4a70-a4a0-39032956e4dc</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Id_529dd5bb-292a-4b1a-844a-f688702c3160" name="Preenchimento do relatório">
+<bpmn:incoming>Id_3f4adf40-0bd9-4a70-a4a0-39032956e4dc</bpmn:incoming>
+<bpmn:outgoing>Id_f640d837-65a8-49f8-84a1-e927e0123f64</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Id_1f8d30f2-f09c-4229-9354-0c1c3b420900" name="Finaliza a consulta com diagnóstico do paciente, opções de tratamento, tratamento e conduta de acompanhamento (entrega a receita)">
+<bpmn:documentation>Conforme a transcrição: não usar "explicação do caso"; finalizar com diagnóstico, opções de tratamento, tratamento e conduta de acompanhamento. A entrega da receita (colírio) foi citada como etapa que faltava: confirmar.</bpmn:documentation>
+<bpmn:incoming>Id_f640d837-65a8-49f8-84a1-e927e0123f64</bpmn:incoming>
+<bpmn:outgoing>Id_c8d7103a-189b-457b-acc9-de02d9bad6f1</bpmn:outgoing>
+</bpmn:task>
+<bpmn:exclusiveGateway id="Id_90eb5a4c-2d4d-40a1-840a-48dd6ce7d77d" name="Encaminhamentos do médico?">
+<bpmn:incoming>Id_c8d7103a-189b-457b-acc9-de02d9bad6f1</bpmn:incoming>
+<bpmn:outgoing>Id_0f4fe1e8-f62c-4808-b3d9-809931977b1d</bpmn:outgoing>
+<bpmn:outgoing>Id_8bc19fa6-ead1-4257-81e2-6e2b1f61630e</bpmn:outgoing>
+<bpmn:outgoing>Id_0148ac9b-2dfb-4a95-baa9-359447f8c5b3</bpmn:outgoing>
+<bpmn:outgoing>Id_2d09f92d-69cf-4653-aef4-091f396aedfc</bpmn:outgoing>
 </bpmn:exclusiveGateway>
-<bpmn:task id="Node_entender" name="Entender o caso do paciente">
-<bpmn:incoming>Flow_10</bpmn:incoming>
-<bpmn:outgoing>Flow_11</bpmn:outgoing>
-</bpmn:task>
-<bpmn:task id="Node_fenda" name="Teste na lâmpada de fenda">
-<bpmn:incoming>Flow_11</bpmn:incoming>
-<bpmn:outgoing>Flow_12</bpmn:outgoing>
-</bpmn:task>
-<bpmn:task id="Node_grau" name="Medir o grau dos óculos do paciente">
-<bpmn:documentation>Executado em paralelo ao teste de lampada de fenda (T2), a pedido do medico.</bpmn:documentation>
-<bpmn:incoming>Flow_12</bpmn:incoming>
-<bpmn:outgoing>Flow_13</bpmn:outgoing>
-</bpmn:task>
-<bpmn:task id="Node_grins" name="Exame de refração - máquina Grins">
-<bpmn:incoming>Flow_13</bpmn:incoming>
-<bpmn:outgoing>Flow_14</bpmn:outgoing>
-</bpmn:task>
-<bpmn:task id="Node_relatorio" name="Preenchimento do relatório">
-<bpmn:incoming>Flow_14</bpmn:incoming>
-<bpmn:outgoing>Flow_15</bpmn:outgoing>
-</bpmn:task>
-<bpmn:task id="Node_entrega" name="Entrega de amostra de colírio, receita e explicação do caso">
-<bpmn:incoming>Flow_15</bpmn:incoming>
-<bpmn:outgoing>Flow_16</bpmn:outgoing>
-</bpmn:task>
-<bpmn:exclusiveGateway id="Node_g_agendar" name="Médico pediu para agendar?">
-<bpmn:incoming>Flow_16</bpmn:incoming>
-<bpmn:outgoing>Flow_17</bpmn:outgoing>
-<bpmn:outgoing>Flow_18</bpmn:outgoing>
-</bpmn:exclusiveGateway>
-<bpmn:endEvent id="Node_fim_casa" name="Fim - paciente vai embora">
-<bpmn:incoming>Flow_17</bpmn:incoming>
+<bpmn:endEvent id="Id_fe7ba47a-9e23-4cb1-aa23-f32d9dbeaebc" name="Fim - paciente vai embora">
+<bpmn:incoming>Id_0f4fe1e8-f62c-4808-b3d9-809931977b1d</bpmn:incoming>
 </bpmn:endEvent>
-<bpmn:task id="Node_sobe" name="Paciente sobe ao setor de marcação (2º andar, ao lado da lanchonete)">
-<bpmn:documentation>Na entrevista: antes o agendamento era feito na recepção; hoje a marcação fica no andar de cima, para tirar o gargalo de quem espera exame e de quem vai marcar.</bpmn:documentation>
-<bpmn:incoming>Flow_18</bpmn:incoming>
-<bpmn:outgoing>Flow_19</bpmn:outgoing>
+<bpmn:task id="Id_5a2de679-ab99-472c-911b-98c6545e00c0" name="Paciente volta na recepcionista da córnea para marcar a próxima consulta ou exame">
+<bpmn:incoming>Id_8bc19fa6-ead1-4257-81e2-6e2b1f61630e</bpmn:incoming>
+<bpmn:outgoing>Id_29a05867-66e3-42cf-9dfe-0aae5fa8d460</bpmn:outgoing>
 </bpmn:task>
-<bpmn:task id="Node_agenda" name="Marcação agenda o que o médico pediu">
-<bpmn:incoming>Flow_19</bpmn:incoming>
-<bpmn:outgoing>Flow_20</bpmn:outgoing>
-</bpmn:task>
-<bpmn:endEvent id="Node_fim_agenda" name="Fim - paciente agendado">
-<bpmn:incoming>Flow_20</bpmn:incoming>
+<bpmn:endEvent id="Id_a95e51b8-dd53-4ad4-bdb2-824136c281ed" name="Fim - paciente agendado">
+<bpmn:incoming>Id_29a05867-66e3-42cf-9dfe-0aae5fa8d460</bpmn:incoming>
 </bpmn:endEvent>
-<bpmn:sequenceFlow id="Flow_1" sourceRef="Node_inicio" targetRef="Node_nome" />
-<bpmn:sequenceFlow id="Flow_2" sourceRef="Node_nome" targetRef="Node_lanca" />
-<bpmn:sequenceFlow id="Flow_3" sourceRef="Node_lanca" targetRef="Node_chama" />
-<bpmn:sequenceFlow id="Flow_4" sourceRef="Node_chama" targetRef="Node_ficha" />
-<bpmn:sequenceFlow id="Flow_5" sourceRef="Node_ficha" targetRef="Node_recebe" />
-<bpmn:sequenceFlow id="Flow_6" sourceRef="Node_recebe" targetRef="Node_g_pedido" />
-<bpmn:sequenceFlow id="Flow_7" sourceRef="Node_g_pedido" targetRef="Node_exames" name="Sim" />
-<bpmn:sequenceFlow id="Flow_8" sourceRef="Node_g_pedido" targetRef="Node_g_merge" name="Não" />
-<bpmn:sequenceFlow id="Flow_9" sourceRef="Node_exames" targetRef="Node_g_merge" />
-<bpmn:sequenceFlow id="Flow_10" sourceRef="Node_g_merge" targetRef="Node_entender" />
-<bpmn:sequenceFlow id="Flow_11" sourceRef="Node_entender" targetRef="Node_fenda" />
-<bpmn:sequenceFlow id="Flow_12" sourceRef="Node_fenda" targetRef="Node_grau" />
-<bpmn:sequenceFlow id="Flow_13" sourceRef="Node_grau" targetRef="Node_grins" />
-<bpmn:sequenceFlow id="Flow_14" sourceRef="Node_grins" targetRef="Node_relatorio" />
-<bpmn:sequenceFlow id="Flow_15" sourceRef="Node_relatorio" targetRef="Node_entrega" />
-<bpmn:sequenceFlow id="Flow_16" sourceRef="Node_entrega" targetRef="Node_g_agendar" />
-<bpmn:sequenceFlow id="Flow_17" sourceRef="Node_g_agendar" targetRef="Node_fim_casa" name="Não" />
-<bpmn:sequenceFlow id="Flow_18" sourceRef="Node_g_agendar" targetRef="Node_sobe" name="Sim" />
-<bpmn:sequenceFlow id="Flow_19" sourceRef="Node_sobe" targetRef="Node_agenda" />
-<bpmn:sequenceFlow id="Flow_20" sourceRef="Node_agenda" targetRef="Node_fim_agenda" />
-<bpmn:textAnnotation id="Note_1605"><bpmn:text>Tempo registrado no desenho original, só da etapa de consulta (do início do atendimento à entrega): aprox. 16:05</bpmn:text></bpmn:textAnnotation>
-<bpmn:association id="Assoc_2" sourceRef="Note_1605" targetRef="Node_entrega" />
+<bpmn:task id="Id_70a2c40e-4d11-4b0b-8e60-a155be44dfbf" name="Paciente leva a guia de encaminhamento do médico e sobe ao 2º andar (consultoria cirúrgica)">
+<bpmn:documentation>Correção (transcrição): o paciente só sobe ao 2º andar quando tem cirurgia. Marcação de consulta e de exame é feita no mesmo andar, na recepção.</bpmn:documentation>
+<bpmn:incoming>Id_0148ac9b-2dfb-4a95-baa9-359447f8c5b3</bpmn:incoming>
+<bpmn:outgoing>Id_17cb720f-5526-4dc6-b86d-99fa57fdf925</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Id_f7a08030-d58d-48a9-b75b-7bf223b40199" name="Marcação de cirurgia agenda a cirurgia (a agenda do bloco é só da equipe da cirurgia)">
+<bpmn:incoming>Id_17cb720f-5526-4dc6-b86d-99fa57fdf925</bpmn:incoming>
+<bpmn:outgoing>Id_310ff1e9-19fd-47ac-9424-16829f543270</bpmn:outgoing>
+</bpmn:task>
+<bpmn:endEvent id="Id_ebd4e6a5-c4de-47b4-a12e-645ea1aedd3f" name="Fim - cirurgia agendada">
+<bpmn:incoming>Id_310ff1e9-19fd-47ac-9424-16829f543270</bpmn:incoming>
+</bpmn:endEvent>
+<bpmn:task id="Id_a6a76563-e9c1-4364-826f-0650899f236f" name="Setor de lente de contato faz o teste de lente no paciente">
+<bpmn:incoming>Id_2d09f92d-69cf-4653-aef4-091f396aedfc</bpmn:incoming>
+<bpmn:outgoing>Id_cbe6d0c5-a4d4-4e6a-9ff8-5bb47472a7b9</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Id_105f9eef-11e0-427b-833d-57a7fec4e623" name="Médico avalia o teste e faz o pedido da lente">
+<bpmn:incoming>Id_cbe6d0c5-a4d4-4e6a-9ff8-5bb47472a7b9</bpmn:incoming>
+<bpmn:outgoing>Id_570346a5-c6cb-437b-8a44-cb484109e78e</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Id_359d50c2-7889-43c5-99cd-3cb37bb14826" name="Setor de lente de contato faz o pedido e compra a lente">
+<bpmn:incoming>Id_570346a5-c6cb-437b-8a44-cb484109e78e</bpmn:incoming>
+<bpmn:outgoing>Id_665358ba-fe3a-40f2-8b01-95fd6f306df4</bpmn:outgoing>
+</bpmn:task>
+<bpmn:task id="Id_2fcd50ab-10b3-4427-8f50-8f9379b1a389" name="Paciente retorna, retira a lente e a coloca; se necessário, volta ao médico">
+<bpmn:incoming>Id_665358ba-fe3a-40f2-8b01-95fd6f306df4</bpmn:incoming>
+<bpmn:outgoing>Id_4d91c0c1-c01d-4cb4-9919-d92639afa6b8</bpmn:outgoing>
+</bpmn:task>
+<bpmn:endEvent id="Id_c746205b-5baf-40df-b5d0-8bdb875f131b" name="Fim - paciente com a lente">
+<bpmn:incoming>Id_4d91c0c1-c01d-4cb4-9919-d92639afa6b8</bpmn:incoming>
+</bpmn:endEvent>
+<bpmn:sequenceFlow id="Id_f9c68fbf-94a1-4ad5-b0aa-7843d40f4d78" sourceRef="Id_8ce75007-f14a-49c9-89a0-3ff5a75fe0d3" targetRef="Id_be3ed8e5-4541-46c0-9cdd-10ab55914f84" />
+<bpmn:sequenceFlow id="Id_c84a5140-4405-44c8-8649-aea4e4119eae" sourceRef="Id_be3ed8e5-4541-46c0-9cdd-10ab55914f84" targetRef="Id_196eb9d9-cd84-4498-96cd-93d9d08bf48f" />
+<bpmn:sequenceFlow id="Id_8d39ba18-0349-4cc4-bace-31fca6d2c0c8" sourceRef="Id_196eb9d9-cd84-4498-96cd-93d9d08bf48f" targetRef="Id_5375d9f9-bff7-4d93-898b-c159d6eb951d" />
+<bpmn:sequenceFlow id="Id_b332eaa4-6e82-40d9-932a-0f977e829738" sourceRef="Id_5375d9f9-bff7-4d93-898b-c159d6eb951d" targetRef="Id_e7e075dc-af34-4a5b-b044-4c0fe4cb65c8" />
+<bpmn:sequenceFlow id="Id_499473d5-89e6-4701-8317-006137cb51d0" sourceRef="Id_e7e075dc-af34-4a5b-b044-4c0fe4cb65c8" targetRef="Id_15a23bca-f26c-42ed-8503-84f2637de2b5" />
+<bpmn:sequenceFlow id="Id_d79847a3-9b62-4500-82d1-74e31831bf55" sourceRef="Id_15a23bca-f26c-42ed-8503-84f2637de2b5" targetRef="Id_6ed81df5-be2b-4b11-b964-9ec101d93db1" />
+<bpmn:sequenceFlow id="Id_a76a5ff2-8b75-477a-90c5-b14c6cf4fa26" sourceRef="Id_6ed81df5-be2b-4b11-b964-9ec101d93db1" targetRef="Id_47923264-4bce-4180-b652-3395be1094af" name="Sim" />
+<bpmn:sequenceFlow id="Id_2db7f90e-5fd4-47e5-bc8c-85852509ebe8" sourceRef="Id_6ed81df5-be2b-4b11-b964-9ec101d93db1" targetRef="Id_8123c7d8-bbe3-48b2-b3d4-b5f30b04e0f9" name="Não" />
+<bpmn:sequenceFlow id="Id_6b543700-94c2-4138-af1e-a8bcb1fc8cf8" sourceRef="Id_47923264-4bce-4180-b652-3395be1094af" targetRef="Id_8123c7d8-bbe3-48b2-b3d4-b5f30b04e0f9" />
+<bpmn:sequenceFlow id="Id_47cec006-6c96-4dfe-9f68-2a92e4e603d7" sourceRef="Id_8123c7d8-bbe3-48b2-b3d4-b5f30b04e0f9" targetRef="Id_27ceb70a-3709-4f4f-98b0-4c313d0f655f" />
+<bpmn:sequenceFlow id="Id_0234f522-f638-40b1-9a4a-bd2c3550ee7a" sourceRef="Id_27ceb70a-3709-4f4f-98b0-4c313d0f655f" targetRef="Id_e1cfd6e6-6e06-4878-a8bf-4bb6644972f7" />
+<bpmn:sequenceFlow id="Id_e4d58d3b-e22d-4322-ac9a-b0459c53e36c" sourceRef="Id_e1cfd6e6-6e06-4878-a8bf-4bb6644972f7" targetRef="Id_85cca87e-eba1-422d-818f-ea5c6e0c97c0" />
+<bpmn:sequenceFlow id="Id_3f4adf40-0bd9-4a70-a4a0-39032956e4dc" sourceRef="Id_85cca87e-eba1-422d-818f-ea5c6e0c97c0" targetRef="Id_529dd5bb-292a-4b1a-844a-f688702c3160" />
+<bpmn:sequenceFlow id="Id_f640d837-65a8-49f8-84a1-e927e0123f64" sourceRef="Id_529dd5bb-292a-4b1a-844a-f688702c3160" targetRef="Id_1f8d30f2-f09c-4229-9354-0c1c3b420900" />
+<bpmn:sequenceFlow id="Id_c8d7103a-189b-457b-acc9-de02d9bad6f1" sourceRef="Id_1f8d30f2-f09c-4229-9354-0c1c3b420900" targetRef="Id_90eb5a4c-2d4d-40a1-840a-48dd6ce7d77d" />
+<bpmn:sequenceFlow id="Id_0f4fe1e8-f62c-4808-b3d9-809931977b1d" sourceRef="Id_90eb5a4c-2d4d-40a1-840a-48dd6ce7d77d" targetRef="Id_fe7ba47a-9e23-4cb1-aa23-f32d9dbeaebc" name="Nenhum" />
+<bpmn:sequenceFlow id="Id_8bc19fa6-ead1-4257-81e2-6e2b1f61630e" sourceRef="Id_90eb5a4c-2d4d-40a1-840a-48dd6ce7d77d" targetRef="Id_5a2de679-ab99-472c-911b-98c6545e00c0" name="Retorno ou exame" />
+<bpmn:sequenceFlow id="Id_0148ac9b-2dfb-4a95-baa9-359447f8c5b3" sourceRef="Id_90eb5a4c-2d4d-40a1-840a-48dd6ce7d77d" targetRef="Id_70a2c40e-4d11-4b0b-8e60-a155be44dfbf" name="Cirurgia" />
+<bpmn:sequenceFlow id="Id_2d09f92d-69cf-4653-aef4-091f396aedfc" sourceRef="Id_90eb5a4c-2d4d-40a1-840a-48dd6ce7d77d" targetRef="Id_a6a76563-e9c1-4364-826f-0650899f236f" name="Lente de contato" />
+<bpmn:sequenceFlow id="Id_29a05867-66e3-42cf-9dfe-0aae5fa8d460" sourceRef="Id_5a2de679-ab99-472c-911b-98c6545e00c0" targetRef="Id_a95e51b8-dd53-4ad4-bdb2-824136c281ed" />
+<bpmn:sequenceFlow id="Id_17cb720f-5526-4dc6-b86d-99fa57fdf925" sourceRef="Id_70a2c40e-4d11-4b0b-8e60-a155be44dfbf" targetRef="Id_f7a08030-d58d-48a9-b75b-7bf223b40199" />
+<bpmn:sequenceFlow id="Id_310ff1e9-19fd-47ac-9424-16829f543270" sourceRef="Id_f7a08030-d58d-48a9-b75b-7bf223b40199" targetRef="Id_ebd4e6a5-c4de-47b4-a12e-645ea1aedd3f" />
+<bpmn:sequenceFlow id="Id_cbe6d0c5-a4d4-4e6a-9ff8-5bb47472a7b9" sourceRef="Id_a6a76563-e9c1-4364-826f-0650899f236f" targetRef="Id_105f9eef-11e0-427b-833d-57a7fec4e623" />
+<bpmn:sequenceFlow id="Id_570346a5-c6cb-437b-8a44-cb484109e78e" sourceRef="Id_105f9eef-11e0-427b-833d-57a7fec4e623" targetRef="Id_359d50c2-7889-43c5-99cd-3cb37bb14826" />
+<bpmn:sequenceFlow id="Id_665358ba-fe3a-40f2-8b01-95fd6f306df4" sourceRef="Id_359d50c2-7889-43c5-99cd-3cb37bb14826" targetRef="Id_2fcd50ab-10b3-4427-8f50-8f9379b1a389" />
+<bpmn:sequenceFlow id="Id_4d91c0c1-c01d-4cb4-9919-d92639afa6b8" sourceRef="Id_2fcd50ab-10b3-4427-8f50-8f9379b1a389" targetRef="Id_c746205b-5baf-40df-b5d0-8bdb875f131b" />
+<bpmn:textAnnotation id="Id_90805167-b4b0-442a-bed8-5c55bab8addf"><bpmn:text>Biomicroscopia = fundo de olho. A lâmpada de fenda é o equipamento onde o exame é feito.</bpmn:text></bpmn:textAnnotation>
+<bpmn:association id="Id_b8aba4f0-0810-45e5-9e5b-2030eed12687" sourceRef="Id_27ceb70a-3709-4f4f-98b0-4c313d0f655f" targetRef="Id_90805167-b4b0-442a-bed8-5c55bab8addf" />
 </bpmn:process>
 <bpmndi:BPMNDiagram id="Diagram_1"><bpmndi:BPMNPlane id="Plane_1" bpmnElement="Collab_1">
-<bpmndi:BPMNShape id="Pool_1_di" bpmnElement="Pool_1" isHorizontal="true"><dc:Bounds x="10" y="40" width="2528" height="850" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Lane_portaria_di" bpmnElement="Lane_portaria" isHorizontal="true"><dc:Bounds x="50" y="40" width="2448" height="170" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Lane_recepcao_di" bpmnElement="Lane_recepcao" isHorizontal="true"><dc:Bounds x="50" y="210" width="2448" height="170" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Lane_enfermeira_di" bpmnElement="Lane_enfermeira" isHorizontal="true"><dc:Bounds x="50" y="380" width="2448" height="170" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Lane_medico_di" bpmnElement="Lane_medico" isHorizontal="true"><dc:Bounds x="50" y="550" width="2448" height="170" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Lane_marcacao_di" bpmnElement="Lane_marcacao" isHorizontal="true"><dc:Bounds x="50" y="720" width="2448" height="170" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_inicio_di" bpmnElement="Node_inicio"><dc:Bounds x="122" y="107" width="36" height="36" /><bpmndi:BPMNLabel><dc:Bounds x="65" y="147" width="90" height="36" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_nome_di" bpmnElement="Node_nome"><dc:Bounds x="215" y="88" width="110" height="74" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_lanca_di" bpmnElement="Node_lanca"><dc:Bounds x="360" y="82" width="140" height="86" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_chama_di" bpmnElement="Node_chama"><dc:Bounds x="360" y="258" width="140" height="74" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_ficha_di" bpmnElement="Node_ficha"><dc:Bounds x="535" y="258" width="110" height="74" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_recebe_di" bpmnElement="Node_recebe"><dc:Bounds x="535" y="428" width="110" height="74" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_g_pedido_di" bpmnElement="Node_g_pedido" isMarkerVisible="true"><dc:Bounds x="705" y="440" width="50" height="50" /><bpmndi:BPMNLabel><dc:Bounds x="665" y="394" width="90" height="36" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_exames_di" bpmnElement="Node_exames"><dc:Bounds x="805" y="413" width="170" height="104" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_g_merge_di" bpmnElement="Node_g_merge" isMarkerVisible="true"><dc:Bounds x="1025" y="440" width="50" height="50" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_entender_di" bpmnElement="Node_entender"><dc:Bounds x="1135" y="598" width="110" height="74" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_fenda_di" bpmnElement="Node_fenda"><dc:Bounds x="1280" y="598" width="110" height="74" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_grau_di" bpmnElement="Node_grau"><dc:Bounds x="1425" y="598" width="110" height="74" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_grins_di" bpmnElement="Node_grins"><dc:Bounds x="1570" y="598" width="110" height="74" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_relatorio_di" bpmnElement="Node_relatorio"><dc:Bounds x="1715" y="598" width="110" height="74" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_entrega_di" bpmnElement="Node_entrega"><dc:Bounds x="1865" y="593" width="130" height="84" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_g_agendar_di" bpmnElement="Node_g_agendar" isMarkerVisible="true"><dc:Bounds x="2045" y="610" width="50" height="50" /><bpmndi:BPMNLabel><dc:Bounds x="2005" y="564" width="90" height="36" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_fim_casa_di" bpmnElement="Node_fim_casa"><dc:Bounds x="2172" y="617" width="36" height="36" /><bpmndi:BPMNLabel><dc:Bounds x="2115" y="657" width="90" height="36" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_sobe_di" bpmnElement="Node_sobe"><dc:Bounds x="2120" y="762" width="140" height="86" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_agenda_di" bpmnElement="Node_agenda"><dc:Bounds x="2305" y="768" width="110" height="74" /></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Node_fim_agenda_di" bpmnElement="Node_fim_agenda"><dc:Bounds x="2462" y="787" width="36" height="36" /><bpmndi:BPMNLabel><dc:Bounds x="2405" y="827" width="90" height="36" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="Note_1605_di" bpmnElement="Note_1605"><dc:Bounds x="1760" y="388" width="260" height="84" /></bpmndi:BPMNShape>
-<bpmndi:BPMNEdge id="Flow_1_di" bpmnElement="Flow_1">
-<di:waypoint x="158" y="125" />
-<di:waypoint x="215" y="125" />
+<bpmndi:BPMNShape id="Pool_1_di" bpmnElement="Pool_1" isHorizontal="true"><dc:Bounds x="10" y="80" width="3070" height="1020" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_6207a09a-a08f-4c60-af60-423c0f0b3ba0_di" bpmnElement="Id_6207a09a-a08f-4c60-af60-423c0f0b3ba0" isHorizontal="true"><dc:Bounds x="50" y="80" width="2950" height="170" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_ea5a175e-8671-4de1-b1be-fd6d26c245fb_di" bpmnElement="Id_ea5a175e-8671-4de1-b1be-fd6d26c245fb" isHorizontal="true"><dc:Bounds x="50" y="250" width="2950" height="170" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_69cbfb1a-ea4e-4167-9ded-5cd69b2bebf6_di" bpmnElement="Id_69cbfb1a-ea4e-4167-9ded-5cd69b2bebf6" isHorizontal="true"><dc:Bounds x="50" y="420" width="2950" height="170" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_a9eb32c2-c6a6-4cec-95ce-6524b89923ba_di" bpmnElement="Id_a9eb32c2-c6a6-4cec-95ce-6524b89923ba" isHorizontal="true"><dc:Bounds x="50" y="590" width="2950" height="170" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_1d7b6b85-734f-49e9-9a22-3540487f5bbf_di" bpmnElement="Id_1d7b6b85-734f-49e9-9a22-3540487f5bbf" isHorizontal="true"><dc:Bounds x="50" y="760" width="2950" height="170" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_c878253d-7287-409b-8219-96a8d6db2bd2_di" bpmnElement="Id_c878253d-7287-409b-8219-96a8d6db2bd2" isHorizontal="true"><dc:Bounds x="50" y="930" width="2950" height="170" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_8ce75007-f14a-49c9-89a0-3ff5a75fe0d3_di" bpmnElement="Id_8ce75007-f14a-49c9-89a0-3ff5a75fe0d3"><dc:Bounds x="162" y="147" width="36" height="36" /><bpmndi:BPMNLabel><dc:Bounds x="135" y="187" width="90" height="36" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_be3ed8e5-4541-46c0-9cdd-10ab55914f84_di" bpmnElement="Id_be3ed8e5-4541-46c0-9cdd-10ab55914f84"><dc:Bounds x="255" y="128" width="110" height="74" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_196eb9d9-cd84-4498-96cd-93d9d08bf48f_di" bpmnElement="Id_196eb9d9-cd84-4498-96cd-93d9d08bf48f"><dc:Bounds x="400" y="122" width="140" height="86" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_5375d9f9-bff7-4d93-898b-c159d6eb951d_di" bpmnElement="Id_5375d9f9-bff7-4d93-898b-c159d6eb951d"><dc:Bounds x="400" y="298" width="140" height="74" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_e7e075dc-af34-4a5b-b044-4c0fe4cb65c8_di" bpmnElement="Id_e7e075dc-af34-4a5b-b044-4c0fe4cb65c8"><dc:Bounds x="575" y="298" width="110" height="74" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_15a23bca-f26c-42ed-8503-84f2637de2b5_di" bpmnElement="Id_15a23bca-f26c-42ed-8503-84f2637de2b5"><dc:Bounds x="575" y="468" width="110" height="74" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_6ed81df5-be2b-4b11-b964-9ec101d93db1_di" bpmnElement="Id_6ed81df5-be2b-4b11-b964-9ec101d93db1" isMarkerVisible="true"><dc:Bounds x="745" y="480" width="50" height="50" /><bpmndi:BPMNLabel><dc:Bounds x="710" y="447" width="120" height="36" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_47923264-4bce-4180-b652-3395be1094af_di" bpmnElement="Id_47923264-4bce-4180-b652-3395be1094af"><dc:Bounds x="845" y="453" width="170" height="104" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_8123c7d8-bbe3-48b2-b3d4-b5f30b04e0f9_di" bpmnElement="Id_8123c7d8-bbe3-48b2-b3d4-b5f30b04e0f9"><dc:Bounds x="1175" y="638" width="110" height="74" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_27ceb70a-3709-4f4f-98b0-4c313d0f655f_di" bpmnElement="Id_27ceb70a-3709-4f4f-98b0-4c313d0f655f"><dc:Bounds x="1320" y="638" width="110" height="74" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_e1cfd6e6-6e06-4878-a8bf-4bb6644972f7_di" bpmnElement="Id_e1cfd6e6-6e06-4878-a8bf-4bb6644972f7"><dc:Bounds x="1465" y="638" width="110" height="74" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_85cca87e-eba1-422d-818f-ea5c6e0c97c0_di" bpmnElement="Id_85cca87e-eba1-422d-818f-ea5c6e0c97c0"><dc:Bounds x="1610" y="638" width="110" height="74" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_529dd5bb-292a-4b1a-844a-f688702c3160_di" bpmnElement="Id_529dd5bb-292a-4b1a-844a-f688702c3160"><dc:Bounds x="1755" y="638" width="110" height="74" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_1f8d30f2-f09c-4229-9354-0c1c3b420900_di" bpmnElement="Id_1f8d30f2-f09c-4229-9354-0c1c3b420900"><dc:Bounds x="1905" y="633" width="130" height="84" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_90eb5a4c-2d4d-40a1-840a-48dd6ce7d77d_di" bpmnElement="Id_90eb5a4c-2d4d-40a1-840a-48dd6ce7d77d" isMarkerVisible="true"><dc:Bounds x="2085" y="650" width="50" height="50" /><bpmndi:BPMNLabel><dc:Bounds x="2048" y="699" width="123" height="36" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_fe7ba47a-9e23-4cb1-aa23-f32d9dbeaebc_di" bpmnElement="Id_fe7ba47a-9e23-4cb1-aa23-f32d9dbeaebc"><dc:Bounds x="2212" y="657" width="36" height="36" /><bpmndi:BPMNLabel><dc:Bounds x="2185" y="697" width="90" height="36" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_5a2de679-ab99-472c-911b-98c6545e00c0_di" bpmnElement="Id_5a2de679-ab99-472c-911b-98c6545e00c0"><dc:Bounds x="2170" y="298" width="140" height="74" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_a95e51b8-dd53-4ad4-bdb2-824136c281ed_di" bpmnElement="Id_a95e51b8-dd53-4ad4-bdb2-824136c281ed"><dc:Bounds x="2402" y="317" width="36" height="36" /><bpmndi:BPMNLabel><dc:Bounds x="2375" y="357" width="90" height="36" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_70a2c40e-4d11-4b0b-8e60-a155be44dfbf_di" bpmnElement="Id_70a2c40e-4d11-4b0b-8e60-a155be44dfbf"><dc:Bounds x="2170" y="947" width="140" height="86" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_f7a08030-d58d-48a9-b75b-7bf223b40199_di" bpmnElement="Id_f7a08030-d58d-48a9-b75b-7bf223b40199"><dc:Bounds x="2355" y="953" width="110" height="74" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_ebd4e6a5-c4de-47b4-a12e-645ea1aedd3f_di" bpmnElement="Id_ebd4e6a5-c4de-47b4-a12e-645ea1aedd3f"><dc:Bounds x="2542" y="972" width="36" height="36" /><bpmndi:BPMNLabel><dc:Bounds x="2515" y="1012" width="90" height="36" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_a6a76563-e9c1-4364-826f-0650899f236f_di" bpmnElement="Id_a6a76563-e9c1-4364-826f-0650899f236f"><dc:Bounds x="2185" y="808" width="110" height="74" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_105f9eef-11e0-427b-833d-57a7fec4e623_di" bpmnElement="Id_105f9eef-11e0-427b-833d-57a7fec4e623"><dc:Bounds x="2385" y="638" width="110" height="74" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_359d50c2-7889-43c5-99cd-3cb37bb14826_di" bpmnElement="Id_359d50c2-7889-43c5-99cd-3cb37bb14826"><dc:Bounds x="2545" y="808" width="110" height="74" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_2fcd50ab-10b3-4427-8f50-8f9379b1a389_di" bpmnElement="Id_2fcd50ab-10b3-4427-8f50-8f9379b1a389"><dc:Bounds x="2685" y="808" width="130" height="74" /></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_c746205b-5baf-40df-b5d0-8bdb875f131b_di" bpmnElement="Id_c746205b-5baf-40df-b5d0-8bdb875f131b"><dc:Bounds x="2912" y="827" width="36" height="36" /><bpmndi:BPMNLabel><dc:Bounds x="2885" y="867" width="90" height="36" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Id_90805167-b4b0-442a-bed8-5c55bab8addf_di" bpmnElement="Id_90805167-b4b0-442a-bed8-5c55bab8addf"><dc:Bounds x="1280" y="528" width="190" height="60" /></bpmndi:BPMNShape>
+<bpmndi:BPMNEdge id="Id_f9c68fbf-94a1-4ad5-b0aa-7843d40f4d78_di" bpmnElement="Id_f9c68fbf-94a1-4ad5-b0aa-7843d40f4d78">
+<di:waypoint x="198" y="165" />
+<di:waypoint x="255" y="165" />
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="Flow_2_di" bpmnElement="Flow_2">
-<di:waypoint x="325" y="125" />
-<di:waypoint x="360" y="125" />
+<bpmndi:BPMNEdge id="Id_c84a5140-4405-44c8-8649-aea4e4119eae_di" bpmnElement="Id_c84a5140-4405-44c8-8649-aea4e4119eae">
+<di:waypoint x="365" y="165" />
+<di:waypoint x="400" y="165" />
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="Flow_3_di" bpmnElement="Flow_3">
-<di:waypoint x="430" y="168" />
-<di:waypoint x="430" y="258" />
+<bpmndi:BPMNEdge id="Id_8d39ba18-0349-4cc4-bace-31fca6d2c0c8_di" bpmnElement="Id_8d39ba18-0349-4cc4-bace-31fca6d2c0c8">
+<di:waypoint x="470" y="208" />
+<di:waypoint x="470" y="298" />
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="Flow_4_di" bpmnElement="Flow_4">
-<di:waypoint x="500" y="295" />
-<di:waypoint x="535" y="295" />
+<bpmndi:BPMNEdge id="Id_b332eaa4-6e82-40d9-932a-0f977e829738_di" bpmnElement="Id_b332eaa4-6e82-40d9-932a-0f977e829738">
+<di:waypoint x="540" y="335" />
+<di:waypoint x="575" y="335" />
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="Flow_5_di" bpmnElement="Flow_5">
-<di:waypoint x="590" y="332" />
-<di:waypoint x="590" y="428" />
+<bpmndi:BPMNEdge id="Id_499473d5-89e6-4701-8317-006137cb51d0_di" bpmnElement="Id_499473d5-89e6-4701-8317-006137cb51d0">
+<di:waypoint x="630" y="372" />
+<di:waypoint x="630" y="468" />
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="Flow_6_di" bpmnElement="Flow_6">
-<di:waypoint x="645" y="465" />
-<di:waypoint x="705" y="465" />
+<bpmndi:BPMNEdge id="Id_d79847a3-9b62-4500-82d1-74e31831bf55_di" bpmnElement="Id_d79847a3-9b62-4500-82d1-74e31831bf55">
+<di:waypoint x="685" y="505" />
+<di:waypoint x="745" y="505" />
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="Flow_7_di" bpmnElement="Flow_7">
-<di:waypoint x="755" y="465" />
-<di:waypoint x="805" y="465" />
+<bpmndi:BPMNEdge id="Id_a76a5ff2-8b75-477a-90c5-b14c6cf4fa26_di" bpmnElement="Id_a76a5ff2-8b75-477a-90c5-b14c6cf4fa26">
+<di:waypoint x="795" y="505" />
+<di:waypoint x="845" y="505" />
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="Flow_8_di" bpmnElement="Flow_8">
-<di:waypoint x="730" y="490" />
-<di:waypoint x="730" y="536" />
-<di:waypoint x="1050" y="536" />
-<di:waypoint x="1050" y="490" />
+<bpmndi:BPMNEdge id="Id_2db7f90e-5fd4-47e5-bc8c-85852509ebe8_di" bpmnElement="Id_2db7f90e-5fd4-47e5-bc8c-85852509ebe8">
+<di:waypoint x="770" y="530" />
+<di:waypoint x="770" y="675" />
+<di:waypoint x="1175" y="675" />
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="Flow_9_di" bpmnElement="Flow_9">
-<di:waypoint x="975" y="465" />
-<di:waypoint x="1025" y="465" />
+<bpmndi:BPMNEdge id="Id_6b543700-94c2-4138-af1e-a8bcb1fc8cf8_di" bpmnElement="Id_6b543700-94c2-4138-af1e-a8bcb1fc8cf8">
+<di:waypoint x="1015" y="505" />
+<di:waypoint x="1230" y="505" />
+<di:waypoint x="1230" y="638" />
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="Flow_10_di" bpmnElement="Flow_10">
-<di:waypoint x="1075" y="465" />
-<di:waypoint x="1120" y="465" />
-<di:waypoint x="1120" y="635" />
-<di:waypoint x="1135" y="635" />
+<bpmndi:BPMNEdge id="Id_47cec006-6c96-4dfe-9f68-2a92e4e603d7_di" bpmnElement="Id_47cec006-6c96-4dfe-9f68-2a92e4e603d7">
+<di:waypoint x="1285" y="675" />
+<di:waypoint x="1320" y="675" />
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="Flow_11_di" bpmnElement="Flow_11">
-<di:waypoint x="1245" y="635" />
-<di:waypoint x="1280" y="635" />
+<bpmndi:BPMNEdge id="Id_0234f522-f638-40b1-9a4a-bd2c3550ee7a_di" bpmnElement="Id_0234f522-f638-40b1-9a4a-bd2c3550ee7a">
+<di:waypoint x="1430" y="675" />
+<di:waypoint x="1465" y="675" />
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="Flow_12_di" bpmnElement="Flow_12">
-<di:waypoint x="1390" y="635" />
-<di:waypoint x="1425" y="635" />
+<bpmndi:BPMNEdge id="Id_e4d58d3b-e22d-4322-ac9a-b0459c53e36c_di" bpmnElement="Id_e4d58d3b-e22d-4322-ac9a-b0459c53e36c">
+<di:waypoint x="1575" y="675" />
+<di:waypoint x="1610" y="675" />
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="Flow_13_di" bpmnElement="Flow_13">
-<di:waypoint x="1535" y="635" />
-<di:waypoint x="1570" y="635" />
+<bpmndi:BPMNEdge id="Id_3f4adf40-0bd9-4a70-a4a0-39032956e4dc_di" bpmnElement="Id_3f4adf40-0bd9-4a70-a4a0-39032956e4dc">
+<di:waypoint x="1720" y="675" />
+<di:waypoint x="1755" y="675" />
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="Flow_14_di" bpmnElement="Flow_14">
-<di:waypoint x="1680" y="635" />
-<di:waypoint x="1715" y="635" />
+<bpmndi:BPMNEdge id="Id_f640d837-65a8-49f8-84a1-e927e0123f64_di" bpmnElement="Id_f640d837-65a8-49f8-84a1-e927e0123f64">
+<di:waypoint x="1865" y="675" />
+<di:waypoint x="1905" y="675" />
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="Flow_15_di" bpmnElement="Flow_15">
-<di:waypoint x="1825" y="635" />
-<di:waypoint x="1865" y="635" />
+<bpmndi:BPMNEdge id="Id_c8d7103a-189b-457b-acc9-de02d9bad6f1_di" bpmnElement="Id_c8d7103a-189b-457b-acc9-de02d9bad6f1">
+<di:waypoint x="2035" y="675" />
+<di:waypoint x="2085" y="675" />
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="Flow_16_di" bpmnElement="Flow_16">
-<di:waypoint x="1995" y="635" />
-<di:waypoint x="2045" y="635" />
+<bpmndi:BPMNEdge id="Id_0f4fe1e8-f62c-4808-b3d9-809931977b1d_di" bpmnElement="Id_0f4fe1e8-f62c-4808-b3d9-809931977b1d">
+<di:waypoint x="2135" y="675" />
+<di:waypoint x="2212" y="675" />
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="Flow_17_di" bpmnElement="Flow_17">
-<di:waypoint x="2095" y="635" />
-<di:waypoint x="2172" y="635" />
+<bpmndi:BPMNEdge id="Id_8bc19fa6-ead1-4257-81e2-6e2b1f61630e_di" bpmnElement="Id_8bc19fa6-ead1-4257-81e2-6e2b1f61630e">
+<di:waypoint x="2110" y="650" />
+<di:waypoint x="2110" y="335" />
+<di:waypoint x="2170" y="335" />
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="Flow_18_di" bpmnElement="Flow_18">
-<di:waypoint x="2070" y="660" />
-<di:waypoint x="2070" y="805" />
-<di:waypoint x="2120" y="805" />
+<bpmndi:BPMNEdge id="Id_0148ac9b-2dfb-4a95-baa9-359447f8c5b3_di" bpmnElement="Id_0148ac9b-2dfb-4a95-baa9-359447f8c5b3">
+<di:waypoint x="2110" y="700" />
+<di:waypoint x="2110" y="990" />
+<di:waypoint x="2170" y="990" />
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="Flow_19_di" bpmnElement="Flow_19">
-<di:waypoint x="2260" y="805" />
-<di:waypoint x="2305" y="805" />
+<bpmndi:BPMNEdge id="Id_2d09f92d-69cf-4653-aef4-091f396aedfc_di" bpmnElement="Id_2d09f92d-69cf-4653-aef4-091f396aedfc">
+<di:waypoint x="2110" y="700" />
+<di:waypoint x="2110" y="845" />
+<di:waypoint x="2185" y="845" />
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="Flow_20_di" bpmnElement="Flow_20">
-<di:waypoint x="2415" y="805" />
-<di:waypoint x="2462" y="805" />
+<bpmndi:BPMNEdge id="Id_29a05867-66e3-42cf-9dfe-0aae5fa8d460_di" bpmnElement="Id_29a05867-66e3-42cf-9dfe-0aae5fa8d460">
+<di:waypoint x="2310" y="335" />
+<di:waypoint x="2402" y="335" />
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="Assoc_2_di" bpmnElement="Assoc_2">
-<di:waypoint x="1930" y="472" />
-<di:waypoint x="1930" y="593" />
+<bpmndi:BPMNEdge id="Id_17cb720f-5526-4dc6-b86d-99fa57fdf925_di" bpmnElement="Id_17cb720f-5526-4dc6-b86d-99fa57fdf925">
+<di:waypoint x="2310" y="990" />
+<di:waypoint x="2355" y="990" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Id_310ff1e9-19fd-47ac-9424-16829f543270_di" bpmnElement="Id_310ff1e9-19fd-47ac-9424-16829f543270">
+<di:waypoint x="2465" y="990" />
+<di:waypoint x="2542" y="990" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Id_cbe6d0c5-a4d4-4e6a-9ff8-5bb47472a7b9_di" bpmnElement="Id_cbe6d0c5-a4d4-4e6a-9ff8-5bb47472a7b9">
+<di:waypoint x="2295" y="845" />
+<di:waypoint x="2440" y="845" />
+<di:waypoint x="2440" y="712" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Id_570346a5-c6cb-437b-8a44-cb484109e78e_di" bpmnElement="Id_570346a5-c6cb-437b-8a44-cb484109e78e">
+<di:waypoint x="2495" y="675" />
+<di:waypoint x="2600" y="675" />
+<di:waypoint x="2600" y="808" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Id_665358ba-fe3a-40f2-8b01-95fd6f306df4_di" bpmnElement="Id_665358ba-fe3a-40f2-8b01-95fd6f306df4">
+<di:waypoint x="2655" y="845" />
+<di:waypoint x="2685" y="845" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Id_4d91c0c1-c01d-4cb4-9919-d92639afa6b8_di" bpmnElement="Id_4d91c0c1-c01d-4cb4-9919-d92639afa6b8">
+<di:waypoint x="2815" y="845" />
+<di:waypoint x="2912" y="845" />
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Id_b8aba4f0-0810-45e5-9e5b-2030eed12687_di" bpmnElement="Id_b8aba4f0-0810-45e5-9e5b-2030eed12687">
+<di:waypoint x="1375" y="638" />
+<di:waypoint x="1375" y="588" />
 </bpmndi:BPMNEdge>
 </bpmndi:BPMNPlane></bpmndi:BPMNDiagram></bpmn:definitions>

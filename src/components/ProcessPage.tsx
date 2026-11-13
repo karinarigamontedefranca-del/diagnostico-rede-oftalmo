@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Dataset, JOURNEY, fmt } from '../lib/data'
+import { Dataset, JOURNEY, RETINA, fmt } from '../lib/data'
 import BpmnViewer from './BpmnViewer'
 import Measures from './Measures'
 
@@ -11,7 +11,7 @@ export default function ProcessPage({ data, id, step }: { data: Dataset; id: str
   useEffect(() => { if (step) setTimeout(() => document.getElementById('medicoes')?.scrollIntoView({ behavior: 'smooth' }), 250) }, [step, id])
   if (!p) return <main className="wrap" style={{ paddingTop: 140 }}><h2>Processo não encontrado</h2><a className="btn" href="#/">Voltar à visão geral</a></main>
   const steps = m.steps.filter((s) => s.link.process === p.id)
-  const journey = JOURNEY(steps)
+  const journey = [...JOURNEY(steps), ...RETINA(steps)]
   const prev = processes[idx - 1], next = processes[idx + 1]
   const tasks = p.nodes.filter((n) => n.kind === 'task')
   const all = journey.flatMap((s) => s.samples.map((x) => x.seconds))

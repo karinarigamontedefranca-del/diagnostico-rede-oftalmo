@@ -36,3 +36,6 @@ Logos em `public/logos/` (`skema-branca.png`, `skema.png`, `rede-oftalmo.png`); 
 
 ## v4.6
 Planilha `Medicoes_Rede_Oftalmo.xlsx` atualizada (1ºandar: 150 linhas). As colunas foram renomeadas para Recepção Glaucoma, Recepção Córnea e Recepção Retina (mesmas colunas de antes). Valores inválidos ficam listados na etapa: consulta de glaucoma de “1800:00” (linha 47) e duas paquimetrias com início = fim.
+
+## v4.7
+Fluxogramas novos em `source/` (`Glaucoma.bpmn`, `Cornea.bpmn`, `Retina.bpmn`; Teste de lente inalterado): Glaucoma 23 tarefas, Córnea 19, Retina 25 (agora com fluxograma próprio e percurso interativo; decisões “inclusivas” são tratadas como escolha de caminho). Planilha 3: nova etapa Córnea Consulta, OCT da Retina (2º andar), colunas do 1º andar deslocadas (OCT V–X, Paquimetria Y–AA, Campo visual AB–AD, Retinografia AE–AG, Recepção Córnea AH–AJ); tempos digitados como texto (“25:09”) são lidos. As ligações etapa↔tarefa estão em `LINK`/`RETLINK`/`CORLINK` no `build_data.py`.

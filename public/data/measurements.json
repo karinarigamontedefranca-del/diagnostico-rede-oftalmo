@@ -753,8 +753,8 @@
    "link": {
     "process": "glaucoma",
     "nodes": [
-     "Node_b1a6b13f",
-     "Node_030b3116"
+     "Id_688ca65d-b560-40a9-a344-a9e2f43b2c0f",
+     "Id_057e746d-f492-4d0c-9edd-7a6ed339fe3b"
     ],
     "confidence": "provável",
     "note": "A planilha mede “Recepção (Portaria)” como uma etapa única; no fluxograma ela corresponde às duas tarefas da entrada (Portaria e Recepção). O mesmo tempo é exibido nas duas, sem soma."
@@ -765,12 +765,12 @@
    "id": "atendimento-glaucoma",
    "label": "Recepção Glaucoma",
    "phase": "Chegada",
-   "n": 48,
-   "mean": 181.17,
-   "median": 142.5,
+   "n": 75,
+   "mean": 210.92,
+   "median": 147,
    "min": 37,
-   "max": 577,
-   "stdev": 120.77,
+   "max": 1113,
+   "stdev": 169.6,
    "samples": [
     {
      "row": 3,
@@ -1059,6 +1059,168 @@
      "obs": 48.0,
      "seconds": 147,
      "note": null
+    },
+    {
+     "row": 51,
+     "obs": 49.0,
+     "seconds": 143,
+     "note": null
+    },
+    {
+     "row": 52,
+     "obs": 50.0,
+     "seconds": 49,
+     "note": null
+    },
+    {
+     "row": 53,
+     "obs": 51.0,
+     "seconds": 423,
+     "note": null
+    },
+    {
+     "row": 54,
+     "obs": 52.0,
+     "seconds": 562,
+     "note": null
+    },
+    {
+     "row": 55,
+     "obs": 53.0,
+     "seconds": 144,
+     "note": null
+    },
+    {
+     "row": 56,
+     "obs": 54.0,
+     "seconds": 78,
+     "note": null
+    },
+    {
+     "row": 57,
+     "obs": 55.0,
+     "seconds": 216,
+     "note": null
+    },
+    {
+     "row": 58,
+     "obs": 56.0,
+     "seconds": 68,
+     "note": null
+    },
+    {
+     "row": 59,
+     "obs": 57.0,
+     "seconds": 216,
+     "note": null
+    },
+    {
+     "row": 60,
+     "obs": 58.0,
+     "seconds": 68,
+     "note": null
+    },
+    {
+     "row": 61,
+     "obs": 59.0,
+     "seconds": 1113,
+     "note": null
+    },
+    {
+     "row": 62,
+     "obs": 60.0,
+     "seconds": 226,
+     "note": null
+    },
+    {
+     "row": 63,
+     "obs": 61.0,
+     "seconds": 101,
+     "note": null
+    },
+    {
+     "row": 64,
+     "obs": 62.0,
+     "seconds": 145,
+     "note": null
+    },
+    {
+     "row": 65,
+     "obs": 63.0,
+     "seconds": 181,
+     "note": null
+    },
+    {
+     "row": 66,
+     "obs": 64.0,
+     "seconds": 574,
+     "note": null
+    },
+    {
+     "row": 67,
+     "obs": 65.0,
+     "seconds": 338,
+     "note": null
+    },
+    {
+     "row": 68,
+     "obs": 66.0,
+     "seconds": 116,
+     "note": null
+    },
+    {
+     "row": 69,
+     "obs": 67.0,
+     "seconds": 365,
+     "note": null
+    },
+    {
+     "row": 70,
+     "obs": 68.0,
+     "seconds": 257,
+     "note": null
+    },
+    {
+     "row": 71,
+     "obs": 69.0,
+     "seconds": 195,
+     "note": null
+    },
+    {
+     "row": 72,
+     "obs": 70.0,
+     "seconds": 420,
+     "note": null
+    },
+    {
+     "row": 73,
+     "obs": 71.0,
+     "seconds": 190,
+     "note": null
+    },
+    {
+     "row": 74,
+     "obs": 72.0,
+     "seconds": 449,
+     "note": null
+    },
+    {
+     "row": 75,
+     "obs": 73.0,
+     "seconds": 205,
+     "note": null
+    },
+    {
+     "row": 76,
+     "obs": 74.0,
+     "seconds": 59,
+     "note": null
+    },
+    {
+     "row": 77,
+     "obs": 75.0,
+     "seconds": 222,
+     "note": null
     }
    ],
    "excluded": [],
@@ -1067,9 +1229,11 @@
    "group": "principal",
    "link": {
     "process": "glaucoma",
-    "nodes": [],
-    "confidence": "sem etapa equivalente",
-    "note": "Não há tarefa com este nome no fluxograma; mantida apenas nos dados do processo."
+    "nodes": [
+     "Id_859fe7aa-43b3-4e9e-904a-99f70efd3d73"
+    ],
+    "confidence": "provável",
+    "note": "“Recepção Glaucoma” é o tempo na recepção do 1º andar, associado à abertura da ficha."
    },
    "process": "glaucoma"
   },
@@ -1247,10 +1411,11 @@
    "group": "principal",
    "link": {
     "process": "glaucoma",
-    "nodes": [],
-    "lane": "Lane_33ed1915",
-    "confidence": "raia",
-    "note": "O fluxograma não detalha este exame/etapa individualmente; a medição é associada à raia “Exames”."
+    "nodes": [
+     "Id_5bdd5a79-1a31-4e00-bbef-0e2a71aa2c61"
+    ],
+    "confidence": "provável",
+    "note": "A tarefa do fluxograma reúne os pré-exames (tonometria, autorrefração e microscopia); a planilha mede cada um separadamente."
    },
    "process": "glaucoma"
   },
@@ -1258,12 +1423,12 @@
    "id": "topografia",
    "label": "Topografia",
    "phase": "Exames",
-   "n": 29,
-   "mean": 326.62,
+   "n": 79,
+   "mean": 357.11,
    "median": 334,
    "min": 50,
    "max": 915,
-   "stdev": 191.73,
+   "stdev": 168.77,
    "samples": [
     {
      "row": 3,
@@ -1438,6 +1603,306 @@
      "obs": 29.0,
      "seconds": 334,
      "note": null
+    },
+    {
+     "row": 32,
+     "obs": 30.0,
+     "seconds": 570,
+     "note": null
+    },
+    {
+     "row": 33,
+     "obs": 31.0,
+     "seconds": 180,
+     "note": null
+    },
+    {
+     "row": 34,
+     "obs": 32.0,
+     "seconds": 240,
+     "note": null
+    },
+    {
+     "row": 35,
+     "obs": 33.0,
+     "seconds": 240,
+     "note": null
+    },
+    {
+     "row": 36,
+     "obs": 34.0,
+     "seconds": 300,
+     "note": null
+    },
+    {
+     "row": 37,
+     "obs": 35.0,
+     "seconds": 300,
+     "note": null
+    },
+    {
+     "row": 38,
+     "obs": 36.0,
+     "seconds": 300,
+     "note": null
+    },
+    {
+     "row": 39,
+     "obs": 37.0,
+     "seconds": 660,
+     "note": null
+    },
+    {
+     "row": 40,
+     "obs": 38.0,
+     "seconds": 180,
+     "note": null
+    },
+    {
+     "row": 41,
+     "obs": 39.0,
+     "seconds": 360,
+     "note": null
+    },
+    {
+     "row": 42,
+     "obs": 40.0,
+     "seconds": 540,
+     "note": null
+    },
+    {
+     "row": 43,
+     "obs": 41.0,
+     "seconds": 420,
+     "note": null
+    },
+    {
+     "row": 44,
+     "obs": 42.0,
+     "seconds": 360,
+     "note": null
+    },
+    {
+     "row": 45,
+     "obs": 43.0,
+     "seconds": 360,
+     "note": null
+    },
+    {
+     "row": 46,
+     "obs": 44.0,
+     "seconds": 240,
+     "note": null
+    },
+    {
+     "row": 47,
+     "obs": 45.0,
+     "seconds": 300,
+     "note": null
+    },
+    {
+     "row": 48,
+     "obs": 46.0,
+     "seconds": 360,
+     "note": null
+    },
+    {
+     "row": 49,
+     "obs": 47.0,
+     "seconds": 780,
+     "note": null
+    },
+    {
+     "row": 50,
+     "obs": 48.0,
+     "seconds": 240,
+     "note": null
+    },
+    {
+     "row": 51,
+     "obs": 49.0,
+     "seconds": 420,
+     "note": null
+    },
+    {
+     "row": 52,
+     "obs": 50.0,
+     "seconds": 240,
+     "note": null
+    },
+    {
+     "row": 53,
+     "obs": 51.0,
+     "seconds": 300,
+     "note": null
+    },
+    {
+     "row": 54,
+     "obs": 52.0,
+     "seconds": 240,
+     "note": null
+    },
+    {
+     "row": 55,
+     "obs": 53.0,
+     "seconds": 300,
+     "note": null
+    },
+    {
+     "row": 56,
+     "obs": 54.0,
+     "seconds": 420,
+     "note": null
+    },
+    {
+     "row": 57,
+     "obs": 55.0,
+     "seconds": 360,
+     "note": null
+    },
+    {
+     "row": 58,
+     "obs": 56.0,
+     "seconds": 360,
+     "note": null
+    },
+    {
+     "row": 59,
+     "obs": 57.0,
+     "seconds": 420,
+     "note": null
+    },
+    {
+     "row": 60,
+     "obs": 58.0,
+     "seconds": 240,
+     "note": null
+    },
+    {
+     "row": 61,
+     "obs": 59.0,
+     "seconds": 300,
+     "note": null
+    },
+    {
+     "row": 62,
+     "obs": 60.0,
+     "seconds": 240,
+     "note": null
+    },
+    {
+     "row": 63,
+     "obs": 61.0,
+     "seconds": 300,
+     "note": null
+    },
+    {
+     "row": 64,
+     "obs": 62.0,
+     "seconds": 600,
+     "note": null
+    },
+    {
+     "row": 65,
+     "obs": 63.0,
+     "seconds": 900,
+     "note": null
+    },
+    {
+     "row": 66,
+     "obs": 64.0,
+     "seconds": 240,
+     "note": null
+    },
+    {
+     "row": 67,
+     "obs": 65.0,
+     "seconds": 240,
+     "note": null
+    },
+    {
+     "row": 68,
+     "obs": 66.0,
+     "seconds": 300,
+     "note": null
+    },
+    {
+     "row": 69,
+     "obs": 67.0,
+     "seconds": 360,
+     "note": null
+    },
+    {
+     "row": 70,
+     "obs": 68.0,
+     "seconds": 420,
+     "note": null
+    },
+    {
+     "row": 71,
+     "obs": 69.0,
+     "seconds": 600,
+     "note": null
+    },
+    {
+     "row": 72,
+     "obs": 70.0,
+     "seconds": 300,
+     "note": null
+    },
+    {
+     "row": 73,
+     "obs": 71.0,
+     "seconds": 600,
+     "note": null
+    },
+    {
+     "row": 74,
+     "obs": 72.0,
+     "seconds": 300,
+     "note": null
+    },
+    {
+     "row": 75,
+     "obs": 73.0,
+     "seconds": 240,
+     "note": null
+    },
+    {
+     "row": 76,
+     "obs": 74.0,
+     "seconds": 240,
+     "note": null
+    },
+    {
+     "row": 77,
+     "obs": 75.0,
+     "seconds": 480,
+     "note": null
+    },
+    {
+     "row": 78,
+     "obs": 76.0,
+     "seconds": 450,
+     "note": null
+    },
+    {
+     "row": 79,
+     "obs": 77.0,
+     "seconds": 495,
+     "note": null
+    },
+    {
+     "row": 80,
+     "obs": 78.0,
+     "seconds": 465,
+     "note": null
+    },
+    {
+     "row": 81,
+     "obs": 79.0,
+     "seconds": 440,
+     "note": null
     }
    ],
    "excluded": [],
@@ -1447,9 +1912,9 @@
    "link": {
     "process": "glaucoma",
     "nodes": [],
-    "lane": "Lane_33ed1915",
+    "lane": "Id_ddf0e9f8-6753-4d3b-a4da-15b5449a5e9c",
     "confidence": "raia",
-    "note": "O fluxograma não detalha este exame/etapa individualmente; a medição é associada à raia “Exames”."
+    "note": "O fluxograma não detalha este exame individualmente; a medição é associada à raia “Exames”."
    },
    "process": "glaucoma"
   },
@@ -2102,10 +2567,10 @@
    "link": {
     "process": "glaucoma",
     "nodes": [
-     "Node_f3e97cd1"
+     "Id_5bdd5a79-1a31-4e00-bbef-0e2a71aa2c61"
     ],
     "confidence": "provável",
-    "note": "A tarefa do fluxograma une “mapeamento de retina e tonometria”; a planilha mede a tonometria de sopro separadamente."
+    "note": "A tarefa do fluxograma reúne os pré-exames (tonometria, autorrefração e microscopia); a planilha mede cada um separadamente."
    },
    "process": "glaucoma"
   },
@@ -2752,7 +3217,7 @@
    "link": {
     "process": "glaucoma",
     "nodes": [
-     "Node_e858f5cb"
+     "Id_03ffb9df-44f5-43ca-878f-3525b0496817"
     ],
     "confidence": "provável",
     "note": "O auto refrator é o equipamento da etapa de refração."
@@ -2763,12 +3228,12 @@
    "id": "glaucoma-consulta",
    "label": "Glaucoma Consulta",
    "phase": "Consulta",
-   "n": 46,
-   "mean": 592.48,
-   "median": 582.0,
+   "n": 65,
+   "mean": 574.02,
+   "median": 514,
    "min": 142,
    "max": 1490,
-   "stdev": 293.82,
+   "stdev": 283.09,
    "samples": [
     {
      "row": 3,
@@ -3045,6 +3510,120 @@
      "obs": 47.0,
      "seconds": 712,
      "note": null
+    },
+    {
+     "row": 50,
+     "obs": 48.0,
+     "seconds": 377,
+     "note": "Leandro Malta"
+    },
+    {
+     "row": 51,
+     "obs": 49.0,
+     "seconds": 291,
+     "note": "Leandro Malta"
+    },
+    {
+     "row": 52,
+     "obs": 50.0,
+     "seconds": 317,
+     "note": "Leandro Malta"
+    },
+    {
+     "row": 53,
+     "obs": 51.0,
+     "seconds": 403,
+     "note": "Leandro Malta"
+    },
+    {
+     "row": 54,
+     "obs": 52.0,
+     "seconds": 638,
+     "note": "Leandro Malta"
+    },
+    {
+     "row": 55,
+     "obs": 53.0,
+     "seconds": 228,
+     "note": "Leandro Malta"
+    },
+    {
+     "row": 56,
+     "obs": 54.0,
+     "seconds": 789,
+     "note": "Daniela Faria"
+    },
+    {
+     "row": 57,
+     "obs": 55.0,
+     "seconds": 499,
+     "note": "Daniela Faria"
+    },
+    {
+     "row": 58,
+     "obs": 56.0,
+     "seconds": 753,
+     "note": "Daniela Faria"
+    },
+    {
+     "row": 59,
+     "obs": 57.0,
+     "seconds": 818,
+     "note": "Daniela Faria"
+    },
+    {
+     "row": 60,
+     "obs": 58.0,
+     "seconds": 415,
+     "note": "Daniela Faria"
+    },
+    {
+     "row": 61,
+     "obs": 59.0,
+     "seconds": 1137,
+     "note": "Daniela Faria"
+    },
+    {
+     "row": 62,
+     "obs": 60.0,
+     "seconds": 434,
+     "note": "Clarice Dayrell"
+    },
+    {
+     "row": 63,
+     "obs": 61.0,
+     "seconds": 263,
+     "note": "Clarice Dayrell"
+    },
+    {
+     "row": 64,
+     "obs": 62.0,
+     "seconds": 446,
+     "note": "Clarice Dayrell"
+    },
+    {
+     "row": 65,
+     "obs": 63.0,
+     "seconds": 347,
+     "note": "Clarice Dayrell"
+    },
+    {
+     "row": 66,
+     "obs": 64.0,
+     "seconds": 318,
+     "note": "Clarice Dayrell"
+    },
+    {
+     "row": 67,
+     "obs": 65.0,
+     "seconds": 619,
+     "note": "Clarice Dayrell"
+    },
+    {
+     "row": 68,
+     "obs": 66.0,
+     "seconds": 965,
+     "note": "Clarice Dayrell"
     }
    ],
    "excluded": [
@@ -3060,11 +3639,78 @@
    "link": {
     "process": "glaucoma",
     "nodes": [],
-    "lane": "Lane_33ed1915",
+    "lane": "Id_1c732e4a-9f54-4fa9-8d5f-bb048ad78a43",
     "confidence": "raia",
-    "note": "O fluxograma não detalha este exame/etapa individualmente; a medição é associada à raia “Exames”."
+    "note": "A consulta é associada à raia “Consultório médico”."
    },
    "process": "glaucoma"
+  },
+  {
+   "id": "cornea-consulta",
+   "label": "Córnea Consulta",
+   "phase": "Consulta",
+   "n": 7,
+   "mean": 807.57,
+   "median": 718,
+   "min": 294,
+   "max": 1509,
+   "stdev": 394.63,
+   "samples": [
+    {
+     "row": 3,
+     "obs": null,
+     "seconds": 579,
+     "note": "Cristiana Campos"
+    },
+    {
+     "row": 4,
+     "obs": null,
+     "seconds": 294,
+     "note": "Cristiana Campos"
+    },
+    {
+     "row": 5,
+     "obs": null,
+     "seconds": 583,
+     "note": "Cristiana Campos"
+    },
+    {
+     "row": 6,
+     "obs": null,
+     "seconds": 1509,
+     "note": "Cristiana Campos"
+    },
+    {
+     "row": 7,
+     "obs": null,
+     "seconds": 1035,
+     "note": "Carlos Gustavo"
+    },
+    {
+     "row": 8,
+     "obs": null,
+     "seconds": 718,
+     "note": "Rafael Canhestro"
+    },
+    {
+     "row": 9,
+     "obs": null,
+     "seconds": 935,
+     "note": "Rafael Canhestro"
+    }
+   ],
+   "excluded": [],
+   "source": "Colunas S–T",
+   "kind": "cronometrado",
+   "group": "principal",
+   "link": {
+    "process": "exame-de-cornea",
+    "nodes": [],
+    "lane": "Id_a9eb32c2-c6a6-4cec-95ce-6524b89923ba",
+    "confidence": "raia",
+    "note": "A planilha mede a consulta da córnea como um bloco; no fluxograma ela corresponde à raia do médico. Associação por raia."
+   },
+   "process": "exame-de-cornea"
   },
   {
    "id": "campo-visual",
@@ -4276,15 +4922,16 @@
     }
    ],
    "excluded": [],
-   "source": "Colunas Y–AA",
+   "source": "Colunas AB–AD",
    "kind": "cronometrado / início-fim",
    "group": "principal",
    "link": {
     "process": "glaucoma",
-    "nodes": [],
-    "lane": "Lane_33ed1915",
-    "confidence": "raia",
-    "note": "O fluxograma não detalha este exame/etapa individualmente; a medição é associada à raia “Exames”."
+    "nodes": [
+     "Id_7406ae74-4380-451d-88ee-30a905b146fc"
+    ],
+    "confidence": "provável",
+    "note": "Exame obrigatório do glaucoma; o fluxograma reúne todos na mesma tarefa e a planilha mede cada um separadamente."
    },
    "process": "glaucoma"
   },
@@ -5365,15 +6012,16 @@
     }
    ],
    "excluded": [],
-   "source": "Colunas S–U",
+   "source": "Colunas V–X",
    "kind": "início / fim",
    "group": "principal",
    "link": {
     "process": "glaucoma",
-    "nodes": [],
-    "lane": "Lane_33ed1915",
-    "confidence": "raia",
-    "note": "O fluxograma não detalha este exame/etapa individualmente; a medição é associada à raia “Exames”."
+    "nodes": [
+     "Id_7406ae74-4380-451d-88ee-30a905b146fc"
+    ],
+    "confidence": "provável",
+    "note": "Exame obrigatório do glaucoma; o fluxograma reúne todos na mesma tarefa e a planilha mede cada um separadamente."
    },
    "process": "glaucoma"
   },
@@ -5985,15 +6633,16 @@
      "reason": "início e fim iguais (duração 0 s); não é uma medição válida"
     }
    ],
-   "source": "Colunas V–X",
+   "source": "Colunas Y–AA",
    "kind": "início / fim",
    "group": "principal",
    "link": {
     "process": "glaucoma",
-    "nodes": [],
-    "lane": "Lane_33ed1915",
-    "confidence": "raia",
-    "note": "O fluxograma não detalha este exame/etapa individualmente; a medição é associada à raia “Exames”."
+    "nodes": [
+     "Id_7406ae74-4380-451d-88ee-30a905b146fc"
+    ],
+    "confidence": "provável",
+    "note": "Exame obrigatório do glaucoma; o fluxograma reúne todos na mesma tarefa e a planilha mede cada um separadamente."
    },
    "process": "glaucoma"
   },
@@ -7058,29 +7707,463 @@
     }
    ],
    "excluded": [],
-   "source": "Colunas AB–AD",
+   "source": "Colunas AE–AG",
    "kind": "início / fim",
    "group": "principal",
    "link": {
     "process": "glaucoma",
     "nodes": [
-     "Node_f3e97cd1"
+     "Id_7406ae74-4380-451d-88ee-30a905b146fc"
     ],
     "confidence": "provável",
-    "note": "A tarefa do fluxograma une “mapeamento de retina e tonometria”; a planilha mede a retinografia separadamente."
+    "note": "Exame obrigatório do glaucoma; o fluxograma reúne todos na mesma tarefa e a planilha mede cada um separadamente."
    },
    "process": "glaucoma"
+  },
+  {
+   "id": "oct-retina",
+   "label": "OCT (Retina)",
+   "phase": "Retina",
+   "n": 51,
+   "mean": 184.71,
+   "median": 180,
+   "min": 60,
+   "max": 540,
+   "stdev": 98.11,
+   "samples": [
+    {
+     "row": 3,
+     "obs": null,
+     "seconds": 120,
+     "start": "07:34",
+     "end": "07:36",
+     "note": null
+    },
+    {
+     "row": 4,
+     "obs": null,
+     "seconds": 300,
+     "start": "07:53",
+     "end": "07:58",
+     "note": null
+    },
+    {
+     "row": 5,
+     "obs": null,
+     "seconds": 300,
+     "start": "08:37",
+     "end": "08:42",
+     "note": null
+    },
+    {
+     "row": 6,
+     "obs": null,
+     "seconds": 240,
+     "start": "08:49",
+     "end": "08:53",
+     "note": null
+    },
+    {
+     "row": 7,
+     "obs": null,
+     "seconds": 180,
+     "start": "09:20",
+     "end": "09:23",
+     "note": null
+    },
+    {
+     "row": 8,
+     "obs": null,
+     "seconds": 120,
+     "start": "09:25",
+     "end": "09:27",
+     "note": null
+    },
+    {
+     "row": 9,
+     "obs": null,
+     "seconds": 540,
+     "start": "09:31",
+     "end": "09:40",
+     "note": null
+    },
+    {
+     "row": 10,
+     "obs": null,
+     "seconds": 180,
+     "start": "10:02",
+     "end": "10:05",
+     "note": null
+    },
+    {
+     "row": 11,
+     "obs": null,
+     "seconds": 120,
+     "start": "11:18",
+     "end": "11:20",
+     "note": null
+    },
+    {
+     "row": 12,
+     "obs": null,
+     "seconds": 120,
+     "start": "13:23",
+     "end": "13:25",
+     "note": null
+    },
+    {
+     "row": 13,
+     "obs": null,
+     "seconds": 180,
+     "start": "13:57",
+     "end": "14:00",
+     "note": null
+    },
+    {
+     "row": 14,
+     "obs": null,
+     "seconds": 120,
+     "start": "14:30",
+     "end": "14:32",
+     "note": null
+    },
+    {
+     "row": 15,
+     "obs": null,
+     "seconds": 180,
+     "start": "14:34",
+     "end": "14:37",
+     "note": null
+    },
+    {
+     "row": 16,
+     "obs": null,
+     "seconds": 180,
+     "start": "15:07",
+     "end": "15:10",
+     "note": null
+    },
+    {
+     "row": 17,
+     "obs": null,
+     "seconds": 360,
+     "start": "15:20",
+     "end": "15:26",
+     "note": null
+    },
+    {
+     "row": 18,
+     "obs": null,
+     "seconds": 420,
+     "start": "15:28",
+     "end": "15:35",
+     "note": null
+    },
+    {
+     "row": 19,
+     "obs": null,
+     "seconds": 360,
+     "start": "15:44",
+     "end": "15:50",
+     "note": null
+    },
+    {
+     "row": 20,
+     "obs": null,
+     "seconds": 180,
+     "start": "07:33",
+     "end": "07:36",
+     "note": null
+    },
+    {
+     "row": 21,
+     "obs": null,
+     "seconds": 180,
+     "start": "07:37",
+     "end": "07:40",
+     "note": null
+    },
+    {
+     "row": 22,
+     "obs": null,
+     "seconds": 120,
+     "start": "07:42",
+     "end": "07:44",
+     "note": null
+    },
+    {
+     "row": 23,
+     "obs": null,
+     "seconds": 120,
+     "start": "08:27",
+     "end": "08:29",
+     "note": null
+    },
+    {
+     "row": 24,
+     "obs": null,
+     "seconds": 180,
+     "start": "08:30",
+     "end": "08:33",
+     "note": null
+    },
+    {
+     "row": 25,
+     "obs": null,
+     "seconds": 120,
+     "start": "08:36",
+     "end": "08:38",
+     "note": null
+    },
+    {
+     "row": 26,
+     "obs": null,
+     "seconds": 120,
+     "start": "09:59",
+     "end": "10:01",
+     "note": null
+    },
+    {
+     "row": 27,
+     "obs": null,
+     "seconds": 120,
+     "start": "10:12",
+     "end": "10:14",
+     "note": null
+    },
+    {
+     "row": 28,
+     "obs": null,
+     "seconds": 240,
+     "start": "12:00",
+     "end": "12:04",
+     "note": null
+    },
+    {
+     "row": 29,
+     "obs": null,
+     "seconds": 180,
+     "start": "12:06",
+     "end": "12:09",
+     "note": null
+    },
+    {
+     "row": 30,
+     "obs": null,
+     "seconds": 180,
+     "start": "12:10",
+     "end": "12:13",
+     "note": null
+    },
+    {
+     "row": 31,
+     "obs": null,
+     "seconds": 360,
+     "start": "14:00",
+     "end": "14:06",
+     "note": null
+    },
+    {
+     "row": 32,
+     "obs": null,
+     "seconds": 420,
+     "start": "14:08",
+     "end": "14:15",
+     "note": null
+    },
+    {
+     "row": 33,
+     "obs": null,
+     "seconds": 180,
+     "start": "14:26",
+     "end": "14:29",
+     "note": null
+    },
+    {
+     "row": 34,
+     "obs": null,
+     "seconds": 180,
+     "start": "14:39",
+     "end": "14:42",
+     "note": null
+    },
+    {
+     "row": 35,
+     "obs": null,
+     "seconds": 60,
+     "start": "14:52",
+     "end": "14:53",
+     "note": null
+    },
+    {
+     "row": 36,
+     "obs": null,
+     "seconds": 120,
+     "start": "15:02",
+     "end": "15:04",
+     "note": null
+    },
+    {
+     "row": 37,
+     "obs": null,
+     "seconds": 120,
+     "start": "15:04",
+     "end": "15:06",
+     "note": null
+    },
+    {
+     "row": 38,
+     "obs": null,
+     "seconds": 120,
+     "start": "15:23",
+     "end": "15:25",
+     "note": null
+    },
+    {
+     "row": 39,
+     "obs": null,
+     "seconds": 120,
+     "start": "15:25",
+     "end": "15:27",
+     "note": null
+    },
+    {
+     "row": 40,
+     "obs": null,
+     "seconds": 120,
+     "start": "15:40",
+     "end": "15:42",
+     "note": null
+    },
+    {
+     "row": 41,
+     "obs": null,
+     "seconds": 120,
+     "start": "15:50",
+     "end": "15:52",
+     "note": null
+    },
+    {
+     "row": 42,
+     "obs": null,
+     "seconds": 120,
+     "start": "16:35",
+     "end": "16:37",
+     "note": null
+    },
+    {
+     "row": 43,
+     "obs": null,
+     "seconds": 120,
+     "start": "16:40",
+     "end": "16:42",
+     "note": null
+    },
+    {
+     "row": 44,
+     "obs": null,
+     "seconds": 120,
+     "start": "16:43",
+     "end": "16:45",
+     "note": null
+    },
+    {
+     "row": 45,
+     "obs": null,
+     "seconds": 120,
+     "start": "16:46",
+     "end": "16:48",
+     "note": null
+    },
+    {
+     "row": 46,
+     "obs": null,
+     "seconds": 180,
+     "start": "16:49",
+     "end": "16:52",
+     "note": null
+    },
+    {
+     "row": 47,
+     "obs": null,
+     "seconds": 240,
+     "start": "07:36",
+     "end": "07:40",
+     "note": null
+    },
+    {
+     "row": 48,
+     "obs": null,
+     "seconds": 120,
+     "start": "07:51",
+     "end": "07:53",
+     "note": null
+    },
+    {
+     "row": 49,
+     "obs": null,
+     "seconds": 120,
+     "start": "08:32",
+     "end": "08:34",
+     "note": null
+    },
+    {
+     "row": 50,
+     "obs": null,
+     "seconds": 120,
+     "start": "09:04",
+     "end": "09:06",
+     "note": null
+    },
+    {
+     "row": 51,
+     "obs": null,
+     "seconds": 180,
+     "start": "09:58",
+     "end": "10:01",
+     "note": null
+    },
+    {
+     "row": 52,
+     "obs": null,
+     "seconds": 180,
+     "start": "10:28",
+     "end": "10:31",
+     "note": null
+    },
+    {
+     "row": 53,
+     "obs": null,
+     "seconds": 120,
+     "start": "10:33",
+     "end": "10:35",
+     "note": null
+    }
+   ],
+   "excluded": [],
+   "source": "Colunas S–T",
+   "kind": "início / fim",
+   "group": "retina",
+   "link": {
+    "process": "retina",
+    "nodes": [
+     "Id_45eaca1e-c30c-444c-a211-534b9649e813"
+    ],
+    "confidence": "provável",
+    "note": "O OCT é um dos exames do pedido feitos pelas técnicas."
+   },
+   "process": "retina"
   },
   {
    "id": "atendimento-cornea",
    "label": "Recepção Córnea",
    "phase": "Córnea",
-   "n": 75,
-   "mean": 278.99,
-   "median": 217,
+   "n": 99,
+   "mean": 279.58,
+   "median": 202,
    "min": 60,
    "max": 1263,
-   "stdev": 216.6,
+   "stdev": 224.71,
    "samples": [
     {
      "row": 3,
@@ -7629,18 +8712,167 @@
      "obs": 75.0,
      "seconds": 342,
      "note": null
+    },
+    {
+     "row": 78,
+     "obs": 76.0,
+     "seconds": 106,
+     "note": null
+    },
+    {
+     "row": 79,
+     "obs": 77.0,
+     "seconds": 141,
+     "note": null
+    },
+    {
+     "row": 80,
+     "obs": 78.0,
+     "seconds": 90,
+     "note": null
+    },
+    {
+     "row": 81,
+     "obs": 79.0,
+     "seconds": 889,
+     "note": null
+    },
+    {
+     "row": 82,
+     "obs": 80.0,
+     "seconds": 250,
+     "note": null
+    },
+    {
+     "row": 83,
+     "obs": 81.0,
+     "seconds": 174,
+     "note": null
+    },
+    {
+     "row": 84,
+     "obs": 82.0,
+     "seconds": 130,
+     "note": null
+    },
+    {
+     "row": 85,
+     "obs": 83.0,
+     "seconds": 160,
+     "note": null
+    },
+    {
+     "row": 86,
+     "obs": 84.0,
+     "seconds": 331,
+     "note": null
+    },
+    {
+     "row": 87,
+     "obs": 85.0,
+     "seconds": 164,
+     "note": null
+    },
+    {
+     "row": 88,
+     "obs": 86.0,
+     "seconds": 113,
+     "note": null
+    },
+    {
+     "row": 89,
+     "obs": 87.0,
+     "seconds": 158,
+     "note": null
+    },
+    {
+     "row": 90,
+     "obs": 88.0,
+     "seconds": 355,
+     "note": null
+    },
+    {
+     "row": 91,
+     "obs": 89.0,
+     "seconds": 121,
+     "note": null
+    },
+    {
+     "row": 92,
+     "obs": 90.0,
+     "seconds": 679,
+     "note": null
+    },
+    {
+     "row": 93,
+     "obs": 91.0,
+     "seconds": 616,
+     "note": null
+    },
+    {
+     "row": 94,
+     "obs": 92.0,
+     "seconds": 131,
+     "note": null
+    },
+    {
+     "row": 95,
+     "obs": 93.0,
+     "seconds": 201,
+     "note": null
+    },
+    {
+     "row": 96,
+     "obs": 94.0,
+     "seconds": 226,
+     "note": null
+    },
+    {
+     "row": 97,
+     "obs": 95.0,
+     "seconds": 147,
+     "note": null
+    },
+    {
+     "row": 98,
+     "obs": 96.0,
+     "seconds": 215,
+     "note": null
+    },
+    {
+     "row": 99,
+     "obs": 97.0,
+     "seconds": 155,
+     "note": null
+    },
+    {
+     "row": 100,
+     "obs": 98.0,
+     "seconds": 192,
+     "note": null,
+     "start": "11:15",
+     "end": "11:18"
+    },
+    {
+     "row": 101,
+     "obs": 99.0,
+     "seconds": 1010,
+     "note": null,
+     "start": "11:19",
+     "end": "11:35"
     }
    ],
    "excluded": [],
-   "source": "Colunas AE–AG",
+   "source": "Colunas AH–AJ",
    "kind": "cronometrado / início-fim",
    "group": "principal",
    "link": {
     "process": "exame-de-cornea",
-    "nodes": [],
-    "lane": "Lane_medico",
-    "confidence": "raia",
-    "note": "A planilha mede a recepção da córnea (atendimento) como um bloco, do início ao fim; no fluxograma ele corresponde à raia do médico (da conversa inicial à entrega da receita). Associação por raia."
+    "nodes": [
+     "Id_e7e075dc-af34-4a5b-b044-4c0fe4cb65c8"
+    ],
+    "confidence": "provável",
+    "note": "“Recepção Córnea” é o tempo da recepção do 1º andar para a córnea, associado à criação da ficha."
    },
    "process": "exame-de-cornea"
   },
@@ -7680,9 +8912,11 @@
    "group": "retina",
    "link": {
     "process": "retina",
-    "nodes": [],
-    "confidence": "sem fluxograma",
-    "note": "A Retina não tem fluxograma mapeado; as medições aparecem só nos resultados."
+    "nodes": [
+     "Id_12ef7ba3-b0f3-4da6-88a0-54bdd59436ec"
+    ],
+    "confidence": "provável",
+    "note": null
    },
    "process": "retina"
   },
@@ -7758,9 +8992,11 @@
    "group": "retina",
    "link": {
     "process": "retina",
-    "nodes": [],
-    "confidence": "sem fluxograma",
-    "note": "A Retina não tem fluxograma mapeado; as medições aparecem só nos resultados."
+    "nodes": [
+     "Id_eb7fb807-eab7-46b6-bd8a-cef0ba9dc364"
+    ],
+    "confidence": "provável",
+    "note": null
    },
    "process": "retina"
   },
@@ -7788,9 +9024,11 @@
    "group": "retina",
    "link": {
     "process": "retina",
-    "nodes": [],
-    "confidence": "sem fluxograma",
-    "note": "A Retina não tem fluxograma mapeado; as medições aparecem só nos resultados."
+    "nodes": [
+     "Id_8d9674ea-3e29-4ed4-a953-555594729089"
+    ],
+    "confidence": "provável",
+    "note": null
    },
    "process": "retina"
   },
@@ -8028,9 +9266,11 @@
    "group": "retina",
    "link": {
     "process": "retina",
-    "nodes": [],
-    "confidence": "sem fluxograma",
-    "note": "A Retina não tem fluxograma mapeado; as medições aparecem só nos resultados."
+    "nodes": [
+     "Id_497f8c50-fda3-4969-b423-9d8282f0e3cc"
+    ],
+    "confidence": "provável",
+    "note": "“Recepção Retina” é o tempo na recepção, da chamada da senha à entrada do paciente."
    },
    "process": "retina"
   }
@@ -8056,9 +9296,9 @@
    {
     "id": "atendimento-glaucoma",
     "label": "Recepção Glaucoma",
-    "n": 48,
-    "missing": 52,
-    "visits": 2
+    "n": 75,
+    "missing": 25,
+    "visits": 1
    },
    {
     "id": "microscopia",
@@ -8070,9 +9310,9 @@
    {
     "id": "topografia",
     "label": "Topografia",
-    "n": 29,
-    "missing": 71,
-    "visits": 3
+    "n": 79,
+    "missing": 21,
+    "visits": 1
    },
    {
     "id": "tonometria-sopro",
@@ -8091,15 +9331,22 @@
    {
     "id": "glaucoma-consulta",
     "label": "Glaucoma Consulta",
-    "n": 46,
-    "missing": 54,
-    "visits": 2
+    "n": 65,
+    "missing": 35,
+    "visits": 1
+   },
+   {
+    "id": "cornea-consulta",
+    "label": "Córnea Consulta",
+    "n": 7,
+    "missing": 93,
+    "visits": 3
    },
    {
     "id": "atendimento-cornea",
     "label": "Recepção Córnea",
-    "n": 75,
-    "missing": 25,
+    "n": 99,
+    "missing": 1,
     "visits": 1
    }
   ],
@@ -8109,25 +9356,25 @@
     "n": 1,
     "date": "2026-10-08",
     "closes": [
+     "Recepção Glaucoma",
+     "Topografia",
+     "Glaucoma Consulta",
      "Recepção Córnea"
     ],
-    "lowest": 61
+    "lowest": 42
    },
    {
     "n": 2,
     "date": "2026-10-09",
-    "closes": [
-     "Recepção Glaucoma",
-     "Glaucoma Consulta"
-    ],
-    "lowest": 96
+    "closes": [],
+    "lowest": 77
    },
    {
     "n": 3,
     "date": "2026-10-15",
     "closes": [
      "Microscopia",
-     "Topografia"
+     "Córnea Consulta"
     ],
     "lowest": 100
    }
@@ -8137,22 +9384,20 @@
   "next": "2026-10-16",
   "bottleneck": [
    "Microscopia",
-   "Topografia"
+   "Córnea Consulta"
   ],
   "weekdays": [
    3,
    4
   ],
-  "start": "2026-11-12"
+  "start": "2026-11-19"
  },
  "emptySteps": [],
  "laneSteps": {
-  "Lane_33ed1915": [
-   "microscopia",
-   "topografia",
-   "oct",
-   "paquimetria",
-   "campo-visual",
+  "Id_ddf0e9f8-6753-4d3b-a4da-15b5449a5e9c": [
+   "topografia"
+  ],
+  "Id_1c732e4a-9f54-4fa9-8d5f-bb048ad78a43": [
    "glaucoma-consulta"
   ]
  },
